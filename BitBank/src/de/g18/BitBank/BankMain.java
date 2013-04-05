@@ -1,5 +1,3 @@
-// Test1234
-
 package de.g18.BitBank;
 
 import java.util.Scanner;
@@ -12,7 +10,7 @@ public class BankMain {
 
 	public static void main(String[] args) {
 		try {
-			Scanner sc = new Scanner(System.in);
+			//Scanner sc = new Scanner(System.in);
 			int kundenNummer = 1234;
 			String kundenName = "Test.Test";
 			// System.out.print("Bitte Kundennummer eingeben: ");
