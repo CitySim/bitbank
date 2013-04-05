@@ -50,6 +50,7 @@ public class KundeTest {
 	 */
 	@Test
 	public void testKunde() {
+		//test
 		fail("Not yet implemented");
 	}
 
