@@ -1,5 +1,3 @@
-// Test1234
-
 package de.g18.BitBank;
 
 import java.util.Scanner;
