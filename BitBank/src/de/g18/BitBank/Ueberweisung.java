@@ -6,6 +6,7 @@ import java.util.Date;
  * @author it1-markde
  * @since JRE6
  */
+
 public class Ueberweisung {
 
 	private double betrag;
@@ -22,6 +23,12 @@ public class Ueberweisung {
 		this.datum = datum;
 
 	}
+
+	/**
+	 * Ueberträgt den betrag der ueberweisung von einem Konto zum anderen.
+	 * 
+	 * @throws Exception
+	 */
 
 	public void durchfuehrenUeberweisung() throws Exception {
 

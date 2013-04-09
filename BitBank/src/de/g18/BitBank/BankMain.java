@@ -6,6 +6,7 @@ import java.util.Scanner;
  * @author it1-markde
  * @since JRE6
  */
+
 public class BankMain {
 
 	public static void main(String[] args) {

@@ -9,6 +9,7 @@ import java.util.List;
  * @author it1-markde
  * @since JRE6
  */
+
 public class Kunde {
 
 	private int kundenNummmer;
@@ -24,6 +25,7 @@ public class Kunde {
 	 *            Kundennummer des Kunden
 	 * @throws Exception
 	 */
+
 	public Kunde(String kundenName, int kundenNummer) throws Exception {
 		if (kundenNummer < 0) {
 			throw new Exception("Kundennummer darf nicht kleiner 0 sein");
@@ -37,6 +39,7 @@ public class Kunde {
 	 * 
 	 * @return Kundennummer des Kunden
 	 */
+
 	public int getKundenNummmer() {
 		return kundenNummmer;
 	}
@@ -47,6 +50,7 @@ public class Kunde {
 	 * @param neue
 	 *            Kundennummer des Kunden
 	 */
+
 	public void setKundenNummmer(int kundenNummmer) {
 		this.kundenNummmer = kundenNummmer;
 	}
@@ -56,6 +60,7 @@ public class Kunde {
 	 * 
 	 * @return Name des Kunden
 	 */
+
 	public String getName() {
 		return name;
 	}
@@ -66,6 +71,7 @@ public class Kunde {
 	 * @param neue
 	 *            Kundennummer des Kunden
 	 */
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -75,9 +81,25 @@ public class Kunde {
 	 * 
 	 * @return Name des Kunden
 	 */
+
 	public List<Konto> getKontenListe() {
 		return kontenListe;
 	}
+
+	/**
+	 * Führt die Ueberweisung über das entsprechende Quellkonto durch.
+	 * 
+	 * @param quellKonto
+	 *            Konto von dem ueberwiesen wird.
+	 * 
+	 * @param zielKonto
+	 *            Konto auf das ueberwiesen wird.
+	 * @param betrag
+	 *            zu ueberweisende Summe.
+	 * @param datum
+	 *            aktuelles Datum.F
+	 * @throws Exception
+	 */
 
 	public void ueberweisen(Konto quellKonto, Konto zielKonto, int betrag,
 			Date datum) throws Exception {
@@ -91,6 +113,7 @@ public class Kunde {
 	 *            Typ des neuen Kontos
 	 * @return das neu angelegte Konto
 	 */
+
 	public Konto anlegenKonto(Kontotyp kontoTyp) {
 		// Die Daten werden übergeben um die Kontonummer erzeugen zu können
 		Konto neuesKonto = new Konto(kontoTyp, this.kundenNummmer,
@@ -105,6 +128,7 @@ public class Kunde {
 	 * 
 	 * @return mehrzeiliger String
 	 */
+
 	public String anzeigenKontostandsUebersicht() {
 		String ubersicht = "\n";
 

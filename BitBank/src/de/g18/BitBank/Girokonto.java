@@ -4,6 +4,7 @@ package de.g18.BitBank;
  * @author it1-markde
  * @since JRE6
  */
+
 public class Girokonto extends Konto {
 
 	public Girokonto(Kontotyp kontoTyp, int kundenNummer, int indexNummer) {
@@ -26,6 +27,7 @@ public class Girokonto extends Konto {
 	 * Zieht einen Betrag vom aktuellen Kontostand ab. Kann nicht unter 0 - das
 	 * festgelegte Limit fallen.
 	 */
+
 	@Override
 	public void auszahlen(double betrag) throws Exception {
 

@@ -11,8 +11,8 @@ import java.util.List;
  * @see Sparkonto
  * @author it1-markde
  * @since JRE6
- * 
  */
+
 public class Konto {
 
 	private Kontotyp kontoTyp;
@@ -68,6 +68,7 @@ public class Konto {
 	 * 
 	 * @return 1 für Kontotyp = Girokonto,0 für Sparkonto
 	 */
+
 	public int getKontoTypNumber() {
 
 		if (this.getKontoTyp().toString().equals("GIROKONTO")) {
@@ -99,11 +100,25 @@ public class Konto {
 	 *            zu subtrahierender Wert.
 	 * @throws Exception
 	 */
+
 	public void auszahlen(double betrag) throws Exception {
 		this.kontoStand = this.kontoStand - betrag;
 		this.kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
 				betrag));
 	}
+
+	/**
+	 * Erstellt ein Objekt von Ueberweisung und speichert dieses in der
+	 * ueberweisungsliste.
+	 * 
+	 * @param zielKonto
+	 *            Konto auf das ueberwiesen wird.
+	 * @param betrag
+	 *            zu ueberweisende Summe.
+	 * @param datum
+	 *            aktuelles Datum.F
+	 * @throws Exception
+	 */
 
 	public void ueberweisen(Konto zielKonto, int betrag, Date datum)
 			throws Exception {

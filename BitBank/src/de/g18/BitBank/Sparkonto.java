@@ -4,6 +4,7 @@ package de.g18.BitBank;
  * @author it1-markde
  * @since JRE6
  */
+
 public class Sparkonto extends Konto {
 	private double festzins;
 
@@ -23,6 +24,7 @@ public class Sparkonto extends Konto {
 	 * Zieht einen Betrag vom aktuellen Kontostand ab. Kann nicht unter 0
 	 * sinken.
 	 */
+
 	@Override
 	public void auszahlen(double betrag) throws Exception {
 		if (this.kontoStand - betrag <= 0) {
