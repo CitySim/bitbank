@@ -3,6 +3,11 @@ package de.g18.BitBank;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
 public class Kunde {
 
 	private int kundenNummmer;
@@ -96,7 +101,7 @@ public class Kunde {
 	 */
 	public String anzeigenKontostandsUebersicht() {
 		String ubersicht = "\n";
-		
+
 		ubersicht += "┌────────────────────────────────────────────────────────────────────┐\n";
 		ubersicht += "│ Kunde: " + String.format("%1$-60s", name) + "│\n";
 		ubersicht += "├─────────────────────┬───────────────────────────┬──────────────────┤\n";

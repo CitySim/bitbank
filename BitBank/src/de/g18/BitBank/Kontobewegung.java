@@ -4,8 +4,9 @@ import java.util.Date;
 
 /**
  * Gibt eine Kontobewegung (Einzahlung || Auszahlung || Überweisung) aus.
- * @author it1-korebj
  * 
+ * @author it1-korebj
+ * @since JRE6
  */
 
 public class Kontobewegung {

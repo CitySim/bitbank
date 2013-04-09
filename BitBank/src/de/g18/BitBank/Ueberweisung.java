@@ -1,9 +1,10 @@
 package de.g18.BitBank;
 
 import java.util.Date;
+
 /**
  * @author it1-markde
- * @since JDK 1.7.0_11
+ * @since JRE6
  */
 public class Ueberweisung {
 

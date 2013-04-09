@@ -1,7 +1,8 @@
 package de.g18.BitBank;
+
 /**
  * @author it1-markde
- * @since JDK 1.7.0_11
+ * @since JRE6
  */
 public enum Kontotyp {
 
