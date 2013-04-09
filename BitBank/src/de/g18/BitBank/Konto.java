@@ -1,6 +1,7 @@
 package de.g18.BitBank;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,6 +19,7 @@ public class Konto {
 	protected double kontoStand;
 	protected long kontoNummer;
 	private List<Kontobewegung> kontoBewegungsListe = new ArrayList<Kontobewegung>();
+	private List<Ueberweisung> ueberweisungsListe = new ArrayList<Ueberweisung>();
 
 	/**
 	 * Erstellt ein neues Konto.
@@ -53,6 +55,10 @@ public class Konto {
 		return kontoBewegungsListe;
 	}
 
+	public List<Ueberweisung> getUeberweisungsListe() {
+		return ueberweisungsListe;
+	}
+
 	public Kontotyp getKontoTyp() {
 		return kontoTyp;
 	}
@@ -79,8 +85,11 @@ public class Konto {
 	 *            zu addierender Wert.
 	 */
 
-	public void einzahlen(int betrag) {
+	public void einzahlen(double betrag) {
 		this.kontoStand = this.kontoStand + betrag;
+		this.kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
+				betrag));
+
 	}
 
 	/**
@@ -90,8 +99,17 @@ public class Konto {
 	 *            zu subtrahierender Wert.
 	 * @throws Exception
 	 */
-	public void auszahlen(int betrag) throws Exception {
+	public void auszahlen(double betrag) throws Exception {
 		this.kontoStand = this.kontoStand - betrag;
+		this.kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
+				betrag));
 	}
 
+	public void ueberweisen(Konto zielKonto, int betrag, Date datum)
+			throws Exception {
+		Ueberweisung ueberweisung = new Ueberweisung(this, zielKonto, betrag,
+				datum);
+		ueberweisung.durchfuehrenUeberweisung();
+		this.ueberweisungsListe.add(ueberweisung);
+	}
 }

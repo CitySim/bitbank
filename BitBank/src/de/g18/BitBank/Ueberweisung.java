@@ -9,21 +9,24 @@ import java.util.Date;
 public class Ueberweisung {
 
 	private double betrag;
-	private Konto quellKlasse;
-	private Konto zielKlasse;
+	private Konto quellKonto;
+	private Konto zielKonto;
 	private Date datum;
 
-	public Ueberweisung(Konto quellKlasse, Konto zielKlasse, double betrag,
+	public Ueberweisung(Konto quellKonto, Konto zielKonto, double betrag,
 			Date datum) {
 
-		this.quellKlasse = quellKlasse;
-		this.zielKlasse = zielKlasse;
+		this.quellKonto = quellKonto;
+		this.zielKonto = zielKonto;
 		this.betrag = betrag;
 		this.datum = datum;
 
 	}
 
-	public void durchfuehrenUeberweisung() {
+	public void durchfuehrenUeberweisung() throws Exception {
+
+		this.quellKonto.auszahlen(betrag);
+		this.zielKonto.einzahlen(betrag);
 
 	}
 
@@ -32,11 +35,11 @@ public class Ueberweisung {
 	}
 
 	public Konto getQuellKlasse() {
-		return quellKlasse;
+		return quellKonto;
 	}
 
 	public Konto getZielKlasse() {
-		return zielKlasse;
+		return zielKonto;
 	}
 
 	public Date getDatum() {

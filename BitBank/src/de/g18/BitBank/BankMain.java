@@ -33,9 +33,12 @@ public class BankMain {
 			konto2.auszahlen(100);
 			System.out.println("(5) " + kunde1.anzeigenKontostandsUebersicht());
 
-			Ueberweisung ueb = new Ueberweisung(konto1, konto2, 25,
-					new java.util.Date());
-			ueb.durchfuehrenUeberweisung();
+			// Ueberweisung ueb = new Ueberweisung(konto1, konto2, 25,
+			// new java.util.Date());
+			// ueb.durchfuehrenUeberweisung();
+
+			kunde1.ueberweisen(konto1, konto2, 25, new java.util.Date());
+
 			System.out.println("(6) " + kunde1.anzeigenKontostandsUebersicht());
 		} catch (Exception e) {
 			e.printStackTrace();

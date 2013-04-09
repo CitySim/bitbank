@@ -1,6 +1,7 @@
 package de.g18.BitBank;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -76,6 +77,11 @@ public class Kunde {
 	 */
 	public List<Konto> getKontenListe() {
 		return kontenListe;
+	}
+
+	public void ueberweisen(Konto quellKonto, Konto zielKonto, int betrag,
+			Date datum) throws Exception {
+		quellKonto.ueberweisen(zielKonto, betrag, datum);
 	}
 
 	/**

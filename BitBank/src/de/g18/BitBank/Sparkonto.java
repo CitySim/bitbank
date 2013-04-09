@@ -24,7 +24,7 @@ public class Sparkonto extends Konto {
 	 * sinken.
 	 */
 	@Override
-	public void auszahlen(int betrag) throws Exception {
+	public void auszahlen(double betrag) throws Exception {
 		if (this.kontoStand - betrag <= 0) {
 			this.kontoStand = this.kontoStand - betrag;
 		} else {
