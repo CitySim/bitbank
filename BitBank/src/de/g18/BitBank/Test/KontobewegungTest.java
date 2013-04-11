@@ -1,18 +1,12 @@
 package de.g18.BitBank.Test;
 
-import static org.junit.Assert.*;
+import de.g18.BitBank.Kontobewegung;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Date;
 
-import junit.framework.Assert;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import de.g18.BitBank.Kontobewegung;
+import static org.junit.Assert.assertEquals;
 
 public class KontobewegungTest {
 	Kontobewegung kb;
@@ -26,7 +20,7 @@ public class KontobewegungTest {
 
 	@Test
 	public void KontobewegungErstellen() {
-		Assert.assertEquals(kb.getBetrag(), 237.68, 0);
-		Assert.assertEquals(kb.getDatum(), now);
+		assertEquals(237.68, kb.getBetrag(), 0);
+		assertEquals(now, kb.getDatum());
 	}
 }

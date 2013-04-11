@@ -86,7 +86,11 @@ public abstract class Konto {
 	 *            zu addierender Wert.
 	 */
 
-	public void einzahlen(double betrag) {
+	public void einzahlen(double betrag) throws Exception {
+		if (betrag < 0) {
+			throw new Exception("Betrag darf nicht negativ sein");
+		}
+
 		this.kontoStand = this.kontoStand + betrag;
 		this.kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
 				betrag));

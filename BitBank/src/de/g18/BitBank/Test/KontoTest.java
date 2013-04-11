@@ -1,11 +1,11 @@
 package de.g18.BitBank.Test;
 
-import org.junit.Assert;
+import de.g18.BitBank.Girokonto;
+import de.g18.BitBank.Konto;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.g18.BitBank.Girokonto;
-import de.g18.BitBank.Konto;
+import static org.junit.Assert.assertEquals;
 
 public class KontoTest {
 	Konto k;
@@ -17,29 +17,28 @@ public class KontoTest {
 
 	@Test
 	public void KontoErstellen() {
-		Assert.assertEquals(k.getKontoNummer(), 123401034);
-		Assert.assertEquals(k.getKontoStand(), 0, 0);
+		assertEquals(123401034, k.getKontoNummer());
+		assertEquals(0, k.getKontoStand(), 0);
 	}
 
 	@Test
-	public void auszahlen() {
-
+	public void auszahlen() throws Exception {
 		k.einzahlen(200);
-		Assert.assertEquals(k.getKontoStand(), 200, 0);
+		assertEquals(100, k.getKontoStand(), 0);
 
 		// es sollte genau ein eintrag in der liste sein
-		Assert.assertEquals(k.getKontoBewegungsListe().size(), 1);
-		Assert.assertEquals(k.getKontoBewegungsListe().get(0).getBetrag(), 200,
+		assertEquals(1, k.getKontoBewegungsListe().size());
+		assertEquals(200, k.getKontoBewegungsListe().get(0).getBetrag(),
 				0);
 	}
-		
-	@Test(expected=Exception.class)
-	public void negativenBetragAuszahlen() {
+
+	@Test(expected = Exception.class)
+	public void negativenBetragAuszahlen() throws Exception {
 		// es können keine negativ beträge eingezahlt werden
 		k.einzahlen(-100);
 
 		// konto muss noch immer 200 haben, betrag darf sich nicht ändern
 		// TODO: wie soll man das testen?!
-		// Assert.assertEquals(k.getKontoStand(), 200, 0);
-}
+		// assertEquals(k.getKontoStand(), 200, 0);
+	}
 }
