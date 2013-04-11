@@ -123,7 +123,7 @@ public class Kunde {
 			return neuesKonto;
 
 		} else {
-			Sparkonto neuesKonto = new Sparkonto(kontoTyp, this.kundenNummmer,
+			Sparkonto neuesKonto = new Sparkonto(this.kundenNummmer,
 					this.kontenListe.size());
 			kontenListe.add(neuesKonto);
 			return neuesKonto;

@@ -36,11 +36,15 @@ public class KontoTest {
 		Assert.assertEquals(k.getKontoBewegungsListe().size(), 1);
 		Assert.assertEquals(k.getKontoBewegungsListe().get(0).getBetrag(), 200,
 				0);
-
-		// es können keine negativ beträge eingezahlt werden
-		// TODO: Assert.That(delegate() { k.einzahlen(-100); },
-		// Throws.Exception);
-		// konto muss noch immer 200 haben, betrag darf sich nicht ändern
-		Assert.assertEquals(k.getKontoStand(), 200, 0);
 	}
+		
+	@Test(expected=Exception.class)
+	public void negativenBetragAuszahlen() {
+		// es können keine negativ beträge eingezahlt werden
+		k.einzahlen(-100);
+
+		// konto muss noch immer 200 haben, betrag darf sich nicht ändern
+		// TODO: wie soll man das testen?!
+		// Assert.assertEquals(k.getKontoStand(), 200, 0);
+}
 }
