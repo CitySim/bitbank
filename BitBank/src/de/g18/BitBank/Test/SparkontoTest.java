@@ -3,13 +3,14 @@
  */
 package de.g18.BitBank.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+
+import de.g18.BitBank.Sparkonto;
 
 /**
  * @author it1-tattsv
@@ -17,32 +18,15 @@ import org.junit.Test;
  */
 public class SparkontoTest {
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
+	Sparkonto k;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
+		k = new Sparkonto(1234, 34);
+		k.setKontoStand(10000);
 	}
 
 	/**
@@ -50,31 +34,25 @@ public class SparkontoTest {
 	 */
 	@Test
 	public void testAuszahlen() {
-		fail("Not yet implemented");
+		try {
+			k.auszahlen(k.getKontoStand());
+			assertEquals(0, k.getKontoStand(), 0);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
-	 * Test method for {@link de.g18.BitBank.Sparkonto#Sparkonto(de.g18.BitBank.Kontotyp, int, int)}.
+	 * Hier wird das Überziehen des Kontos getestet
 	 */
 	@Test
-	public void testSparkonto() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link de.g18.BitBank.Sparkonto#getFestzins()}.
-	 */
-	@Test
-	public void testGetFestzins() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link de.g18.BitBank.Sparkonto#setFestzins(double)}.
-	 */
-	@Test
-	public void testSetFestzins() {
-		fail("Not yet implemented");
+	public void testÜberziehen() {
+		try {
+			k.auszahlen(k.getKontoStand() + 1);
+			fail("Expected an exception");
+		} catch (Exception e) {
+			assertNotNull(e.getMessage());
+		}
 	}
 
 }
