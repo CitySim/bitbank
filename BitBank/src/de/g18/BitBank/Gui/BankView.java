@@ -2,12 +2,7 @@ package de.g18.BitBank.Gui;
 
 import java.awt.BorderLayout;
 
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 import de.g18.BitBank.Gui.Listener.BankViewListener;
 
@@ -147,6 +142,12 @@ public class BankView extends JFrame {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		// TODO Auto-generated method stub
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
