@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import de.g18.BitBank.Gui.Listener.KontoAnlegenListener;
+import de.g18.BitBank.Gui.Listener.ZahlungVornehmenListener;
 
 /**
  * Gui Klasse zum Ein - / Auszahlen eines Betrages auf ein Konto.
@@ -24,6 +25,7 @@ public class ZahlungVornehmen extends JFrame {
 		this.setSize(400, 400);
 		this.setLocationRelativeTo(null);
 		this.setLayout(new GridLayout(0, 1));
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("Bank-Anwendung - Konto anlegen");
 
 		JLabel kontoNummerLabel = new JLabel("Kontonummer");
@@ -41,10 +43,10 @@ public class ZahlungVornehmen extends JFrame {
 		JButton auszahlungButton = new JButton("Auszahlung");
 		JButton beendenButton = new JButton("Beenden");
 
-		kontoStandButton.addActionListener(new KontoAnlegenListener());
-		einzahlungButton.addActionListener(new KontoAnlegenListener());
-		auszahlungButton.addActionListener(new KontoAnlegenListener());
-		beendenButton.addActionListener(new KontoAnlegenListener());
+		kontoStandButton.addActionListener(new ZahlungVornehmenListener());
+		einzahlungButton.addActionListener(new ZahlungVornehmenListener());
+		auszahlungButton.addActionListener(new ZahlungVornehmenListener());
+		beendenButton.addActionListener(new ZahlungVornehmenListener());
 
 		this.add(kontoNummerLabel);
 		this.add(alterKontoStandLabel);

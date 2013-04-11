@@ -24,6 +24,7 @@ public class KontoAnlegen extends JFrame {
 		this.setSize(400, 400);
 		this.setLocationRelativeTo(null);
 		this.setLayout(new GridLayout(0, 1));
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("Bank-Anwendung - Ein- / Auszahlung durchführen");
 
 		JLabel kundenNummerLabel = new JLabel("KundenNummer");
@@ -33,7 +34,6 @@ public class KontoAnlegen extends JFrame {
 		JButton anlegenButton = new JButton("Anlegen");
 		JButton beendenButton = new JButton("Beenden");
 
-		// this.add(anlegenPanel);
 		this.add(kundenNummerLabel);
 
 		this.add(kundenNummerField);
@@ -44,8 +44,9 @@ public class KontoAnlegen extends JFrame {
 		this.add(anlegenButton);
 		this.add(beendenButton);
 
-		anlegenButton.addActionListener(new KontoAnlegenListener());
-		beendenButton.addActionListener(new KontoAnlegenListener());
+		anlegenButton.addActionListener(new KontoAnlegenListener(
+				kundenNummerField));
+		beendenButton.addActionListener(new KontoAnlegenListener(null));
 
 		this.setVisible(true);
 
