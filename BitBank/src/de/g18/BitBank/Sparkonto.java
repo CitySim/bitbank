@@ -8,8 +8,8 @@ package de.g18.BitBank;
 public class Sparkonto extends Konto {
 	private double festzins;
 
-	public Sparkonto(Kontotyp kontoTyp, int kundenNummer, int indexNummer) {
-		super(kontoTyp, kundenNummer, indexNummer);
+	public Sparkonto(int kundenNummer, int indexNummer) {
+		super(Kontotyp.SPARKONTO, kundenNummer, indexNummer);
 	}
 
 	public double getFestzins() {
