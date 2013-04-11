@@ -1,9 +1,10 @@
-/**
- * 
- */
 package de.g18.BitBank.Test;
 
 import static org.junit.Assert.*;
+
+import java.util.Date;
+
+import junit.framework.Assert;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,62 +12,21 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- * @author it1-tattsv
- *
- */
+import de.g18.BitBank.Kontobewegung;
+
 public class KontobewegungTest {
+	Kontobewegung kb;
+	Date now;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@Before
 	public void setUp() throws Exception {
+		now = new Date();
+		kb = new Kontobewegung(now, 237.68);
 	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	/**
-	 * Test method for {@link de.g18.BitBank.Kontobewegung#Kontobewegung(java.util.Date, double)}.
-	 */
 	@Test
-	public void testKontobewegung() {
-		fail("Not yet implemented");
+	public void KontobewegungErstellen() {
+		Assert.assertEquals(kb.getBetrag(), 237.68, 0);
+		Assert.assertEquals(kb.getDatum(), now);
 	}
-
-	/**
-	 * Test method for {@link de.g18.BitBank.Kontobewegung#getDatum()}.
-	 */
-	@Test
-	public void testGetDatum() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link de.g18.BitBank.Kontobewegung#getBetrag()}.
-	 */
-	@Test
-	public void testGetBetrag() {
-		fail("Not yet implemented");
-	}
-
 }

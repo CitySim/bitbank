@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import de.g18.BitBank.Gui.Listener.KontoAnlegenListener;
 import de.g18.BitBank.Gui.Listener.ZahlungVornehmenListener;
 
 /**
