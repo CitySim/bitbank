@@ -29,12 +29,12 @@ public class Ueberweisung {
 	 * 
 	 * @throws Exception
 	 */
-
 	public void durchfuehrenUeberweisung() throws Exception {
+		quellKonto.auszahlen(betrag);
+		zielKonto.einzahlen(betrag);
 
-		this.quellKonto.auszahlen(betrag);
-		this.zielKonto.einzahlen(betrag);
-
+		quellKonto.getUeberweisungsListe().add(this);
+		zielKonto.getUeberweisungsListe().add(this);
 	}
 
 	public double getBetrag() {

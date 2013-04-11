@@ -6,10 +6,10 @@ import java.util.List;
 
 /**
  * Konto Klasse
- * 
+ *
+ * @author it1-markde
  * @see Girokonto
  * @see Sparkonto
- * @author it1-markde
  * @since JRE6
  */
 
@@ -23,13 +23,10 @@ public abstract class Konto {
 
 	/**
 	 * Erstellt ein neues Konto.
-	 * 
-	 * @param kontoTyp
-	 *            Typ des Kontos (Sparkonto / Girokonto).
-	 * @param kundenNummer
-	 *            Nummer des Kundens im Bankverwaltungstool.
-	 * @param indexNummer
-	 *            IndexNummer des Kontos in der Kontoliste des Kunden.
+	 *
+	 * @param kontoTyp     Typ des Kontos (Sparkonto / Girokonto).
+	 * @param kundenNummer Nummer des Kundens im Bankverwaltungstool.
+	 * @param indexNummer  IndexNummer des Kontos in der Kontoliste des Kunden.
 	 */
 
 	public Konto(Kontotyp kontoTyp, int kundenNummer, int indexNummer) {
@@ -65,7 +62,7 @@ public abstract class Konto {
 
 	/**
 	 * Gibt einen Int je nach Kontoart wieder.
-	 * 
+	 *
 	 * @return 1 für Kontotyp = Girokonto,0 für Sparkonto
 	 */
 
@@ -81,9 +78,8 @@ public abstract class Konto {
 
 	/**
 	 * Addiert einen Betrag auf den aktuellen Kontostand.
-	 * 
-	 * @param betrag
-	 *            zu addierender Wert.
+	 *
+	 * @param betrag zu addierender Wert.
 	 */
 
 	public void einzahlen(double betrag) throws Exception {
@@ -91,39 +87,38 @@ public abstract class Konto {
 			throw new Exception("Betrag darf nicht negativ sein");
 		}
 
-		this.kontoStand = this.kontoStand + betrag;
-		this.kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
+		kontoStand += betrag;
+		kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
 				betrag));
 
 	}
 
 	/**
 	 * Subtrahiert einen Betrag von dem aktuellen Kontostand.
-	 * 
-	 * @param betrag
-	 *            zu subtrahierender Wert.
+	 *
+	 * @param betrag zu subtrahierender Wert.
 	 * @throws Exception
 	 */
 
 	public void auszahlen(double betrag) throws Exception {
-		this.kontoStand = this.kontoStand - betrag;
-		this.kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
-				betrag));
+		if (betrag < 0) {
+			throw new Exception("Betrag darf nicht negativ sein");
+		}
+
+		kontoStand -= betrag;
+		kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
+				-betrag));
 	}
 
 	/**
 	 * Erstellt ein Objekt von Ueberweisung und speichert dieses in der
 	 * ueberweisungsliste.
-	 * 
-	 * @param zielKonto
-	 *            Konto auf das ueberwiesen wird.
-	 * @param betrag
-	 *            zu ueberweisende Summe.
-	 * @param datum
-	 *            aktuelles Datum.F
+	 *
+	 * @param zielKonto Konto auf das ueberwiesen wird.
+	 * @param betrag    zu ueberweisende Summe.
+	 * @param datum     aktuelles Datum.F
 	 * @throws Exception
 	 */
-
 	public void ueberweisen(Konto zielKonto, int betrag, Date datum)
 			throws Exception {
 		Ueberweisung ueberweisung = new Ueberweisung(this, zielKonto, betrag,

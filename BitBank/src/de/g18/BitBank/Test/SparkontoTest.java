@@ -13,10 +13,9 @@ public class SparkontoTest {
 		k.setKontoStand(10000);
 	}
 
-	@Test(expected = Exception.class)
+	@Test
 	public void testAuszahlen() throws Exception {
 		k.auszahlen(k.getKontoStand());
-		// TODO: assertEquals(0, k.getKontoStand(), 0);
 	}
 
 	/**

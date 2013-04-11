@@ -43,7 +43,7 @@ public class UeberweisungTest {
 		assertEquals(150, k2.getKontoStand(), 0);
 
 		assertEquals(2, k1.getKontoBewegungsListe().size());
-		assertEquals(-200, k1.getKontoBewegungsListe().get(0).getBetrag(), 0); // einzahlung
+		assertEquals(200, k1.getKontoBewegungsListe().get(0).getBetrag(), 0); // einzahlung
 		assertEquals(-150, k1.getKontoBewegungsListe().get(1).getBetrag(), 0); // überweisung
 		assertEquals(1, k1.getUeberweisungsListe().size(), 1);
 
