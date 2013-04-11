@@ -10,9 +10,8 @@ import org.junit.Test;
 
 import de.g18.BitBank.Girokonto;
 
-
 /**
- * @author it1-tattsv
+ * @author it1-korebj
  * 
  */
 public class GirokontoTest {
@@ -34,14 +33,14 @@ public class GirokontoTest {
 	 */
 	@Test
 	public void testAuszahlen() {
-			try {
-				k.auszahlen(k.getLimit());
-				assertEquals(0, k.getKontoStand(), 0);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		try {
+			k.auszahlen(k.getLimit());
+			assertEquals(0, k.getKontoStand(), 0);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-	
+
 	/**
 	 * Hier wird das Überziehen des Kontos getestet
 	 */
@@ -64,9 +63,5 @@ public class GirokontoTest {
 	public void testGirokonto() {
 		assertEquals(123401034, k.getKontoNummer());
 	}
-
-	/**
-	 * Test method for {@link de.g18.BitBank.Girokonto#getLimit()}.
-	 */
 
 }
