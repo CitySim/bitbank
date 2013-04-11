@@ -1,41 +1,51 @@
 package de.g18.BitBank.Gui;
 
-import java.awt.BorderLayout;
+import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-public class KontoAnlegen {
+import de.g18.BitBank.Gui.Listener.KontoAnlegenListener;
 
-	public static void main(String[] args) {
-		// public void createGUI() {
-		JFrame anlegenFrame = new JFrame();
-		anlegenFrame.setSize(400, 400);
-		anlegenFrame.setLocationRelativeTo(null);
-		anlegenFrame.setTitle("Bank-Anwendung - Konto anlegen");
+@SuppressWarnings("serial")
+public class KontoAnlegen extends JFrame {
 
-		JPanel anlegenPanel = new JPanel();
+	public KontoAnlegen() {
+
+		this.setSize(400, 400);
+		this.setLocationRelativeTo(null);
+		this.setLayout(new GridLayout(0, 1));
+		this.setTitle("Bank-Anwendung - Ein- / Auszahlung durchführen");
+
 		JLabel kundenNummerLabel = new JLabel("KundenNummer");
 		JTextField kundenNummerField = new JTextField(10);
-		JRadioButton giroKontoButton = new JRadioButton("GiroKonto");
-		JRadioButton sparKontoButton = new JRadioButton("SparKonto");
+		JRadioButton giroKontoRadioButton = new JRadioButton("GiroKonto");
+		JRadioButton sparKontoRadioButton = new JRadioButton("SparKonto");
 		JButton anlegenButton = new JButton("Anlegen");
 		JButton beendenButton = new JButton("Beenden");
 
-		anlegenFrame.add(BorderLayout.CENTER, anlegenPanel);
-		anlegenPanel.add(BorderLayout.WEST, kundenNummerLabel);
-		anlegenPanel.add(BorderLayout.CENTER, kundenNummerField);
-		anlegenPanel.add(BorderLayout.CENTER, giroKontoButton);
-		anlegenPanel.add(BorderLayout.CENTER, sparKontoButton);
-		anlegenPanel.add(BorderLayout.SOUTH, anlegenButton);
-		anlegenPanel.add(BorderLayout.SOUTH, beendenButton);
+		// this.add(anlegenPanel);
+		this.add(kundenNummerLabel);
 
-		anlegenFrame.pack();
-		anlegenFrame.setVisible(true);
+		this.add(kundenNummerField);
 
+		this.add(giroKontoRadioButton);
+		this.add(sparKontoRadioButton);
+
+		this.add(anlegenButton);
+		this.add(beendenButton);
+
+		anlegenButton.addActionListener(new KontoAnlegenListener());
+		beendenButton.addActionListener(new KontoAnlegenListener());
+
+		this.setVisible(true);
+
+	}
+
+	public static void main(String[] args) {
+		new KontoAnlegen();
 	}
 }
