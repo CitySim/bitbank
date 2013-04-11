@@ -1,96 +1,58 @@
-/**
- * 
- */
 package de.g18.BitBank.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
-import org.junit.After;
-import org.junit.AfterClass;
+import java.util.Date;
+
+import junit.framework.Assert;
+
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- * @author it1-tattsv
- *
- */
+import de.g18.BitBank.Girokonto;
+import de.g18.BitBank.Konto;
+import de.g18.BitBank.Ueberweisung;
+
 public class UeberweisungTest {
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
+	Konto k1 ;
+	Konto k2;
+	Ueberweisung u;
+	Date now;
+	
 	@Before
 	public void setUp() throws Exception {
+		k1 = new Girokonto(1234, 34);
+		k2 = new Girokonto(1234, 35);
+		now = new Date();
+		
+		u = new Ueberweisung(k1, k2, 150, now);
 	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	/**
-	 * Test method for {@link de.g18.BitBank.Ueberweisung#Ueberweisung(de.g18.BitBank.Konto, de.g18.BitBank.Konto, double, java.util.Date)}.
-	 */
 	@Test
 	public void testUeberweisung() {
-		fail("Not yet implemented");
+		Assert.assertEquals(u.getBetrag(), 150, 0);
+		Assert.assertEquals(u.getDatum(), now);
+		Assert.assertEquals(u.getQuellKlasse(), k1);
+		Assert.assertEquals(u.getZielKlasse(), k2);
 	}
 
-	/**
-	 * Test method for {@link de.g18.BitBank.Ueberweisung#durchfuehrenUeberweisung()}.
-	 */
 	@Test
-	public void testDurchfuehrenUeberweisung() {
-		fail("Not yet implemented");
-	}
+	public void testDurchfuehrenUeberweisung() throws Exception {
+		k1.einzahlen(200);
 
-	/**
-	 * Test method for {@link de.g18.BitBank.Ueberweisung#getBetrag()}.
-	 */
-	@Test
-	public void testGetBetrag() {
-		fail("Not yet implemented");
-	}
+		u.durchfuehrenUeberweisung();
 
-	/**
-	 * Test method for {@link de.g18.BitBank.Ueberweisung#getQuellKlasse()}.
-	 */
-	@Test
-	public void testGetQuellKlasse() {
-		fail("Not yet implemented");
-	}
+		Assert.assertEquals(k1.getKontoStand(), 50, 0);
+		Assert.assertEquals(k2.getKontoStand(), 150, 0);
 
-	/**
-	 * Test method for {@link de.g18.BitBank.Ueberweisung#getZielKlasse()}.
-	 */
-	@Test
-	public void testGetZielKlasse() {
-		fail("Not yet implemented");
-	}
+		Assert.assertEquals(k1.getKontoBewegungsListe().size(), 2);
+		Assert.assertEquals(k1.getKontoBewegungsListe().get(0).getBetrag(), 200); // einzahlung
+		Assert.assertEquals(k1.getKontoBewegungsListe().get(1).getBetrag(), -150); // überweisung
+		Assert.assertEquals(k1.getUeberweisungsListe().size(), 1);
 
-	/**
-	 * Test method for {@link de.g18.BitBank.Ueberweisung#getDatum()}.
-	 */
-	@Test
-	public void testGetDatum() {
-		fail("Not yet implemented");
+		Assert.assertEquals(k2.getKontoBewegungsListe().size(), 1);
+		Assert.assertEquals(k2.getKontoBewegungsListe().get(0).getBetrag(), 150);
+		Assert.assertEquals(k2.getUeberweisungsListe().size(), 1);
+		Assert.assertEquals(k2.getUeberweisungsListe().get(0), k1.getUeberweisungsListe().get(0));
 	}
-
 }
