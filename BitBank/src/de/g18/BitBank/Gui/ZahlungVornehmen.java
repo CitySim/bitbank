@@ -9,6 +9,13 @@ import javax.swing.JTextField;
 
 import de.g18.BitBank.Gui.Listener.KontoAnlegenListener;
 
+/**
+ * Gui Klasse zum Ein - / Auszahlen eines Betrages auf ein Konto.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
+
 @SuppressWarnings("serial")
 public class ZahlungVornehmen extends JFrame {
 

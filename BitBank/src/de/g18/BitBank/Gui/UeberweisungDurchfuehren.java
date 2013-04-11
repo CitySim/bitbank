@@ -9,6 +9,12 @@ import javax.swing.JTextField;
 
 import de.g18.BitBank.Gui.Listener.UeberweisungDurchfuehrenListener;
 
+/**
+ * Gui Klasse zum Überweisen eines Betrages von einem Konto zum anderen.
+ * @author it1-markde
+ * @since JRE6
+ */
+
 @SuppressWarnings("serial")
 public class UeberweisungDurchfuehren extends JFrame {
 

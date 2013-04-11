@@ -7,8 +7,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-
 import de.g18.BitBank.Gui.Listener.KontoAnlegenListener;
+
+/**
+ * Gui Klasse zum anlegen eines Kundens.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
 
 @SuppressWarnings("serial")
 public class KontoAnlegen extends JFrame {

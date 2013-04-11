@@ -9,6 +9,14 @@ import javax.swing.JTextField;
 
 import de.g18.BitBank.Gui.Listener.KontostandsUebersichtAnzeigenListener;
 
+/**
+ * Gui Klasse zum Anzeigen des aktuellen Kontostandes aller Konten eines
+ * Kundens.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
+
 @SuppressWarnings("serial")
 public class KontostandsUebersichtAnzeigen extends JFrame {
 

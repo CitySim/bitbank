@@ -9,6 +9,13 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+/**
+ * Vorgegebene BankMain.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
+
 public class BankView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
