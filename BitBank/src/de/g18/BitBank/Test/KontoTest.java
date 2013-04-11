@@ -2,7 +2,6 @@ package de.g18.BitBank.Test;
 
 import de.g18.BitBank.Girokonto;
 import de.g18.BitBank.Konto;
-import org.hamcrest.core.Is;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,7 +15,7 @@ public class KontoTest {
 	@Before
 	public void setUp() throws Exception {
 		k = new Girokonto(1234, 34);
-		((Girokonto)k).setLimit(1000);
+		((Girokonto) k).setLimit(1000);
 	}
 
 	@Test
@@ -47,7 +46,8 @@ public class KontoTest {
 	public void FehlerBeimEinzahlenAendertBetragNicht() {
 		try {
 			k.einzahlen(-100);
-		} catch (Exception e) {}
+		} catch (Exception e) {
+		}
 
 		// konto muss noch immer 0 haben, betrag darf sich nicht ändern
 		assertEquals(0, k.getKontoStand(), 0);
