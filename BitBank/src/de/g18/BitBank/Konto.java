@@ -13,7 +13,7 @@ import java.util.List;
  * @since JRE6
  */
 
-public class Konto {
+public abstract class Konto {
 
 	private Kontotyp kontoTyp;
 	protected double kontoStand;

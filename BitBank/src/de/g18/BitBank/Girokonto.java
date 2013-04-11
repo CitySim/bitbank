@@ -31,7 +31,7 @@ public class Girokonto extends Konto {
 	@Override
 	public void auszahlen(double betrag) throws Exception {
 
-		if (this.kontoStand - betrag <= 0 - this.limit) {
+		if (this.kontoStand - betrag >= 0 - this.limit) {
 			this.kontoStand = this.kontoStand - betrag;
 		} else {
 			throw new Exception(

@@ -116,10 +116,20 @@ public class Kunde {
 
 	public Konto anlegenKonto(Kontotyp kontoTyp) {
 		// Die Daten werden übergeben um die Kontonummer erzeugen zu können
-		Konto neuesKonto = new Konto(kontoTyp, this.kundenNummmer,
-				this.kontenListe.size());
-		kontenListe.add(neuesKonto);
-		return neuesKonto;
+		if (kontoTyp.toString().equals("GIROKONTO")) {
+			Girokonto neuesKonto = new Girokonto(kontoTyp, this.kundenNummmer,
+					this.kontenListe.size());
+			kontenListe.add(neuesKonto);
+			return neuesKonto;
+
+		} else {
+			Sparkonto neuesKonto = new Sparkonto(kontoTyp, this.kundenNummmer,
+					this.kontenListe.size());
+			kontenListe.add(neuesKonto);
+			return neuesKonto;
+
+		}
+
 	}
 
 	/**
