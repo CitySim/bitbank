@@ -117,7 +117,7 @@ public class Kunde {
 	public Konto anlegenKonto(Kontotyp kontoTyp) {
 		// Die Daten werden übergeben um die Kontonummer erzeugen zu können
 		if (kontoTyp.toString().equals("GIROKONTO")) {
-			Girokonto neuesKonto = new Girokonto(kontoTyp, this.kundenNummmer,
+			Girokonto neuesKonto = new Girokonto(this.kundenNummmer,
 					this.kontenListe.size());
 			kontenListe.add(neuesKonto);
 			return neuesKonto;

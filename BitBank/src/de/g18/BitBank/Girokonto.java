@@ -7,8 +7,8 @@ package de.g18.BitBank;
 
 public class Girokonto extends Konto {
 
-	public Girokonto(Kontotyp kontoTyp, int kundenNummer, int indexNummer) {
-		super(kontoTyp, kundenNummer, indexNummer);
+	public Girokonto(int kundenNummer, int indexNummer) {
+		super(Kontotyp.GIROKONTO, kundenNummer, indexNummer);
 	}
 
 	/**
