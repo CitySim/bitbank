@@ -9,6 +9,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import de.g18.BitBank.Gui.Listener.BankViewListener;
+
 /**
  * Vorgegebene BankMain.
  * 
@@ -28,7 +30,6 @@ public class BankView extends JFrame {
 	private JMenuItem durchführenUeberweisungen = null;
 	private JMenuItem anzeigenKontostand = null;
 	private JMenuItem ende = null;
-	private JMenuItem jMenuItem = null;
 
 	/**
 	 * This method initializes bankMenuBar
@@ -152,6 +153,7 @@ public class BankView extends JFrame {
 				BankView thisClass = new BankView();
 				thisClass.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				thisClass.setVisible(true);
+
 			}
 		});
 	}
@@ -162,6 +164,8 @@ public class BankView extends JFrame {
 	public BankView() {
 		super();
 		initialize();
+		new BankViewListener(Anwendungen);
+
 	}
 
 	/**

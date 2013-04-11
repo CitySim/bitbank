@@ -1,7 +1,5 @@
 package de.g18.BitBank;
 
-import java.util.Scanner;
-
 /**
  * @author it1-markde
  * @since JRE6
