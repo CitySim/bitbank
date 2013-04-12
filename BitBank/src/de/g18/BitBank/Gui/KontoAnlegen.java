@@ -48,7 +48,6 @@ public class KontoAnlegen extends JFrame {
 		this.add(links);
 		this.add(mitte);
 		this.add(rechts);
-		System.out.println("test");
 		links.add(kundenNummerLabel);
 		mitte.add(kundenNummerField);
 		mitte.add(giroKontoRadioButton);
