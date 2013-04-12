@@ -2,10 +2,7 @@ package de.g18.BitBank.Gui;
 
 import java.awt.GridLayout;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 import de.g18.BitBank.Gui.Listener.UeberweisungDurchfuehrenListener;
 
@@ -65,6 +62,12 @@ public class UeberweisungDurchfuehren extends JFrame {
 	}
 
 	public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 		new UeberweisungDurchfuehren();
 	}
 }
