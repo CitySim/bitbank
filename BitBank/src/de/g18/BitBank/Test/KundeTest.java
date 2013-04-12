@@ -52,24 +52,4 @@ public class KundeTest {
 		System.out.println(k.getKontenListe());
 		assertTrue(k.getKontenListe().size() == 1);
 	}
-
-	//TODO
-	/**
-	 * Test method for
-	 * {@link de.g18.BitBank.Kunde#anzeigenKontostandsUebersicht()}.
-	 */
-	@Test
-	public void testAnzeigenKontostandsUebersicht() {
-		fail("Not yet implemented");
-	}
-
-	//TODO
-	/**
-	 * Javadoc fehlt
-	 */
-	@Test
-	public void testUeberweisen() {
-		fail("Not yet implemented");
-	}
-
 }
