@@ -40,7 +40,7 @@ public class KontoAnlegen extends JFrame {
 		JRadioButton sparKontoRadioButton = new JRadioButton("SparKonto");
 		JButton anlegenButton = new JButton("Anlegen");
 		JButton beendenButton = new JButton("Beenden");
-		
+
 		mitte.setLayout(new FlowLayout(FlowLayout.LEFT));
 		anlegenButton.setPreferredSize(new Dimension(100, 25));
 		beendenButton.setPreferredSize(new Dimension(100, 25));
@@ -48,7 +48,7 @@ public class KontoAnlegen extends JFrame {
 		this.add(links);
 		this.add(mitte);
 		this.add(rechts);
-		
+		System.out.println("test");
 		links.add(kundenNummerLabel);
 		mitte.add(kundenNummerField);
 		mitte.add(giroKontoRadioButton);
@@ -58,7 +58,7 @@ public class KontoAnlegen extends JFrame {
 
 		anlegenButton.addActionListener(new KontoAnlegenListener(
 				kundenNummerField));
-		beendenButton.addActionListener(new KontoAnlegenListener(null));
+		beendenButton.addActionListener(new KontoAnlegenListener(this));
 
 		this.setVisible(true);
 
