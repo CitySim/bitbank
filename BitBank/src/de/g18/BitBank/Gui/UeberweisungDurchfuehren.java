@@ -24,7 +24,7 @@ public class UeberweisungDurchfuehren extends JFrame {
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
         c.insets = new Insets(5, 5, 5, 5);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("Bank-Anwendung - Überweisung durchführen");
 
         JLabel vomKontoLabel = new JLabel("Vom Konto");
@@ -57,7 +57,6 @@ public class UeberweisungDurchfuehren extends JFrame {
         c.gridx = 0;
         c.gridy = 3;
         this.add(betragLabel, c);
-
 
         c.gridx = 1;
         c.gridy = 0;

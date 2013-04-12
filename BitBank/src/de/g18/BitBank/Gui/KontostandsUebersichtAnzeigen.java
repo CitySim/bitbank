@@ -26,7 +26,7 @@ public class KontostandsUebersichtAnzeigen extends JFrame {
 		this.setSize(400, 400);
 		this.setLocationRelativeTo(null);
 		this.setLayout(new GridLayout(0, 1));
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setTitle("Bank-Anwendung - Kontostandsübersicht anzeigen");
 
 		JLabel kundenNummerLabel = new JLabel("KundenNummer");
