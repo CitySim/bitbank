@@ -8,8 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import de.g18.BitBank.Konto;
-import de.g18.BitBank.Kontotyp;
 import de.g18.BitBank.Gui.KontoAnlegen;
 
 /**
