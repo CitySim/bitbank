@@ -23,7 +23,7 @@ public class UeberweisungDurchfuehren extends JFrame {
         this.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(2, 2, 2, 2);
+        c.insets = new Insets(5, 5, 5, 5);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Bank-Anwendung - Überweisung durchführen");
 
@@ -88,6 +88,12 @@ public class UeberweisungDurchfuehren extends JFrame {
         c.gridx = 2;
         c.gridy = 4;
         this.add(beendenButton, c);
+
+        c.gridx = 0;
+        c.gridy = 5;
+        c.gridwidth = 3;
+        c.weighty = 1;
+        this.add(new JPanel(), c);
 
         datumAuswählenButton
                 .addActionListener(new UeberweisungDurchfuehrenListener());
