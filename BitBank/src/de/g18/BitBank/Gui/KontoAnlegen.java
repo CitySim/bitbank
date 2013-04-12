@@ -1,9 +1,11 @@
 package de.g18.BitBank.Gui;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -28,8 +30,9 @@ public class KontoAnlegen extends JFrame {
 		this.setSize(400, 400);
 		this.setLocationRelativeTo(null);
 		this.setLayout(new GridLayout(0, 3));
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setTitle("Bank-Anwendung - Ein- / Auszahlung durchführen");
+		this.setResizable(false);
 
 		JPanel links = new JPanel();
 		JPanel mitte = new JPanel();
@@ -44,11 +47,13 @@ public class KontoAnlegen extends JFrame {
 		mitte.setLayout(new FlowLayout(FlowLayout.LEFT));
 		anlegenButton.setPreferredSize(new Dimension(100, 25));
 		beendenButton.setPreferredSize(new Dimension(100, 25));
+		links.setBorder(BorderFactory.createMatteBorder(20, 0, 0, 0, Color.decode("#EEEEEE")));
+		mitte.setBorder(BorderFactory.createMatteBorder(20, 0, 0, 0, Color.decode("#EEEEEE")));
+		rechts.setBorder(BorderFactory.createMatteBorder(75, 0, 0, 0, Color.decode("#EEEEEE")));
 
 		this.add(links);
 		this.add(mitte);
 		this.add(rechts);
-		System.out.println("test");
 		links.add(kundenNummerLabel);
 		mitte.add(kundenNummerField);
 		mitte.add(giroKontoRadioButton);
