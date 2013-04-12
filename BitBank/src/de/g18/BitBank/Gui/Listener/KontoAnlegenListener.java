@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import de.g18.BitBank.Konto;
+import de.g18.BitBank.Kontotyp;
 import de.g18.BitBank.Gui.KontoAnlegen;
 
 /**
@@ -37,6 +39,8 @@ public class KontoAnlegenListener implements ActionListener {
 
 		if (buttonClicked.getText().compareTo("Anlegen") == 0) {
 			try {
+				// Konto konto1 = kunde1.anlegenKonto(Kontotyp.GIROKONTO);
+
 				int kundenNummer = Integer.parseInt(this.kundenNummerField
 						.getText());
 

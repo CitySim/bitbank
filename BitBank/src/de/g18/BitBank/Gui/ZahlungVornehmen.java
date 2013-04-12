@@ -25,7 +25,7 @@ public class ZahlungVornehmen extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setLayout(new GridLayout(0, 1));
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		this.setTitle("Bank-Anwendung - Konto anlegen");
+		this.setTitle("Bank-Anwendung - Ein- / Auszahlung durchführen");
 
 		JLabel kontoNummerLabel = new JLabel("Kontonummer");
 		JLabel alterKontoStandLabel = new JLabel("alter Kontostand");

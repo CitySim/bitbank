@@ -31,7 +31,7 @@ public class KontoAnlegen extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setLayout(new GridLayout(0, 3));
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		this.setTitle("Bank-Anwendung - Ein- / Auszahlung durchführen");
+		this.setTitle("Bank-Anwendung - Konto anlegen");
 		this.setResizable(false);
 
 		JPanel links = new JPanel();
@@ -47,9 +47,12 @@ public class KontoAnlegen extends JFrame {
 		mitte.setLayout(new FlowLayout(FlowLayout.LEFT));
 		anlegenButton.setPreferredSize(new Dimension(100, 25));
 		beendenButton.setPreferredSize(new Dimension(100, 25));
-		links.setBorder(BorderFactory.createMatteBorder(20, 0, 0, 0, Color.decode("#EEEEEE")));
-		mitte.setBorder(BorderFactory.createMatteBorder(20, 0, 0, 0, Color.decode("#EEEEEE")));
-		rechts.setBorder(BorderFactory.createMatteBorder(75, 0, 0, 0, Color.decode("#EEEEEE")));
+		links.setBorder(BorderFactory.createMatteBorder(20, 0, 0, 0,
+				Color.decode("#EEEEEE")));
+		mitte.setBorder(BorderFactory.createMatteBorder(20, 0, 0, 0,
+				Color.decode("#EEEEEE")));
+		rechts.setBorder(BorderFactory.createMatteBorder(75, 0, 0, 0,
+				Color.decode("#EEEEEE")));
 
 		this.add(links);
 		this.add(mitte);
