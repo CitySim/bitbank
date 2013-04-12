@@ -18,7 +18,7 @@ import de.g18.BitBank.Kontotyp;
 import de.g18.BitBank.Kunde;
 
 /**
- * @author it1-tattsv
+ * @author it1-korebj
  * 
  */
 public class KundeTest {
