@@ -4,7 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JTextField;
+
+import de.g18.BitBank.Gui.KundenAnlegen;
 
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
@@ -16,9 +19,14 @@ import javax.swing.JTextField;
 public class KundenAnlegenListener implements ActionListener {
 
 	JTextField kundenAnlegenField;
+	JFrame kundenAnlegenFrame;
 
 	public KundenAnlegenListener(JTextField kundenNummerField) {
 		this.kundenAnlegenField = kundenNummerField;
+	}
+
+	public KundenAnlegenListener(KundenAnlegen kundenAnlegenFrame) {
+		this.kundenAnlegenFrame = kundenAnlegenFrame;
 	}
 
 	@Override
@@ -28,7 +36,7 @@ public class KundenAnlegenListener implements ActionListener {
 		if (buttonClicked.getText().compareTo("Anlegen") == 0) {
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			System.exit(1);
+			kundenAnlegenFrame.dispose();
 		}
 	}
 

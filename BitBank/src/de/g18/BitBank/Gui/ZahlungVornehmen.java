@@ -42,10 +42,10 @@ public class ZahlungVornehmen extends JFrame {
 		JButton auszahlungButton = new JButton("Auszahlung");
 		JButton beendenButton = new JButton("Beenden");
 
-		kontoStandButton.addActionListener(new ZahlungVornehmenListener());
-		einzahlungButton.addActionListener(new ZahlungVornehmenListener());
-		auszahlungButton.addActionListener(new ZahlungVornehmenListener());
-		beendenButton.addActionListener(new ZahlungVornehmenListener());
+		kontoStandButton.addActionListener(new ZahlungVornehmenListener(null));
+		einzahlungButton.addActionListener(new ZahlungVornehmenListener(null));
+		auszahlungButton.addActionListener(new ZahlungVornehmenListener(null));
+		beendenButton.addActionListener(new ZahlungVornehmenListener(this));
 
 		this.add(kontoNummerLabel);
 		this.add(alterKontoStandLabel);

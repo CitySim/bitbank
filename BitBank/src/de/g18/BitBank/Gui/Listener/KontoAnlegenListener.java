@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import de.g18.BitBank.Gui.KontoAnlegen;
+
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
  * 
@@ -18,9 +20,14 @@ import javax.swing.JTextField;
 public class KontoAnlegenListener implements ActionListener {
 
 	JTextField kundenNummerField;
+	JFrame kontoAnlegenFrame;
 
 	public KontoAnlegenListener(JTextField kundenNummerField) {
 		this.kundenNummerField = kundenNummerField;
+	}
+
+	public KontoAnlegenListener(KontoAnlegen kontoAnlegenFrame) {
+		this.kontoAnlegenFrame = kontoAnlegenFrame;
 	}
 
 	@Override
@@ -46,7 +53,7 @@ public class KontoAnlegenListener implements ActionListener {
 
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			System.exit(1);
+			kontoAnlegenFrame.dispose();
 		}
 
 	}

@@ -49,9 +49,11 @@ public class KontostandsUebersichtAnzeigen extends JFrame {
 		this.add(table);
 
 		kontoUebersichtButton
-				.addActionListener(new KontostandsUebersichtAnzeigenListener());
+				.addActionListener(new KontostandsUebersichtAnzeigenListener(
+						null));
 		beendenButton
-				.addActionListener(new KontostandsUebersichtAnzeigenListener());
+				.addActionListener(new KontostandsUebersichtAnzeigenListener(
+						this));
 
 		this.setVisible(true);
 	}

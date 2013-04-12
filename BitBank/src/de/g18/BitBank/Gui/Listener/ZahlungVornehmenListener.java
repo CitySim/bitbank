@@ -2,7 +2,11 @@ package de.g18.BitBank.Gui.Listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
+import de.g18.BitBank.Gui.ZahlungVornehmen;
 
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
@@ -12,6 +16,12 @@ import javax.swing.JButton;
  */
 
 public class ZahlungVornehmenListener implements ActionListener {
+
+	JFrame zahlungVornehmenFrame;
+
+	public ZahlungVornehmenListener(ZahlungVornehmen zahlungVornehmenFrame) {
+		this.zahlungVornehmenFrame = zahlungVornehmenFrame;
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
@@ -28,7 +38,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			System.exit(1);
+			this.zahlungVornehmenFrame.dispose();
 		}
 
 	}

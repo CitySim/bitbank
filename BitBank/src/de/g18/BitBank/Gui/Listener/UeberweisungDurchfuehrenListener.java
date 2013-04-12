@@ -3,10 +3,14 @@ package de.g18.BitBank.Gui.Listener;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 
 import com.theotherbell.ui.DatePicker;
+
+import de.g18.BitBank.Gui.UeberweisungDurchfuehren;
 
 /**
  * Listener zu den Buttons der UeberweisungDurchfuehren Klasse.
@@ -16,6 +20,13 @@ import com.theotherbell.ui.DatePicker;
  */
 
 public class UeberweisungDurchfuehrenListener implements ActionListener {
+
+	JFrame ueberweisungDurchfuehrenFrame;
+
+	public UeberweisungDurchfuehrenListener(
+			UeberweisungDurchfuehren ueberweisungDurchfuehrenFrame) {
+		this.ueberweisungDurchfuehrenFrame = ueberweisungDurchfuehrenFrame;
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
@@ -30,7 +41,7 @@ public class UeberweisungDurchfuehrenListener implements ActionListener {
 
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			System.exit(1);
+			this.ueberweisungDurchfuehrenFrame.dispose();
 		}
 
 	}

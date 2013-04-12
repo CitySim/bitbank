@@ -7,6 +7,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import de.g18.BitBank.Gui.KontoAnlegen;
 import de.g18.BitBank.Gui.KontostandsUebersichtAnzeigen;
+import de.g18.BitBank.Gui.KundenAnlegen;
 import de.g18.BitBank.Gui.UeberweisungDurchfuehren;
 import de.g18.BitBank.Gui.ZahlungVornehmen;
 
@@ -54,7 +55,7 @@ public class BankViewListener implements MouseListener {
 		JMenuItem menuItem = (JMenuItem) event.getSource();
 
 		if (menuItem.getText().equals("Kunde anlegen")) {
-			System.out.println("Kunde anlegen");
+			new KundenAnlegen();
 		} else if (menuItem.getText().equals("Konto anlegen")) {
 			new KontoAnlegen();
 		} else if (menuItem.getText().equals("Ein-/Auszahlungen durchführen")) {

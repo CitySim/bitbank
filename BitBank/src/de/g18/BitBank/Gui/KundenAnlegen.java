@@ -44,7 +44,7 @@ public class KundenAnlegen extends JFrame {
 
 		anlegenButton.addActionListener(new KundenAnlegenListener(
 				kundenNummerField));
-		beendenButton.addActionListener(new KundenAnlegenListener(null));
+		beendenButton.addActionListener(new KundenAnlegenListener(this));
 
 		this.setVisible(true);
 
