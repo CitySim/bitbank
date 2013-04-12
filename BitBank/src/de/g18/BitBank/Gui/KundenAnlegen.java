@@ -9,6 +9,13 @@ import javax.swing.JTextField;
 
 import de.g18.BitBank.Gui.Listener.KundenAnlegenListener;
 
+/**
+ * Gui Klasse zum Anlegen eines neuen Kundens.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
+
 @SuppressWarnings("serial")
 public class KundenAnlegen extends JFrame {
 	public KundenAnlegen() {

@@ -3,14 +3,19 @@ package de.g18.BitBank.Gui.Listener;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-
 import de.g18.BitBank.Gui.KontoAnlegen;
 import de.g18.BitBank.Gui.KontostandsUebersichtAnzeigen;
 import de.g18.BitBank.Gui.UeberweisungDurchfuehren;
 import de.g18.BitBank.Gui.ZahlungVornehmen;
+
+/**
+ * Listener zu dem Menü BankView Klasse.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
 
 public class BankViewListener implements MouseListener {
 
