@@ -36,6 +36,7 @@ public class BankView extends JFrame {
 		JTabbedPane tabsPane = new JTabbedPane();
 		add(tabsPane);
 
+		setMinimumSize(new Dimension(650, 400));
 		setVisible(true);
 
 		new BankViewListener(AktionenMenu, tabsPane);

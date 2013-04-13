@@ -64,6 +64,5 @@ public class BankViewListener implements MouseListener {
 		} else if (menuItem.getText().equals("Beenden")) {
 			System.exit(1);
 		}
-
 	}
 }
