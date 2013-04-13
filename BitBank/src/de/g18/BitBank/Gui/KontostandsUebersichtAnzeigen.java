@@ -1,33 +1,22 @@
 package de.g18.BitBank.Gui;
 
-import java.awt.GridLayout;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-
 import de.g18.BitBank.Gui.Listener.KontostandsUebersichtAnzeigenListener;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Gui Klasse zum Anzeigen des aktuellen Kontostandes aller Konten eines
  * Kundens.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
 
-@SuppressWarnings("serial")
-public class KontostandsUebersichtAnzeigen extends JFrame {
+public class KontostandsUebersichtAnzeigen extends JPanel {
 
 	public KontostandsUebersichtAnzeigen() {
-
-		this.setSize(400, 400);
-		this.setLocationRelativeTo(null);
 		this.setLayout(new GridLayout(0, 1));
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		this.setTitle("Bank-Anwendung - Kontostandsübersicht anzeigen");
 
 		JLabel kundenNummerLabel = new JLabel("KundenNummer");
 		JTextField kundenNummerField = new JTextField(10);
@@ -63,14 +52,14 @@ public class KontostandsUebersichtAnzeigen extends JFrame {
 	}
 
 	public Object[][] generateTextObjects() {
-		Object[][] data = { { "Giro", "1100001", "750.0" },
-				{ "Spar", "1101002", "250.0" } };
+		Object[][] data = {{"Giro", "1100001", "750.0"},
+				{"Spar", "1101002", "250.0"}};
 
 		return data;
 	}
 
 	public Object[] generateColumnNames() {
-		Object[] data = { "Kontoart", "Kontonummer", "Kontostand" };
+		Object[] data = {"Kontoart", "Kontonummer", "Kontostand"};
 		return data;
 	}
 }

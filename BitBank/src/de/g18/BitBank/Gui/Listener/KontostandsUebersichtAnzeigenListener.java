@@ -1,23 +1,20 @@
 package de.g18.BitBank.Gui.Listener;
 
+import de.g18.BitBank.Gui.KontostandsUebersichtAnzeigen;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-
-import de.g18.BitBank.Gui.KontostandsUebersichtAnzeigen;
-
 /**
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
 
 public class KontostandsUebersichtAnzeigenListener implements ActionListener {
-
-	JFrame kontostandsUebersichtAnzeigenFrame;
+	JPanel kontostandsUebersichtAnzeigenFrame;
 
 	public KontostandsUebersichtAnzeigenListener(
 			KontostandsUebersichtAnzeigen kontostandsUebersichtAnzeigenFrame) {
@@ -31,10 +28,8 @@ public class KontostandsUebersichtAnzeigenListener implements ActionListener {
 		if (buttonClicked.getText().compareTo("Kontoübersicht") == 0) {
 
 		}
-		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			this.kontostandsUebersichtAnzeigenFrame.dispose();
-		}
-
+		//if (buttonClicked.getText().compareTo("Beenden") == 0) {
+		//	this.kontostandsUebersichtAnzeigenFrame.dispose();
+		//}
 	}
-
 }

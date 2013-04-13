@@ -1,31 +1,23 @@
 package de.g18.BitBank.Gui;
 
-import java.awt.*;
+import de.g18.BitBank.Gui.Listener.UeberweisungDurchfuehrenListener;
 
 import javax.swing.*;
-
-import de.g18.BitBank.Gui.Listener.UeberweisungDurchfuehrenListener;
+import java.awt.*;
 
 /**
  * Gui Klasse zum Überweisen eines Betrages von einem Konto zum anderen.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
 
-@SuppressWarnings("serial")
-public class UeberweisungDurchfuehren extends JFrame {
-
+public class UeberweisungDurchfuehren extends JPanel {
 	public UeberweisungDurchfuehren() {
-
-		this.setSize(400, 400);
-		this.setLocationRelativeTo(null);
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		this.setTitle("Bank-Anwendung - Überweisung durchführen");
 
 		JLabel vomKontoLabel = new JLabel("Vom Konto");
 		JLabel nachKontoLabel = new JLabel("Nach Konto");

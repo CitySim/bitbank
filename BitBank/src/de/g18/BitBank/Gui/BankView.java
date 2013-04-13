@@ -33,9 +33,12 @@ public class BankView extends JFrame {
 		bankMenuBar.add(AktionenMenu);
 		setJMenuBar(bankMenuBar);
 
+		JTabbedPane tabsPane = new JTabbedPane();
+		add(tabsPane);
+
 		setVisible(true);
 
-		new BankViewListener(AktionenMenu);
+		new BankViewListener(AktionenMenu, tabsPane);
 	}
 
 	public static void main(String[] args) {

@@ -1,38 +1,20 @@
 package de.g18.BitBank.Gui;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-
 import de.g18.BitBank.Gui.Listener.KontoAnlegenListener;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Gui Klasse zum anlegen eines Kundens.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
 
-@SuppressWarnings("serial")
-public class KontoAnlegen extends JFrame {
-
+public class KontoAnlegen extends JPanel {
 	public KontoAnlegen() {
-
-		this.setSize(400, 400);
-		this.setLocationRelativeTo(null);
 		this.setLayout(new GridLayout(0, 3));
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		this.setTitle("Bank-Anwendung - Konto anlegen");
-		this.setResizable(false);
 
 		JPanel links = new JPanel();
 		JPanel mitte = new JPanel();
@@ -69,7 +51,6 @@ public class KontoAnlegen extends JFrame {
 		beendenButton.addActionListener(new KontoAnlegenListener(this));
 
 		this.setVisible(true);
-
 	}
 
 	public static void main(String[] args) {

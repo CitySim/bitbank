@@ -1,31 +1,28 @@
 package de.g18.BitBank.Gui.Listener;
 
-import java.awt.Component;
+import de.g18.BitBank.Gui.*;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import de.g18.BitBank.Gui.KontoAnlegen;
-import de.g18.BitBank.Gui.KontostandsUebersichtAnzeigen;
-import de.g18.BitBank.Gui.KundenAnlegen;
-import de.g18.BitBank.Gui.UeberweisungDurchfuehren;
-import de.g18.BitBank.Gui.ZahlungVornehmen;
 
 /**
  * Listener zu dem Menü BankView Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
 
 public class BankViewListener implements MouseListener {
+	JTabbedPane tabsPane;
 
-	public BankViewListener(JMenu anwendungen) {
-
+	public BankViewListener(JMenu anwendungen, JTabbedPane tabsPane) {
 		for (Component component : anwendungen.getMenuComponents()) {
 			component.addMouseListener(this);
 		}
 
+		this.tabsPane = tabsPane;
 	}
 
 	@Override
@@ -55,15 +52,15 @@ public class BankViewListener implements MouseListener {
 		JMenuItem menuItem = (JMenuItem) event.getSource();
 
 		if (menuItem.getText().equals("Kunde anlegen")) {
-			new KundenAnlegen();
+			tabsPane.add("Kunde anlegen", new KundenAnlegen());
 		} else if (menuItem.getText().equals("Konto anlegen")) {
-			new KontoAnlegen();
+			tabsPane.add("Konto anlegen", new KontoAnlegen());
 		} else if (menuItem.getText().equals("Ein-/Auszahlungen durchführen")) {
-			new ZahlungVornehmen();
+			tabsPane.add("Ein-/Auszahlung", new ZahlungVornehmen());
 		} else if (menuItem.getText().equals("Überweisungen durchführen")) {
-			new UeberweisungDurchfuehren();
+			tabsPane.add("Überweisungen", new UeberweisungDurchfuehren());
 		} else if (menuItem.getText().equals("Kontostandsübersicht anzeigen")) {
-			new KontostandsUebersichtAnzeigen();
+			tabsPane.add("Kontostandsübersicht", new KontostandsUebersichtAnzeigen());
 		} else if (menuItem.getText().equals("Beenden")) {
 			System.exit(1);
 		}
