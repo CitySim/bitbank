@@ -26,8 +26,9 @@ public class BankView extends JFrame {
 		AktionenMenu.add(new JMenuItem("Ein-/Auszahlungen durchführen"));
 		AktionenMenu.add(new JMenuItem("Überweisungen durchführen"));
 		AktionenMenu.add(new JMenuItem("Kontostandsübersicht anzeigen"));
+		AktionenMenu.add(new JMenuItem("Kontobewegungen anzeigen"));
 		AktionenMenu.add(new JMenuItem("Beenden"));
-		AktionenMenu.insertSeparator(5);
+		AktionenMenu.insertSeparator(6);
 
 		JMenuBar bankMenuBar = new JMenuBar();
 		bankMenuBar.add(AktionenMenu);
