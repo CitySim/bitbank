@@ -19,7 +19,10 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 	public KontostandsUebersichtAnzeigen(JTabbedPane tabsPane) {
 		this.tabsPane = tabsPane;
 
-		this.setLayout(new GridLayout(0, 1));
+		this.setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.insets = new Insets(5, 5, 5, 5);
 
 		JLabel kundenNummerLabel = new JLabel("KundenNummer");
 		JTextField kundenNummerField = new JTextField(10);
@@ -31,14 +34,33 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 		Object[] columnNames = this.generateColumnNames();
 
 		JTable table = new JTable(data, columnNames);
+		table.setFillsViewportHeight(true);
+		JScrollPane tablePane = new JScrollPane(table);
 
-		this.add(kundenNummerLabel);
+		c.gridx = 0;
+		c.gridy = 0;
+		this.add(kundenNummerLabel, c);
 
-		this.add(kundenNummerField);
+		c.gridx = 1;
+		c.gridy = 0;
+		c.weightx = 1;
+		this.add(kundenNummerField, c);
 
-		this.add(kontoUebersichtButton);
-		this.add(beendenButton);
-		this.add(table);
+		c.gridx = 2;
+		c.gridy = 0;
+		c.weightx = 0;
+		this.add(kontoUebersichtButton, c);
+
+		c.gridx = 2;
+		c.gridy = 1;
+		this.add(beendenButton, c);
+
+		c.gridx = 0;
+		c.gridy = 3;
+		c.weightx = 1;
+		c.weighty = 1;
+		c.gridwidth = 3;
+		this.add(tablePane, c);
 
 		kontoUebersichtButton
 				.addActionListener(new KontostandsUebersichtAnzeigenListener(
