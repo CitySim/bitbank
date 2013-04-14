@@ -30,8 +30,12 @@ public class BankView extends JFrame {
 		AktionenMenu.add(new JMenuItem("Beenden"));
 		AktionenMenu.insertSeparator(6);
 
+		JMenu about = new JMenu("Hilfe");
+		about.add(new JMenuItem("Über"));
+
 		JMenuBar bankMenuBar = new JMenuBar();
 		bankMenuBar.add(AktionenMenu);
+		bankMenuBar.add(about);
 		setJMenuBar(bankMenuBar);
 
 		JTabbedPane tabsPane = new JTabbedPane();
@@ -40,7 +44,8 @@ public class BankView extends JFrame {
 		setMinimumSize(new Dimension(650, 400));
 		setVisible(true);
 
-		new BankViewListener(AktionenMenu, tabsPane);
+		BankViewListener listener = new BankViewListener(AktionenMenu, tabsPane);
+		about.getMenuComponents()[0].addMouseListener(listener);
 	}
 
 	public static void main(String[] args) {

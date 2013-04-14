@@ -62,6 +62,8 @@ public class BankViewListener implements MouseListener {
 			tabsPane.add("Kontostandsübersicht", new KontostandsUebersichtAnzeigen(tabsPane));
 		} else if (menuItem.getText().equals("Kontobewegungen anzeigen")) {
 			tabsPane.add("Kontobewegungen", new Kontobewegungen(tabsPane));
+		} else if (menuItem.getText().equals("Über")) {
+			new UeberFenster();
 		} else if (menuItem.getText().equals("Beenden")) {
 			System.exit(1);
 		}
