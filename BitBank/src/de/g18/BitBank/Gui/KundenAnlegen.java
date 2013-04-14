@@ -18,33 +18,51 @@ public class KundenAnlegen extends JPanel {
 	public KundenAnlegen(JTabbedPane tabsPane) {
 		this.tabsPane = tabsPane;
 
-		this.setLayout(new GridLayout(0, 1));
+		this.setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.insets = new Insets(5, 5, 5, 5);
 
 		JPanel eingabe = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		JPanel buttons = new JPanel();
 		JLabel kundenNummerLabel = new JLabel("Kundennummer");
 		JLabel kundenNamenLabel = new JLabel("Kundenname");
-		JTextField kundenNummerField = new JTextField(20);
-		JTextField kundenNamenField = new JTextField(20);
+		JTextField kundenNummerField = new JTextField();
+		JTextField kundenNamenField = new JTextField();
 		JButton anlegenButton = new JButton("Anlegen");
 		JButton beendenButton = new JButton("Beenden");
 
-		Dimension labelSize = new Dimension(145, 25);
-		kundenNummerLabel.setPreferredSize(labelSize);
-		kundenNamenLabel.setPreferredSize(labelSize);
-		eingabe.setBorder(BorderFactory.createMatteBorder(20, 25, 0, 25,
-				Color.decode("#EEEEEE")));
-		buttons.setBorder(BorderFactory.createMatteBorder(20, 20, 20, 20,
-				Color.decode("#EEEEEE")));
+		c.gridx = 0;
+		c.gridy = 0;
+		add(kundenNummerLabel, c);
 
-		this.add(eingabe);
-		this.add(buttons);
-		eingabe.add(kundenNummerLabel);
-		eingabe.add(kundenNummerField);
-		eingabe.add(kundenNamenLabel);
-		eingabe.add(kundenNamenField);
-		buttons.add(anlegenButton);
-		buttons.add(beendenButton);
+		c.gridx = 1;
+		c.gridy = 0;
+		c.weightx = 1;
+		add(kundenNummerField, c);
+
+		c.gridx = 0;
+		c.gridy = 1;
+		c.weightx = 0;
+		add(kundenNamenLabel, c);
+
+		c.gridx = 1;
+		c.gridy = 1;
+		add(kundenNamenField, c);
+
+		c.gridx = 3;
+		c.gridy = 1;
+		add(anlegenButton, c);
+
+		c.gridx = 3;
+		c.gridy = 2;
+		add(beendenButton, c);
+
+		c.gridx = 0;
+		c.gridy = 3;
+		c.gridwidth = 3;
+		c.weighty = 1;
+		this.add(new JPanel(), c);
 
 		anlegenButton.addActionListener(new KundenAnlegenListener(
 				kundenNummerField, kundenNamenField));
