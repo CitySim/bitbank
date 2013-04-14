@@ -19,7 +19,7 @@ public class UeberFenster extends JDialog {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("Über BitBank");
 		setResizable(false);
-		setModal(trueKK);
+		setModal(true);
 
 		JLabel textLabel = new JLabel();
 		textLabel.setText("<html><h3>BitBank</h3>erstellt von:<ul><li>Björn Korella</li><li>Sven Tatter</li><li>Dennis</li></ul></html>");
