@@ -19,7 +19,10 @@ public class ZahlungVornehmen extends JPanel {
 	public ZahlungVornehmen(JTabbedPane tabsPane) {
 		this.tabsPane = tabsPane;
 
-		this.setLayout(new GridLayout(0, 1));
+		this.setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.insets = new Insets(5, 5, 5, 5);
 
 		JLabel kontoNummerLabel = new JLabel("Kontonummer");
 		JLabel alterKontoStandLabel = new JLabel("alter Kontostand");
@@ -36,26 +39,67 @@ public class ZahlungVornehmen extends JPanel {
 		JButton auszahlungButton = new JButton("Auszahlung");
 		JButton beendenButton = new JButton("Beenden");
 
+		c.gridx = 0;
+		c.gridy = 0;
+		add(kontoNummerLabel, c);
+
+		c.gridx = 0;
+		c.gridy = 1;
+		add(alterKontoStandLabel, c);
+
+		c.gridx = 0;
+		c.gridy = 2;
+		add(betragLabel, c);
+
+		c.gridx = 0;
+		c.gridy = 3;
+		add(neuerKontoStandLabel, c);
+
+
+		c.gridx = 1;
+		c.gridy = 0;
+		c.weightx = 1;
+		add(kontoNummerField, c);
+
+		c.gridx = 1;
+		c.gridy = 1;
+		add(alterKontoStandField, c);
+
+		c.gridx = 1;
+		c.gridy = 2;
+		add(betragField, c);
+
+		c.gridx = 1;
+		c.gridy = 3;
+		add(neuerKontoStandField, c);
+
+
+		c.gridx = 3;
+		c.gridy = 0;
+		c.weightx = 0;
+		add(kontoStandButton, c);
+
+		c.gridx = 3;
+		c.gridy = 2;
+		add(einzahlungButton, c);
+
+		c.gridx = 3;
+		c.gridy = 3;
+		add(auszahlungButton, c);
+
+		c.gridx = 3;
+		c.gridy = 4;
+		add(beendenButton, c);
+
+		c.gridx = 0;
+		c.gridy = 5;
+		c.gridwidth = 3;
+		c.weighty = 1;
+		this.add(new JPanel(), c);
+
 		kontoStandButton.addActionListener(new ZahlungVornehmenListener(null));
 		einzahlungButton.addActionListener(new ZahlungVornehmenListener(null));
 		auszahlungButton.addActionListener(new ZahlungVornehmenListener(null));
 		beendenButton.addActionListener(new ZahlungVornehmenListener(this));
-
-		this.add(kontoNummerLabel);
-		this.add(alterKontoStandLabel);
-		this.add(betragLabel);
-		this.add(neuerKontoStandLabel);
-
-		this.add(kontoNummerField);
-		this.add(alterKontoStandField);
-		this.add(betragField);
-		this.add(neuerKontoStandField);
-
-		this.add(kontoStandButton);
-		this.add(einzahlungButton);
-		this.add(auszahlungButton);
-		this.add(beendenButton);
-
-		this.setVisible(true);
 	}
 }
