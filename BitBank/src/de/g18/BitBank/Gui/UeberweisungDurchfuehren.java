@@ -28,11 +28,11 @@ public class UeberweisungDurchfuehren extends JPanel {
 		JLabel datumLabel = new JLabel("Datum");
 		JLabel betragLabel = new JLabel("Betrag");
 
-		JTextField vomKontoField = new JTextField(10);
-		JTextField nachKontoField = new JTextField(10);
-		JTextField datumField = new JTextField(10);
+		JTextField vomKontoField = new JTextField();
+		JTextField nachKontoField = new JTextField();
+		JTextField datumField = new JTextField();
 		datumField.setEnabled(false);
-		JTextField betragField = new JTextField(10);
+		JTextField betragField = new JTextField();
 
 		JButton datumAuswählenButton = new JButton("Datum auswählen");
 		JButton überweisenButton = new JButton("Überweisen");
@@ -96,7 +96,5 @@ public class UeberweisungDurchfuehren extends JPanel {
 				.addActionListener(new UeberweisungDurchfuehrenListener(null));
 		beendenButton.addActionListener(new UeberweisungDurchfuehrenListener(
 				this));
-
-		this.setVisible(true);
 	}
 }

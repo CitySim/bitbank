@@ -23,8 +23,6 @@ public class KundenAnlegen extends JPanel {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
 
-		JPanel eingabe = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		JPanel buttons = new JPanel();
 		JLabel kundenNummerLabel = new JLabel("Kundennummer");
 		JLabel kundenNamenLabel = new JLabel("Kundenname");
 		JTextField kundenNummerField = new JTextField();
@@ -67,7 +65,5 @@ public class KundenAnlegen extends JPanel {
 		anlegenButton.addActionListener(new KundenAnlegenListener(
 				kundenNummerField, kundenNamenField));
 		beendenButton.addActionListener(new KundenAnlegenListener(this));
-
-		this.setVisible(true);
 	}
 }

@@ -29,10 +29,11 @@ public class ZahlungVornehmen extends JPanel {
 		JLabel betragLabel = new JLabel("Betrag");
 		JLabel neuerKontoStandLabel = new JLabel("neuer Kontostand");
 
-		JTextField kontoNummerField = new JTextField(10);
-		JTextField alterKontoStandField = new JTextField(10);
-		JTextField betragField = new JTextField(10);
-		JTextField neuerKontoStandField = new JTextField(10);
+		JTextField kontoNummerField = new JTextField();
+		JTextField alterKontoStandField = new JTextField();
+		alterKontoStandField.setEnabled(false);
+		JTextField betragField = new JTextField();
+		JTextField neuerKontoStandField = new JTextField();
 
 		JButton kontoStandButton = new JButton("Kontostand");
 		JButton einzahlungButton = new JButton("Einzahlung");

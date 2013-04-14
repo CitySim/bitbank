@@ -68,8 +68,6 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 		beendenButton
 				.addActionListener(new KontostandsUebersichtAnzeigenListener(
 						this));
-
-		this.setVisible(true);
 	}
 
 	public Object[][] generateTextObjects() {
@@ -80,7 +78,7 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 	}
 
 	public Object[] generateColumnNames() {
-		Object[] data = {"Kontoart", "Kontonummer", "Kontostand"};
-		return data;
+		Object[] columnData = {"Kontoart", "Kontonummer", "Kontostand"};
+		return columnData;
 	}
 }
