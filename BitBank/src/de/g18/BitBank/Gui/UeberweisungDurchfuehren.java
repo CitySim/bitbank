@@ -13,7 +13,11 @@ import java.awt.*;
  */
 
 public class UeberweisungDurchfuehren extends JPanel {
-	public UeberweisungDurchfuehren() {
+	public JTabbedPane tabsPane;
+
+	public UeberweisungDurchfuehren(JTabbedPane tabsPane) {
+		this.tabsPane = tabsPane;
+
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
@@ -94,16 +98,5 @@ public class UeberweisungDurchfuehren extends JPanel {
 				this));
 
 		this.setVisible(true);
-	}
-
-	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		// test
-
-		new UeberweisungDurchfuehren();
 	}
 }

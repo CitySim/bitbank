@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 
 public class KontoAnlegenListener implements ActionListener {
 	JTextField kundenNummerField;
-	JPanel kontoAnlegenFrame;
+	KontoAnlegen kontoAnlegenFrame;
 
 	public KontoAnlegenListener(JTextField kundenNummerField) {
 		this.kundenNummerField = kundenNummerField;
@@ -49,8 +49,9 @@ public class KontoAnlegenListener implements ActionListener {
 			}
 
 		}
-		//if (buttonClicked.getText().compareTo("Beenden") == 0) {
-		//	kontoAnlegenFrame.dispose();
-		//}
+
+		if (buttonClicked.getText().compareTo("Beenden") == 0) {
+			kontoAnlegenFrame.tabsPane.remove(kontoAnlegenFrame);
+		}
 	}
 }

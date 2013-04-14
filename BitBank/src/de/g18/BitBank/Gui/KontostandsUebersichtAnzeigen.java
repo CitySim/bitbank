@@ -14,8 +14,11 @@ import java.awt.*;
  */
 
 public class KontostandsUebersichtAnzeigen extends JPanel {
+	public JTabbedPane tabsPane;
 
-	public KontostandsUebersichtAnzeigen() {
+	public KontostandsUebersichtAnzeigen(JTabbedPane tabsPane) {
+		this.tabsPane = tabsPane;
+
 		this.setLayout(new GridLayout(0, 1));
 
 		JLabel kundenNummerLabel = new JLabel("KundenNummer");
@@ -45,10 +48,6 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 						this));
 
 		this.setVisible(true);
-	}
-
-	public static void main(String[] args) {
-		new KontostandsUebersichtAnzeigen();
 	}
 
 	public Object[][] generateTextObjects() {

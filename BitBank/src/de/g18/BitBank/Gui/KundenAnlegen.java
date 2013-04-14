@@ -13,7 +13,11 @@ import java.awt.*;
  */
 
 public class KundenAnlegen extends JPanel {
-	public KundenAnlegen() {
+	public JTabbedPane tabsPane;
+
+	public KundenAnlegen(JTabbedPane tabsPane) {
+		this.tabsPane = tabsPane;
+
 		this.setLayout(new GridLayout(0, 1));
 
 		JPanel eingabe = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -47,9 +51,5 @@ public class KundenAnlegen extends JPanel {
 		beendenButton.addActionListener(new KundenAnlegenListener(this));
 
 		this.setVisible(true);
-	}
-
-	public static void main(String[] args) {
-		new KundenAnlegen();
 	}
 }

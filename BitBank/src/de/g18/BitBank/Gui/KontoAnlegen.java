@@ -13,7 +13,11 @@ import java.awt.*;
  */
 
 public class KontoAnlegen extends JPanel {
-	public KontoAnlegen() {
+	public JTabbedPane tabsPane;
+
+	public KontoAnlegen(JTabbedPane tabsPane) {
+		this.tabsPane = tabsPane;
+
 		this.setLayout(new GridLayout(0, 3));
 
 		JPanel links = new JPanel();
@@ -51,9 +55,5 @@ public class KontoAnlegen extends JPanel {
 		beendenButton.addActionListener(new KontoAnlegenListener(this));
 
 		this.setVisible(true);
-	}
-
-	public static void main(String[] args) {
-		new KontoAnlegen();
 	}
 }

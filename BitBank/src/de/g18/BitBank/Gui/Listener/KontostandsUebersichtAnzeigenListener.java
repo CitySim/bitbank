@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
  */
 
 public class KontostandsUebersichtAnzeigenListener implements ActionListener {
-	JPanel kontostandsUebersichtAnzeigenFrame;
+	KontostandsUebersichtAnzeigen kontostandsUebersichtAnzeigenFrame;
 
 	public KontostandsUebersichtAnzeigenListener(
 			KontostandsUebersichtAnzeigen kontostandsUebersichtAnzeigenFrame) {
@@ -28,8 +28,8 @@ public class KontostandsUebersichtAnzeigenListener implements ActionListener {
 		if (buttonClicked.getText().compareTo("Kontoübersicht") == 0) {
 
 		}
-		//if (buttonClicked.getText().compareTo("Beenden") == 0) {
-		//	this.kontostandsUebersichtAnzeigenFrame.dispose();
-		//}
+		if (buttonClicked.getText().compareTo("Beenden") == 0) {
+			kontostandsUebersichtAnzeigenFrame.tabsPane.remove(kontostandsUebersichtAnzeigenFrame);
+		}
 	}
 }

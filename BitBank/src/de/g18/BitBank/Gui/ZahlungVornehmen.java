@@ -14,7 +14,11 @@ import java.awt.*;
 
 
 public class ZahlungVornehmen extends JPanel {
-	public ZahlungVornehmen() {
+	public JTabbedPane tabsPane;
+
+	public ZahlungVornehmen(JTabbedPane tabsPane) {
+		this.tabsPane = tabsPane;
+
 		this.setLayout(new GridLayout(0, 1));
 
 		JLabel kontoNummerLabel = new JLabel("Kontonummer");
@@ -53,10 +57,5 @@ public class ZahlungVornehmen extends JPanel {
 		this.add(beendenButton);
 
 		this.setVisible(true);
-
-	}
-
-	public static void main(String[] args) {
-		new ZahlungVornehmen();
 	}
 }

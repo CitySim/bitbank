@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
  */
 
 public class UeberweisungDurchfuehrenListener implements ActionListener {
-	JPanel ueberweisungDurchfuehrenFrame;
+	UeberweisungDurchfuehren ueberweisungDurchfuehrenFrame;
 
 	public UeberweisungDurchfuehrenListener(
 			UeberweisungDurchfuehren ueberweisungDurchfuehrenFrame) {
@@ -35,9 +35,9 @@ public class UeberweisungDurchfuehrenListener implements ActionListener {
 		if (buttonClicked.getText().compareTo("Überweisen") == 0) {
 
 		}
-		//if (buttonClicked.getText().compareTo("Beenden") == 0) {
-		//	this.ueberweisungDurchfuehrenFrame.dispose();
-		//}
+		if (buttonClicked.getText().compareTo("Beenden") == 0) {
+			ueberweisungDurchfuehrenFrame.tabsPane.remove(ueberweisungDurchfuehrenFrame);
+		}
 	}
 
 	public JDialog createCalender() {

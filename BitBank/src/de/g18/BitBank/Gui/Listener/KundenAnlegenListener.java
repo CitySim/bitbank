@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 public class KundenAnlegenListener implements ActionListener {
 	JTextField kundenAnlegenField;
 	JTextField kundenNamenField;
-	JPanel kundenAnlegenFrame;
+	KundenAnlegen kundenAnlegenFrame;
 
 	public KundenAnlegenListener(JTextField kundenNummerField,
 								 JTextField kundenNamenField) {
@@ -47,8 +47,8 @@ public class KundenAnlegenListener implements ActionListener {
 			}
 
 		}
-		//if (buttonClicked.getText().compareTo("Beenden") == 0) {
-		//	this.kundenAnlegenFrame.dispose();
-		//}
+		if (buttonClicked.getText().compareTo("Beenden") == 0) {
+			kundenAnlegenFrame.tabsPane.remove(kundenAnlegenFrame);
+		}
 	}
 }

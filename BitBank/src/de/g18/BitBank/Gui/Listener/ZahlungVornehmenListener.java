@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
  */
 
 public class ZahlungVornehmenListener implements ActionListener {
-	JPanel zahlungVornehmenFrame;
+	ZahlungVornehmen zahlungVornehmenFrame;
 
 	public ZahlungVornehmenListener(ZahlungVornehmen zahlungVornehmenFrame) {
 		this.zahlungVornehmenFrame = zahlungVornehmenFrame;
@@ -34,8 +34,8 @@ public class ZahlungVornehmenListener implements ActionListener {
 		if (buttonClicked.getText().compareTo("Auszahlung") == 0) {
 
 		}
-		//if (buttonClicked.getText().compareTo("Beenden") == 0) {
-		//	this.zahlungVornehmenFrame.dispose();
-		//}
+		if (buttonClicked.getText().compareTo("Beenden") == 0) {
+			zahlungVornehmenFrame.tabsPane.remove(zahlungVornehmenFrame);
+		}
 	}
 }
