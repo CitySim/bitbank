@@ -3,6 +3,7 @@ package de.g18.BitBank.Gui;
 import de.g18.BitBank.Gui.Listener.KontostandsUebersichtAnzeigenListener;
 
 import javax.swing.*;
+import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 
 /**
@@ -24,7 +25,7 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
 
-		JLabel kundenNummerLabel = new JLabel("KundenNummer");
+		JLabel kundenNummerLabel = new JLabel("Kundennummer");
 		JTextField kundenNummerField = new JTextField(10);
 
 		JButton kontoUebersichtButton = new JButton("Kontoübersicht");
@@ -36,6 +37,7 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 		JTable table = new JTable(data, columnNames);
 		table.setFillsViewportHeight(true);
 		JScrollPane tablePane = new JScrollPane(table);
+		tablePane.setBorder(new BorderUIResource.MatteBorderUIResource(10, 10, 10, 10, SystemColor.black));
 
 		c.gridx = 0;
 		c.gridy = 0;
@@ -57,10 +59,11 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 
 		c.gridx = 0;
 		c.gridy = 3;
-		c.weightx = 1;
 		c.weighty = 1;
 		c.gridwidth = 3;
+		c.fill = GridBagConstraints.BOTH;
 		this.add(tablePane, c);
+
 
 		kontoUebersichtButton
 				.addActionListener(new KontostandsUebersichtAnzeigenListener(
