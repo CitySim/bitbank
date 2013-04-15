@@ -1,27 +1,22 @@
 package de.g18.BitBank.Gui.Listener;
 
-import java.awt.Frame;
+import com.theotherbell.ui.DatePicker;
+import de.g18.BitBank.Gui.UeberweisungDurchfuehren;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-
-import com.theotherbell.ui.DatePicker;
-
-import de.g18.BitBank.Gui.UeberweisungDurchfuehren;
-
 /**
  * Listener zu den Buttons der UeberweisungDurchfuehren Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
 
 public class UeberweisungDurchfuehrenListener implements ActionListener {
-
-	JFrame ueberweisungDurchfuehrenFrame;
+	UeberweisungDurchfuehren ueberweisungDurchfuehrenFrame;
 
 	public UeberweisungDurchfuehrenListener(
 			UeberweisungDurchfuehren ueberweisungDurchfuehrenFrame) {
@@ -41,13 +36,11 @@ public class UeberweisungDurchfuehrenListener implements ActionListener {
 
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			this.ueberweisungDurchfuehrenFrame.dispose();
+			ueberweisungDurchfuehrenFrame.tabsPane.remove(ueberweisungDurchfuehrenFrame);
 		}
-
 	}
 
 	public JDialog createCalender() {
-
 		JDialog dlg = new JDialog(new Frame(), true);
 		DatePicker dp = new DatePicker();
 		dp.setHideOnSelect(false);
@@ -57,6 +50,5 @@ public class UeberweisungDurchfuehrenListener implements ActionListener {
 		System.out.println(dp.getDate().toString());
 
 		return dlg;
-
 	}
 }

@@ -1,26 +1,21 @@
 package de.g18.BitBank.Gui.Listener;
 
+import de.g18.BitBank.Gui.KontoAnlegen;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-
-import de.g18.BitBank.Gui.KontoAnlegen;
-
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
 
 public class KontoAnlegenListener implements ActionListener {
-
 	JTextField kundenNummerField;
-	JFrame kontoAnlegenFrame;
+	KontoAnlegen kontoAnlegenFrame;
 
 	public KontoAnlegenListener(JTextField kundenNummerField) {
 		this.kundenNummerField = kundenNummerField;
@@ -54,9 +49,9 @@ public class KontoAnlegenListener implements ActionListener {
 			}
 
 		}
-		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			kontoAnlegenFrame.dispose();
-		}
 
+		if (buttonClicked.getText().compareTo("Beenden") == 0) {
+			kontoAnlegenFrame.tabsPane.remove(kontoAnlegenFrame);
+		}
 	}
 }

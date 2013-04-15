@@ -1,31 +1,26 @@
 package de.g18.BitBank.Gui.Listener;
 
+import de.g18.BitBank.Gui.KundenAnlegen;
+import de.g18.BitBank.Kunde;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-
-import de.g18.BitBank.Kunde;
-import de.g18.BitBank.Gui.KundenAnlegen;
-
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
 
 public class KundenAnlegenListener implements ActionListener {
-
 	JTextField kundenAnlegenField;
 	JTextField kundenNamenField;
-	JFrame kundenAnlegenFrame;
+	KundenAnlegen kundenAnlegenFrame;
 
 	public KundenAnlegenListener(JTextField kundenNummerField,
-			JTextField kundenNamenField) {
+								 JTextField kundenNamenField) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 	}
@@ -53,7 +48,7 @@ public class KundenAnlegenListener implements ActionListener {
 
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			this.kundenAnlegenFrame.dispose();
+			kundenAnlegenFrame.tabsPane.remove(kundenAnlegenFrame);
 		}
 	}
 }
