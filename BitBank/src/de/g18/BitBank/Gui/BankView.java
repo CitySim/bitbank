@@ -7,7 +7,7 @@ import java.awt.*;
 
 /**
  * Vorgegebene BankMain.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -44,8 +44,10 @@ public class BankView extends JFrame {
 		setMinimumSize(new Dimension(650, 400));
 		setVisible(true);
 
-		BankViewListener listener = new BankViewListener(AktionenMenu, tabsPane);
-		about.getMenuComponents()[0].addMouseListener(listener);
+		// BankViewListener listener = new BankViewListener(AktionenMenu,
+		// tabsPane);
+		// about.getMenuComponents()[0].addMouseListener(listener);
+		new BankViewListener(AktionenMenu, tabsPane);
 	}
 
 	public static void main(String[] args) {

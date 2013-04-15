@@ -7,7 +7,7 @@ import java.awt.*;
 
 /**
  * Gui Klasse zum anlegen eines Kundens.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */

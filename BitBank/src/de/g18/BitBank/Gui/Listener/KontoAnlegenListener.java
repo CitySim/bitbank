@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -37,8 +37,10 @@ public class KontoAnlegenListener implements ActionListener {
 				int kundenNummer = Integer.parseInt(this.kundenNummerField
 						.getText());
 
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Konto unter Nummer " + kundenNummer + " angelegt.");
+				JOptionPane
+						.showMessageDialog(new JFrame(),
+								"Konto unter Nummer \"" + kundenNummer
+										+ "\" angelegt.");
 
 			} catch (java.lang.NumberFormatException exception) {
 

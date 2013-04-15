@@ -7,10 +7,7 @@ import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Sven
- * Date: 14.04.13
- * Time: 14:42
+ * Created with IntelliJ IDEA. User: Sven Date: 14.04.13 Time: 14:42
  */
 public class Kontobewegungen extends JPanel {
 	public JTabbedPane tabsPane;
@@ -35,7 +32,8 @@ public class Kontobewegungen extends JPanel {
 		JTable table = new JTable(data, columnNames);
 		table.setFillsViewportHeight(true);
 		JScrollPane tablePane = new JScrollPane(table);
-		tablePane.setBorder(new BorderUIResource.MatteBorderUIResource(10, 10, 10, 10, SystemColor.black));
+		tablePane.setBorder(new BorderUIResource.MatteBorderUIResource(10, 10,
+				10, 10, SystemColor.black));
 
 		c.gridx = 0;
 		c.gridy = 0;
@@ -62,13 +60,9 @@ public class Kontobewegungen extends JPanel {
 		c.fill = GridBagConstraints.BOTH;
 		this.add(tablePane, c);
 
-
-		kontobewegungenButton
-				.addActionListener(new KontobewegungenListener(
-						null));
-		beendenButton
-				.addActionListener(new KontobewegungenListener(
-						this));
+		kontobewegungenButton.addActionListener(new KontobewegungenListener(
+				null));
+		beendenButton.addActionListener(new KontobewegungenListener(this));
 	}
 
 	public Object[][] generateTextObjects() {
@@ -78,7 +72,7 @@ public class Kontobewegungen extends JPanel {
 	}
 
 	public Object[] generateColumnNames() {
-		Object[] columnData = {"Datum", "von", "nach", "Betrag"};
+		Object[] columnData = { "Datum", "von", "nach", "Betrag" };
 		return columnData;
 	}
 }

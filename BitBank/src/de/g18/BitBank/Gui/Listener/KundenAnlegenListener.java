@@ -4,12 +4,13 @@ import de.g18.BitBank.Gui.KundenAnlegen;
 import de.g18.BitBank.Kunde;
 
 import javax.swing.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -20,7 +21,7 @@ public class KundenAnlegenListener implements ActionListener {
 	KundenAnlegen kundenAnlegenFrame;
 
 	public KundenAnlegenListener(JTextField kundenNummerField,
-								 JTextField kundenNamenField) {
+			JTextField kundenNamenField) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 	}
@@ -38,6 +39,13 @@ public class KundenAnlegenListener implements ActionListener {
 			try {
 				Kunde kunde = new Kunde(this.kundenNamenField.getText(),
 						Integer.parseInt(this.kundenAnlegenField.getText()));
+
+				JOptionPane.showMessageDialog(
+						new JFrame(),
+						"Kunde mit dem Namen \"" + kunde.getName()
+								+ "\" und der Kontonummer \""
+								+ kunde.getKundenNummmer() + "\" angelegt.");
+
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(new JFrame(),
 						"Die Kundennummer ist keine gültige Zahl.",
