@@ -11,10 +11,10 @@ import java.util.Date;
 import static org.junit.Assert.assertEquals;
 
 public class UeberweisungTest {
-	Konto k1;
-	Konto k2;
-	Ueberweisung u;
-	Date now;
+	private Konto k1;
+	private Konto k2;
+	private Ueberweisung u;
+	private Date now;
 
 	@Before
 	public void setUp() throws Exception {
@@ -50,6 +50,7 @@ public class UeberweisungTest {
 		assertEquals(1, k2.getKontoBewegungsListe().size());
 		assertEquals(150, k2.getKontoBewegungsListe().get(0).getBetrag(), 0);
 		assertEquals(1, k2.getUeberweisungsListe().size());
-		assertEquals(k1.getUeberweisungsListe().get(0), k2.getUeberweisungsListe().get(0));
+		assertEquals(k1.getUeberweisungsListe().get(0), k2
+				.getUeberweisungsListe().get(0));
 	}
 }

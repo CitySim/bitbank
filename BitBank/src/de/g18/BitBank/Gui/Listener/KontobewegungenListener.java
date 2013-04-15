@@ -8,16 +8,15 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
 
 public class KontobewegungenListener implements ActionListener {
-	Kontobewegungen KontobewegungenFrame;
+	private Kontobewegungen KontobewegungenFrame;
 
-	public KontobewegungenListener(
-			Kontobewegungen KontobewegungenFrame) {
+	public KontobewegungenListener(Kontobewegungen KontobewegungenFrame) {
 		this.KontobewegungenFrame = KontobewegungenFrame;
 	}
 
@@ -29,7 +28,8 @@ public class KontobewegungenListener implements ActionListener {
 
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			KontobewegungenFrame.tabsPane.remove(KontobewegungenFrame);
+			this.KontobewegungenFrame.getTabsPane().remove(
+					this.KontobewegungenFrame);
 		}
 	}
 }

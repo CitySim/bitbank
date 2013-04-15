@@ -30,7 +30,7 @@ public class Girokonto extends Konto {
 
 	@Override
 	public void auszahlen(double betrag) throws Exception {
-		if (this.kontoStand - betrag < -limit) {
+		if (super.getKontoStand() - betrag < -limit) {
 			throw new Exception(
 					"Das Konto kann nicht weiter als um das zugelassene Limit überzogen werden.");
 		}

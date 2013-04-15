@@ -9,8 +9,8 @@ import java.util.Date;
 import static org.junit.Assert.assertEquals;
 
 public class KontobewegungTest {
-	Kontobewegung kb;
-	Date now;
+	private Kontobewegung kb;
+	private Date now;
 
 	@Before
 	public void setUp() throws Exception {

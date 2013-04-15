@@ -8,7 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class GirokontoTest {
-	Girokonto k;
+	private Girokonto k;
 
 	@Before
 	public void setUp() throws Exception {
@@ -31,7 +31,7 @@ public class GirokontoTest {
 	}
 
 	@Test(expected = Exception.class)
-	public void testÜberziehen() throws Exception {
+	public void testUeberziehen() throws Exception {
 		k.auszahlen(k.getLimit() + k.getKontoStand() + 1);
 	}
 }

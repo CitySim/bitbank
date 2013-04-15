@@ -18,7 +18,7 @@ import de.g18.BitBank.Kunde;
  */
 public class KundeTest {
 
-	Kunde k;
+	private Kunde k;
 
 	/**
 	 * @throws java.lang.Exception
@@ -30,8 +30,7 @@ public class KundeTest {
 	}
 
 	/**
-	 * Test method for
-	 * {@link de.g18.BitBank.Kunde#Kunde(java.lang.String, int)}
+	 * Test method for {@link de.g18.BitBank.Kunde#Kunde(java.lang.String, int)}
 	 */
 	@Test
 	public void testKunde() {

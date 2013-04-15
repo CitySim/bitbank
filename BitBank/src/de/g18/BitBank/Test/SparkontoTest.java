@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class SparkontoTest {
-	Sparkonto k;
+	private Sparkonto k;
 
 	@Before
 	public void setUp() throws Exception {
@@ -22,7 +22,7 @@ public class SparkontoTest {
 	 * Hier wird das Überziehen des Kontos getestet
 	 */
 	@Test(expected = Exception.class)
-	public void testÜberziehen() throws Exception {
+	public void testUeberziehen() throws Exception {
 		k.auszahlen(k.getKontoStand() + 1);
 	}
 }

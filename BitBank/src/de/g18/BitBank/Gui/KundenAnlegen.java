@@ -3,17 +3,20 @@ package de.g18.BitBank.Gui;
 import de.g18.BitBank.Gui.Listener.KundenAnlegenListener;
 
 import javax.swing.*;
+
 import java.awt.*;
 
 /**
  * Gui Klasse zum Anlegen eines neuen Kundens.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
 
 public class KundenAnlegen extends JPanel {
-	public JTabbedPane tabsPane;
+	private static final long serialVersionUID = -2795653707387451326L;
+
+	private JTabbedPane tabsPane;
 
 	public KundenAnlegen(JTabbedPane tabsPane) {
 		this.tabsPane = tabsPane;
@@ -65,5 +68,9 @@ public class KundenAnlegen extends JPanel {
 		anlegenButton.addActionListener(new KundenAnlegenListener(
 				kundenNummerField, kundenNamenField));
 		beendenButton.addActionListener(new KundenAnlegenListener(this));
+	}
+
+	public JTabbedPane getTabsPane() {
+		return tabsPane;
 	}
 }

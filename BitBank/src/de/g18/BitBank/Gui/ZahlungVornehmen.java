@@ -7,14 +7,19 @@ import java.awt.*;
 
 /**
  * Gui Klasse zum Ein - / Auszahlen eines Betrages auf ein Konto.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
 
-
 public class ZahlungVornehmen extends JPanel {
-	public JTabbedPane tabsPane;
+	private static final long serialVersionUID = -260972803425184120L;
+
+	private JTabbedPane tabsPane;
+
+	public JTabbedPane getTabsPane() {
+		return tabsPane;
+	}
 
 	public ZahlungVornehmen(JTabbedPane tabsPane) {
 		this.tabsPane = tabsPane;
@@ -56,7 +61,6 @@ public class ZahlungVornehmen extends JPanel {
 		c.gridy = 3;
 		add(neuerKontoStandLabel, c);
 
-
 		c.gridx = 1;
 		c.gridy = 0;
 		c.weightx = 1;
@@ -73,7 +77,6 @@ public class ZahlungVornehmen extends JPanel {
 		c.gridx = 1;
 		c.gridy = 3;
 		add(neuerKontoStandField, c);
-
 
 		c.gridx = 3;
 		c.gridy = 0;

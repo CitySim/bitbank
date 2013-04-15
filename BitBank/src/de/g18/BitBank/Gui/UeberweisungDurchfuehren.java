@@ -3,17 +3,20 @@ package de.g18.BitBank.Gui;
 import de.g18.BitBank.Gui.Listener.UeberweisungDurchfuehrenListener;
 
 import javax.swing.*;
+
 import java.awt.*;
 
 /**
  * Gui Klasse zum Überweisen eines Betrages von einem Konto zum anderen.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
 
 public class UeberweisungDurchfuehren extends JPanel {
-	public JTabbedPane tabsPane;
+	private static final long serialVersionUID = 3658600368625899293L;
+
+	private JTabbedPane tabsPane;
 
 	public UeberweisungDurchfuehren(JTabbedPane tabsPane) {
 		this.tabsPane = tabsPane;
@@ -34,8 +37,8 @@ public class UeberweisungDurchfuehren extends JPanel {
 		datumField.setEnabled(false);
 		JTextField betragField = new JTextField();
 
-		JButton datumAuswählenButton = new JButton("Datum auswählen");
-		JButton überweisenButton = new JButton("Überweisen");
+		JButton datumAuswaehlenButton = new JButton("Datum auswählen");
+		JButton ueberweisenButton = new JButton("Überweisen");
 		JButton beendenButton = new JButton("Beenden");
 
 		c.gridx = 0;
@@ -74,11 +77,11 @@ public class UeberweisungDurchfuehren extends JPanel {
 		c.weightx = 0;
 		c.gridx = 2;
 		c.gridy = 2;
-		this.add(datumAuswählenButton, c);
+		this.add(datumAuswaehlenButton, c);
 
 		c.gridx = 2;
 		c.gridy = 3;
-		this.add(überweisenButton, c);
+		this.add(ueberweisenButton, c);
 
 		c.gridx = 2;
 		c.gridy = 4;
@@ -90,11 +93,15 @@ public class UeberweisungDurchfuehren extends JPanel {
 		c.weighty = 1;
 		this.add(new JPanel(), c);
 
-		datumAuswählenButton
+		datumAuswaehlenButton
 				.addActionListener(new UeberweisungDurchfuehrenListener(null));
-		überweisenButton
+		ueberweisenButton
 				.addActionListener(new UeberweisungDurchfuehrenListener(null));
 		beendenButton.addActionListener(new UeberweisungDurchfuehrenListener(
 				this));
+	}
+
+	public JTabbedPane getTabsPane() {
+		return tabsPane;
 	}
 }

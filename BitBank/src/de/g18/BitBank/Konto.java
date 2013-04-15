@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Konto Klasse
- *
+ * 
  * @author it1-markde
  * @see Girokonto
  * @see Sparkonto
@@ -16,17 +16,20 @@ import java.util.List;
 public abstract class Konto {
 
 	private Kontotyp kontoTyp;
-	protected double kontoStand;
-	protected long kontoNummer;
+	private double kontoStand;
+	private long kontoNummer;
 	private List<Kontobewegung> kontoBewegungsListe = new ArrayList<Kontobewegung>();
 	private List<Ueberweisung> ueberweisungsListe = new ArrayList<Ueberweisung>();
 
 	/**
 	 * Erstellt ein neues Konto.
-	 *
-	 * @param kontoTyp     Typ des Kontos (Sparkonto / Girokonto).
-	 * @param kundenNummer Nummer des Kundens im Bankverwaltungstool.
-	 * @param indexNummer  IndexNummer des Kontos in der Kontoliste des Kunden.
+	 * 
+	 * @param kontoTyp
+	 *            Typ des Kontos (Sparkonto / Girokonto).
+	 * @param kundenNummer
+	 *            Nummer des Kundens im Bankverwaltungstool.
+	 * @param indexNummer
+	 *            IndexNummer des Kontos in der Kontoliste des Kunden.
 	 */
 
 	public Konto(Kontotyp kontoTyp, int kundenNummer, int indexNummer) {
@@ -62,7 +65,7 @@ public abstract class Konto {
 
 	/**
 	 * Gibt einen Int je nach Kontoart wieder.
-	 *
+	 * 
 	 * @return 1 für Kontotyp = Girokonto,0 für Sparkonto
 	 */
 
@@ -78,8 +81,9 @@ public abstract class Konto {
 
 	/**
 	 * Addiert einen Betrag auf den aktuellen Kontostand.
-	 *
-	 * @param betrag zu addierender Wert.
+	 * 
+	 * @param betrag
+	 *            zu addierender Wert.
 	 */
 
 	public void einzahlen(double betrag) throws Exception {
@@ -88,15 +92,16 @@ public abstract class Konto {
 		}
 
 		kontoStand += betrag;
-		kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
-				betrag));
+		kontoBewegungsListe
+				.add(new Kontobewegung(new java.util.Date(), betrag));
 
 	}
 
 	/**
 	 * Subtrahiert einen Betrag von dem aktuellen Kontostand.
-	 *
-	 * @param betrag zu subtrahierender Wert.
+	 * 
+	 * @param betrag
+	 *            zu subtrahierender Wert.
 	 * @throws Exception
 	 */
 
@@ -106,17 +111,20 @@ public abstract class Konto {
 		}
 
 		kontoStand -= betrag;
-		kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
-				-betrag));
+		kontoBewegungsListe
+				.add(new Kontobewegung(new java.util.Date(), -betrag));
 	}
 
 	/**
 	 * Erstellt ein Objekt von Ueberweisung und speichert dieses in der
 	 * ueberweisungsliste.
-	 *
-	 * @param zielKonto Konto auf das ueberwiesen wird.
-	 * @param betrag    zu ueberweisende Summe.
-	 * @param datum     aktuelles Datum.F
+	 * 
+	 * @param zielKonto
+	 *            Konto auf das ueberwiesen wird.
+	 * @param betrag
+	 *            zu ueberweisende Summe.
+	 * @param datum
+	 *            aktuelles Datum.F
 	 * @throws Exception
 	 */
 	public void ueberweisen(Konto zielKonto, int betrag, Date datum)

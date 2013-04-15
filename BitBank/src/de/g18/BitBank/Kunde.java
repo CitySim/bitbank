@@ -47,8 +47,6 @@ public class Kunde {
 	/**
 	 * Setzt die Kundennummer des Kunden neu
 	 * 
-	 * @param neue
-	 *            Kundennummer des Kunden
 	 */
 
 	public void setKundenNummmer(int kundenNummmer) {
@@ -64,13 +62,6 @@ public class Kunde {
 	public String getName() {
 		return name;
 	}
-
-	/**
-	 * Setzt die Kundennummer des Kunden neu
-	 * 
-	 * @param neue
-	 *            Kundennummer des Kunden
-	 */
 
 	public void setName(String name) {
 		this.name = name;

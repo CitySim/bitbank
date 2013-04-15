@@ -27,7 +27,7 @@ public class Sparkonto extends Konto {
 
 	@Override
 	public void auszahlen(double betrag) throws Exception {
-		if (kontoStand - betrag < 0) {
+		if (super.getKontoStand() - betrag < 0) {
 			throw new Exception("Das Konto darf nicht überzogen werden.");
 		}
 

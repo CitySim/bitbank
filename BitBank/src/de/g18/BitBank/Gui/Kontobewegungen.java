@@ -10,7 +10,9 @@ import java.awt.*;
  * Created with IntelliJ IDEA. User: Sven Date: 14.04.13 Time: 14:42
  */
 public class Kontobewegungen extends JPanel {
-	public JTabbedPane tabsPane;
+	private static final long serialVersionUID = -7895660068030891020L;
+
+	private JTabbedPane tabsPane;
 
 	public Kontobewegungen(JTabbedPane tabsPane) {
 		this.tabsPane = tabsPane;
@@ -74,5 +76,9 @@ public class Kontobewegungen extends JPanel {
 	public Object[] generateColumnNames() {
 		Object[] columnData = { "Datum", "von", "nach", "Betrag" };
 		return columnData;
+	}
+
+	public JTabbedPane getTabsPane() {
+		return tabsPane;
 	}
 }

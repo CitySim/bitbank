@@ -9,13 +9,13 @@ import java.awt.event.MouseListener;
 
 /**
  * Listener zu dem Menü BankView Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
 
 public class BankViewListener implements MouseListener {
-	JTabbedPane tabsPane;
+	private JTabbedPane tabsPane;
 
 	public BankViewListener(JMenu anwendungen, JTabbedPane tabsPane) {
 		for (Component component : anwendungen.getMenuComponents()) {
@@ -57,9 +57,11 @@ public class BankViewListener implements MouseListener {
 		} else if (menuItem.getText().equals("Ein-/Auszahlungen durchführen")) {
 			tabsPane.add("Ein-/Auszahlung", new ZahlungVornehmen(tabsPane));
 		} else if (menuItem.getText().equals("Überweisungen durchführen")) {
-			tabsPane.add("Überweisungen", new UeberweisungDurchfuehren(tabsPane));
+			tabsPane.add("Überweisungen",
+					new UeberweisungDurchfuehren(tabsPane));
 		} else if (menuItem.getText().equals("Kontostandsübersicht anzeigen")) {
-			tabsPane.add("Kontostandsübersicht", new KontostandsUebersichtAnzeigen(tabsPane));
+			tabsPane.add("Kontostandsübersicht",
+					new KontostandsUebersichtAnzeigen(tabsPane));
 		} else if (menuItem.getText().equals("Kontobewegungen anzeigen")) {
 			tabsPane.add("Kontobewegungen", new Kontobewegungen(tabsPane));
 		} else if (menuItem.getText().equals("Über")) {
@@ -68,6 +70,6 @@ public class BankViewListener implements MouseListener {
 			System.exit(1);
 		}
 
-		tabsPane.setSelectedIndex(tabsPane.getTabCount() - 1);
+		this.tabsPane.setSelectedIndex(this.tabsPane.getTabCount() - 1);
 	}
 }

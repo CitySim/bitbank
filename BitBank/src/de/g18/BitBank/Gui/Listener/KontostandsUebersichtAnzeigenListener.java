@@ -8,13 +8,13 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
 
 public class KontostandsUebersichtAnzeigenListener implements ActionListener {
-	KontostandsUebersichtAnzeigen kontostandsUebersichtAnzeigenFrame;
+	private KontostandsUebersichtAnzeigen kontostandsUebersichtAnzeigenFrame;
 
 	public KontostandsUebersichtAnzeigenListener(
 			KontostandsUebersichtAnzeigen kontostandsUebersichtAnzeigenFrame) {
@@ -29,7 +29,8 @@ public class KontostandsUebersichtAnzeigenListener implements ActionListener {
 
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			kontostandsUebersichtAnzeigenFrame.tabsPane.remove(kontostandsUebersichtAnzeigenFrame);
+			this.kontostandsUebersichtAnzeigenFrame.getTabsPane().remove(
+					this.kontostandsUebersichtAnzeigenFrame);
 		}
 	}
 }

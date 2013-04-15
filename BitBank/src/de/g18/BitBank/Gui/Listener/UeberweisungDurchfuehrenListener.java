@@ -10,13 +10,13 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der UeberweisungDurchfuehren Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
 
 public class UeberweisungDurchfuehrenListener implements ActionListener {
-	UeberweisungDurchfuehren ueberweisungDurchfuehrenFrame;
+	private UeberweisungDurchfuehren ueberweisungDurchfuehrenFrame;
 
 	public UeberweisungDurchfuehrenListener(
 			UeberweisungDurchfuehren ueberweisungDurchfuehrenFrame) {
@@ -36,7 +36,8 @@ public class UeberweisungDurchfuehrenListener implements ActionListener {
 
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			ueberweisungDurchfuehrenFrame.tabsPane.remove(ueberweisungDurchfuehrenFrame);
+			this.ueberweisungDurchfuehrenFrame.getTabsPane().remove(
+					this.ueberweisungDurchfuehrenFrame);
 		}
 	}
 

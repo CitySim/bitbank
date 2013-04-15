@@ -10,7 +10,7 @@ import java.util.Date;
 import static org.junit.Assert.assertEquals;
 
 public class KontoTest {
-	Konto k;
+	private Konto k;
 
 	@Before
 	public void setUp() throws Exception {
@@ -60,8 +60,7 @@ public class KontoTest {
 
 		// es sollte genau ein eintrag in der liste sein
 		assertEquals(1, k.getKontoBewegungsListe().size());
-		assertEquals(-200, k.getKontoBewegungsListe().get(0).getBetrag(),
-				0);
+		assertEquals(-200, k.getKontoBewegungsListe().get(0).getBetrag(), 0);
 	}
 
 	@Test(expected = Exception.class)
@@ -99,6 +98,7 @@ public class KontoTest {
 		assertEquals(1, ziel.getKontoBewegungsListe().size());
 		assertEquals(200, ziel.getKontoBewegungsListe().get(0).getBetrag(), 0);
 		assertEquals(1, ziel.getUeberweisungsListe().size());
-		assertEquals(ziel.getUeberweisungsListe().get(0), ziel.getUeberweisungsListe().get(0));
+		assertEquals(ziel.getUeberweisungsListe().get(0), ziel
+				.getUeberweisungsListe().get(0));
 	}
 }

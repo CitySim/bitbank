@@ -9,13 +9,15 @@ import java.awt.*;
 /**
  * Gui Klasse zum Anzeigen des aktuellen Kontostandes aller Konten eines
  * Kundens.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
 
 public class KontostandsUebersichtAnzeigen extends JPanel {
-	public JTabbedPane tabsPane;
+	private static final long serialVersionUID = 5388389196936658751L;
+
+	private JTabbedPane tabsPane;
 
 	public KontostandsUebersichtAnzeigen(JTabbedPane tabsPane) {
 		this.tabsPane = tabsPane;
@@ -37,7 +39,8 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 		JTable table = new JTable(data, columnNames);
 		table.setFillsViewportHeight(true);
 		JScrollPane tablePane = new JScrollPane(table);
-		tablePane.setBorder(new BorderUIResource.MatteBorderUIResource(10, 10, 10, 10, SystemColor.black));
+		tablePane.setBorder(new BorderUIResource.MatteBorderUIResource(10, 10,
+				10, 10, SystemColor.black));
 
 		c.gridx = 0;
 		c.gridy = 0;
@@ -64,7 +67,6 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 		c.fill = GridBagConstraints.BOTH;
 		this.add(tablePane, c);
 
-
 		kontoUebersichtButton
 				.addActionListener(new KontostandsUebersichtAnzeigenListener(
 						null));
@@ -74,14 +76,18 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 	}
 
 	public Object[][] generateTextObjects() {
-		Object[][] data = {{"Giro", "1100001", "750.0"},
-				{"Spar", "1101002", "250.0"}};
+		Object[][] data = { { "Giro", "1100001", "750.0" },
+				{ "Spar", "1101002", "250.0" } };
 
 		return data;
 	}
 
 	public Object[] generateColumnNames() {
-		Object[] columnData = {"Kontoart", "Kontonummer", "Kontostand"};
+		Object[] columnData = { "Kontoart", "Kontonummer", "Kontostand" };
 		return columnData;
+	}
+
+	public JTabbedPane getTabsPane() {
+		return tabsPane;
 	}
 }

@@ -13,6 +13,8 @@ import java.awt.*;
  */
 
 public class BankView extends JFrame {
+	private static final long serialVersionUID = -6398346930903875436L;
+
 	public BankView() {
 		setSize(650, 400);
 		setLocationRelativeTo(null);
@@ -20,21 +22,21 @@ public class BankView extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("BitBank");
 
-		JMenu AktionenMenu = new JMenu("Aktionen");
-		AktionenMenu.add(new JMenuItem("Kunde anlegen"));
-		AktionenMenu.add(new JMenuItem("Konto anlegen"));
-		AktionenMenu.add(new JMenuItem("Ein-/Auszahlungen durchführen"));
-		AktionenMenu.add(new JMenuItem("Überweisungen durchführen"));
-		AktionenMenu.add(new JMenuItem("Kontostandsübersicht anzeigen"));
-		AktionenMenu.add(new JMenuItem("Kontobewegungen anzeigen"));
-		AktionenMenu.add(new JMenuItem("Beenden"));
-		AktionenMenu.insertSeparator(6);
+		JMenu actionMenu = new JMenu("Aktionen");
+		actionMenu.add(new JMenuItem("Kunde anlegen"));
+		actionMenu.add(new JMenuItem("Konto anlegen"));
+		actionMenu.add(new JMenuItem("Ein-/Auszahlungen durchführen"));
+		actionMenu.add(new JMenuItem("Überweisungen durchführen"));
+		actionMenu.add(new JMenuItem("Kontostandsübersicht anzeigen"));
+		actionMenu.add(new JMenuItem("Kontobewegungen anzeigen"));
+		actionMenu.add(new JMenuItem("Beenden"));
+		actionMenu.insertSeparator(6);
 
 		JMenu about = new JMenu("Hilfe");
 		about.add(new JMenuItem("Über"));
 
 		JMenuBar bankMenuBar = new JMenuBar();
-		bankMenuBar.add(AktionenMenu);
+		bankMenuBar.add(actionMenu);
 		bankMenuBar.add(about);
 		setJMenuBar(bankMenuBar);
 
@@ -47,7 +49,7 @@ public class BankView extends JFrame {
 		// BankViewListener listener = new BankViewListener(AktionenMenu,
 		// tabsPane);
 		// about.getMenuComponents()[0].addMouseListener(listener);
-		new BankViewListener(AktionenMenu, tabsPane);
+		new BankViewListener(actionMenu, tabsPane);
 	}
 
 	public static void main(String[] args) {

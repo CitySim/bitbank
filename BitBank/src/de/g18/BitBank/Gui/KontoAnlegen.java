@@ -13,7 +13,9 @@ import java.awt.*;
  */
 
 public class KontoAnlegen extends JPanel {
-	public JTabbedPane tabsPane;
+	private static final long serialVersionUID = -4665144187936969278L;
+
+	private JTabbedPane tabsPane;
 
 	public KontoAnlegen(JTabbedPane tabsPane) {
 		this.tabsPane = tabsPane;
@@ -25,7 +27,7 @@ public class KontoAnlegen extends JPanel {
 
 		JLabel kundenNummerLabel = new JLabel("Kundennummer");
 		JTextField kundenNummerField = new JTextField();
-		JLabel KontotypLabel = new JLabel("Kontotyp");
+		JLabel kontoTypLabel = new JLabel("Kontotyp");
 		JRadioButton giroKontoRadioButton = new JRadioButton("GiroKonto");
 		JRadioButton sparKontoRadioButton = new JRadioButton("SparKonto");
 		JButton anlegenButton = new JButton("Anlegen");
@@ -47,7 +49,7 @@ public class KontoAnlegen extends JPanel {
 		c.gridx = 0;
 		c.gridy = 1;
 		c.weightx = 0;
-		add(KontotypLabel, c);
+		add(kontoTypLabel, c);
 
 		c.gridx = 1;
 		c.gridy = 1;
@@ -74,5 +76,9 @@ public class KontoAnlegen extends JPanel {
 		anlegenButton.addActionListener(new KontoAnlegenListener(
 				kundenNummerField));
 		beendenButton.addActionListener(new KontoAnlegenListener(this));
+	}
+
+	public JTabbedPane getTabsPane() {
+		return tabsPane;
 	}
 }
