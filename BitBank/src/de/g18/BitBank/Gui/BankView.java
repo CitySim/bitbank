@@ -14,7 +14,7 @@ import de.g18.BitBank.Gui.Listener.BankViewListener;
 
 /**
  * Vorgegebene BankMain.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -36,8 +36,9 @@ public class BankView extends JFrame {
 		actionMenu.add(new JMenuItem("Überweisungen durchführen"));
 		actionMenu.add(new JMenuItem("Kontostandsübersicht anzeigen"));
 		actionMenu.add(new JMenuItem("Kontobewegungen anzeigen"));
+		actionMenu.add(new JMenuItem("Kundenliste anzeigen"));
 		actionMenu.add(new JMenuItem("Beenden"));
-		actionMenu.insertSeparator(6);
+		actionMenu.insertSeparator(7);
 
 		JMenu about = new JMenu("Hilfe");
 		about.add(new JMenuItem("Über"));

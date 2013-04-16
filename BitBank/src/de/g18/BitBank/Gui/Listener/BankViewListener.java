@@ -19,7 +19,7 @@ import de.g18.BitBank.Gui.ZahlungVornehmen;
 
 /**
  * Listener zu dem Menü BankView Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -76,6 +76,8 @@ public class BankViewListener implements MouseListener {
 					new KontostandsUebersichtAnzeigen(tabsPane));
 		} else if (menuItem.getText().equals("Kontobewegungen anzeigen")) {
 			tabsPane.add("Kontobewegungen", new Kontobewegungen(tabsPane));
+		} else if (menuItem.getText().equals("Kundenliste anzeigen")) {
+			tabsPane.add("Kundenliste", new kundenListe(tabsPane));
 		} else if (menuItem.getText().equals("Über")) {
 			new UeberFenster();
 		} else if (menuItem.getText().equals("Beenden")) {
