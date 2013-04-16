@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -25,8 +25,7 @@ public class KundenListeListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			kundenListeFrame.getTabsPane().remove(
-					kundenListeFrame);
+			kundenListeFrame.getTabsPane().remove(kundenListeFrame);
 		}
 	}
 }

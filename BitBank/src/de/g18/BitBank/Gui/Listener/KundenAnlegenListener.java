@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import de.g18.BitBank.BankController;
-import de.g18.BitBank.Kunde;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
 /**
