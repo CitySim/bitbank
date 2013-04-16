@@ -1,6 +1,6 @@
 package de.g18.BitBank.Gui.Listener;
 
-import de.g18.BitBank.Gui.kundenListe;
+import de.g18.BitBank.Gui.KundenListe;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,11 +13,11 @@ import java.awt.event.ActionListener;
  * @since JRE6
  */
 
-public class kundenListeListener implements ActionListener {
-	private kundenListe kundenListeFrame;
+public class KundenListeListener implements ActionListener {
+	private KundenListe kundenListeFrame;
 
-	public kundenListeListener(kundenListe kundenListeFrame) {
-		kundenListeFrame = kundenListeFrame;
+	public KundenListeListener(KundenListe kundenListeFrame) {
+		this.kundenListeFrame = kundenListeFrame;
 	}
 
 	@Override

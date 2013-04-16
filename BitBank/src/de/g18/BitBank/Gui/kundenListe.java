@@ -1,6 +1,6 @@
 package de.g18.BitBank.Gui;
 
-import de.g18.BitBank.Gui.Listener.kundenListeListener;
+import de.g18.BitBank.Gui.Listener.KundenListeListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,11 +13,11 @@ import java.awt.*;
  * @since JRE6
  */
 
-public class kundenListe extends JPanel {
+public class KundenListe extends JPanel {
 	private static final long serialVersionUID = 5388389196936658751L;
 	private JTabbedPane tabsPane;
 
-	public kundenListe(JTabbedPane tabsPane) {
+	public KundenListe(JTabbedPane tabsPane) {
 		this.tabsPane = tabsPane;
 
 		setLayout(new GridBagLayout());
@@ -53,7 +53,7 @@ public class kundenListe extends JPanel {
 		this.add(tablePane, c);
 
 		beendenButton
-				.addActionListener(new kundenListeListener(
+				.addActionListener(new KundenListeListener(
 						this));
 	}
 
