@@ -1,10 +1,17 @@
 package de.g18.BitBank.Gui;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+
+import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.KundenAnlegenListener;
-
-import javax.swing.*;
-
-import java.awt.*;
 
 /**
  * Gui Klasse zum Anlegen eines neuen Kundens.
@@ -18,7 +25,7 @@ public class KundenAnlegen extends JPanel {
 
 	private JTabbedPane tabsPane;
 
-	public KundenAnlegen(JTabbedPane tabsPane) {
+	public KundenAnlegen(JTabbedPane tabsPane, BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -66,7 +73,7 @@ public class KundenAnlegen extends JPanel {
 		this.add(new JPanel(), c);
 
 		anlegenButton.addActionListener(new KundenAnlegenListener(
-				kundenNummerField, kundenNamenField));
+				kundenNummerField, kundenNamenField, controller));
 		beendenButton.addActionListener(new KundenAnlegenListener(this));
 	}
 

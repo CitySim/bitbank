@@ -1,9 +1,16 @@
 package de.g18.BitBank.Gui;
 
-import de.g18.BitBank.Gui.Listener.BankViewListener;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JTabbedPane;
+import javax.swing.UIManager;
+
+import de.g18.BitBank.Gui.Listener.BankViewListener;
 
 /**
  * Vorgegebene BankMain.
@@ -46,10 +53,8 @@ public class BankView extends JFrame {
 		setMinimumSize(new Dimension(650, 400));
 		setVisible(true);
 
-		// BankViewListener listener = new BankViewListener(AktionenMenu,
-		// tabsPane);
-		// about.getMenuComponents()[0].addMouseListener(listener);
-		new BankViewListener(actionMenu, tabsPane);
+		BankViewListener listener = new BankViewListener(actionMenu, tabsPane);
+		about.getMenuComponents()[0].addMouseListener(listener);
 	}
 
 	public static void main(String[] args) {

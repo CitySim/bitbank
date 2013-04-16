@@ -1,6 +1,7 @@
 package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.Gui.KundenAnlegen;
+import de.g18.BitBank.BankController;
 import de.g18.BitBank.Kunde;
 
 import javax.swing.*;
@@ -21,7 +22,7 @@ public class KundenAnlegenListener implements ActionListener {
 	private KundenAnlegen kundenAnlegenFrame;
 
 	public KundenAnlegenListener(JTextField kundenNummerField,
-			JTextField kundenNamenField) {
+			JTextField kundenNamenField, BankController controller) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 	}
