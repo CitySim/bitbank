@@ -2,6 +2,7 @@ package de.g18.BitBank;
 
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
+import de.g18.BitBank.Exception.KundenNummerException;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,9 +12,7 @@ import java.util.List;
  * @author it1-markde
  * @since JRE6
  */
-
 public class Kunde {
-
 	private int kundenNummmer;
 	private String name;
 	private List<Konto> kontenListe = new ArrayList<Konto>();
@@ -25,10 +24,9 @@ public class Kunde {
 	 * @param kundenNummer Kundennummer des Kunden
 	 * @throws Exception
 	 */
-
-	public Kunde(String kundenName, int kundenNummer) throws Exception {
+	public Kunde(String kundenName, int kundenNummer) throws KundenNummerException {
 		if (kundenNummer < 0) {
-			throw new Exception("Kundennummer darf nicht kleiner 0 sein");
+			throw new KundenNummerException("Kundennummer darf nicht kleiner 0 sein");
 		}
 		this.name = kundenName;
 		this.kundenNummmer = kundenNummer;
@@ -39,7 +37,6 @@ public class Kunde {
 	 *
 	 * @return Kundennummer des Kunden
 	 */
-
 	public int getKundenNummmer() {
 		return kundenNummmer;
 	}
@@ -47,7 +44,6 @@ public class Kunde {
 	/**
 	 * Setzt die Kundennummer des Kunden neu
 	 */
-
 	public void setKundenNummmer(int kundenNummmer) {
 		this.kundenNummmer = kundenNummmer;
 	}
@@ -57,7 +53,6 @@ public class Kunde {
 	 *
 	 * @return Name des Kunden
 	 */
-
 	public String getName() {
 		return name;
 	}
@@ -71,7 +66,6 @@ public class Kunde {
 	 *
 	 * @return Name des Kunden
 	 */
-
 	public List<Konto> getKontenListe() {
 		return kontenListe;
 	}
@@ -83,9 +77,9 @@ public class Kunde {
 	 * @param zielKonto  Konto auf das ueberwiesen wird.
 	 * @param betrag     zu ueberweisende Summe.
 	 * @param datum      aktuelles Datum.F
-	 * @throws Exception
+	 * @throws KontoLeerException
+	 * @throws BetragNegativException
 	 */
-
 	public void ueberweisen(Konto quellKonto, Konto zielKonto, int betrag,
 							Date datum) throws KontoLeerException, BetragNegativException {
 		quellKonto.ueberweisen(zielKonto, betrag, datum);
@@ -97,7 +91,6 @@ public class Kunde {
 	 * @param kontoTyp Typ des neuen Kontos
 	 * @return das neu angelegte Konto
 	 */
-
 	public Konto anlegenKonto(Kontotyp kontoTyp) {
 		// Die Daten werden übergeben um die Kontonummer erzeugen zu können
 		if (kontoTyp.toString().equals("GIROKONTO")) {
@@ -113,7 +106,6 @@ public class Kunde {
 			return neuesKonto;
 
 		}
-
 	}
 
 	/**
@@ -122,7 +114,6 @@ public class Kunde {
 	 *
 	 * @return mehrzeiliger String
 	 */
-
 	public String anzeigenKontostandsUebersicht() {
 		String ubersicht = "\n";
 

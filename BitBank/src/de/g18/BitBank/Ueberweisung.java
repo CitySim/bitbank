@@ -30,7 +30,8 @@ public class Ueberweisung {
 	/**
 	 * Ueberträgt den betrag der ueberweisung von einem Konto zum anderen.
 	 *
-	 * @throws Exception
+	 * @throws BetragNegativException
+	 * @throws KontoLeerException
 	 */
 	public void durchfuehrenUeberweisung() throws BetragNegativException, KontoLeerException {
 		quellKonto.auszahlen(betrag);

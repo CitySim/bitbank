@@ -111,7 +111,8 @@ public abstract class Konto {
 	 * @param zielKonto Konto auf das ueberwiesen wird.
 	 * @param betrag    zu ueberweisende Summe.
 	 * @param datum     aktuelles Datum.F
-	 * @throws Exception
+	 * @throws BetragNegativException
+	 * @throws KontoLeerException
 	 */
 	public void ueberweisen(Konto zielKonto, int betrag, Date datum)
 			throws BetragNegativException, KontoLeerException {
