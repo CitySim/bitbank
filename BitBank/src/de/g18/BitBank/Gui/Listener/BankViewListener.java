@@ -16,14 +16,15 @@ import java.awt.event.MouseListener;
  */
 
 public class BankViewListener implements MouseListener {
+	BankController controller;
 	private JTabbedPane tabsPane;
-	BankController controller = new BankController();
 
-	public BankViewListener(JMenu anwendungen, JTabbedPane tabsPane) {
+	public BankViewListener(JMenu anwendungen, JTabbedPane tabsPane, BankController controller) {
 		for (Component component : anwendungen.getMenuComponents()) {
 			component.addMouseListener(this);
 		}
 
+		this.controller = controller;
 		this.tabsPane = tabsPane;
 	}
 
@@ -35,7 +36,6 @@ public class BankViewListener implements MouseListener {
 	@Override
 	public void mouseEntered(MouseEvent event) {
 		// not in use
-
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class BankViewListener implements MouseListener {
 
 		if (menuItem.getText().equals("Kunde anlegen")) {
 			tabsPane.add("Kunde anlegen", new KundenAnlegen(tabsPane,
-					this.controller));
+					controller));
 		} else if (menuItem.getText().equals("Konto anlegen")) {
 			tabsPane.add("Konto anlegen", new KontoAnlegen(tabsPane));
 		} else if (menuItem.getText().equals("Ein-/Auszahlungen durchführen")) {
@@ -68,7 +68,7 @@ public class BankViewListener implements MouseListener {
 		} else if (menuItem.getText().equals("Kontobewegungen anzeigen")) {
 			tabsPane.add("Kontobewegungen", new Kontobewegungen(tabsPane));
 		} else if (menuItem.getText().equals("Kundenliste anzeigen")) {
-			tabsPane.add("Kundenliste", new KundenListe(tabsPane));
+			tabsPane.add("Kundenliste", new KundenListe(tabsPane, controller));
 		} else if (menuItem.getText().equals("Über")) {
 			new UeberFenster();
 		} else if (menuItem.getText().equals("Beenden")) {

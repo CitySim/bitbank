@@ -1,19 +1,15 @@
 package de.g18.BitBank.Gui.Listener;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -25,7 +21,7 @@ public class KundenAnlegenListener implements ActionListener {
 	private BankController controller;
 
 	public KundenAnlegenListener(JTextField kundenNummerField,
-			JTextField kundenNamenField, BankController controller) {
+								 JTextField kundenNamenField, BankController controller) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 		this.controller = controller;
@@ -42,7 +38,6 @@ public class KundenAnlegenListener implements ActionListener {
 		if (buttonClicked.getText().compareTo("Anlegen") == 0) {
 
 			try {
-
 				this.controller.createKunde(this.kundenNamenField.getText(),
 						Integer.parseInt(this.kundenAnlegenField.getText()));
 
@@ -52,7 +47,7 @@ public class KundenAnlegenListener implements ActionListener {
 								+ kundenNamenField.getText()
 								+ "\" und der Kontonummer \""
 								+ Integer.parseInt(this.kundenAnlegenField
-										.getText()) + "\" angelegt.");
+								.getText()) + "\" angelegt.");
 
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(new JFrame(),

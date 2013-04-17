@@ -18,4 +18,11 @@ public class BankController {
 		}
 	}
 
+	public int getKundenCount() {
+		return kundenListe.size();
+	}
+
+	public Kunde getKundeByIndex(int i) {
+		return kundenListe.get(i);
+	}
 }

@@ -1,16 +1,10 @@
 package de.g18.BitBank.Gui;
 
-import java.awt.Dimension;
-import java.awt.GridLayout;
-
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JTabbedPane;
-import javax.swing.UIManager;
-
+import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.BankViewListener;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Vorgegebene BankMain.
@@ -22,7 +16,7 @@ import de.g18.BitBank.Gui.Listener.BankViewListener;
 public class BankView extends JFrame {
 	private static final long serialVersionUID = -6398346930903875436L;
 
-	public BankView() {
+	public BankView(BankController controller) {
 		setSize(650, 400);
 		setLocationRelativeTo(null);
 		setLayout(new GridLayout(1, 1));
@@ -54,17 +48,19 @@ public class BankView extends JFrame {
 		setMinimumSize(new Dimension(650, 400));
 		setVisible(true);
 
-		BankViewListener listener = new BankViewListener(actionMenu, tabsPane);
+		BankViewListener listener = new BankViewListener(actionMenu, tabsPane, controller);
 		about.getMenuComponents()[0].addMouseListener(listener);
 	}
 
 	public static void main(String[] args) {
+		BankController c = new BankController();
+
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		new BankView();
+		new BankView(c);
 	}
 }

@@ -1,6 +1,8 @@
 package de.g18.BitBank.Gui;
 
+import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.KundenListeListener;
+import de.g18.BitBank.Gui.TableModels.KundenTableModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +19,7 @@ public class KundenListe extends JPanel {
 	private static final long serialVersionUID = 5388389196936658751L;
 	private JTabbedPane tabsPane;
 
-	public KundenListe(JTabbedPane tabsPane) {
+	public KundenListe(JTabbedPane tabsPane, BankController controller) {
 		this.tabsPane = tabsPane;
 
 		setLayout(new GridBagLayout());
@@ -27,10 +29,7 @@ public class KundenListe extends JPanel {
 
 		JButton beendenButton = new JButton("Beenden");
 
-		Object[][] data = this.generateTextObjects();
-		Object[] columnNames = this.generateColumnNames();
-
-		JTable table = new JTable(data, columnNames);
+		JTable table = new JTable(new KundenTableModel(controller));
 		table.setFillsViewportHeight(true);
 		JScrollPane tablePane = new JScrollPane(table);
 
@@ -55,17 +54,6 @@ public class KundenListe extends JPanel {
 		beendenButton
 				.addActionListener(new KundenListeListener(
 						this));
-	}
-
-	public Object[][] generateTextObjects() {
-		Object[][] data = {};
-
-		return data;
-	}
-
-	public Object[] generateColumnNames() {
-		Object[] columnData = {"Nr.", "Name", "Konten"};
-		return columnData;
 	}
 
 	public JTabbedPane getTabsPane() {
