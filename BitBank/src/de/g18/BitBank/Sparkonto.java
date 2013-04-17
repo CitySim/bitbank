@@ -1,5 +1,8 @@
 package de.g18.BitBank;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
+
 /**
  * @author it1-markde
  * @since JRE6
@@ -26,9 +29,9 @@ public class Sparkonto extends Konto {
 	 */
 
 	@Override
-	public void auszahlen(double betrag) throws Exception {
+	public void auszahlen(double betrag) throws KontoLeerException, BetragNegativException {
 		if (super.getKontoStand() - betrag < 0) {
-			throw new Exception("Das Konto darf nicht überzogen werden.");
+			throw new KontoLeerException("Das Konto darf nicht überzogen werden.");
 		}
 
 		super.auszahlen(betrag);

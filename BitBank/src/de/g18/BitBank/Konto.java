@@ -1,20 +1,21 @@
 package de.g18.BitBank;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 /**
  * Konto Klasse
- * 
+ *
  * @author it1-markde
  * @see Girokonto
  * @see Sparkonto
  * @since JRE6
  */
-
 public abstract class Konto {
-
 	private Kontotyp kontoTyp;
 	private double kontoStand;
 	private long kontoNummer;
@@ -23,20 +24,15 @@ public abstract class Konto {
 
 	/**
 	 * Erstellt ein neues Konto.
-	 * 
-	 * @param kontoTyp
-	 *            Typ des Kontos (Sparkonto / Girokonto).
-	 * @param kundenNummer
-	 *            Nummer des Kundens im Bankverwaltungstool.
-	 * @param indexNummer
-	 *            IndexNummer des Kontos in der Kontoliste des Kunden.
+	 *
+	 * @param kontoTyp     Typ des Kontos (Sparkonto / Girokonto).
+	 * @param kundenNummer Nummer des Kundens im Bankverwaltungstool.
+	 * @param indexNummer  IndexNummer des Kontos in der Kontoliste des Kunden.
 	 */
-
 	public Konto(Kontotyp kontoTyp, int kundenNummer, int indexNummer) {
 		this.kontoTyp = kontoTyp;
 		this.kontoNummer = ((((long) kundenNummer) * 100) + this
 				.getKontoTypNumber()) * 1000 + indexNummer;
-
 	}
 
 	public double getKontoStand() {
@@ -65,30 +61,25 @@ public abstract class Konto {
 
 	/**
 	 * Gibt einen Int je nach Kontoart wieder.
-	 * 
+	 *
 	 * @return 1 für Kontotyp = Girokonto,0 für Sparkonto
 	 */
-
 	public int getKontoTypNumber() {
-
 		if (this.getKontoTyp().toString().equals("GIROKONTO")) {
 			return 1;
 		} else {
 			return 0;
 		}
-
 	}
 
 	/**
 	 * Addiert einen Betrag auf den aktuellen Kontostand.
-	 * 
-	 * @param betrag
-	 *            zu addierender Wert.
+	 *
+	 * @param betrag zu addierender Wert.
 	 */
-
-	public void einzahlen(double betrag) throws Exception {
+	public void einzahlen(double betrag) throws BetragNegativException {
 		if (betrag < 0) {
-			throw new Exception("Betrag darf nicht negativ sein");
+			throw new BetragNegativException("Betrag darf nicht negativ sein");
 		}
 
 		kontoStand += betrag;
@@ -99,15 +90,13 @@ public abstract class Konto {
 
 	/**
 	 * Subtrahiert einen Betrag von dem aktuellen Kontostand.
-	 * 
-	 * @param betrag
-	 *            zu subtrahierender Wert.
+	 *
+	 * @param betrag zu subtrahierender Wert.
 	 * @throws Exception
 	 */
-
-	public void auszahlen(double betrag) throws Exception {
+	public void auszahlen(double betrag) throws BetragNegativException, KontoLeerException {
 		if (betrag < 0) {
-			throw new Exception("Betrag darf nicht negativ sein");
+			throw new BetragNegativException("Betrag darf nicht negativ sein");
 		}
 
 		kontoStand -= betrag;
@@ -118,19 +107,17 @@ public abstract class Konto {
 	/**
 	 * Erstellt ein Objekt von Ueberweisung und speichert dieses in der
 	 * ueberweisungsliste.
-	 * 
-	 * @param zielKonto
-	 *            Konto auf das ueberwiesen wird.
-	 * @param betrag
-	 *            zu ueberweisende Summe.
-	 * @param datum
-	 *            aktuelles Datum.F
+	 *
+	 * @param zielKonto Konto auf das ueberwiesen wird.
+	 * @param betrag    zu ueberweisende Summe.
+	 * @param datum     aktuelles Datum.F
 	 * @throws Exception
 	 */
 	public void ueberweisen(Konto zielKonto, int betrag, Date datum)
-			throws Exception {
+			throws BetragNegativException, KontoLeerException {
 		Ueberweisung ueberweisung = new Ueberweisung(this, zielKonto, betrag,
 				datum);
+
 		ueberweisung.durchfuehrenUeberweisung();
 		this.ueberweisungsListe.add(ueberweisung);
 	}

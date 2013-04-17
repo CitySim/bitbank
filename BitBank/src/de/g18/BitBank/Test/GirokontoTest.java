@@ -1,5 +1,7 @@
 package de.g18.BitBank.Test;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Girokonto;
 import de.g18.BitBank.Kontotyp;
 import org.junit.Before;
@@ -25,13 +27,13 @@ public class GirokontoTest {
 	}
 
 	@Test
-	public void testAuszahlen() throws Exception {
+	public void testAuszahlen() throws KontoLeerException, BetragNegativException {
 		k.auszahlen(k.getLimit());
 		assertEquals(0, k.getKontoStand(), 0);
 	}
 
-	@Test(expected = Exception.class)
-	public void testUeberziehen() throws Exception {
+	@Test(expected = KontoLeerException.class)
+	public void testUeberziehen() throws KontoLeerException, BetragNegativException {
 		k.auszahlen(k.getLimit() + k.getKontoStand() + 1);
 	}
 }

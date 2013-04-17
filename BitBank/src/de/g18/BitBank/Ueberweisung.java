@@ -1,5 +1,8 @@
 package de.g18.BitBank;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
+
 import java.util.Date;
 
 /**
@@ -15,7 +18,7 @@ public class Ueberweisung {
 	private Date datum;
 
 	public Ueberweisung(Konto quellKonto, Konto zielKonto, double betrag,
-			Date datum) {
+						Date datum) {
 
 		this.quellKonto = quellKonto;
 		this.zielKonto = zielKonto;
@@ -26,10 +29,10 @@ public class Ueberweisung {
 
 	/**
 	 * Ueberträgt den betrag der ueberweisung von einem Konto zum anderen.
-	 * 
+	 *
 	 * @throws Exception
 	 */
-	public void durchfuehrenUeberweisung() throws Exception {
+	public void durchfuehrenUeberweisung() throws BetragNegativException, KontoLeerException {
 		quellKonto.auszahlen(betrag);
 		zielKonto.einzahlen(betrag);
 

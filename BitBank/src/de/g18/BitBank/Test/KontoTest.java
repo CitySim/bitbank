@@ -1,5 +1,7 @@
 package de.g18.BitBank.Test;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Girokonto;
 import de.g18.BitBank.Konto;
 import org.junit.Before;
@@ -25,7 +27,7 @@ public class KontoTest {
 	}
 
 	@Test
-	public void einzahlen() throws Exception {
+	public void einzahlen() throws BetragNegativException {
 		k.einzahlen(200);
 		assertEquals(200, k.getKontoStand(), 0);
 
@@ -34,8 +36,8 @@ public class KontoTest {
 		assertEquals(200, k.getKontoBewegungsListe().get(0).getBetrag(), 0);
 	}
 
-	@Test(expected = Exception.class)
-	public void negativenBetragEinzahlen() throws Exception {
+	@Test(expected = BetragNegativException.class)
+	public void negativenBetragEinzahlen() throws BetragNegativException {
 		// es können keine negativ beträge eingezahlt werden
 		k.einzahlen(-100);
 		// konto muss noch immer 0 haben, betrag darf sich nicht ändern
@@ -46,7 +48,8 @@ public class KontoTest {
 	public void FehlerBeimEinzahlenAendertBetragNicht() {
 		try {
 			k.einzahlen(-100);
-		} catch (Exception e) {
+		} catch (BetragNegativException e) {
+			e.printStackTrace();
 		}
 
 		// konto muss noch immer 0 haben, betrag darf sich nicht ändern
@@ -54,7 +57,7 @@ public class KontoTest {
 	}
 
 	@Test
-	public void auszahlen() throws Exception {
+	public void auszahlen() throws KontoLeerException, BetragNegativException {
 		k.auszahlen(200);
 		assertEquals(-200, k.getKontoStand(), 0);
 
@@ -63,8 +66,8 @@ public class KontoTest {
 		assertEquals(-200, k.getKontoBewegungsListe().get(0).getBetrag(), 0);
 	}
 
-	@Test(expected = Exception.class)
-	public void negativenBetragAuszahlen() throws Exception {
+	@Test(expected = BetragNegativException.class)
+	public void negativenBetragAuszahlen() throws KontoLeerException, BetragNegativException {
 		// es können keine negativ beträge eingezahlt werden
 		k.auszahlen(-100);
 	}
@@ -73,7 +76,10 @@ public class KontoTest {
 	public void FehlerBeimAuszahlenAendertBetragNicht() {
 		try {
 			k.auszahlen(-100);
-		} catch (Exception e) {
+		} catch (BetragNegativException e) {
+			e.printStackTrace();
+		} catch (KontoLeerException e) {
+			e.printStackTrace();
 		}
 
 		// konto muss noch immer 0 haben, betrag darf sich nicht ändern
@@ -81,7 +87,7 @@ public class KontoTest {
 	}
 
 	@Test
-	public void testDurchfuehrenUeberweisung() throws Exception {
+	public void testDurchfuehrenUeberweisung() throws BetragNegativException, KontoLeerException {
 		k.einzahlen(200);
 		Konto ziel = new Girokonto(1234, 35);
 

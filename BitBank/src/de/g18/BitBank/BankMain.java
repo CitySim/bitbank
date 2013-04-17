@@ -1,5 +1,8 @@
 package de.g18.BitBank;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
+
 /**
  * @author it1-markde
  * @since JRE6
@@ -39,6 +42,10 @@ public class BankMain {
 			kunde1.ueberweisen(konto1, konto2, 25, new java.util.Date());
 			System.out.println("(6) " + kunde1.anzeigenKontostandsUebersicht());
 
+		} catch (BetragNegativException e) {
+			e.printStackTrace();
+		} catch (KontoLeerException e) {
+			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

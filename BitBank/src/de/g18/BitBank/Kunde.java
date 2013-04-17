@@ -1,11 +1,13 @@
 package de.g18.BitBank;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 /**
- * 
  * @author it1-markde
  * @since JRE6
  */
@@ -18,11 +20,9 @@ public class Kunde {
 
 	/**
 	 * Ertsellt eine neue Instanz eines Kunden
-	 * 
-	 * @param kundenName
-	 *            Name des Kunden
-	 * @param kundenNummer
-	 *            Kundennummer des Kunden
+	 *
+	 * @param kundenName   Name des Kunden
+	 * @param kundenNummer Kundennummer des Kunden
 	 * @throws Exception
 	 */
 
@@ -36,7 +36,7 @@ public class Kunde {
 
 	/**
 	 * Gibt die Kundennummer des Kunden zurück
-	 * 
+	 *
 	 * @return Kundennummer des Kunden
 	 */
 
@@ -46,7 +46,6 @@ public class Kunde {
 
 	/**
 	 * Setzt die Kundennummer des Kunden neu
-	 * 
 	 */
 
 	public void setKundenNummmer(int kundenNummmer) {
@@ -55,7 +54,7 @@ public class Kunde {
 
 	/**
 	 * Gibt den Namen des Kunden zurück
-	 * 
+	 *
 	 * @return Name des Kunden
 	 */
 
@@ -69,7 +68,7 @@ public class Kunde {
 
 	/**
 	 * Gibt die Liste aller Konten des Kunden zurücks Namen des Kunden zurück
-	 * 
+	 *
 	 * @return Name des Kunden
 	 */
 
@@ -79,29 +78,23 @@ public class Kunde {
 
 	/**
 	 * Führt die Ueberweisung über das entsprechende Quellkonto durch.
-	 * 
-	 * @param quellKonto
-	 *            Konto von dem ueberwiesen wird.
-	 * 
-	 * @param zielKonto
-	 *            Konto auf das ueberwiesen wird.
-	 * @param betrag
-	 *            zu ueberweisende Summe.
-	 * @param datum
-	 *            aktuelles Datum.F
+	 *
+	 * @param quellKonto Konto von dem ueberwiesen wird.
+	 * @param zielKonto  Konto auf das ueberwiesen wird.
+	 * @param betrag     zu ueberweisende Summe.
+	 * @param datum      aktuelles Datum.F
 	 * @throws Exception
 	 */
 
 	public void ueberweisen(Konto quellKonto, Konto zielKonto, int betrag,
-			Date datum) throws Exception {
+							Date datum) throws KontoLeerException, BetragNegativException {
 		quellKonto.ueberweisen(zielKonto, betrag, datum);
 	}
 
 	/**
 	 * Legt ein neues Konto von angeben Typ und fügt es diesem Kunden hinzu
-	 * 
-	 * @param kontoTyp
-	 *            Typ des neuen Kontos
+	 *
+	 * @param kontoTyp Typ des neuen Kontos
 	 * @return das neu angelegte Konto
 	 */
 
@@ -126,7 +119,7 @@ public class Kunde {
 	/**
 	 * Gibt einen mehrzeiligen String mit einer Übersicht aller Konten des
 	 * Kunden zurück
-	 * 
+	 *
 	 * @return mehrzeiliger String
 	 */
 

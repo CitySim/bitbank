@@ -1,5 +1,7 @@
 package de.g18.BitBank.Test;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Girokonto;
 import de.g18.BitBank.Konto;
 import de.g18.BitBank.Ueberweisung;
@@ -34,7 +36,7 @@ public class UeberweisungTest {
 	}
 
 	@Test
-	public void testDurchfuehrenUeberweisung() throws Exception {
+	public void testDurchfuehrenUeberweisung() throws KontoLeerException, BetragNegativException {
 		k1.einzahlen(200);
 
 		u.durchfuehrenUeberweisung();
