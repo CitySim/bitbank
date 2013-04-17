@@ -7,7 +7,7 @@ package de.g18.BitBank.Exception;
  * Time: 14:28
  * To change this template use File | Settings | File Templates.
  */
-public class BetragNegativException extends Throwable {
+public class BetragNegativException extends Exception {
 	public BetragNegativException(String message) {
 		super(message);
 	}

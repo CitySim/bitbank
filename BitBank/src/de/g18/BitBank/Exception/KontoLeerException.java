@@ -7,7 +7,7 @@ package de.g18.BitBank.Exception;
  * Time: 21:37
  * To change this template use File | Settings | File Templates.
  */
-public class KontoLeerException extends Throwable {
+public class KontoLeerException extends Exception {
 	public KontoLeerException(String message) {
 		super(message);
 	}

@@ -1,30 +1,21 @@
 package de.g18.BitBank;
 
-import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.KontoLeerException;
-
-/**
- * @author it1-markde
- * @since JRE6
- */
+import java.util.Scanner;
 
 public class BankMain {
 
 	public static void main(String[] args) {
 		try {
-			// Scanner sc = new Scanner(System.in);
-			int kundenNummer = 1234;
-			String kundenName = "Test.Test";
-			// System.out.print("Bitte Kundennummer eingeben: ");
-			// int kundenNummer = sc.nextInt();
-			// System.out.print("Bitte Kundenname eingeben: ");
-			// String kundenName = sc.next();
-			// System.out.print("Bitte Kundenvorname eingeben: ");
-			// String kundenVorname = sc.next();
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Bitte Kundennummer eingeben: ");
+			int kundenNummer = sc.nextInt();
+			System.out.print("Bitte Kundenname eingeben: ");
+			String kundenName = sc.next();
+			System.out.print("Bitte Kundenvorname eingeben: ");
+			String kundenVorname = sc.next();
 			Kunde kunde1 = new Kunde(kundenName, kundenNummer);
 			Konto konto1 = kunde1.anlegenKonto(Kontotyp.GIROKONTO);
 			Konto konto2 = kunde1.anlegenKonto(Kontotyp.SPARKONTO);
-
 			System.out.println("(1) " + kunde1.anzeigenKontostandsUebersicht());
 			konto1.einzahlen(1000);
 			System.out.println("(2) " + kunde1.anzeigenKontostandsUebersicht());
@@ -35,19 +26,12 @@ public class BankMain {
 			konto2.auszahlen(100);
 			System.out.println("(5) " + kunde1.anzeigenKontostandsUebersicht());
 
-			// Ueberweisung ueb = new Ueberweisung(konto1, konto2, 25,
-			// new java.util.Date());
-			// ueb.durchfuehrenUeberweisung();
-
-			kunde1.ueberweisen(konto1, konto2, 25, new java.util.Date());
+			Ueberweisung ueb = new Ueberweisung(konto1, konto2, 25, new java.util.Date());
+			ueb.durchfuehrenUeberweisung();
 			System.out.println("(6) " + kunde1.anzeigenKontostandsUebersicht());
-
-		} catch (BetragNegativException e) {
-			e.printStackTrace();
-		} catch (KontoLeerException e) {
-			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 }
