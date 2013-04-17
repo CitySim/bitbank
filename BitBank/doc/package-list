@@ -1,1 +1,6 @@
 de.g18.BitBank
+de.g18.BitBank.Exception
+de.g18.BitBank.Gui
+de.g18.BitBank.Gui.Listener
+de.g18.BitBank.Gui.TableModels
+de.g18.BitBank.Test
