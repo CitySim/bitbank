@@ -13,20 +13,24 @@ import java.util.List;
  * @since JRE6
  */
 public class Kunde {
-	private int kundenNummmer;
+	private long kundenNummmer;
 	private String name;
 	private List<Konto> kontenListe = new ArrayList<Konto>();
 
 	/**
 	 * Ertsellt eine neue Instanz eines Kunden
-	 *
-	 * @param kundenName   Name des Kunden
-	 * @param kundenNummer Kundennummer des Kunden
+	 * 
+	 * @param kundenName
+	 *            Name des Kunden
+	 * @param kundenNummer
+	 *            Kundennummer des Kunden
 	 * @throws Exception
 	 */
-	public Kunde(String kundenName, int kundenNummer) throws KundenNummerException {
+	public Kunde(String kundenName, long kundenNummer)
+			throws KundenNummerException {
 		if (kundenNummer < 0) {
-			throw new KundenNummerException("Kundennummer darf nicht kleiner 0 sein");
+			throw new KundenNummerException(
+					"Kundennummer darf nicht kleiner 0 sein");
 		}
 		this.name = kundenName;
 		this.kundenNummmer = kundenNummer;
@@ -34,10 +38,10 @@ public class Kunde {
 
 	/**
 	 * Gibt die Kundennummer des Kunden zurück
-	 *
+	 * 
 	 * @return Kundennummer des Kunden
 	 */
-	public int getKundenNummmer() {
+	public long getKundenNummmer() {
 		return kundenNummmer;
 	}
 
@@ -50,7 +54,7 @@ public class Kunde {
 
 	/**
 	 * Gibt den Namen des Kunden zurück
-	 *
+	 * 
 	 * @return Name des Kunden
 	 */
 	public String getName() {
@@ -63,7 +67,7 @@ public class Kunde {
 
 	/**
 	 * Gibt die Liste aller Konten des Kunden zurücks Namen des Kunden zurück
-	 *
+	 * 
 	 * @return Name des Kunden
 	 */
 	public List<Konto> getKontenListe() {
@@ -72,23 +76,28 @@ public class Kunde {
 
 	/**
 	 * Führt die Ueberweisung über das entsprechende Quellkonto durch.
-	 *
-	 * @param quellKonto Konto von dem ueberwiesen wird.
-	 * @param zielKonto  Konto auf das ueberwiesen wird.
-	 * @param betrag     zu ueberweisende Summe.
-	 * @param datum      aktuelles Datum.F
+	 * 
+	 * @param quellKonto
+	 *            Konto von dem ueberwiesen wird.
+	 * @param zielKonto
+	 *            Konto auf das ueberwiesen wird.
+	 * @param betrag
+	 *            zu ueberweisende Summe.
+	 * @param datum
+	 *            aktuelles Datum.F
 	 * @throws KontoLeerException
 	 * @throws BetragNegativException
 	 */
 	public void ueberweisen(Konto quellKonto, Konto zielKonto, int betrag,
-							Date datum) throws KontoLeerException, BetragNegativException {
+			Date datum) throws KontoLeerException, BetragNegativException {
 		quellKonto.ueberweisen(zielKonto, betrag, datum);
 	}
 
 	/**
 	 * Legt ein neues Konto von angeben Typ und fügt es diesem Kunden hinzu
-	 *
-	 * @param kontoTyp Typ des neuen Kontos
+	 * 
+	 * @param kontoTyp
+	 *            Typ des neuen Kontos
 	 * @return das neu angelegte Konto
 	 */
 	public Konto anlegenKonto(Kontotyp kontoTyp) {
@@ -111,7 +120,7 @@ public class Kunde {
 	/**
 	 * Gibt einen mehrzeiligen String mit einer Übersicht aller Konten des
 	 * Kunden zurück
-	 *
+	 * 
 	 * @return mehrzeiliger String
 	 */
 	public String anzeigenKontostandsUebersicht() {

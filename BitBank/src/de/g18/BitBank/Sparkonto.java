@@ -11,8 +11,8 @@ import de.g18.BitBank.Exception.KontoLeerException;
 public class Sparkonto extends Konto {
 	private double festzins;
 
-	public Sparkonto(int kundenNummer, int indexNummer) {
-		super(Kontotyp.SPARKONTO, kundenNummer, indexNummer);
+	public Sparkonto(long kundenNummmer, int indexNummer) {
+		super(Kontotyp.SPARKONTO, kundenNummmer, indexNummer);
 	}
 
 	public double getFestzins() {
@@ -29,9 +29,11 @@ public class Sparkonto extends Konto {
 	 */
 
 	@Override
-	public void auszahlen(double betrag) throws KontoLeerException, BetragNegativException {
+	public void auszahlen(double betrag) throws KontoLeerException,
+			BetragNegativException {
 		if (super.getKontoStand() - betrag < 0) {
-			throw new KontoLeerException("Das Konto darf nicht überzogen werden.");
+			throw new KontoLeerException(
+					"Das Konto darf nicht überzogen werden.");
 		}
 
 		super.auszahlen(betrag);

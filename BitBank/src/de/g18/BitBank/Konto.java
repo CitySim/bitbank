@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Konto Klasse
- *
+ * 
  * @author it1-markde
  * @see Girokonto
  * @see Sparkonto
@@ -24,14 +24,17 @@ public abstract class Konto {
 
 	/**
 	 * Erstellt ein neues Konto.
-	 *
-	 * @param kontoTyp     Typ des Kontos (Sparkonto / Girokonto).
-	 * @param kundenNummer Nummer des Kundens im Bankverwaltungstool.
-	 * @param indexNummer  IndexNummer des Kontos in der Kontoliste des Kunden.
+	 * 
+	 * @param kontoTyp
+	 *            Typ des Kontos (Sparkonto / Girokonto).
+	 * @param kundenNummmer
+	 *            Nummer des Kundens im Bankverwaltungstool.
+	 * @param indexNummer
+	 *            IndexNummer des Kontos in der Kontoliste des Kunden.
 	 */
-	public Konto(Kontotyp kontoTyp, int kundenNummer, int indexNummer) {
+	public Konto(Kontotyp kontoTyp, long kundenNummmer, int indexNummer) {
 		this.kontoTyp = kontoTyp;
-		this.kontoNummer = ((((long) kundenNummer) * 100) + this
+		this.kontoNummer = ((((long) kundenNummmer) * 100) + this
 				.getKontoTypNumber()) * 1000 + indexNummer;
 	}
 
@@ -61,7 +64,7 @@ public abstract class Konto {
 
 	/**
 	 * Gibt einen Int je nach Kontoart wieder.
-	 *
+	 * 
 	 * @return 1 für Kontotyp = Girokonto,0 für Sparkonto
 	 */
 	public int getKontoTypNumber() {
@@ -74,8 +77,9 @@ public abstract class Konto {
 
 	/**
 	 * Addiert einen Betrag auf den aktuellen Kontostand.
-	 *
-	 * @param betrag zu addierender Wert.
+	 * 
+	 * @param betrag
+	 *            zu addierender Wert.
 	 */
 	public void einzahlen(double betrag) throws BetragNegativException {
 		if (betrag < 0) {
@@ -90,11 +94,13 @@ public abstract class Konto {
 
 	/**
 	 * Subtrahiert einen Betrag von dem aktuellen Kontostand.
-	 *
-	 * @param betrag zu subtrahierender Wert.
+	 * 
+	 * @param betrag
+	 *            zu subtrahierender Wert.
 	 * @throws Exception
 	 */
-	public void auszahlen(double betrag) throws BetragNegativException, KontoLeerException {
+	public void auszahlen(double betrag) throws BetragNegativException,
+			KontoLeerException {
 		if (betrag < 0) {
 			throw new BetragNegativException("Betrag darf nicht negativ sein");
 		}
@@ -107,10 +113,13 @@ public abstract class Konto {
 	/**
 	 * Erstellt ein Objekt von Ueberweisung und speichert dieses in der
 	 * ueberweisungsliste.
-	 *
-	 * @param zielKonto Konto auf das ueberwiesen wird.
-	 * @param betrag    zu ueberweisende Summe.
-	 * @param datum     aktuelles Datum.F
+	 * 
+	 * @param zielKonto
+	 *            Konto auf das ueberwiesen wird.
+	 * @param betrag
+	 *            zu ueberweisende Summe.
+	 * @param datum
+	 *            aktuelles Datum.F
 	 * @throws BetragNegativException
 	 * @throws KontoLeerException
 	 */

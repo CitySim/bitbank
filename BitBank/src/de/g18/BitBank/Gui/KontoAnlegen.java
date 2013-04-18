@@ -1,5 +1,6 @@
 package de.g18.BitBank.Gui;
 
+import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.KontoAnlegenListener;
 
 import javax.swing.*;
@@ -17,7 +18,7 @@ public class KontoAnlegen extends JPanel {
 
 	private JTabbedPane tabsPane;
 
-	public KontoAnlegen(JTabbedPane tabsPane) {
+	public KontoAnlegen(JTabbedPane tabsPane, BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -25,7 +26,7 @@ public class KontoAnlegen extends JPanel {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
 
-		JLabel kontoNummerLabel = new JLabel("Kontonummer");
+		JLabel kundenNummerLabel = new JLabel("Kontonummer");
 		JTextField kundenNummerField = new JTextField();
 		JLabel kontoTypLabel = new JLabel("Kontotyp");
 		JRadioButton giroKontoRadioButton = new JRadioButton("GiroKonto");
@@ -39,7 +40,7 @@ public class KontoAnlegen extends JPanel {
 
 		c.gridx = 0;
 		c.gridy = 0;
-		add(kontoNummerLabel, c);
+		add(kundenNummerLabel, c);
 
 		c.gridx = 1;
 		c.gridy = 0;
@@ -74,7 +75,8 @@ public class KontoAnlegen extends JPanel {
 		this.add(new JPanel(), c);
 
 		anlegenButton.addActionListener(new KontoAnlegenListener(
-				kundenNummerField));
+				kundenNummerField, controller, giroKontoRadioButton,
+				sparKontoRadioButton));
 		beendenButton.addActionListener(new KontoAnlegenListener(this));
 	}
 

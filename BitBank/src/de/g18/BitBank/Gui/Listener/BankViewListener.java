@@ -10,7 +10,7 @@ import java.awt.event.MouseListener;
 
 /**
  * Listener zu dem Menü BankView Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -19,7 +19,8 @@ public class BankViewListener implements MouseListener {
 	BankController controller;
 	private JTabbedPane tabsPane;
 
-	public BankViewListener(JMenu anwendungen, JTabbedPane tabsPane, BankController controller) {
+	public BankViewListener(JMenu anwendungen, JTabbedPane tabsPane,
+			BankController controller) {
 		for (Component component : anwendungen.getMenuComponents()) {
 			component.addMouseListener(this);
 		}
@@ -56,7 +57,8 @@ public class BankViewListener implements MouseListener {
 			tabsPane.add("Kunde anlegen", new KundenAnlegen(tabsPane,
 					controller));
 		} else if (menuItem.getText().equals("Konto anlegen")) {
-			tabsPane.add("Konto anlegen", new KontoAnlegen(tabsPane));
+			tabsPane.add("Konto anlegen",
+					new KontoAnlegen(tabsPane, controller));
 		} else if (menuItem.getText().equals("Ein-/Auszahlungen durchführen")) {
 			tabsPane.add("Ein-/Auszahlung", new ZahlungVornehmen(tabsPane));
 		} else if (menuItem.getText().equals("Überweisungen durchführen")) {

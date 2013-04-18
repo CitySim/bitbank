@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -21,7 +21,7 @@ public class KundenAnlegenListener implements ActionListener {
 	private BankController controller;
 
 	public KundenAnlegenListener(JTextField kundenNummerField,
-								 JTextField kundenNamenField, BankController controller) {
+			JTextField kundenNamenField, BankController controller) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 		this.controller = controller;
@@ -39,7 +39,7 @@ public class KundenAnlegenListener implements ActionListener {
 
 			try {
 				this.controller.createKunde(this.kundenNamenField.getText(),
-						Integer.parseInt(this.kundenAnlegenField.getText()));
+						Long.parseLong(this.kundenAnlegenField.getText()));
 
 				JOptionPane.showMessageDialog(
 						new JFrame(),
@@ -47,7 +47,7 @@ public class KundenAnlegenListener implements ActionListener {
 								+ kundenNamenField.getText()
 								+ "\" und der Kontonummer \""
 								+ Integer.parseInt(this.kundenAnlegenField
-								.getText()) + "\" angelegt.");
+										.getText()) + "\" angelegt.");
 
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(new JFrame(),
