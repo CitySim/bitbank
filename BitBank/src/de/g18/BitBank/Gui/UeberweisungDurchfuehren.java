@@ -98,7 +98,8 @@ public class UeberweisungDurchfuehren extends JPanel {
 		datumAuswaehlenButton
 				.addActionListener(new UeberweisungDurchfuehrenListener(null));
 		ueberweisenButton
-				.addActionListener(new UeberweisungDurchfuehrenListener(null));
+				.addActionListener(new UeberweisungDurchfuehrenListener(
+						vomKontoField, nachKontoField, betragField, controller));
 		beendenButton.addActionListener(new UeberweisungDurchfuehrenListener(
 				this));
 	}

@@ -42,6 +42,10 @@ public class BankController {
 
 	}
 
+	public List<Konto> getKundenKonten(long kundenNummer) {
+		return getKundeByKundenNummer(kundenNummer).getKontenListe();
+	}
+
 	public void createKunde(String kundenName, long kundenNummer) {
 		try {
 			Kunde kunde = new Kunde(kundenName, kundenNummer);
@@ -81,7 +85,20 @@ public class BankController {
 		}
 	}
 
-	public List<Konto> getKundenKonten(long kundenNummer) {
-		return getKundeByKundenNummer(kundenNummer).getKontenListe();
+	public void ueberweisen(int zielKontoNummer, int quellKontoNummer,
+			double betrag) {
+
+		try {
+			this.getKontoByKontoNummer(quellKontoNummer).ueberweisen(
+					this.getKontoByKontoNummer(zielKontoNummer), betrag,
+					new java.util.Date());
+		} catch (BetragNegativException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (KontoLeerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 }

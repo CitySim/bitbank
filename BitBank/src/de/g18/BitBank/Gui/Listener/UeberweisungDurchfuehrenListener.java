@@ -1,9 +1,12 @@
 package de.g18.BitBank.Gui.Listener;
 
 import com.theotherbell.ui.DatePicker;
+
+import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.UeberweisungDurchfuehren;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,10 +20,25 @@ import java.awt.event.ActionListener;
 
 public class UeberweisungDurchfuehrenListener implements ActionListener {
 	private UeberweisungDurchfuehren ueberweisungDurchfuehrenFrame;
+	private JTextField vomKontoField;
+	private JTextField nachKontoField;
+	private JTextField betragField;
+	private BankController controller;
 
 	public UeberweisungDurchfuehrenListener(
 			UeberweisungDurchfuehren ueberweisungDurchfuehrenFrame) {
 		this.ueberweisungDurchfuehrenFrame = ueberweisungDurchfuehrenFrame;
+	}
+
+	public UeberweisungDurchfuehrenListener(JTextField vomKontoField,
+			JTextField nachKontoField, JTextField betragField,
+			BankController controller) {
+
+		this.vomKontoField = vomKontoField;
+		this.nachKontoField = nachKontoField;
+		this.betragField = betragField;
+		this.controller = controller;
+
 	}
 
 	@Override
@@ -33,6 +51,14 @@ public class UeberweisungDurchfuehrenListener implements ActionListener {
 
 		}
 		if (buttonClicked.getText().compareTo("Überweisen") == 0) {
+
+			double betrag = Double.parseDouble(this.betragField.getText());
+			int vomKontoNummer = Integer.parseInt(this.vomKontoField.getText());
+			int nachKontoNummer = Integer.parseInt(this.nachKontoField
+					.getText());
+
+			this.controller
+					.ueberweisen(nachKontoNummer, vomKontoNummer, betrag);
 
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {

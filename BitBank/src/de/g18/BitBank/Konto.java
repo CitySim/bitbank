@@ -123,7 +123,7 @@ public abstract class Konto {
 	 * @throws BetragNegativException
 	 * @throws KontoLeerException
 	 */
-	public void ueberweisen(Konto zielKonto, int betrag, Date datum)
+	public void ueberweisen(Konto zielKonto, double betrag, Date datum)
 			throws BetragNegativException, KontoLeerException {
 		Ueberweisung ueberweisung = new Ueberweisung(this, zielKonto, betrag,
 				datum);
