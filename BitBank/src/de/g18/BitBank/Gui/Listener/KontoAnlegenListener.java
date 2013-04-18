@@ -14,11 +14,11 @@ import java.awt.event.ActionListener;
  */
 
 public class KontoAnlegenListener implements ActionListener {
-	private JTextField kundenNummerField;
+	private JTextField kontoNummerField;
 	private KontoAnlegen kontoAnlegenFrame;
 
-	public KontoAnlegenListener(JTextField kundenNummerField) {
-		this.kundenNummerField = kundenNummerField;
+	public KontoAnlegenListener(JTextField kontoNummerField) {
+		this.kontoNummerField = kontoNummerField;
 	}
 
 	public KontoAnlegenListener(KontoAnlegen kontoAnlegenFrame) {
@@ -34,7 +34,7 @@ public class KontoAnlegenListener implements ActionListener {
 			try {
 				// Konto konto1 = kunde1.anlegenKonto(Kontotyp.GIROKONTO);
 
-				int kundenNummer = Integer.parseInt(this.kundenNummerField
+				int kundenNummer = Integer.parseInt(this.kontoNummerField
 						.getText());
 
 				JOptionPane

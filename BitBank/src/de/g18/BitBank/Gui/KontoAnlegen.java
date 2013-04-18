@@ -25,7 +25,7 @@ public class KontoAnlegen extends JPanel {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
 
-		JLabel kundenNummerLabel = new JLabel("Kundennummer");
+		JLabel kontoNummerLabel = new JLabel("Kontonummer");
 		JTextField kundenNummerField = new JTextField();
 		JLabel kontoTypLabel = new JLabel("Kontotyp");
 		JRadioButton giroKontoRadioButton = new JRadioButton("GiroKonto");
@@ -39,7 +39,7 @@ public class KontoAnlegen extends JPanel {
 
 		c.gridx = 0;
 		c.gridy = 0;
-		add(kundenNummerLabel, c);
+		add(kontoNummerLabel, c);
 
 		c.gridx = 1;
 		c.gridy = 0;
