@@ -1,5 +1,6 @@
 package de.g18.BitBank.Gui;
 
+import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.ZahlungVornehmenListener;
 
 import javax.swing.*;
@@ -21,7 +22,7 @@ public class ZahlungVornehmen extends JPanel {
 		return tabsPane;
 	}
 
-	public ZahlungVornehmen(JTabbedPane tabsPane) {
+	public ZahlungVornehmen(JTabbedPane tabsPane, BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -101,9 +102,12 @@ public class ZahlungVornehmen extends JPanel {
 		c.weighty = 1;
 		this.add(new JPanel(), c);
 
-		kontoStandButton.addActionListener(new ZahlungVornehmenListener(null));
-		einzahlungButton.addActionListener(new ZahlungVornehmenListener(null));
-		auszahlungButton.addActionListener(new ZahlungVornehmenListener(null));
+		kontoStandButton.addActionListener(new ZahlungVornehmenListener(
+				kontoNummerField));
+		einzahlungButton.addActionListener(new ZahlungVornehmenListener(
+				kontoNummerField));
+		auszahlungButton.addActionListener(new ZahlungVornehmenListener(
+				kontoNummerField));
 		beendenButton.addActionListener(new ZahlungVornehmenListener(this));
 	}
 }

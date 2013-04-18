@@ -1,10 +1,12 @@
 package de.g18.BitBank.Gui.Listener;
 
-import de.g18.BitBank.Gui.ZahlungVornehmen;
-
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+import de.g18.BitBank.Gui.ZahlungVornehmen;
 
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
@@ -16,15 +18,22 @@ import java.awt.event.ActionListener;
 public class ZahlungVornehmenListener implements ActionListener {
 
 	private ZahlungVornehmen zahlungVornehmenFrame;
+	private JTextField kontoNummerField;
 
 	public ZahlungVornehmenListener(ZahlungVornehmen zahlungVornehmenFrame) {
 		this.zahlungVornehmenFrame = zahlungVornehmenFrame;
+	}
+
+	public ZahlungVornehmenListener(JTextField kontoNummerField) {
+		this.kontoNummerField = kontoNummerField;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
 
 		JButton buttonClicked = (JButton) event.getSource();
+
+		int kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
 
 		if (buttonClicked.getText().compareTo("Kontostand") == 0) {
 

@@ -1,5 +1,6 @@
 package de.g18.BitBank.Gui;
 
+import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.KontostandsUebersichtAnzeigenListener;
 
 import javax.swing.*;
@@ -19,7 +20,8 @@ public class KontostandsUebersichtAnzeigen extends JPanel {
 
 	private JTabbedPane tabsPane;
 
-	public KontostandsUebersichtAnzeigen(JTabbedPane tabsPane) {
+	public KontostandsUebersichtAnzeigen(JTabbedPane tabsPane,
+			BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());

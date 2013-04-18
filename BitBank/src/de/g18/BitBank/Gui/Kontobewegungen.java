@@ -1,5 +1,6 @@
 package de.g18.BitBank.Gui;
 
+import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.KontobewegungenListener;
 
 import javax.swing.*;
@@ -14,7 +15,7 @@ public class Kontobewegungen extends JPanel {
 
 	private JTabbedPane tabsPane;
 
-	public Kontobewegungen(JTabbedPane tabsPane) {
+	public Kontobewegungen(JTabbedPane tabsPane, BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
