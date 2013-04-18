@@ -45,4 +45,17 @@ public class BankController {
 		this.kontenListe.add(konto);
 
 	}
+
+	public Kunde getKundeByKundenNummer(long kundenNummer) {
+		for (Kunde kunde : kundenListe) {
+			if (kunde.getKundenNummmer() == kundenNummer) {
+				return kunde;
+			}
+		}
+		return null;
+	}
+
+	public List<Konto> getKundenKonten(long kundenNummer) {
+		return getKundeByKundenNummer(kundenNummer).getKontenListe();
+	}
 }

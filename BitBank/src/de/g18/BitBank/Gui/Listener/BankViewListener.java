@@ -64,24 +64,18 @@ public class BankViewListener implements MouseListener {
 		JMenuItem menuItem = (JMenuItem) event.getSource();
 
 		if (menuItem.getText().equals("Kunde anlegen")) {
-			tabsPane.add("Kunde anlegen", new KundenAnlegen(tabsPane,
-					controller));
+			tabsPane.add("Kunde anlegen", new KundenAnlegen(tabsPane, controller));
 		} else if (menuItem.getText().equals("Konto anlegen")) {
-			tabsPane.add("Konto anlegen",
-					new KontoAnlegen(tabsPane, controller));
+			tabsPane.add("Konto anlegen", new KontoAnlegen(tabsPane, controller));
 		} else if (menuItem.getText().equals("Ein-/Auszahlungen durchführen")) {
-			tabsPane.add("Ein-/Auszahlung", new ZahlungVornehmen(tabsPane,
-					controller));
+			tabsPane.add("Ein-/Auszahlung", new ZahlungVornehmen(tabsPane, controller));
 		} else if (menuItem.getText().equals("Überweisungen durchführen")) {
-			tabsPane.add("Überweisungen", new UeberweisungDurchfuehren(
-					tabsPane, controller));
-		} else if (menuItem.getText().equals("Kontostandsübersicht anzeigen")) {
-			tabsPane.add("Kontostandsübersicht",
-					new KontostandsUebersichtAnzeigen(tabsPane, controller));
-		} else if (menuItem.getText().equals("Kontobewegungen anzeigen")) {
-			tabsPane.add("Kontobewegungen", new Kontobewegungen(tabsPane,
-					controller));
-		} else if (menuItem.getText().equals("Kundenliste anzeigen")) {
+			tabsPane.add("Überweisung", new UeberweisungDurchfuehren(tabsPane, controller));
+		} else if (menuItem.getText().equals("Kontenliste")) {
+			tabsPane.add("Kontenliste", new KontoListe(tabsPane, controller));
+		} else if (menuItem.getText().equals("Kontobewegungen")) {
+			tabsPane.add("Kontobewegungen", new Kontobewegungen(tabsPane));
+		} else if (menuItem.getText().equals("Kundenliste")) {
 			tabsPane.add("Kundenliste", new KundenListe(tabsPane, controller));
 		} else if (menuItem.getText().equals("Über")) {
 			new UeberFenster();
