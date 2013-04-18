@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * Gui Klasse zum anlegen eines Kundens.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -26,7 +26,7 @@ public class KontoAnlegen extends JPanel {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
 
-		JLabel kundenNummerLabel = new JLabel("Kontonummer");
+		JLabel kundenNummerLabel = new JLabel("Kundennummer");
 		JTextField kundenNummerField = new JTextField();
 		JLabel kontoTypLabel = new JLabel("Kontotyp");
 		JRadioButton giroKontoRadioButton = new JRadioButton("GiroKonto");

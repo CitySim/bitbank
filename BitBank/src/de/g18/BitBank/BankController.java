@@ -55,6 +55,7 @@ public class BankController {
 
 		Konto konto = this.getKundeByKundenNummer(kundenNummer).anlegenKonto(
 				kontoTyp);
+
 		this.kontenListe.add(konto);
 	}
 
@@ -78,5 +79,9 @@ public class BankController {
 		} catch (KontoLeerException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public List<Konto> getKundenKonten(long kundenNummer) {
+		return getKundeByKundenNummer(kundenNummer).getKontenListe();
 	}
 }
