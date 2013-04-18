@@ -1,9 +1,9 @@
 package de.g18.BitBank;
 
+import de.g18.BitBank.Exception.KundenNummerException;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import de.g18.BitBank.Exception.KundenNummerException;
 
 public class BankController {
 
@@ -18,17 +18,6 @@ public class BankController {
 		return kundenListe.get(i);
 	}
 
-	public Kunde getKundeByKundenNummer(long kundenNummer) {
-
-		for (Kunde kunde : this.kundenListe) {
-			if (kunde.getKundenNummmer() == kundenNummer) {
-				return kunde;
-			}
-		}
-		return null;
-
-	}
-
 	public void createKunde(String kundenName, long kundenNummer) {
 		try {
 			Kunde kunde = new Kunde(kundenName, kundenNummer);
@@ -39,11 +28,8 @@ public class BankController {
 	}
 
 	public void createKonto(long kundenNummer, Kontotyp kontoTyp) {
-
-		Konto konto = getKundeByKundenNummer(kundenNummer).anlegenKonto(
-				kontoTyp);
+		Konto konto = getKundeByKundenNummer(kundenNummer).anlegenKonto(kontoTyp);
 		this.kontenListe.add(konto);
-
 	}
 
 	public Kunde getKundeByKundenNummer(long kundenNummer) {
