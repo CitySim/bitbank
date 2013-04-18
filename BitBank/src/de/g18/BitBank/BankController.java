@@ -31,6 +31,17 @@ public class BankController {
 		return getKundeByKundenNummer(kundenNummer).getKontenListe();
 	}
 
+	public Konto getKontoByKontoNummer(long kontoNummer) {
+		for (Kunde kunde : kundenListe) {
+			for (Konto konto : kunde.getKontenListe()) {
+				if (konto.getKontoNummer() == kontoNummer) {
+					return konto;
+				}
+			}
+		}
+		return null;
+	}
+
 	public void createKunde(String kundenName, long kundenNummer) {
 		try {
 			Kunde kunde = new Kunde(kundenName, kundenNummer);
@@ -52,12 +63,12 @@ public class BankController {
 	}
 
 	public double kontoStandAnzeigen(int kontoNummer) {
-		return this.getKontoByKontonummer(kontoNummer).getKontoStand();
+		return this.getKontoByKontoNummer(kontoNummer).getKontoStand();
 	}
 
 	public void einzahlen(int kontoNummer, double betrag) {
 		try {
-			this.getKontoByKontonummer(kontoNummer).einzahlen(betrag);
+			this.getKontoByKontoNummer(kontoNummer).einzahlen(betrag);
 		} catch (BetragNegativException e) {
 			e.printStackTrace();
 		}
@@ -65,7 +76,7 @@ public class BankController {
 
 	public void auszahlen(int kontoNummer, double betrag) {
 		try {
-			this.getKontoByKontonummer(kontoNummer).auszahlen(betrag);
+			this.getKontoByKontoNummer(kontoNummer).auszahlen(betrag);
 		} catch (BetragNegativException e) {
 			e.printStackTrace();
 		} catch (KontoLeerException e) {
@@ -90,14 +101,4 @@ public class BankController {
 
 	}
 
-	public Konto getKontoByKontonummer(long kontoNummer) {
-		for (Kunde kunde : kundenListe) {
-			for (Konto konto : kunde.getKontenListe()) {
-				if (konto.getKontoNummer() == kontoNummer) {
-					return konto;
-				}
-			}
-		}
-		return null;
-	}
 }
