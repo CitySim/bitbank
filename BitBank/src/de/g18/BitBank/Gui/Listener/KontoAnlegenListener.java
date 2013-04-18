@@ -1,17 +1,16 @@
 package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
-import de.g18.BitBank.Kontotyp;
 import de.g18.BitBank.Gui.KontoAnlegen;
+import de.g18.BitBank.Kontotyp;
 
 import javax.swing.*;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -24,8 +23,8 @@ public class KontoAnlegenListener implements ActionListener {
 	private JRadioButton sparKontoRadioButton;
 
 	public KontoAnlegenListener(JTextField kundenNummerField,
-			BankController controller, JRadioButton giroKontoRadioButton,
-			JRadioButton sparKontoRadioButton) {
+								BankController controller, JRadioButton giroKontoRadioButton,
+								JRadioButton sparKontoRadioButton) {
 		this.kundenNummerField = kundenNummerField;
 		this.controller = controller;
 		this.giroKontoRadioButton = giroKontoRadioButton;
@@ -55,7 +54,7 @@ public class KontoAnlegenListener implements ActionListener {
 
 				JOptionPane
 						.showMessageDialog(new JFrame(),
-								"Konto unter Nummer \"" + kundenNummer
+								"Konto unter für Kunde Nr. \"" + kundenNummer
 										+ "\" angelegt.");
 
 			} catch (java.lang.NumberFormatException exception) {
