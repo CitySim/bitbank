@@ -3,6 +3,8 @@ package de.g18.BitBank;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KundenNummerException;
 
 public class BankController {
@@ -18,11 +20,22 @@ public class BankController {
 		return kundenListe.get(i);
 	}
 
-	public Kunde getKundeByKundenNummer(long kundenNummer) {
+	private Kunde getKundeByKundenNummer(long kundenNummer) {
 
 		for (Kunde kunde : this.kundenListe) {
 			if (kunde.getKundenNummmer() == kundenNummer) {
 				return kunde;
+			}
+		}
+		return null;
+
+	}
+
+	private Konto getKontoByKontoNummer(long kontoNummer) {
+
+		for (Konto konto : this.kontenListe) {
+			if (konto.getKontoNummer() == kontoNummer) {
+				return konto;
 			}
 		}
 		return null;
@@ -40,9 +53,30 @@ public class BankController {
 
 	public void createKonto(long kundenNummer, Kontotyp kontoTyp) {
 
-		Konto konto = getKundeByKundenNummer(kundenNummer).anlegenKonto(
+		Konto konto = this.getKundeByKundenNummer(kundenNummer).anlegenKonto(
 				kontoTyp);
 		this.kontenListe.add(konto);
+	}
 
+	public double kontoStandAnzeigen(int kontoNummer) {
+		return this.getKontoByKontoNummer(kontoNummer).getKontoStand();
+	}
+
+	public void einzahlen(int kontoNummer, double betrag) {
+		try {
+			this.getKontoByKontoNummer(kontoNummer).einzahlen(betrag);
+		} catch (BetragNegativException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void auszahlen(int kontoNummer, double betrag) {
+		try {
+			this.getKontoByKontoNummer(kontoNummer).auszahlen(betrag);
+		} catch (BetragNegativException e) {
+			e.printStackTrace();
+		} catch (KontoLeerException e) {
+			e.printStackTrace();
+		}
 	}
 }
