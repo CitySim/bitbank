@@ -1,7 +1,7 @@
 package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
-import de.g18.BitBank.Gui.KontoListe;
+import de.g18.BitBank.Gui.KontenListe;
 import de.g18.BitBank.Gui.TableModels.KontenTableModel;
 
 import javax.swing.*;
@@ -9,18 +9,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Listener zu den Buttons der KontoListe Klasse.
+ * Listener zu den Buttons der KontenListe Klasse.
  *
  * @author it1-markde
  * @since JRE6
  */
 
-public class KontonListeListener implements ActionListener {
-	private KontoListe kontoListeFrame;
+public class KontenListeListener implements ActionListener {
+	private KontenListe kontenListeFrame;
 	BankController controller;
 
-	public KontonListeListener(KontoListe kontoListeFrame, BankController controller) {
-		this.kontoListeFrame = kontoListeFrame;
+	public KontenListeListener(KontenListe kontenListeFrame, BankController controller) {
+		this.kontenListeFrame = kontenListeFrame;
 		this.controller = controller;
 	}
 
@@ -29,12 +29,12 @@ public class KontonListeListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Kontoübersicht") == 0) {
-			long kundenNummer = kontoListeFrame.getKundenNummer();
-			kontoListeFrame.getTable().setModel(new KontenTableModel(controller, kundenNummer));
+			long kundenNummer = kontenListeFrame.getKundenNummer();
+			kontenListeFrame.getTable().setModel(new KontenTableModel(controller, kundenNummer));
 		}
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			this.kontoListeFrame.getTabsPane().remove(
-					this.kontoListeFrame);
+			this.kontenListeFrame.getTabsPane().remove(
+					this.kontenListeFrame);
 		}
 	}
 }

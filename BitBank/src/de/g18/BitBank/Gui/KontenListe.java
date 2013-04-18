@@ -1,7 +1,7 @@
 package de.g18.BitBank.Gui;
 
 import de.g18.BitBank.BankController;
-import de.g18.BitBank.Gui.Listener.KontonListeListener;
+import de.g18.BitBank.Gui.Listener.KontenListeListener;
 
 import javax.swing.*;
 import javax.swing.plaf.BorderUIResource;
@@ -15,13 +15,13 @@ import java.awt.*;
  * @since JRE6
  */
 
-public class KontoListe extends JPanel {
+public class KontenListe extends JPanel {
 	private static final long serialVersionUID = 5388389196936658751L;
 	private JTabbedPane tabsPane;
 	private JTable table;
 	JTextField kundenNummerField;
 
-	public KontoListe(JTabbedPane tabsPane, BankController controller) {
+	public KontenListe(JTabbedPane tabsPane, BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -65,8 +65,8 @@ public class KontoListe extends JPanel {
 		c.fill = GridBagConstraints.BOTH;
 		add(tablePane, c);
 
-		kontoUebersichtButton.addActionListener(new KontonListeListener(null, controller));
-		beendenButton.addActionListener(new KontonListeListener(this, controller));
+		kontoUebersichtButton.addActionListener(new KontenListeListener(null, controller));
+		beendenButton.addActionListener(new KontenListeListener(this, controller));
 	}
 
 	public JTabbedPane getTabsPane() {
