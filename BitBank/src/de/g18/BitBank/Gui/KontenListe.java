@@ -65,8 +65,9 @@ public class KontenListe extends JPanel {
 		c.fill = GridBagConstraints.BOTH;
 		add(tablePane, c);
 
-		kontoUebersichtButton.addActionListener(new KontenListeListener(null, controller));
-		beendenButton.addActionListener(new KontenListeListener(this, controller));
+		KontenListeListener listener = new KontenListeListener(this, controller);
+		kontoUebersichtButton.addActionListener(listener);
+		beendenButton.addActionListener(listener);
 	}
 
 	public JTabbedPane getTabsPane() {
