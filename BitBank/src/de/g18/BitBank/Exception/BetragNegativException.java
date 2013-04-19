@@ -5,6 +5,8 @@ package de.g18.BitBank.Exception;
  * change this template use File | Settings | File Templates.
  */
 public class BetragNegativException extends Exception {
+	private static final long serialVersionUID = -2180366140800175258L;
+
 	public BetragNegativException(String message) {
 		super(message);
 	}

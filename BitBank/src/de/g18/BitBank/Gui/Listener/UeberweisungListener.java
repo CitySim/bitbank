@@ -4,7 +4,6 @@ import com.toedter.calendar.JDateChooser;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
-import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.Ueberweisung;
 
 import javax.swing.*;
@@ -13,9 +12,11 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 /**
- * F
  * Listener zu den Buttons der Ueberweisung Klasse.
  *
+/**
+ * F Listener zu den Buttons der Ueberweisung Klasse.
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -28,14 +29,13 @@ public class UeberweisungListener implements ActionListener {
 	private BankController controller;
 	private JDateChooser chooser;
 
-	public UeberweisungListener(
-			Ueberweisung ueberweisungFrame) {
+	public UeberweisungListener(Ueberweisung ueberweisungFrame) {
 		this.ueberweisungFrame = ueberweisungFrame;
 	}
 
 	public UeberweisungListener(JTextField vomKontoField,
-								JTextField nachKontoField, JTextField betragField,
-								BankController controller, JDateChooser chooser) {
+			JTextField nachKontoField, JTextField betragField,
+			BankController controller, JDateChooser chooser) {
 
 		this.vomKontoField = vomKontoField;
 		this.nachKontoField = nachKontoField;
@@ -58,30 +58,42 @@ public class UeberweisungListener implements ActionListener {
 			try {
 				betrag = Double.parseDouble(this.betragField.getText());
 				vomKontoNummer = Integer.parseInt(this.vomKontoField.getText());
-				nachKontoNummer = Integer.parseInt(this.nachKontoField.getText());
+				nachKontoNummer = Integer.parseInt(this.nachKontoField
+						.getText());
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Bitee prüfen zahl eingabe dU§$", "zHAl", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null,
+						"Bitee prüfen zahl eingabe dU§$", "zHAl",
+						JOptionPane.OK_OPTION);
 				return;
 			}
 
 			Date datum = chooser.getDate();
 
 			try {
-				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer, betrag, datum);
+				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer,
+						betrag, datum);
 			} catch (KontoLeerException e) {
-				JOptionPane.showMessageDialog(null, "Konto leer:", "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, "Konto leer:", "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			} catch (BetragNegativException e) {
+				JOptionPane.showMessageDialog(null,
+						"betrag nicht negativvvröjrea", "Fehler",
+						JOptionPane.OK_OPTION);
 				JOptionPane.showMessageDialog(null, "betrag nicht negativvvröjrea", "Fehler", JOptionPane.OK_OPTION);
 				return;
 			} catch (KontoNichtGefundenException e) {
 				JOptionPane.showMessageDialog(null, "betrag nicht negativvvröjrea", "Fehler", JOptionPane.OK_OPTION);
 				return;
+			} catch (KontoNichtGefundenException e) {
+				JOptionPane.showMessageDialog(null,
+						"betrag nicht negativvvröjrea", "Fehler",
+						JOptionPane.OK_OPTION);
+				return;
 			}
 
 		} else if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			this.ueberweisungFrame.getTabsPane().remove(
-					this.ueberweisungFrame);
+			this.ueberweisungFrame.getTabsPane().remove(this.ueberweisungFrame);
 		}
 	}
 

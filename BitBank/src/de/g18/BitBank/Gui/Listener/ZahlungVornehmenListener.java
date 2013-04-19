@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -31,8 +31,8 @@ public class ZahlungVornehmenListener implements ActionListener {
 	}
 
 	public ZahlungVornehmenListener(JTextField kontoNummerField,
-									JTextField alterKontoStandField, JTextField neuerKontoStandField,
-									JTextField betragField, BankController controller) {
+			JTextField alterKontoStandField, JTextField neuerKontoStandField,
+			JTextField betragField, BankController controller) {
 		this.kontoNummerField = kontoNummerField;
 		this.alterKontoStandField = alterKontoStandField;
 		this.neuerKontoStandField = neuerKontoStandField;
@@ -49,14 +49,15 @@ public class ZahlungVornehmenListener implements ActionListener {
 			kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
 		} catch (java.lang.NumberFormatException exception) {
 
-
 		}
 
 		if (buttonClicked.getText().compareTo("Kontostand") == 0) {
 			try {
-				alterKontoStandField.setText(Double.toString(this.controller.kontoStandAnzeigen(kontoNummer)));
+				alterKontoStandField.setText(Double.toString(this.controller
+						.kontoStandAnzeigen(kontoNummer)));
 			} catch (KontoNichtGefundenException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			}
 		} else if (buttonClicked.getText().compareTo("Einzahlung") == 0) {
@@ -65,17 +66,21 @@ public class ZahlungVornehmenListener implements ActionListener {
 			try {
 				betrag = Double.parseDouble(this.betragField.getText());
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Betrag konnte nicht gelesen werden", "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null,
+						"Betrag konnte nicht gelesen werden", "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			}
 
 			try {
 				this.controller.einzahlen(kontoNummer, betrag);
 			} catch (KontoNichtGefundenException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			} catch (BetragNegativException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Betrag Negativ", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(),
+						"Betrag Negativ", JOptionPane.OK_OPTION);
 				return;
 			}
 
@@ -86,21 +91,26 @@ public class ZahlungVornehmenListener implements ActionListener {
 
 			try {
 				betrag = Double.parseDouble(this.betragField.getText());
-			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Betrag konnte nicht gelesen werden", "Fehler", JOptionPane.OK_OPTION);
+			} catch (java.lang.NumberFormatException e) {
+				JOptionPane.showMessageDialog(null,
+						"Betrag konnte nicht gelesen werden", "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			}
 
 			try {
 				this.controller.auszahlen(kontoNummer, betrag);
 			} catch (KontoNichtGefundenException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			} catch (KontoLeerException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			} catch (BetragNegativException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			}
 
@@ -113,13 +123,16 @@ public class ZahlungVornehmenListener implements ActionListener {
 
 	public void aktualisieren(int kontoNummer) {
 		if (!this.neuerKontoStandField.getText().equals("")) {
-			this.alterKontoStandField.setText(this.neuerKontoStandField.getText());
+			this.alterKontoStandField.setText(this.neuerKontoStandField
+					.getText());
 		}
 
 		try {
-			this.neuerKontoStandField.setText(Double.toString(this.controller.kontoStandAnzeigen(kontoNummer)));
+			this.neuerKontoStandField.setText(Double.toString(this.controller
+					.kontoStandAnzeigen(kontoNummer)));
 		} catch (KontoNichtGefundenException e) {
-			JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+			JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
+					JOptionPane.OK_OPTION);
 			return;
 		}
 	}
