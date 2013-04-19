@@ -10,30 +10,24 @@ import java.util.Date;
  * @since JRE6
  */
 
-public class Ueberweisung {
-
-	private double betrag;
+public class Ueberweisung extends Kontobewegung {
 	private Konto quellKonto;
 	private Konto zielKonto;
-	private Date datum;
 
 	public Ueberweisung(final Konto quellKonto, final Konto zielKonto,
-			final double betrag, final Date datum) {
+						final double betrag, final Date datum) {
+
+		super(datum, betrag);
 
 		this.quellKonto = quellKonto;
 		this.zielKonto = zielKonto;
-		this.betrag = betrag;
-		this.datum = datum;
-
 	}
 
 	/**
 	 * Ueberträgt den betrag der ueberweisung von einem Konto zum anderen.
-	 * 
-	 * @throws BetragNegativException
-	 *             Fehler bei negativen Beträgen
-	 * @throws KontoLeerException
-	 *             Fehler bei nicht bekannten Konten
+	 *
+	 * @throws BetragNegativException Fehler bei negativen Beträgen
+	 * @throws KontoLeerException     Fehler bei nicht bekannten Konten
 	 */
 	public void durchfuehrenUeberweisung() throws BetragNegativException,
 			KontoLeerException {
@@ -42,10 +36,8 @@ public class Ueberweisung {
 
 		quellKonto.getUeberweisungsListe().add(this);
 		zielKonto.getUeberweisungsListe().add(this);
-	}
-
-	public double getBetrag() {
-		return betrag;
+		quellKonto.getKontoBewegungsListe().add(this);
+		zielKonto.getKontoBewegungsListe().add(this);
 	}
 
 	public Konto getQuellKlasse() {
@@ -54,9 +46,5 @@ public class Ueberweisung {
 
 	public Konto getZielKlasse() {
 		return zielKonto;
-	}
-
-	public Date getDatum() {
-		return datum;
 	}
 }

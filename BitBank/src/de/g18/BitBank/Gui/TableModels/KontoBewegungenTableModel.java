@@ -1,9 +1,10 @@
 package de.g18.BitBank.Gui.TableModels;
 
-import javax.swing.table.AbstractTableModel;
-
 import de.g18.BitBank.Konto;
 import de.g18.BitBank.Kontobewegung;
+import de.g18.BitBank.Ueberweisung;
+
+import javax.swing.table.AbstractTableModel;
 
 /**
  * Created with IntelliJ IDEA. User: Sven Date: 17.04.13 Time: 22:38 To change
@@ -12,7 +13,7 @@ import de.g18.BitBank.Kontobewegung;
 public class KontoBewegungenTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -5781280913032155581L;
 	private Konto konto;
-	private String[] cols = { "Datum", "von", "nach", "Betrag" };
+	private String[] cols = {"Datum", "von", "nach", "Betrag"};
 
 	public KontoBewegungenTableModel(final Konto konto) {
 		this.konto = konto;
@@ -38,16 +39,36 @@ public class KontoBewegungenTableModel extends AbstractTableModel {
 		Kontobewegung kb = konto.getKontoBewegungsListe().get(rowIndex);
 
 		switch (columnIndex) {
-		case 0:
-			return kb.getDatum().toString();
-		case 1:
-			return "";
-		case 2:
-			return "";
-		case 3:
-			return Double.toString(kb.getBetrag());
-		default:
-			return "Fehler";
+			case 0:
+				return kb.getDatum().toString();
+			case 1:
+				if (kb.getClass().equals(Ueberweisung.class)) {
+					return ((Ueberweisung) kb).getQuellKlasse().getKontoNummer();
+				} else if (kb.getClass().equals(Kontobewegung.class)) {
+					if (kb.getBetrag() > 0) {
+						return "Einzahlung";
+					} else {
+						return Long.toString(konto.getKontoNummer());
+					}
+				} else {
+					return "Fehler";
+				}
+			case 2:
+				if (kb.getClass().equals(Ueberweisung.class)) {
+					return ((Ueberweisung) kb).getZielKlasse().getKontoNummer();
+				} else if (kb.getClass().equals(Kontobewegung.class)) {
+					if (kb.getBetrag() > 0) {
+						return Long.toString(konto.getKontoNummer());
+					} else {
+						return "Auszahlung";
+					}
+				} else {
+					return "Fehler";
+				}
+			case 3:
+				return Double.toString(kb.getBetrag());
+			default:
+				return "Fehler";
 		}
 	}
 }
