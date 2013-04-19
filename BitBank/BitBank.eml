@@ -2,13 +2,7 @@
 <component jdk="1.6" jdk_type="JavaSDK">
 	<exclude-output/>
 	<contentEntry url="file://$MODULE_DIR$"/>
-	<lib name="AbsoluteLayout.jar" scope="COMPILE">
-		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/AbsoluteLayout.jar!/"/>
-	</lib>
-	<lib name="jdp.jar" scope="COMPILE">
-		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/jdp.jar!/"/>
-	</lib>
-	<lib name="samples.jar" scope="COMPILE">
-		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/samples.jar!/"/>
+	<lib name="jcalendar-1.4.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/jcalendar-1.4.jar!/"/>
 	</lib>
 </component>

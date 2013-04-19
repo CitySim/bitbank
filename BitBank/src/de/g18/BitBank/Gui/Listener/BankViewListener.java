@@ -60,7 +60,7 @@ public class BankViewListener implements MouseListener {
 		} else if (menuItem.getText().equals("Ein-/Auszahlungen durchführen")) {
 			tabsPane.add("Ein-/Auszahlung", new ZahlungVornehmen(tabsPane, controller));
 		} else if (menuItem.getText().equals("Überweisungen durchführen")) {
-			tabsPane.add("Überweisung", new UeberweisungDurchfuehren(tabsPane, controller));
+			tabsPane.add("Überweisung", new Ueberweisung(tabsPane, controller));
 		} else if (menuItem.getText().equals("Kontenliste")) {
 			tabsPane.add("Kontenliste", new KontenListe(tabsPane, controller));
 		} else if (menuItem.getText().equals("Kontobewegungen")) {
