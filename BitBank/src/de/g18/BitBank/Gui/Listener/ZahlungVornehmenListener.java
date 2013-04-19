@@ -43,8 +43,12 @@ public class ZahlungVornehmenListener implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 
 		JButton buttonClicked = (JButton) event.getSource();
-
-		int kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
+		int kontoNummer = 0;
+		try {
+			kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
+		} catch (java.lang.NumberFormatException exception) {
+			
+		}
 
 		if (buttonClicked.getText().compareTo("Kontostand") == 0) {
 			this.alterKontoStandField.setText(""
