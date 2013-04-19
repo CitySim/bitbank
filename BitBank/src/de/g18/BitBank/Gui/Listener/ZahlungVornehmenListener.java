@@ -7,6 +7,7 @@ import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.ZahlungVornehmen;
 
 import javax.swing.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -46,29 +47,35 @@ public class ZahlungVornehmenListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 		int kontoNummer = 0;
 		try {
-			kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
+			if (this.kontoNummerField != null) {
+				kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
+			}
 		} catch (java.lang.NumberFormatException exception) {
-
+			JOptionPane.showMessageDialog(new JFrame(),
+					"Die Kontonummer ist keine gültige Zahl.", "Inane error",
+					JOptionPane.ERROR_MESSAGE);
 		}
 
-		if (buttonClicked.getText().compareTo("Kontostand") == 0) {
+		if (buttonClicked.getText().compareTo("Kontostand") == 0
+				&& kontoNummer != 0) {
 			try {
 				alterKontoStandField.setText(Double.toString(this.controller
 						.kontoStandAnzeigen(kontoNummer)));
 			} catch (KontoNichtGefundenException e) {
 				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-						JOptionPane.OK_OPTION);
+						JOptionPane.ERROR_MESSAGE);
 				return;
 			}
-		} else if (buttonClicked.getText().compareTo("Einzahlung") == 0) {
+		} else if (buttonClicked.getText().compareTo("Einzahlung") == 0
+				&& kontoNummer != 0) {
 			double betrag;
 
 			try {
 				betrag = Double.parseDouble(this.betragField.getText());
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null,
-						"Betrag konnte nicht gelesen werden", "Fehler",
-						JOptionPane.OK_OPTION);
+						"Der eingegebene Betrag ist keine gültige Zahl.",
+						"Fehler", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 
@@ -76,25 +83,26 @@ public class ZahlungVornehmenListener implements ActionListener {
 				this.controller.einzahlen(kontoNummer, betrag);
 			} catch (KontoNichtGefundenException e) {
 				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-						JOptionPane.OK_OPTION);
+						JOptionPane.ERROR_MESSAGE);
 				return;
 			} catch (BetragNegativException e) {
 				JOptionPane.showMessageDialog(null, e.getMessage(),
-						"Betrag Negativ", JOptionPane.OK_OPTION);
+						"Betrag Negativ", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 
 			this.aktualisieren(kontoNummer);
 
-		} else if (buttonClicked.getText().compareTo("Auszahlung") == 0) {
+		} else if (buttonClicked.getText().compareTo("Auszahlung") == 0
+				&& kontoNummer != 0) {
 			double betrag;
 
 			try {
 				betrag = Double.parseDouble(this.betragField.getText());
 			} catch (java.lang.NumberFormatException e) {
 				JOptionPane.showMessageDialog(null,
-						"Betrag konnte nicht gelesen werden", "Fehler",
-						JOptionPane.OK_OPTION);
+						"Der eingegebene Betrag ist keine gültige Zahl.",
+						"Fehler", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 
@@ -102,15 +110,15 @@ public class ZahlungVornehmenListener implements ActionListener {
 				this.controller.auszahlen(kontoNummer, betrag);
 			} catch (KontoNichtGefundenException e) {
 				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-						JOptionPane.OK_OPTION);
+						JOptionPane.ERROR_MESSAGE);
 				return;
 			} catch (KontoLeerException e) {
 				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-						JOptionPane.OK_OPTION);
+						JOptionPane.ERROR_MESSAGE);
 				return;
 			} catch (BetragNegativException e) {
 				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-						JOptionPane.OK_OPTION);
+						JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 
@@ -132,7 +140,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 					.kontoStandAnzeigen(kontoNummer)));
 		} catch (KontoNichtGefundenException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-					JOptionPane.OK_OPTION);
+					JOptionPane.ERROR_MESSAGE);
 			return;
 		}
 	}
