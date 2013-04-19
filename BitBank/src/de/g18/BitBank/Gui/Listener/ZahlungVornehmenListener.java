@@ -1,20 +1,17 @@
 package de.g18.BitBank.Gui.Listener;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JTextField;
-
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.ZahlungVornehmen;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -33,8 +30,8 @@ public class ZahlungVornehmenListener implements ActionListener {
 	}
 
 	public ZahlungVornehmenListener(JTextField kontoNummerField,
-			JTextField alterKontoStandField, JTextField neuerKontoStandField,
-			JTextField betragField, BankController controller) {
+									JTextField alterKontoStandField, JTextField neuerKontoStandField,
+									JTextField betragField, BankController controller) {
 		this.kontoNummerField = kontoNummerField;
 		this.alterKontoStandField = alterKontoStandField;
 		this.neuerKontoStandField = neuerKontoStandField;
@@ -51,46 +48,63 @@ public class ZahlungVornehmenListener implements ActionListener {
 			kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
 		} catch (java.lang.NumberFormatException exception) {
 
+
 		}
 
 		if (buttonClicked.getText().compareTo("Kontostand") == 0) {
 			try {
-				this.alterKontoStandField.setText(""
-						+ this.controller.kontoStandAnzeigen(kontoNummer));
+				alterKontoStandField.setText(Double.toString(this.controller.kontoStandAnzeigen(kontoNummer)));
 			} catch (KontoNichtGefundenException e) {
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				return;
 			}
-		}
-		if (buttonClicked.getText().compareTo("Einzahlung") == 0) {
-			double betrag = Double.parseDouble(this.betragField.getText());
+		} else if (buttonClicked.getText().compareTo("Einzahlung") == 0) {
+			double betrag;
+
+			try {
+				betrag = Double.parseDouble(this.betragField.getText());
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Betrag konnte nicht gelesen werden", "Fehler", JOptionPane.OK_OPTION);
+				return;
+			}
+
 			try {
 				this.controller.einzahlen(kontoNummer, betrag);
 			} catch (KontoNichtGefundenException e) {
-				new KontoNichtGefundenException(kontoNummer);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				return;
 			} catch (BetragNegativException e) {
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Betrag Negativ", JOptionPane.OK_OPTION);
+				return;
 			}
 
 			this.aktualisieren(kontoNummer);
 
-		}
-		if (buttonClicked.getText().compareTo("Auszahlung") == 0) {
-			double betrag = Double.parseDouble(this.betragField.getText());
+		} else if (buttonClicked.getText().compareTo("Auszahlung") == 0) {
+			double betrag;
+
+			try {
+				betrag = Double.parseDouble(this.betragField.getText());
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Betrag konnte nicht gelesen werden", "Fehler", JOptionPane.OK_OPTION);
+				return;
+			}
+
 			try {
 				this.controller.auszahlen(kontoNummer, betrag);
 			} catch (KontoNichtGefundenException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				return;
 			} catch (KontoLeerException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				return;
 			} catch (BetragNegativException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				return;
 			}
 
 			this.aktualisieren(kontoNummer);
-		}
-		if (buttonClicked.getText().compareTo("Beenden") == 0) {
+		} else if (buttonClicked.getText().compareTo("Beenden") == 0) {
 			this.zahlungVornehmenFrame.getTabsPane().remove(
 					this.zahlungVornehmenFrame);
 		}
@@ -98,16 +112,14 @@ public class ZahlungVornehmenListener implements ActionListener {
 
 	public void aktualisieren(int kontoNummer) {
 		if (!this.neuerKontoStandField.getText().equals("")) {
-			this.alterKontoStandField.setText(""
-					+ this.neuerKontoStandField.getText());
+			this.alterKontoStandField.setText(this.neuerKontoStandField.getText());
 		}
 
 		try {
-			this.neuerKontoStandField.setText(""
-					+ this.controller.kontoStandAnzeigen(kontoNummer));
+			this.neuerKontoStandField.setText(Double.toString(this.controller.kontoStandAnzeigen(kontoNummer)));
 		} catch (KontoNichtGefundenException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+			return;
 		}
 	}
 }

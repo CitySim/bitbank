@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontenListe Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -20,7 +20,7 @@ public class KontenListeListener implements ActionListener {
 	BankController controller;
 
 	public KontenListeListener(KontenListe kontenListeFrame,
-			BankController controller) {
+							   BankController controller) {
 		this.kontenListeFrame = kontenListeFrame;
 		this.controller = controller;
 	}
