@@ -52,9 +52,9 @@ public class UeberweisungListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Überweisen") == 0) {
-			double betrag = 0;
-			int vomKontoNummer = 0;
-			int nachKontoNummer = 0;
+			double betrag;
+			int vomKontoNummer;
+			int nachKontoNummer;
 
 			try {
 				betrag = Double.parseDouble(this.betragField.getText());
@@ -62,7 +62,7 @@ public class UeberweisungListener implements ActionListener {
 				nachKontoNummer = Integer.parseInt(this.nachKontoField
 						.getText());
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Bitee prüfen zahl eingabe dU§$", "zHAl", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, "Eingabe konnte nicht gelesen werden. (Alles korrekte Zahlen?)", "zHAl", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 
@@ -71,16 +71,15 @@ public class UeberweisungListener implements ActionListener {
 			try {
 				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer, betrag, datum);
 			} catch (KontoLeerException e) {
-				JOptionPane.showMessageDialog(null, "Konto leer:", "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
 				return;
 			} catch (BetragNegativException e) {
-				JOptionPane.showMessageDialog(null, "betrag nicht negativvvröjrea", "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
 				return;
 			} catch (KontoNichtGefundenException e) {
-				JOptionPane.showMessageDialog(null, "betrag nicht negativvvröjrea", "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
-
 		} else if (buttonClicked.getText().compareTo("Beenden") == 0) {
 			this.ueberweisungFrame.getTabsPane().remove(this.ueberweisungFrame);
 		}

@@ -17,13 +17,13 @@ public class BankController {
 		return kundenListe.get(i);
 	}
 
-	private Kunde getKundeByKundenNummer(long kundenNummer) {
+	private Kunde getKundeByKundenNummer(long kundenNummer) throws KundeNichtGefundenException {
 		for (Kunde kunde : this.kundenListe) {
 			if (kunde.getKundenNummmer() == kundenNummer) {
 				return kunde;
 			}
 		}
-		return null;
+		throw new KundeNichtGefundenException(kundenNummer);
 	}
 
 	public Konto getKontoByKontoNummer(long kontoNummer) throws KontoNichtGefundenException {
@@ -46,15 +46,9 @@ public class BankController {
 		}
 	}
 
-	public Konto createKonto(long kundenNummer, Kontotyp kontoTyp) {
+	public Konto createKonto(long kundenNummer, Kontotyp kontoTyp) throws KundeNichtGefundenException {
 		Kunde kunde = getKundeByKundenNummer(kundenNummer);
-
-		if (kunde != null) {
-			return kunde.anlegenKonto(kontoTyp);
-		} else {
-			// TODO throw exception, oder so
-			return null;
-		}
+		return kunde.anlegenKonto(kontoTyp);
 	}
 
 	public double kontoStandAnzeigen(int kontoNummer) throws KontoNichtGefundenException {

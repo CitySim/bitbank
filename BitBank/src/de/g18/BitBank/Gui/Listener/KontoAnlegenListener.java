@@ -1,18 +1,14 @@
 package de.g18.BitBank.Gui.Listener;
 
+import de.g18.BitBank.BankController;
+import de.g18.BitBank.Exception.KeinKontotypException;
+import de.g18.BitBank.Exception.KundeNichtGefundenException;
+import de.g18.BitBank.Gui.KontoAnlegen;
+import de.g18.BitBank.Kontotyp;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-
-import de.g18.BitBank.BankController;
-import de.g18.BitBank.Kontotyp;
-import de.g18.BitBank.Exception.KeinKontotypException;
-import de.g18.BitBank.Gui.KontoAnlegen;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
@@ -58,26 +54,19 @@ public class KontoAnlegenListener implements ActionListener {
 
 				} else {
 					if (this.giroKontoRadioButton.isSelected()) {
-
-						controller
-								.createKonto(kundenNummer, Kontotyp.GIROKONTO);
+						controller.createKonto(kundenNummer, Kontotyp.GIROKONTO);
 					} else if (this.sparKontoRadioButton.isSelected()) {
-						controller
-								.createKonto(kundenNummer, Kontotyp.SPARKONTO);
+						controller.createKonto(kundenNummer, Kontotyp.SPARKONTO);
 					}
 
-					JOptionPane.showMessageDialog(new JFrame(),
-							"Konto unter für Kunde Nr. \"" + kundenNummer
-									+ "\" angelegt.");
+					JOptionPane.showMessageDialog(new JFrame(), "Konto unter für Kunde Nr. \"" + kundenNummer + "\" angelegt.");
 				}
 			} catch (java.lang.NumberFormatException exception) {
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Die Kundennummer ist keine gültige Zahl.",
-						"Inane error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(new JFrame(), "Die Kundennummer ist keine gültige Zahl.", "Fehler", JOptionPane.ERROR_MESSAGE);
 			} catch (KeinKontotypException exception) {
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Bitte wählen sie einen Kontotypen aus.",
-						"Inane error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(new JFrame(), "Bitte wählen sie einen Kontotypen aus.", "Fehler", JOptionPane.ERROR_MESSAGE);
+			} catch (KundeNichtGefundenException e) {
+				JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
 			}
 
 		}

@@ -1,20 +1,16 @@
 package de.g18.BitBank.Gui.Listener;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.FeldLeerException;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -26,7 +22,7 @@ public class KundenAnlegenListener implements ActionListener {
 	private BankController controller;
 
 	public KundenAnlegenListener(JTextField kundenNummerField,
-			JTextField kundenNamenField, BankController controller) {
+								 JTextField kundenNamenField, BankController controller) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 		this.controller = controller;
@@ -60,10 +56,10 @@ public class KundenAnlegenListener implements ActionListener {
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(new JFrame(),
 						"Die Kundennummer ist keine gültige Zahl.",
-						"Inane error", JOptionPane.ERROR_MESSAGE);
+						"Fehler", JOptionPane.ERROR_MESSAGE);
 			} catch (FeldLeerException e) {
 				JOptionPane.showMessageDialog(new JFrame(),
-						"Der Kundenname muss angegeben werden.", "Inane error",
+						"Der Kundenname muss angegeben werden.", "Fehler",
 						JOptionPane.ERROR_MESSAGE);
 			}
 
