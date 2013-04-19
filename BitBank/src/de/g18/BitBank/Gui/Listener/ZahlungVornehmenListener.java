@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -32,8 +32,8 @@ public class ZahlungVornehmenListener implements ActionListener {
 	}
 
 	public ZahlungVornehmenListener(JTextField kontoNummerField,
-			JTextField alterKontoStandField, JTextField neuerKontoStandField,
-			JTextField betragField, BankController controller) {
+									JTextField alterKontoStandField, JTextField neuerKontoStandField,
+									JTextField betragField, BankController controller) {
 		this.kontoNummerField = kontoNummerField;
 		this.alterKontoStandField = alterKontoStandField;
 		this.neuerKontoStandField = neuerKontoStandField;
