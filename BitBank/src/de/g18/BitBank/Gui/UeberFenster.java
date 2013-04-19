@@ -22,7 +22,7 @@ public class UeberFenster extends JDialog {
 
 		JLabel textLabel = new JLabel();
 		textLabel
-				.setText("<html><h3>BitBank</h3>erstellt von:<ul><li>Björn Korella</li><li>Sven Tatter</li><li>Dennis</li></ul></html>");
+				.setText("<html><h3>BitBank</h3>erstellt von:<ul><li>Björn Korella</li><li>Sven Tatter</li><li>Dennis Markmann</li></ul></html>");
 		textLabel.setBorder(new BorderUIResource.EmptyBorderUIResource(10, 10,
 				10, 10));
 

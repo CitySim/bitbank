@@ -5,6 +5,8 @@ import de.g18.BitBank.Gui.Listener.UeberweisungDurchfuehrenListener;
 
 import javax.swing.*;
 
+import com.toedter.calendar.JDateChooser;
+
 import java.awt.*;
 
 /**
@@ -35,11 +37,9 @@ public class UeberweisungDurchfuehren extends JPanel {
 
 		JTextField vomKontoField = new JTextField();
 		JTextField nachKontoField = new JTextField();
-		JTextField datumField = new JTextField();
-		datumField.setEnabled(false);
+		JDateChooser chooser = new JDateChooser();
 		JTextField betragField = new JTextField();
 
-		JButton datumAuswaehlenButton = new JButton("Datum auswählen");
 		JButton ueberweisenButton = new JButton("Überweisen");
 		JButton beendenButton = new JButton("Beenden");
 
@@ -70,16 +70,11 @@ public class UeberweisungDurchfuehren extends JPanel {
 
 		c.gridx = 1;
 		c.gridy = 2;
-		this.add(datumField, c);
+		this.add(chooser, c);
 
 		c.gridx = 1;
 		c.gridy = 3;
 		this.add(betragField, c);
-
-		c.weightx = 0;
-		c.gridx = 2;
-		c.gridy = 2;
-		this.add(datumAuswaehlenButton, c);
 
 		c.gridx = 2;
 		c.gridy = 3;
@@ -95,11 +90,10 @@ public class UeberweisungDurchfuehren extends JPanel {
 		c.weighty = 1;
 		this.add(new JPanel(), c);
 
-		datumAuswaehlenButton
-				.addActionListener(new UeberweisungDurchfuehrenListener(null));
 		ueberweisenButton
 				.addActionListener(new UeberweisungDurchfuehrenListener(
-						vomKontoField, nachKontoField, betragField, controller));
+						vomKontoField, nachKontoField, betragField, controller,
+						chooser));
 		beendenButton.addActionListener(new UeberweisungDurchfuehrenListener(
 				this));
 	}
