@@ -69,7 +69,7 @@ public class UeberweisungListener implements ActionListener {
 			Date datum = chooser.getDate();
 
 			if (datum == null) {
-				JOptionPane.showMessageDialog(null, "Bitte wählen sie ein Datum", "Fehler", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Bitte wählen sie ein Datum", "Fehlpusher", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 
