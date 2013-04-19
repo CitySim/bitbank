@@ -62,11 +62,16 @@ public class UeberweisungListener implements ActionListener {
 				nachKontoNummer = Integer.parseInt(this.nachKontoField
 						.getText());
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Eingabe konnte nicht gelesen werden. (Alles korrekte Zahlen?)", "zHAl", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Eingabe konnte nicht gelesen werden. (Alles korrekte Zahlen?)", "Fehler", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 
 			Date datum = chooser.getDate();
+
+			if (datum == null) {
+				JOptionPane.showMessageDialog(null, "Bitte wählen sie ein Datum", "Fehler", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
 
 			try {
 				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer, betrag, datum);

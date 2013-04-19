@@ -1,21 +1,14 @@
 package de.g18.BitBank.Gui;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
-
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.ZahlungVornehmenListener;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  * Gui Klasse zum Ein - / Auszahlen eines Betrages auf ein Konto.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -47,6 +40,7 @@ public class ZahlungVornehmen extends JPanel {
 		alterKontoStandField.setEnabled(false);
 		JTextField betragField = new JTextField();
 		JTextField neuerKontoStandField = new JTextField();
+		neuerKontoStandField.setEnabled(false);
 
 		JButton kontoStandButton = new JButton("Kontostand");
 		JButton einzahlungButton = new JButton("Einzahlung");

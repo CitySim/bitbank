@@ -44,7 +44,7 @@ public class KontenListeListener implements ActionListener {
 			try {
 				kunde = controller.getKundeByNummer(kundenNummer);
 			} catch (KundeNichtGefundenException e) {
-				JOptionPane.showMessageDialog(null, "Kundenummer konnte nicht gelesen werden", "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
 				return;
 			}
 
