@@ -5,6 +5,8 @@ package de.g18.BitBank.Exception;
  * this template use File | Settings | File Templates.
  */
 public class KontoLeerException extends Exception {
+	private static final long serialVersionUID = -9013057245886843969L;
+
 	public KontoLeerException(String message) {
 		super(message);
 	}

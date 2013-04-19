@@ -5,6 +5,8 @@ package de.g18.BitBank.Exception;
  * this template use File | Settings | File Templates.
  */
 public class KundenNummerException extends Exception {
+	private static final long serialVersionUID = 1207154093010098944L;
+
 	public KundenNummerException(String message) {
 		super(message);
 	}

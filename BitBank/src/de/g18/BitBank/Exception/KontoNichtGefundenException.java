@@ -5,6 +5,8 @@ package de.g18.BitBank.Exception;
  * change this template use File | Settings | File Templates.
  */
 public class KontoNichtGefundenException extends Exception {
+	private static final long serialVersionUID = -8811022158488793767L;
+
 	public KontoNichtGefundenException(long kontoNummer) {
 		super("Konto " + Long.toString(kontoNummer) + " nicht gefunden");
 	}
