@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * Vorgegebene BankMain.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -21,6 +21,7 @@ public class BankView extends JFrame {
 		setLocationRelativeTo(null);
 		setLayout(new GridLayout(1, 1));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setIconImage(Toolkit.getDefaultToolkit().getImage("icon.png"));
 		setTitle("BitBank");
 
 		JMenu actionMenu = new JMenu("Aktionen");
