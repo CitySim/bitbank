@@ -1,14 +1,17 @@
 package de.g18.BitBank.Gui.Listener;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.FeldLeerException;
 import de.g18.BitBank.Exception.KundenNummerException;
-import de.g18.BitBank.Exception.UnbekannteException;
 import de.g18.BitBank.Gui.KundenAnlegen;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
@@ -56,9 +59,6 @@ public class KundenAnlegenListener implements ActionListener {
 									+ kundenNummer + "\" angelegt.");
 				}
 			} catch (NumberFormatException e) {
-				new KundenNummerException();
-			} catch (Exception e) {
-				new UnbekannteException();
 			}
 
 		}

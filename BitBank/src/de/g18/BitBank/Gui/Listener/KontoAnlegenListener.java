@@ -67,7 +67,6 @@ public class KontoAnlegenListener implements ActionListener {
 									+ "\" angelegt.");
 				}
 			} catch (java.lang.NumberFormatException exception) {
-				new KundenNummerException();
 			}
 
 		}

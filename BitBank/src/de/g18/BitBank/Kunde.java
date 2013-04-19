@@ -29,7 +29,8 @@ public class Kunde {
 	public Kunde(String kundenName, long kundenNummer)
 			throws KundenNummerException {
 		if (kundenNummer < 0) {
-			throw new KundenNummerException();
+			throw new KundenNummerException(
+					"Kundennummer darf nicht kleiner 0 sein");
 		}
 		this.name = kundenName;
 		this.kundenNummmer = kundenNummer;
