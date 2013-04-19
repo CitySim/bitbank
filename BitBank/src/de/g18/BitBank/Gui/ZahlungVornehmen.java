@@ -38,9 +38,9 @@ public class ZahlungVornehmen extends JPanel {
 		c.insets = new Insets(5, 5, 5, 5);
 
 		JLabel kontoNummerLabel = new JLabel("Kontonummer");
-		JLabel alterKontoStandLabel = new JLabel("alter Kontostand");
+		JLabel alterKontoStandLabel = new JLabel("Alter Kontostand");
 		JLabel betragLabel = new JLabel("Betrag");
-		JLabel neuerKontoStandLabel = new JLabel("neuer Kontostand");
+		JLabel neuerKontoStandLabel = new JLabel("Neuer Kontostand");
 
 		JTextField kontoNummerField = new JTextField();
 		JTextField alterKontoStandField = new JTextField();
