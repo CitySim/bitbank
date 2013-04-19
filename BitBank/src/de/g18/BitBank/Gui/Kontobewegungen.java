@@ -69,8 +69,8 @@ public class Kontobewegungen extends JPanel {
 		return tabsPane;
 	}
 
-	public long getKontoNummer() {
-		return Long.parseLong(kontoNummerField.getText());
+	public JTextField getKontoNummer() {
+		return kontoNummerField;
 	}
 
 	public JTable getTable() {

@@ -84,8 +84,7 @@ public class UeberweisungListener implements ActionListener {
 			}
 
 		} else if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			this.ueberweisungFrame.getTabsPane().remove(
-					this.ueberweisungFrame);
+			this.ueberweisungFrame.getTabsPane().remove(this.ueberweisungFrame);
 		}
 	}
 
