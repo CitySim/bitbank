@@ -1,6 +1,7 @@
 package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
+import de.g18.BitBank.Exception.KundenNummerException;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
 import javax.swing.*;
@@ -50,9 +51,7 @@ public class KundenAnlegenListener implements ActionListener {
 										.getText()) + "\" angelegt.");
 
 			} catch (NumberFormatException e) {
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Die Kundennummer ist keine gültige Zahl.",
-						"Inane error", JOptionPane.ERROR_MESSAGE);
+				new KundenNummerException();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

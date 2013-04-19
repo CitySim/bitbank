@@ -6,15 +6,13 @@ import de.g18.BitBank.Kontobewegung;
 import javax.swing.table.AbstractTableModel;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Sven
- * Date: 17.04.13
- * Time: 22:38
- * To change this template use File | Settings | File Templates.
+ * Created with IntelliJ IDEA. User: Sven Date: 17.04.13 Time: 22:38 To change
+ * this template use File | Settings | File Templates.
  */
 public class KontoBewegungenTableModel extends AbstractTableModel {
+	private static final long serialVersionUID = -5781280913032155581L;
 	Konto konto;
-	String[] cols = {"Datum", "von", "nach", "Betrag"};
+	String[] cols = { "Datum", "von", "nach", "Betrag" };
 
 	public KontoBewegungenTableModel(Konto konto) {
 		this.konto = konto;
@@ -40,16 +38,16 @@ public class KontoBewegungenTableModel extends AbstractTableModel {
 		Kontobewegung kb = konto.getKontoBewegungsListe().get(rowIndex);
 
 		switch (columnIndex) {
-			case 0:
-				return kb.getDatum().toString();
-			case 1:
-				return "";
-			case 2:
-				return "";
-			case 3:
-				return Double.toString(kb.getBetrag());
-			default:
-				return "Fehler";
+		case 0:
+			return kb.getDatum().toString();
+		case 1:
+			return "";
+		case 2:
+			return "";
+		case 3:
+			return Double.toString(kb.getBetrag());
+		default:
+			return "Fehler";
 		}
 	}
 }

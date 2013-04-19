@@ -6,15 +6,13 @@ import de.g18.BitBank.Kunde;
 import javax.swing.table.AbstractTableModel;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Sven
- * Date: 17.04.13
- * Time: 22:38
- * To change this template use File | Settings | File Templates.
+ * Created with IntelliJ IDEA. User: Sven Date: 17.04.13 Time: 22:38 To change
+ * this template use File | Settings | File Templates.
  */
 public class KundenTableModel extends AbstractTableModel {
+	private static final long serialVersionUID = -5572145010789838691L;
 	BankController controller;
-	String[] cols = {"Nr.", "Name", "Konten"};
+	String[] cols = { "Nr.", "Name", "Konten" };
 
 	public KundenTableModel(BankController controller) {
 		this.controller = controller;
@@ -40,14 +38,14 @@ public class KundenTableModel extends AbstractTableModel {
 		Kunde k = controller.getKundeByIndex(rowIndex);
 
 		switch (columnIndex) {
-			case 0:
-				return k.getKundenNummmer();
-			case 1:
-				return k.getName();
-			case 2:
-				return k.getKontenListe().size();
-			default:
-				return "Fehler";
+		case 0:
+			return k.getKundenNummmer();
+		case 1:
+			return k.getName();
+		case 2:
+			return k.getKontenListe().size();
+		default:
+			return "Fehler";
 		}
 	}
 }

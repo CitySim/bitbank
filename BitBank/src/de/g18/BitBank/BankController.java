@@ -48,7 +48,7 @@ public class BankController {
 			Kunde kunde = new Kunde(kundenName, kundenNummer);
 			this.kundenListe.add(kunde);
 		} catch (KundenNummerException e) {
-			e.printStackTrace();
+			new KundenNummerException();
 		}
 	}
 
@@ -85,8 +85,11 @@ public class BankController {
 		}
 	}
 
-	public void ueberweisen(int zielKontoNummer, int quellKontoNummer, double betrag, Date datum) throws KontoLeerException, BetragNegativException {
-		this.getKontoByKontoNummer(quellKontoNummer).ueberweisen(this.getKontoByKontoNummer(zielKontoNummer), betrag, datum);
+	public void ueberweisen(int zielKontoNummer, int quellKontoNummer,
+			double betrag, Date datum) throws KontoLeerException,
+			BetragNegativException {
+		this.getKontoByKontoNummer(quellKontoNummer).ueberweisen(
+				this.getKontoByKontoNummer(zielKontoNummer), betrag, datum);
 	}
 
 }
