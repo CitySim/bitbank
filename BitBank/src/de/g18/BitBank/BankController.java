@@ -2,6 +2,7 @@ package de.g18.BitBank;
 
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
+import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Exception.KundenNummerException;
 
 import java.util.ArrayList;
@@ -85,11 +86,18 @@ public class BankController {
 		}
 	}
 
-	public void ueberweisen(int zielKontoNummer, int quellKontoNummer,
-			double betrag, Date datum) throws KontoLeerException,
-			BetragNegativException {
-		this.getKontoByKontoNummer(quellKontoNummer).ueberweisen(
-				this.getKontoByKontoNummer(zielKontoNummer), betrag, datum);
+	public void ueberweisen(long zielKontoNummer, long quellKontoNummer, double betrag, Date datum) throws KontoLeerException, BetragNegativException, KontoNichtGefundenException {
+		Konto von = getKontoByKontoNummer(quellKontoNummer);
+		Konto nach = this.getKontoByKontoNummer(zielKontoNummer);
+
+		if (von == null) {
+			throw new KontoNichtGefundenException(quellKontoNummer);
+		}
+		if (nach == null) {
+			throw new KontoNichtGefundenException(zielKontoNummer);
+		}
+
+		von.ueberweisen(nach, betrag, datum);
 	}
 
 }

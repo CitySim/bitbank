@@ -4,6 +4,7 @@ import com.toedter.calendar.JDateChooser;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
+import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.Ueberweisung;
 
 import javax.swing.*;
@@ -64,13 +65,21 @@ public class UeberweisungListener implements ActionListener {
 
 			Date datum = chooser.getDate();
 
+			if (datum == null) {
+				JOptionPane.showMessageDialog(null, "Kein Datum gewählt.", "Fehler", JOptionPane.OK_OPTION);
+				return;
+			}
+
 			try {
 				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer, betrag, datum);
 			} catch (KontoLeerException e) {
-				JOptionPane.showMessageDialog(null, "Konto leer:", "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
 				return;
 			} catch (BetragNegativException e) {
-				JOptionPane.showMessageDialog(null, "betrag nicht negativvvröjrea", "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				return;
+			} catch (KontoNichtGefundenException e) {
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
 				return;
 			}
 
