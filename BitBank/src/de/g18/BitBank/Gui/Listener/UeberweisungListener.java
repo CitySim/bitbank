@@ -4,6 +4,7 @@ import com.toedter.calendar.JDateChooser;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
+import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.Ueberweisung;
 
 import javax.swing.*;
@@ -11,7 +12,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 
-/**F
+/**
+ * F
  * Listener zu den Buttons der Ueberweisung Klasse.
  *
  * @author it1-markde
@@ -70,6 +72,9 @@ public class UeberweisungListener implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Konto leer:", "Fehler", JOptionPane.OK_OPTION);
 				return;
 			} catch (BetragNegativException e) {
+				JOptionPane.showMessageDialog(null, "betrag nicht negativvvröjrea", "Fehler", JOptionPane.OK_OPTION);
+				return;
+			} catch (KontoNichtGefundenException e) {
 				JOptionPane.showMessageDialog(null, "betrag nicht negativvvröjrea", "Fehler", JOptionPane.OK_OPTION);
 				return;
 			}
