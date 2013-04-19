@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="db1625e7-f934-4dc6-8271-7afd99190f70" name="Default" comment="" />
+    <ignored path="bitbank.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366366779615" ignored="false" />
+    <file path="/fragment.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366363322282" ignored="false" />
+    <file path="/a.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366272796694" ignored="false" />
+    <file path="/a.xml" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365888987035" ignored="false" />
+    <file path="/a.html" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365888989073" ignored="false" />
+    <file path="/a.groovy" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365888990620" ignored="false" />
+    <file path="/BankView.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366365638506" ignored="false" />
+    <file path="/BankViewListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366274686688" ignored="false" />
+    <file path="/KundenAnlegen.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365936218640" ignored="false" />
+    <file path="/KundenAnlegenListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366363401177" ignored="false" />
+    <file path="/KontoAnlegen.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365935828691" ignored="false" />
+    <file path="/KontoAnlegenListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366362202699" ignored="false" />
+    <file path="/KontostandsUebersichtAnzeigenListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366273201479" ignored="false" />
+    <file path="/UeberweisungDurchfuehrenListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365890532572" ignored="false" />
+    <file path="/ZahlungVornehmenListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366360443247" ignored="false" />
+    <file path="/UeberweisungDurchfuehren.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365932313277" ignored="false" />
+    <file path="/ZahlungVornehmen.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366362391574" ignored="false" />
+    <file path="/KontostandsUebersichtAnzeigen.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366273301101" ignored="false" />
+    <file path="/KontobewegungenListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366358845035" ignored="false" />
+    <file path="/UeberFenster.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366366626910" ignored="false" />
+    <file path="/kundenListeListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366114956087" ignored="false" />
+    <file path="/kundenListe.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366114917286" ignored="false" />
+    <file path="/Konto.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366115275025" ignored="false" />
+    <file path="/BetragNegativException.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366228466854" ignored="false" />
+    <file path="/KontoLeerException.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366227479646" ignored="false" />
+    <file path="/BankMain.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366228445345" ignored="false" />
+    <file path="/a.dummy" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366362440115" ignored="false" />
+    <file path="/Kunde.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366230295477" ignored="false" />
+    <file path="/KontoNummerException.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366230772688" ignored="false" />
+    <file path="/Ueberweisung.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366230380349" ignored="false" />
+    <file path="/BankController.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366363311369" ignored="false" />
+    <file path="/KundenTableModel.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366232318903" ignored="false" />
+    <file path="/KundenListe.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366233008930" ignored="false" />
+    <file path="/KontenTableModel.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366359426211" ignored="false" />
+    <file path="/sample.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366272776985" ignored="false" />
+    <file path="/KontonListeListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366275848299" ignored="false" />
+    <file path="/KontoListe.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366275400985" ignored="false" />
+    <file path="/KontoBewegungenTableModel.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366277327368" ignored="false" />
+    <file path="/Kontobewegungen.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366277998352" ignored="false" />
+    <file path="/UeberweisungListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366362571994" ignored="false" />
+    <file path="/KontoNichtGefundenException.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366358191237" ignored="false" />
+    <file path="/KontenListe.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366359287015" ignored="false" />
+    <file path="/KontenListeListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366362326172" ignored="false" />
+    <file path="/KundeNichtGefundenException.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366359552684" ignored="false" />
+    <file path="/KundenNummerVergebenException.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366363351377" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="bitbank" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="BankView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/BankView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="0" selection-start="1253" selection-end="1253" vertical-scroll-proportion="0.815739">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UeberFenster.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/UeberFenster.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="33" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KundenListe.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/KundenListe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="0" selection-start="981" selection-end="1028" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="tabbedMainwindow" />
+      </map>
+    </option>
+  </component>
+  <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/KontenListe.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/TableModels/KontenTableModel.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Exception/KundeNichtGefundenException.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/ZahlungVornehmenListener.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/KontoAnlegenListener.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/KontenListeListener.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/UeberweisungListener.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/ZahlungVornehmen.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Exception/KundenNummerVergebenException.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/BankController.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/KundenAnlegenListener.java" />
+        <option value="$PROJECT_DIR$/BitBank/BitBank.eml" />
+        <option value="$PROJECT_DIR$/BitBank/.classpath" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/TableModels/KundenTableModel.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/BankView.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/UeberFenster.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Ant inspections</id>
+          </State>
+          <State>
+            <id>Class structure</id>
+          </State>
+          <State>
+            <id>Control flow issues</id>
+          </State>
+          <State>
+            <id>Declaration redundancy</id>
+          </State>
+          <State>
+            <id>Error handling</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Imports</id>
+          </State>
+          <State>
+            <id>IntelliJ IDEA Platform Inspections</id>
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
+          </State>
+          <State>
+            <id>Javadoc issues</id>
+          </State>
+          <State>
+            <id>OtherGroovy</id>
+          </State>
+          <State>
+            <id>Portability issues</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsGroovy</id>
+          </State>
+          <State>
+            <id>Probable bugs</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>Resource management issues</id>
+          </State>
+          <State>
+            <id>TestNG</id>
+          </State>
+          <State>
+            <id>Threading issues</id>
+          </State>
+          <State>
+            <id>Validity issuesGroovy</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>HardcodedLineSeparators</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="2" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitbank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitbank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitbank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitbank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitbank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitbank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="132" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="132" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="136" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BitBank/GuiJar" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="133" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="811" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="807" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="132" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="bitbank" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="125" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="options.lastSelected" value="Images" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.g18.BitBank.Gui.TableModels" />
+      <recent name="de.g18.BitBank.Gui.Listener" />
+      <recent name="de.g18.BitBank.Gui" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.g18.BitBank.Exception" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\IdeaProjects\bitbank\BitBank\src\de\g18\BitBank\Gui" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.BankView">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="XSLT" factoryName="XSLT">
+      <option name="myOutputFile" />
+      <option name="myOpenOutputFile" value="false" />
+      <option name="myOpenInBrowser" value="false" />
+      <option name="mySmartErrorHandling" value="true" />
+      <option name="myRunnerPort" value="34873" />
+      <option name="myVmArguments" />
+      <option name="myWorkingDirectory" />
+      <option name="myModule" />
+      <option name="myJdk" />
+      <parameters />
+      <OutputType value="CONSOLE" save-to-file="false" />
+      <FileType name="XML" />
+      <JdkChoice value="FROM_MODULE" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="BankView" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="de.g18.BitBank.Gui.BankView" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="BitBank" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="BankMain" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="de.g18.BitBank.BankMain" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="BitBank" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="de.g18.BitBank.Test in BitBank" type="JUnit" factoryName="JUnit">
+      <module name="BitBank" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="de.g18.BitBank.Test" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.BankView" />
+      <item index="1" class="java.lang.String" itemvalue="Application.BankMain" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.de.g18.BitBank.Test in BitBank" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="true">C:\Users\Sven\AppData\Roaming\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db1625e7-f934-4dc6-8271-7afd99190f70" name="Default" comment="" />
+      <created>1365759007679</created>
+      <updated>1365759007679</updated>
+    </task>
+    <task id="LOCAL-00001" summary="BankView hat jetzt 50 statt 200 zeilen">
+      <created>1365889632543</created>
+      <updated>1365889632543</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ansichten sind JPanels und gehen als Tab auf">
+      <created>1365890831580</created>
+      <updated>1365890831580</updated>
+    </task>
+    <task id="LOCAL-00003" summary="2 mini fixes und intellij project folder">
+      <created>1365891290788</created>
+      <updated>1365891290788</updated>
+    </task>
+    <task id="LOCAL-00004" summary="beenden button gehen">
+      <created>1365933504130</created>
+      <updated>1365933504130</updated>
+    </task>
+    <task id="LOCAL-00005" summary="GrifBag für Konto anlegen">
+      <created>1365935934542</created>
+      <updated>1365935934542</updated>
+    </task>
+    <task id="LOCAL-00006" summary="GridBag für Kunden anlegen">
+      <created>1365936282363</created>
+      <updated>1365936282363</updated>
+    </task>
+    <task id="LOCAL-00007" summary="GridBag für Zahlung vornehmen">
+      <created>1365936786031</created>
+      <updated>1365936786031</updated>
+    </task>
+    <task id="LOCAL-00008" summary="GridBag für Kontoübersicht">
+      <created>1365941691327</created>
+      <updated>1365941691327</updated>
+    </task>
+    <task id="LOCAL-00009" summary="kleine sachen">
+      <created>1365942195955</created>
+      <updated>1365942195955</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Tabelle bei Kontoübersicht kommt richtig raus">
+      <created>1365943012751</created>
+      <updated>1365943012751</updated>
+    </task>
+    <task id="LOCAL-00011" summary="kontobewegungen frame erstellt">
+      <created>1365943850748</created>
+      <updated>1365943850748</updated>
+    </task>
+    <task id="LOCAL-00012" summary="über dialog">
+      <created>1365948671292</created>
+      <updated>1365948671292</updated>
+    </task>
+    <task id="LOCAL-00013" summary="typo">
+      <created>1365948989078</created>
+      <updated>1365948989078</updated>
+    </task>
+    <task id="LOCAL-00014" summary="kundenliste">
+      <created>1366114481971</created>
+      <updated>1366114481971</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fehlender import">
+      <created>1366114603795</created>
+      <updated>1366114603795</updated>
+    </task>
+    <task id="LOCAL-00016" summary="bugfix für kundenliste">
+      <created>1366115157697</created>
+      <updated>1366115157697</updated>
+    </task>
+    <task id="LOCAL-00017" summary="2 neue Exception klassen">
+      <created>1366228290433</created>
+      <updated>1366228290433</updated>
+    </task>
+    <task id="LOCAL-00018" summary="original BankMain">
+      <created>1366228525151</created>
+      <updated>1366228525151</updated>
+    </task>
+    <task id="LOCAL-00019" summary="eine neue exception">
+      <created>1366230806027</created>
+      <updated>1366230806027</updated>
+    </task>
+    <task id="LOCAL-00020" summary="kundenliste geht">
+      <created>1366232539803</created>
+      <updated>1366232539803</updated>
+    </task>
+    <task id="LOCAL-00021" summary="neue JavaDocs, nur mal so">
+      <created>1366232569265</created>
+      <updated>1366232569265</updated>
+    </task>
+    <task id="LOCAL-00022" summary="kontenliste">
+      <created>1366274313310</created>
+      <updated>1366274313310</updated>
+    </task>
+    <task id="LOCAL-00023" summary="kleine fixes">
+      <created>1366274839743</created>
+      <updated>1366274839743</updated>
+    </task>
+    <task id="LOCAL-00024" summary="rename">
+      <created>1366275018256</created>
+      <updated>1366275018256</updated>
+    </task>
+    <task id="LOCAL-00025" summary="konto in kunde ungenannt, war falsch in der GUI">
+      <created>1366275153095</created>
+      <updated>1366275153095</updated>
+    </task>
+    <task id="LOCAL-00026" summary="kontoliste geht">
+      <created>1366275491083</created>
+      <updated>1366275491083</updated>
+    </task>
+    <task id="LOCAL-00027" summary="kontobewegungen">
+      <created>1366278538180</created>
+      <updated>1366278538180</updated>
+    </task>
+    <task id="LOCAL-00028" summary="commit 2&#10;">
+      <created>1366357035447</created>
+      <updated>1366357035447</updated>
+    </task>
+    <task id="LOCAL-00029" summary="commit 2">
+      <created>1366357107712</created>
+      <updated>1366357107712</updated>
+    </task>
+    <task id="LOCAL-00030" summary="commit 3">
+      <created>1366357614851</created>
+      <updated>1366357614851</updated>
+    </task>
+    <task id="LOCAL-00031" summary="mehr eingabe fehler abfangen">
+      <created>1366358381762</created>
+      <updated>1366358381762</updated>
+    </task>
+    <task id="LOCAL-00032" summary="ah">
+      <created>1366359024934</created>
+      <updated>1366359024934</updated>
+    </task>
+    <task id="LOCAL-00033" summary="moar">
+      <created>1366359753815</created>
+      <updated>1366359753815</updated>
+    </task>
+    <task id="LOCAL-00034" summary="app startet">
+      <created>1366360507633</created>
+      <updated>1366360507633</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Merge branch 'master' of http://github.com/CitySim/bitbank&#10;&#10;Conflicts:&#10;&#9;BitBank/src/de/g18/BitBank/Gui/Listener/ZahlungVornehmenListener.java&#10;">
+      <created>1366360810849</created>
+      <updated>1366360810849</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Merge branch 'master' of http://github.com/CitySim/bitbank&#10;&#10;Conflicts:&#10;&#9;BitBank/src/de/g18/BitBank/Gui/Listener/ZahlungVornehmenListener.java&#10;">
+      <created>1366360864990</created>
+      <updated>1366360864990</updated>
+    </task>
+    <task id="LOCAL-00037" summary="läuft wieder teil 2">
+      <created>1366361239787</created>
+      <updated>1366361239787</updated>
+    </task>
+    <task id="LOCAL-00038" summary="läuft wieder teil 3">
+      <created>1366361343187</created>
+      <updated>1366361343187</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Merge branch 'master' of http://github.com/CitySim/bitbank&#10;&#10;Conflicts:&#10;&#9;BitBank/src/de/g18/BitBank/Gui/Listener/UeberweisungListener.java&#10;">
+      <created>1366361672734</created>
+      <updated>1366361672734</updated>
+    </task>
+    <task id="LOCAL-00040" summary="fgvdksj">
+      <created>1366361798304</created>
+      <updated>1366361798304</updated>
+    </task>
+    <task id="LOCAL-00041" summary="better">
+      <created>1366362250581</created>
+      <updated>1366362250581</updated>
+    </task>
+    <task id="LOCAL-00042" summary="bla">
+      <created>1366362630890</created>
+      <updated>1366362630890</updated>
+    </task>
+    <task id="LOCAL-00043" summary="lol">
+      <created>1366362817721</created>
+      <updated>1366362817721</updated>
+    </task>
+    <task id="LOCAL-00044" summary="check auf doppelte Kundennummer">
+      <created>1366363432424</created>
+      <updated>1366363432424</updated>
+    </task>
+    <task id="LOCAL-00045" summary="tollige jar datei">
+      <created>1366364239400</created>
+      <updated>1366364239400</updated>
+    </task>
+    <task id="LOCAL-00046" summary="icon">
+      <created>1366365915483</created>
+      <updated>1366365915483</updated>
+    </task>
+    <task id="LOCAL-00047" summary="logo">
+      <created>1366366782099</created>
+      <updated>1366366782099</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35112694" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32740214" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39739028" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.43890867" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3558719" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19210246" sideWeight="0.66295886" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26256078" sideWeight="0.6488731" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3440095" sideWeight="0.99928313" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39954337" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="logo" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="kontenliste" />
+    <MESSAGE value="kleine fixes" />
+    <MESSAGE value="rename" />
+    <MESSAGE value="konto in kunde ungenannt, war falsch in der GUI" />
+    <MESSAGE value="kontoliste geht" />
+    <MESSAGE value="kontobewegungen" />
+    <MESSAGE value="commit 2&#10;" />
+    <MESSAGE value="commit 2" />
+    <MESSAGE value="commit 3" />
+    <MESSAGE value="mehr eingabe fehler abfangen" />
+    <MESSAGE value="ah" />
+    <MESSAGE value="moar" />
+    <MESSAGE value="app startet" />
+    <MESSAGE value="Merge branch 'master' of http://github.com/CitySim/bitbank&#10;&#10;Conflicts:&#10;&#9;BitBank/src/de/g18/BitBank/Gui/Listener/ZahlungVornehmenListener.java&#10;" />
+    <MESSAGE value="läuft wieder teil 2" />
+    <MESSAGE value="läuft wieder teil 3" />
+    <MESSAGE value="Merge branch 'master' of http://github.com/CitySim/bitbank&#10;&#10;Conflicts:&#10;&#9;BitBank/src/de/g18/BitBank/Gui/Listener/UeberweisungListener.java&#10;" />
+    <MESSAGE value="fgvdksj" />
+    <MESSAGE value="better" />
+    <MESSAGE value="bla" />
+    <MESSAGE value="lol" />
+    <MESSAGE value="check auf doppelte Kundennummer" />
+    <MESSAGE value="tollige jar datei" />
+    <MESSAGE value="icon" />
+    <MESSAGE value="logo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/KontenListeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="13" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/ZahlungVornehmen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="59" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Exception/KundenNummerVergebenException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="90" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/BankController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/BitBank.eml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/.classpath">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="43" selection-start="91" selection-end="91" vertical-scroll-proportion="0.06952965">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/KundenAnlegenListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="16" selection-start="2013" selection-end="2013" vertical-scroll-proportion="0.15105163">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/UeberweisungListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="32" selection-start="2085" selection-end="2085" vertical-scroll-proportion="0.033333335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/.project">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/TableModels/KundenTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.6019536">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/BankMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="23" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/JDK/jdk1.6.0_43/src.zip!/javax/imageio/ImageIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1274" column="0" selection-start="45361" selection-end="45361" vertical-scroll-proportion="0.33206832">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/BankViewListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="0" selection-start="2567" selection-end="2567" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/KundenListe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="981" selection-end="1028" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/UeberFenster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="33" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/BankView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1253" selection-end="1253" vertical-scroll-proportion="0.815739">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>BitBank:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>BitBank</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+
