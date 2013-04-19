@@ -130,7 +130,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		}
 	}
 
-	public void aktualisieren(final int kontoNummer) {
+	public final void aktualisieren(final int kontoNummer) {
 		if (!this.neuerKontoStandField.getText().equals("")) {
 			this.alterKontoStandField.setText(this.neuerKontoStandField
 					.getText());

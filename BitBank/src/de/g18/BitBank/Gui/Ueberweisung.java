@@ -95,7 +95,7 @@ public class Ueberweisung extends JPanel {
 		beendenButton.addActionListener(new UeberweisungListener(this));
 	}
 
-	public JTabbedPane getTabsPane() {
+	public final JTabbedPane getTabsPane() {
 		return tabsPane;
 	}
 }

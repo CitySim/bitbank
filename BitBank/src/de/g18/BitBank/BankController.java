@@ -32,7 +32,7 @@ public class BankController {
 		throw new KundeNichtGefundenException(kundenNummer);
 	}
 
-	public Konto getKontoByKontoNummer(final long kontoNummer)
+	public final Konto getKontoByKontoNummer(final long kontoNummer)
 			throws KontoNichtGefundenException {
 		for (Kunde kunde : kundenListe) {
 			for (Konto konto : kunde.getKontenListe()) {
@@ -44,7 +44,7 @@ public class BankController {
 		throw new KontoNichtGefundenException(kontoNummer);
 	}
 
-	public void createKunde(String kundenName, long kundenNummer)
+	public final void createKunde(String kundenName, long kundenNummer)
 			throws KundenNummerVergebenException {
 		for (Kunde kunde : kundenListe) {
 			if (kunde.getKundenNummmer() == kundenNummer) {
@@ -60,29 +60,29 @@ public class BankController {
 		}
 	}
 
-	public Konto createKonto(final long kundenNummer, final Kontotyp kontoTyp)
-			throws KundeNichtGefundenException {
+	public final Konto createKonto(final long kundenNummer,
+			final Kontotyp kontoTyp) throws KundeNichtGefundenException {
 		Kunde kunde = getKundeByKundenNummer(kundenNummer);
 		return kunde.anlegenKonto(kontoTyp);
 	}
 
-	public double kontoStandAnzeigen(final int kontoNummer)
+	public final double kontoStandAnzeigen(final int kontoNummer)
 			throws KontoNichtGefundenException {
 		return this.getKontoByKontoNummer(kontoNummer).getKontoStand();
 	}
 
-	public void einzahlen(final int kontoNummer, final double betrag)
+	public final void einzahlen(final int kontoNummer, final double betrag)
 			throws KontoNichtGefundenException, BetragNegativException {
 		this.getKontoByKontoNummer(kontoNummer).einzahlen(betrag);
 	}
 
-	public void auszahlen(final int kontoNummer, final double betrag)
+	public final void auszahlen(final int kontoNummer, final double betrag)
 			throws KontoNichtGefundenException, KontoLeerException,
 			BetragNegativException {
 		this.getKontoByKontoNummer(kontoNummer).auszahlen(betrag);
 	}
 
-	public void ueberweisen(final int zielKontoNummer,
+	public final void ueberweisen(final int zielKontoNummer,
 			final long quellKontoNummer, final double betrag, final Date datum)
 			throws KontoNichtGefundenException, KontoLeerException,
 			BetragNegativException {
@@ -99,7 +99,7 @@ public class BankController {
 		von.ueberweisen(nach, betrag, datum);
 	}
 
-	public Kunde getKundeByNummer(final long kundenNummer)
+	public final Kunde getKundeByNummer(final long kundenNummer)
 			throws KundeNichtGefundenException {
 		for (Kunde kunde : kundenListe) {
 			if (kunde.getKundenNummmer() == kundenNummer) {

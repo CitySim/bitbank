@@ -78,15 +78,15 @@ public class Kontobewegungen extends JPanel {
 		beendenButton.addActionListener(listener);
 	}
 
-	public JTabbedPane getTabsPane() {
+	public final JTabbedPane getTabsPane() {
 		return tabsPane;
 	}
 
-	public JTextField getKontoNummer() {
+	public final JTextField getKontoNummer() {
 		return kontoNummerField;
 	}
 
-	public JTable getTable() {
+	public final JTable getTable() {
 		return table;
 	}
 }

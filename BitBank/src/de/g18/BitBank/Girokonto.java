@@ -18,17 +18,25 @@ public class Girokonto extends Konto {
 	 */
 	private double limit;
 
-	public double getLimit() {
+	public final double getLimit() {
 		return limit;
 	}
 
-	public void setLimit(final double limit) {
+	public final void setLimit(final double limit) {
 		this.limit = limit;
 	}
 
 	/**
 	 * Zieht einen Betrag vom aktuellen Kontostand ab. Kann nicht unter 0 - das
 	 * festgelegte Limit fallen.
+	 * 
+	 * @throws KontoLeerException
+	 *             Fehler wenn Konto überzogen wird
+	 * 
+	 * @throws BetragNegativException
+	 *             Fehler bei negativen Beträgen
+	 * @param betrag
+	 *            zu zahlender Betrag
 	 */
 
 	@Override

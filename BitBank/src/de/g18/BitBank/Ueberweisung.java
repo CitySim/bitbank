@@ -31,7 +31,9 @@ public class Ueberweisung {
 	 * Ueberträgt den betrag der ueberweisung von einem Konto zum anderen.
 	 * 
 	 * @throws BetragNegativException
+	 *             Fehler bei negativen Beträgen
 	 * @throws KontoLeerException
+	 *             Fehler bei nicht bekannten Konten
 	 */
 	public void durchfuehrenUeberweisung() throws BetragNegativException,
 			KontoLeerException {

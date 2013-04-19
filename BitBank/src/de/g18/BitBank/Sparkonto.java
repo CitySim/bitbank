@@ -15,17 +15,24 @@ public class Sparkonto extends Konto {
 		super(Kontotyp.SPARKONTO, kundenNummmer, indexNummer);
 	}
 
-	public double getFestzins() {
+	public final double getFestzins() {
 		return festzins;
 	}
 
-	public void setFestzins(final double festzins) {
+	public final void setFestzins(final double festzins) {
 		this.festzins = festzins;
 	}
 
 	/**
 	 * Zieht einen Betrag vom aktuellen Kontostand ab. Kann nicht unter 0
 	 * sinken.
+	 * 
+	 * @throws KontoLeerException
+	 *             Fehler wenn Konto überzogen wird
+	 * @throws BetragNegativException
+	 *             Fehler bei negativen Beträgen
+	 * @param betrag
+	 *            zu zahlender betrag
 	 */
 
 	@Override

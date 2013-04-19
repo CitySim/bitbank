@@ -18,7 +18,7 @@ public class ZahlungVornehmen extends JPanel {
 
 	private JTabbedPane tabsPane;
 
-	public JTabbedPane getTabsPane() {
+	public final JTabbedPane getTabsPane() {
 		return tabsPane;
 	}
 
