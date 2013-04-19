@@ -1,6 +1,7 @@
 package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
+import de.g18.BitBank.Exception.KundenNummerException;
 import de.g18.BitBank.Gui.KontoAnlegen;
 import de.g18.BitBank.Kontotyp;
 
@@ -10,7 +11,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -23,8 +24,8 @@ public class KontoAnlegenListener implements ActionListener {
 	private JRadioButton sparKontoRadioButton;
 
 	public KontoAnlegenListener(JTextField kundenNummerField,
-								BankController controller, JRadioButton giroKontoRadioButton,
-								JRadioButton sparKontoRadioButton) {
+			BankController controller, JRadioButton giroKontoRadioButton,
+			JRadioButton sparKontoRadioButton) {
 		this.kundenNummerField = kundenNummerField;
 		this.controller = controller;
 		this.giroKontoRadioButton = giroKontoRadioButton;
@@ -52,17 +53,12 @@ public class KontoAnlegenListener implements ActionListener {
 					controller.createKonto(kundenNummer, Kontotyp.SPARKONTO);
 				}
 
-				JOptionPane
-						.showMessageDialog(new JFrame(),
-								"Konto unter für Kunde Nr. \"" + kundenNummer
-										+ "\" angelegt.");
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Konto unter für Kunde Nr. \"" + kundenNummer
+								+ "\" angelegt.");
 
 			} catch (java.lang.NumberFormatException exception) {
-
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Die Kundennummer ist keine gültige Zahl.",
-						"Inane error", JOptionPane.ERROR_MESSAGE);
-
+				new KundenNummerException();
 			}
 
 		}

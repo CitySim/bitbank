@@ -2,6 +2,7 @@ package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.KundenNummerException;
+import de.g18.BitBank.Exception.UnbekannteException;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
 import javax.swing.*;
@@ -39,21 +40,22 @@ public class KundenAnlegenListener implements ActionListener {
 		if (buttonClicked.getText().compareTo("Anlegen") == 0) {
 
 			try {
-				this.controller.createKunde(this.kundenNamenField.getText(),
-						Long.parseLong(this.kundenAnlegenField.getText()));
 
-				JOptionPane.showMessageDialog(
-						new JFrame(),
-						"Kunde mit dem Namen \""
-								+ kundenNamenField.getText()
-								+ "\" und der Kontonummer \""
-								+ Integer.parseInt(this.kundenAnlegenField
-										.getText()) + "\" angelegt.");
+				String kundenName = this.kundenNamenField.getText();
+				long kundenNummer = Long.parseLong(this.kundenAnlegenField
+						.getText());
+
+				this.controller.createKunde(kundenName, kundenNummer);
+
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Kunde mit dem Namen \"" + kundenName
+								+ "\" und der Kontonummer \"" + kundenNummer
+								+ "\" angelegt.");
 
 			} catch (NumberFormatException e) {
 				new KundenNummerException();
 			} catch (Exception e) {
-				e.printStackTrace();
+				new UnbekannteException();
 			}
 
 		}
