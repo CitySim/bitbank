@@ -1,11 +1,12 @@
 package de.g18.BitBank;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KundenNummerException;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BankController {
 	List<Kunde> kundenListe = new ArrayList<Kunde>();
@@ -85,12 +86,11 @@ public class BankController {
 	}
 
 	public void ueberweisen(int zielKontoNummer, int quellKontoNummer,
-			double betrag) {
+			double betrag, Date datum) {
 
 		try {
 			this.getKontoByKontoNummer(quellKontoNummer).ueberweisen(
-					this.getKontoByKontoNummer(zielKontoNummer), betrag,
-					new java.util.Date());
+					this.getKontoByKontoNummer(zielKontoNummer), betrag, datum);
 		} catch (BetragNegativException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
