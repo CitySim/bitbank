@@ -9,6 +9,7 @@ import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Exception.KundeNichtGefundenException;
 import de.g18.BitBank.Exception.KundenNummerException;
+import de.g18.BitBank.Exception.KundenNummerVergebenException;
 
 public class BankController {
 	private List<Kunde> kundenListe = new ArrayList<Kunde>();
@@ -43,7 +44,14 @@ public class BankController {
 		throw new KontoNichtGefundenException(kontoNummer);
 	}
 
-	public void createKunde(final String kundenName, final long kundenNummer) {
+	public void createKunde(String kundenName, long kundenNummer)
+			throws KundenNummerVergebenException {
+		for (Kunde kunde : kundenListe) {
+			if (kunde.getKundenNummmer() == kundenNummer) {
+				throw new KundenNummerVergebenException(kundenNummer);
+			}
+		}
+
 		try {
 			Kunde kunde = new Kunde(kundenName, kundenNummer);
 			this.kundenListe.add(kunde);

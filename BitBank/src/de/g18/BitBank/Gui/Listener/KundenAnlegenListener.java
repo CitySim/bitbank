@@ -2,6 +2,7 @@ package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.FeldLeerException;
+import de.g18.BitBank.Exception.KundenNummerVergebenException;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
 import javax.swing.*;
@@ -10,7 +11,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -22,7 +23,7 @@ public class KundenAnlegenListener implements ActionListener {
 	private BankController controller;
 
 	public KundenAnlegenListener(JTextField kundenNummerField,
-			JTextField kundenNamenField, BankController controller) {
+								 JTextField kundenNamenField, BankController controller) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 		this.controller = controller;
@@ -61,6 +62,10 @@ public class KundenAnlegenListener implements ActionListener {
 			} catch (FeldLeerException e) {
 				JOptionPane.showMessageDialog(new JFrame(),
 						"Der Kundenname muss angegeben werden.", "Fehler",
+						JOptionPane.ERROR_MESSAGE);
+			} catch (KundenNummerVergebenException e) {
+				JOptionPane.showMessageDialog(new JFrame(),
+						e.getMessage(), "Fehler",
 						JOptionPane.ERROR_MESSAGE);
 			}
 
