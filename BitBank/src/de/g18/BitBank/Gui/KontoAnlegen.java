@@ -81,7 +81,7 @@ public class KontoAnlegen extends JPanel {
 		beendenButton.addActionListener(new KontoAnlegenListener(this));
 	}
 
-	public JTabbedPane getTabsPane() {
+	public final JTabbedPane getTabsPane() {
 		return tabsPane;
 	}
 }

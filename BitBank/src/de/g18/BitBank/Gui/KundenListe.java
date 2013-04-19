@@ -55,7 +55,7 @@ public class KundenListe extends JPanel {
 		beendenButton.addActionListener(new KundenListeListener(this));
 	}
 
-	public JTabbedPane getTabsPane() {
+	public final JTabbedPane getTabsPane() {
 		return tabsPane;
 	}
 }

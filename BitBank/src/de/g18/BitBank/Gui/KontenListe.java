@@ -72,15 +72,15 @@ public class KontenListe extends JPanel {
 		beendenButton.addActionListener(listener);
 	}
 
-	public JTabbedPane getTabsPane() {
+	public final JTabbedPane getTabsPane() {
 		return tabsPane;
 	}
 
-	public JTable getTable() {
+	public final JTable getTable() {
 		return table;
 	}
 
-	public JTextField getKundenNummer() {
+	public final JTextField getKundenNummer() {
 		return kundenNummerField;
 	}
 }

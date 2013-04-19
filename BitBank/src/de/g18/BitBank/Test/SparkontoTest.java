@@ -24,7 +24,13 @@ public class SparkontoTest {
 
 	/**
 	 * Hier wird das Überziehen des Kontos getestet.
+	 * 
+	 * @throws BetragNegativException
+	 *             Fehler bei negativen Beträgen
+	 * @throws KontoLeerException
+	 *             Fehler bei nicht bekannten Konten
 	 */
+
 	@Test(expected = KontoLeerException.class)
 	public void testUeberziehen() throws BetragNegativException,
 			KontoLeerException {

@@ -78,7 +78,7 @@ public class KundenAnlegen extends JPanel {
 		beendenButton.addActionListener(new KundenAnlegenListener(this));
 	}
 
-	public JTabbedPane getTabsPane() {
+	public final JTabbedPane getTabsPane() {
 		return tabsPane;
 	}
 }

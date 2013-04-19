@@ -39,27 +39,27 @@ public abstract class Konto {
 				.getKontoTypNumber()) * 1000 + indexNummer;
 	}
 
-	public double getKontoStand() {
+	public final double getKontoStand() {
 		return kontoStand;
 	}
 
-	public void setKontoStand(final double kontoStand) {
+	public final void setKontoStand(final double kontoStand) {
 		this.kontoStand = kontoStand;
 	}
 
-	public long getKontoNummer() {
+	public final long getKontoNummer() {
 		return kontoNummer;
 	}
 
-	public List<Kontobewegung> getKontoBewegungsListe() {
+	public final List<Kontobewegung> getKontoBewegungsListe() {
 		return kontoBewegungsListe;
 	}
 
-	public List<Ueberweisung> getUeberweisungsListe() {
+	public final List<Ueberweisung> getUeberweisungsListe() {
 		return ueberweisungsListe;
 	}
 
-	public Kontotyp getKontoTyp() {
+	public final Kontotyp getKontoTyp() {
 		return kontoTyp;
 	}
 
@@ -68,7 +68,7 @@ public abstract class Konto {
 	 * 
 	 * @return 1 für Kontotyp = Girokonto,0 für Sparkonto
 	 */
-	public int getKontoTypNumber() {
+	public final int getKontoTypNumber() {
 		if (this.getKontoTyp().toString().equals("GIROKONTO")) {
 			return 1;
 		} else {
@@ -79,10 +79,14 @@ public abstract class Konto {
 	/**
 	 * Addiert einen Betrag auf den aktuellen Kontostand.
 	 * 
+	 * @throws BetragNegativException
+	 *             Fehler bei negativen Beträgen
+	 * 
 	 * @param betrag
 	 *            zu addierender Wert.
 	 */
-	public void einzahlen(final double betrag) throws BetragNegativException {
+	public final void einzahlen(final double betrag)
+			throws BetragNegativException {
 		if (betrag < 0) {
 			throw new BetragNegativException("Betrag darf nicht negativ sein");
 		}
@@ -98,7 +102,10 @@ public abstract class Konto {
 	 * 
 	 * @param betrag
 	 *            zu subtrahierender Wert.
-	 * @throws Exception
+	 * @throws BetragNegativException
+	 *             Fehler bei negativen Beträgen
+	 * @throws KontoLeerException
+	 *             Fehler bei unbekannten Konten
 	 */
 	public void auszahlen(final double betrag) throws BetragNegativException,
 			KontoLeerException {
@@ -120,11 +127,13 @@ public abstract class Konto {
 	 * @param betrag
 	 *            zu ueberweisende Summe.
 	 * @param datum
-	 *            aktuelles Datum.F
+	 *            aktuelles Datum.
 	 * @throws BetragNegativException
+	 *             Fehler bei negativen Beträgen
 	 * @throws KontoLeerException
+	 *             Fehler bei unbekannten Konten
 	 */
-	public void ueberweisen(final Konto zielKonto, final double betrag,
+	public final void ueberweisen(final Konto zielKonto, final double betrag,
 			final Date datum) throws BetragNegativException, KontoLeerException {
 		Ueberweisung ueberweisung = new Ueberweisung(this, zielKonto, betrag,
 				datum);

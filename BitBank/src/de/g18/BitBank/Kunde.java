@@ -24,7 +24,8 @@ public class Kunde {
 	 *            Name des Kunden
 	 * @param kundenNummer
 	 *            Kundennummer des Kunden
-	 * @throws ExceptionF
+	 * @throws KundenNummerException
+	 *             Fehler wenn Nummer < 0
 	 */
 	public Kunde(final String kundenName, final long kundenNummer)
 			throws KundenNummerException {
@@ -47,8 +48,11 @@ public class Kunde {
 
 	/**
 	 * Setzt die Kundennummer des Kunden neu.
+	 * 
+	 * @param kundenNummmer
+	 *            Nummer des Kunden
 	 */
-	public void setKundenNummmer(final int kundenNummmer) {
+	public final void setKundenNummmer(final int kundenNummmer) {
 		this.kundenNummmer = kundenNummmer;
 	}
 
@@ -57,11 +61,11 @@ public class Kunde {
 	 * 
 	 * @return Name des Kunden
 	 */
-	public String getName() {
+	public final String getName() {
 		return name;
 	}
 
-	public void setName(final String name) {
+	public final void setName(final String name) {
 		this.name = name;
 	}
 
@@ -70,7 +74,7 @@ public class Kunde {
 	 * 
 	 * @return Name des Kunden
 	 */
-	public List<Konto> getKontenListe() {
+	public final List<Konto> getKontenListe() {
 		return kontenListe;
 	}
 
@@ -84,13 +88,15 @@ public class Kunde {
 	 * @param betrag
 	 *            zu ueberweisende Summe.
 	 * @param datum
-	 *            aktuelles Datum.F
-	 * @throws KontoLeerException
+	 *            aktuelles Datum.
 	 * @throws BetragNegativException
+	 *             Fehler bei negativen Beträgen
+	 * @throws KontoLeerException
+	 *             Fehler bei unbekannten Konten
 	 */
-	public void ueberweisen(final Konto quellKonto, final Konto zielKonto,
-			final int betrag, final Date datum) throws KontoLeerException,
-			BetragNegativException {
+	public final void ueberweisen(final Konto quellKonto,
+			final Konto zielKonto, final int betrag, final Date datum)
+			throws KontoLeerException, BetragNegativException {
 		quellKonto.ueberweisen(zielKonto, betrag, datum);
 	}
 
@@ -101,7 +107,7 @@ public class Kunde {
 	 *            Typ des neuen Kontos
 	 * @return das neu angelegte Konto
 	 */
-	public Konto anlegenKonto(final Kontotyp kontoTyp) {
+	public final Konto anlegenKonto(final Kontotyp kontoTyp) {
 		// Die Daten werden übergeben um die Kontonummer erzeugen zu können
 		if (kontoTyp.toString().equals("GIROKONTO")) {
 			Girokonto neuesKonto = new Girokonto(this.kundenNummmer,
@@ -124,7 +130,7 @@ public class Kunde {
 	 * 
 	 * @return mehrzeiliger String
 	 */
-	public String anzeigenKontostandsUebersicht() {
+	public final String anzeigenKontostandsUebersicht() {
 		String ubersicht = "\n";
 
 		ubersicht += "┌────────────────────────────────────────────────────────────────────┐\n";
