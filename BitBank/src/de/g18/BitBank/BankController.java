@@ -2,6 +2,7 @@ package de.g18.BitBank;
 
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
+import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Exception.KundenNummerException;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class BankController {
 		return getKundeByKundenNummer(kundenNummer).getKontenListe();
 	}
 
-	public Konto getKontoByKontoNummer(long kontoNummer) {
+	public Konto getKontoByKontoNummer(long kontoNummer) throws KontoNichtGefundenException {
 		for (Kunde kunde : kundenListe) {
 			for (Konto konto : kunde.getKontenListe()) {
 				if (konto.getKontoNummer() == kontoNummer) {
@@ -40,7 +41,7 @@ public class BankController {
 				}
 			}
 		}
-		return null;
+		throw new KontoNichtGefundenException(kontoNummer);
 	}
 
 	public void createKunde(String kundenName, long kundenNummer) {
@@ -63,33 +64,30 @@ public class BankController {
 		}
 	}
 
-	public double kontoStandAnzeigen(int kontoNummer) {
-		return this.getKontoByKontoNummer(kontoNummer).getKontoStand();
+	public double kontoStandAnzeigen(int kontoNummer) throws KontoNichtGefundenException {
+		return getKontoByKontoNummer(kontoNummer).getKontoStand();
 	}
 
-	public void einzahlen(int kontoNummer, double betrag) {
-		try {
-			this.getKontoByKontoNummer(kontoNummer).einzahlen(betrag);
-		} catch (BetragNegativException e) {
-			e.printStackTrace();
+	public void einzahlen(int kontoNummer, double betrag) throws KontoNichtGefundenException, BetragNegativException {
+		this.getKontoByKontoNummer(kontoNummer).einzahlen(betrag);
+	}
+
+	public void auszahlen(int kontoNummer, double betrag) throws KontoNichtGefundenException, KontoLeerException, BetragNegativException {
+		getKontoByKontoNummer(kontoNummer).auszahlen(betrag);
+	}
+
+	public void ueberweisen(long zielKontoNummer, long quellKontoNummer, double betrag, Date datum) throws KontoLeerException, BetragNegativException, KontoNichtGefundenException {
+		Konto von = getKontoByKontoNummer(quellKontoNummer);
+		Konto nach = this.getKontoByKontoNummer(zielKontoNummer);
+
+		if (von == null) {
+			throw new KontoNichtGefundenException(quellKontoNummer);
 		}
-	}
-
-	public void auszahlen(int kontoNummer, double betrag) {
-		try {
-			this.getKontoByKontoNummer(kontoNummer).auszahlen(betrag);
-		} catch (BetragNegativException e) {
-			e.printStackTrace();
-		} catch (KontoLeerException e) {
-			e.printStackTrace();
+		if (nach == null) {
+			throw new KontoNichtGefundenException(zielKontoNummer);
 		}
-	}
 
-	public void ueberweisen(int zielKontoNummer, int quellKontoNummer,
-			double betrag, Date datum) throws KontoLeerException,
-			BetragNegativException {
-		this.getKontoByKontoNummer(quellKontoNummer).ueberweisen(
-				this.getKontoByKontoNummer(zielKontoNummer), betrag, datum);
+		von.ueberweisen(nach, betrag, datum);
 	}
 
 }
