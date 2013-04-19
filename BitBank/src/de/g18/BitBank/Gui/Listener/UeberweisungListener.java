@@ -8,6 +8,7 @@ import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.Ueberweisung;
 
 import javax.swing.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
@@ -73,7 +74,7 @@ public class UeberweisungListener implements ActionListener {
 
 			if (datum == null) {
 				JOptionPane.showMessageDialog(null,
-						"Bitte wählen sie ein Datum", "Fehlpusher",
+						"Bitte wählen sie ein Datum", "Fehler",
 						JOptionPane.ERROR_MESSAGE);
 				return;
 			}
@@ -81,6 +82,13 @@ public class UeberweisungListener implements ActionListener {
 			try {
 				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer,
 						betrag, datum);
+
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Ihre Überweisung über \"" + betrag + "\" von \""
+								+ vomKontoNummer + "\" nach\""
+								+ nachKontoNummer
+								+ "\" wurde erfolgreich durchgeführt.");
+
 			} catch (KontoLeerException e) {
 				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
 						JOptionPane.ERROR_MESSAGE);
@@ -98,5 +106,4 @@ public class UeberweisungListener implements ActionListener {
 			this.ueberweisungFrame.getTabsPane().remove(this.ueberweisungFrame);
 		}
 	}
-
 }
