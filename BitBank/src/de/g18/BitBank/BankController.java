@@ -37,7 +37,13 @@ public class BankController {
 		throw new KontoNichtGefundenException(kontoNummer);
 	}
 
-	public void createKunde(String kundenName, long kundenNummer) {
+	public void createKunde(String kundenName, long kundenNummer) throws KundenNummerVergebenException {
+		for (Kunde kunde : kundenListe) {
+			if (kunde.getKundenNummmer() == kundenNummer) {
+				throw new KundenNummerVergebenException(kundenNummer);
+			}
+		}
+
 		try {
 			Kunde kunde = new Kunde(kundenName, kundenNummer);
 			this.kundenListe.add(kunde);
