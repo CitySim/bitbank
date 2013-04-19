@@ -3,8 +3,10 @@ package de.g18.BitBank.Gui;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.BankViewListener;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 /**
  * Vorgegebene BankMain.
@@ -21,7 +23,11 @@ public class BankView extends JFrame {
 		setLocationRelativeTo(null);
 		setLayout(new GridLayout(1, 1));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("icon.png"));
+		try {
+			setIconImage(ImageIO.read(this.getClass().getResource("icon.png")));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		setTitle("BitBank");
 
 		JMenu actionMenu = new JMenu("Aktionen");
