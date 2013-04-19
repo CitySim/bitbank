@@ -47,6 +47,7 @@ public class ZahlungVornehmen extends JPanel {
 		alterKontoStandField.setEnabled(false);
 		JTextField betragField = new JTextField();
 		JTextField neuerKontoStandField = new JTextField();
+		neuerKontoStandField.setEditable(false);
 
 		JButton kontoStandButton = new JButton("Kontostand");
 		JButton einzahlungButton = new JButton("Einzahlung");

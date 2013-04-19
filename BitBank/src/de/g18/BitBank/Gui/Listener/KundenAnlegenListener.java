@@ -59,11 +59,11 @@ public class KundenAnlegenListener implements ActionListener {
 
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(new JFrame(),
-						"Die Kundennummer ist keine gültige Zahl.",
-						"Inane error", JOptionPane.ERROR_MESSAGE);
+						"Die Kundennummer ist keine gültige Zahl.", "Fehler",
+						JOptionPane.ERROR_MESSAGE);
 			} catch (FeldLeerException e) {
 				JOptionPane.showMessageDialog(new JFrame(),
-						"Der Kundenname muss angegeben werden.", "Inane error",
+						"Der Kundenname muss angegeben werden.", "Fehler",
 						JOptionPane.ERROR_MESSAGE);
 			}
 
