@@ -1,6 +1,7 @@
 package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
+import de.g18.BitBank.Exception.KeinKontotypException;
 import de.g18.BitBank.Exception.KundenNummerException;
 import de.g18.BitBank.Gui.KontoAnlegen;
 import de.g18.BitBank.Kontotyp;
@@ -47,16 +48,24 @@ public class KontoAnlegenListener implements ActionListener {
 				long kundenNummer = Long.parseLong(this.kundenNummerField
 						.getText());
 
-				if (this.giroKontoRadioButton.isSelected()) {
-					controller.createKonto(kundenNummer, Kontotyp.GIROKONTO);
-				} else if (this.sparKontoRadioButton.isSelected()) {
-					controller.createKonto(kundenNummer, Kontotyp.SPARKONTO);
+				if (!this.giroKontoRadioButton.isSelected()
+						&& !this.sparKontoRadioButton.isSelected()) {
+					new KeinKontotypException();
+
+				} else {
+					if (this.giroKontoRadioButton.isSelected()) {
+
+						controller
+								.createKonto(kundenNummer, Kontotyp.GIROKONTO);
+					} else if (this.sparKontoRadioButton.isSelected()) {
+						controller
+								.createKonto(kundenNummer, Kontotyp.SPARKONTO);
+					}
+
+					JOptionPane.showMessageDialog(new JFrame(),
+							"Konto unter für Kunde Nr. \"" + kundenNummer
+									+ "\" angelegt.");
 				}
-
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Konto unter für Kunde Nr. \"" + kundenNummer
-								+ "\" angelegt.");
-
 			} catch (java.lang.NumberFormatException exception) {
 				new KundenNummerException();
 			}
