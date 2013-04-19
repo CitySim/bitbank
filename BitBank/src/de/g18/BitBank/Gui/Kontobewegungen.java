@@ -1,11 +1,21 @@
 package de.g18.BitBank.Gui;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.SystemColor;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.plaf.BorderUIResource;
+
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.KontobewegungenListener;
-
-import javax.swing.*;
-import javax.swing.plaf.BorderUIResource;
-import java.awt.*;
 
 /**
  * Created with IntelliJ IDEA. User: Sven Date: 14.04.13 Time: 14:42
@@ -16,7 +26,8 @@ public class Kontobewegungen extends JPanel {
 	private JTextField kontoNummerField;
 	private JTable table;
 
-	public Kontobewegungen(JTabbedPane tabsPane, BankController controller) {
+	public Kontobewegungen(final JTabbedPane tabsPane,
+			final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -33,7 +44,8 @@ public class Kontobewegungen extends JPanel {
 		table = new JTable();
 		table.setFillsViewportHeight(true);
 		JScrollPane tablePane = new JScrollPane(table);
-		tablePane.setBorder(new BorderUIResource.MatteBorderUIResource(10, 10, 10, 10, SystemColor.black));
+		tablePane.setBorder(new BorderUIResource.MatteBorderUIResource(10, 10,
+				10, 10, SystemColor.black));
 
 		c.gridx = 0;
 		c.gridy = 0;
@@ -60,7 +72,8 @@ public class Kontobewegungen extends JPanel {
 		c.fill = GridBagConstraints.BOTH;
 		this.add(tablePane, c);
 
-		KontobewegungenListener listener = new KontobewegungenListener(this, controller);
+		KontobewegungenListener listener = new KontobewegungenListener(this,
+				controller);
 		kontobewegungenButton.addActionListener(listener);
 		beendenButton.addActionListener(listener);
 	}

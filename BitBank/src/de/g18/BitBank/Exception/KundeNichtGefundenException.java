@@ -7,7 +7,7 @@ package de.g18.BitBank.Exception;
 public class KundeNichtGefundenException extends Throwable {
 	private static final long serialVersionUID = -982313113253885226L;
 
-	public KundeNichtGefundenException(long kundenNummer) {
+	public KundeNichtGefundenException(final long kundenNummer) {
 		super("Kunde " + Long.toString(kundenNummer) + " nicht gefunden");
 	}
 }

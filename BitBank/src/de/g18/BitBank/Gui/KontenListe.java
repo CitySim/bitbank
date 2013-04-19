@@ -10,7 +10,7 @@ import java.awt.*;
 /**
  * Gui Klasse zum Anzeigen des aktuellen Kontostandes aller Konten eines
  * Kundens.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -21,7 +21,8 @@ public class KontenListe extends JPanel {
 	private JTable table;
 	private JTextField kundenNummerField;
 
-	public KontenListe(JTabbedPane tabsPane, BankController controller) {
+	public KontenListe(final JTabbedPane tabsPane,
+			final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -38,7 +39,8 @@ public class KontenListe extends JPanel {
 		table = new JTable();
 		table.setFillsViewportHeight(true);
 		JScrollPane tablePane = new JScrollPane(table);
-		tablePane.setBorder(new BorderUIResource.MatteBorderUIResource(10, 10, 10, 10, SystemColor.black));
+		tablePane.setBorder(new BorderUIResource.MatteBorderUIResource(10, 10,
+				10, 10, SystemColor.black));
 
 		c.gridx = 0;
 		c.gridy = 0;

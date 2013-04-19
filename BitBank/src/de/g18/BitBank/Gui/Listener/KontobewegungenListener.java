@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -21,21 +21,25 @@ public class KontobewegungenListener implements ActionListener {
 	private Kontobewegungen kontobewegungenFrame;
 	private BankController controller;
 
-	public KontobewegungenListener(Kontobewegungen kontobewegungenFrame, BankController controller) {
+	public KontobewegungenListener(final Kontobewegungen kontobewegungenFrame,
+			final BankController controller) {
 		this.kontobewegungenFrame = kontobewegungenFrame;
 		this.controller = controller;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent event) {
+	public void actionPerformed(final ActionEvent event) {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Kontobewegungen") == 0) {
 			long kontonummer;
 			try {
-				kontonummer = Long.parseLong(kontobewegungenFrame.getKontoNummer().getText());
+				kontonummer = Long.parseLong(kontobewegungenFrame
+						.getKontoNummer().getText());
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Kontonummer konnte nicht gelesen werden", "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null,
+						"Kontonummer konnte nicht gelesen werden", "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			}
 
@@ -43,11 +47,13 @@ public class KontobewegungenListener implements ActionListener {
 			try {
 				konto = controller.getKontoByKontoNummer(kontonummer);
 			} catch (KontoNichtGefundenException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			}
 
-			kontobewegungenFrame.getTable().setModel(new KontoBewegungenTableModel(konto));
+			kontobewegungenFrame.getTable().setModel(
+					new KontoBewegungenTableModel(konto));
 		} else if (buttonClicked.getText().compareTo("Beenden") == 0) {
 			kontobewegungenFrame.getTabsPane().remove(kontobewegungenFrame);
 		}

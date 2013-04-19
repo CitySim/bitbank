@@ -1,9 +1,9 @@
 package de.g18.BitBank.Gui.TableModels;
 
+import javax.swing.table.AbstractTableModel;
+
 import de.g18.BitBank.Konto;
 import de.g18.BitBank.Kontobewegung;
-
-import javax.swing.table.AbstractTableModel;
 
 /**
  * Created with IntelliJ IDEA. User: Sven Date: 17.04.13 Time: 22:38 To change
@@ -11,10 +11,10 @@ import javax.swing.table.AbstractTableModel;
  */
 public class KontoBewegungenTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -5781280913032155581L;
-	Konto konto;
-	String[] cols = { "Datum", "von", "nach", "Betrag" };
+	private Konto konto;
+	private String[] cols = { "Datum", "von", "nach", "Betrag" };
 
-	public KontoBewegungenTableModel(Konto konto) {
+	public KontoBewegungenTableModel(final Konto konto) {
 		this.konto = konto;
 	}
 
@@ -29,12 +29,12 @@ public class KontoBewegungenTableModel extends AbstractTableModel {
 	}
 
 	@Override
-	public String getColumnName(int col) {
+	public String getColumnName(final int col) {
 		return cols[col];
 	}
 
 	@Override
-	public Object getValueAt(int rowIndex, int columnIndex) {
+	public Object getValueAt(final int rowIndex, final int columnIndex) {
 		Kontobewegung kb = konto.getKontoBewegungsListe().get(rowIndex);
 
 		switch (columnIndex) {

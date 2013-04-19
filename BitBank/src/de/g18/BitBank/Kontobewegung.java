@@ -14,7 +14,7 @@ public class Kontobewegung {
 	private Date datum;
 	private double betrag;
 
-	public Kontobewegung(Date datum, double betrag) {
+	public Kontobewegung(final Date datum, final double betrag) {
 		this.datum = datum;
 		this.betrag = betrag;
 	}

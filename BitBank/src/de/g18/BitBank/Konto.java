@@ -1,14 +1,14 @@
 package de.g18.BitBank;
 
-import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.KontoLeerException;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
+
 /**
- * Konto Klasse
+ * Konto Klasse.
  * 
  * @author it1-markde
  * @see Girokonto
@@ -32,7 +32,8 @@ public abstract class Konto {
 	 * @param indexNummer
 	 *            IndexNummer des Kontos in der Kontoliste des Kunden.
 	 */
-	public Konto(Kontotyp kontoTyp, long kundenNummmer, int indexNummer) {
+	public Konto(final Kontotyp kontoTyp, final long kundenNummmer,
+			final int indexNummer) {
 		this.kontoTyp = kontoTyp;
 		this.kontoNummer = ((((long) kundenNummmer) * 100) + this
 				.getKontoTypNumber()) * 1000 + indexNummer;
@@ -42,7 +43,7 @@ public abstract class Konto {
 		return kontoStand;
 	}
 
-	public void setKontoStand(double kontoStand) {
+	public void setKontoStand(final double kontoStand) {
 		this.kontoStand = kontoStand;
 	}
 
@@ -81,7 +82,7 @@ public abstract class Konto {
 	 * @param betrag
 	 *            zu addierender Wert.
 	 */
-	public void einzahlen(double betrag) throws BetragNegativException {
+	public void einzahlen(final double betrag) throws BetragNegativException {
 		if (betrag < 0) {
 			throw new BetragNegativException("Betrag darf nicht negativ sein");
 		}
@@ -99,7 +100,7 @@ public abstract class Konto {
 	 *            zu subtrahierender Wert.
 	 * @throws Exception
 	 */
-	public void auszahlen(double betrag) throws BetragNegativException,
+	public void auszahlen(final double betrag) throws BetragNegativException,
 			KontoLeerException {
 		if (betrag < 0) {
 			throw new BetragNegativException("Betrag darf nicht negativ sein");
@@ -123,8 +124,8 @@ public abstract class Konto {
 	 * @throws BetragNegativException
 	 * @throws KontoLeerException
 	 */
-	public void ueberweisen(Konto zielKonto, double betrag, Date datum)
-			throws BetragNegativException, KontoLeerException {
+	public void ueberweisen(final Konto zielKonto, final double betrag,
+			final Date datum) throws BetragNegativException, KontoLeerException {
 		Ueberweisung ueberweisung = new Ueberweisung(this, zielKonto, betrag,
 				datum);
 

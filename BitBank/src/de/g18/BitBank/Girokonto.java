@@ -10,7 +10,7 @@ import de.g18.BitBank.Exception.KontoLeerException;
 
 public class Girokonto extends Konto {
 
-	public Girokonto(long kundenNummmer, int indexNummer) {
+	public Girokonto(final long kundenNummmer, final int indexNummer) {
 		super(Kontotyp.GIROKONTO, kundenNummmer, indexNummer);
 	}
 
@@ -22,7 +22,7 @@ public class Girokonto extends Konto {
 		return limit;
 	}
 
-	public void setLimit(double limit) {
+	public void setLimit(final double limit) {
 		this.limit = limit;
 	}
 
@@ -32,7 +32,7 @@ public class Girokonto extends Konto {
 	 */
 
 	@Override
-	public void auszahlen(double betrag) throws BetragNegativException,
+	public void auszahlen(final double betrag) throws BetragNegativException,
 			KontoLeerException {
 		if (super.getKontoStand() - betrag < -limit) {
 			throw new KontoLeerException(

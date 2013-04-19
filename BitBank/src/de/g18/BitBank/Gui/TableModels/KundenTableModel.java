@@ -1,9 +1,9 @@
 package de.g18.BitBank.Gui.TableModels;
 
+import javax.swing.table.AbstractTableModel;
+
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Kunde;
-
-import javax.swing.table.AbstractTableModel;
 
 /**
  * Created with IntelliJ IDEA. User: Sven Date: 17.04.13 Time: 22:38 To change
@@ -11,10 +11,10 @@ import javax.swing.table.AbstractTableModel;
  */
 public class KundenTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -5572145010789838691L;
-	BankController controller;
-	String[] cols = { "Nr.", "Name", "Konten" };
+	private BankController controller;
+	private String[] cols = { "Nr.", "Name", "Konten" };
 
-	public KundenTableModel(BankController controller) {
+	public KundenTableModel(final BankController controller) {
 		this.controller = controller;
 	}
 
@@ -29,12 +29,12 @@ public class KundenTableModel extends AbstractTableModel {
 	}
 
 	@Override
-	public String getColumnName(int col) {
+	public String getColumnName(final int col) {
 		return cols[col];
 	}
 
 	@Override
-	public Object getValueAt(int rowIndex, int columnIndex) {
+	public Object getValueAt(final int rowIndex, final int columnIndex) {
 		Kunde k = controller.getKundeByIndex(rowIndex);
 
 		switch (columnIndex) {

@@ -1,10 +1,11 @@
 package de.g18.BitBank.Test;
 
-import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.KontoLeerException;
-import de.g18.BitBank.Sparkonto;
 import org.junit.Before;
 import org.junit.Test;
+
+import de.g18.BitBank.Sparkonto;
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
 
 public class SparkontoTest {
 	private Sparkonto k;
@@ -16,15 +17,17 @@ public class SparkontoTest {
 	}
 
 	@Test
-	public void testAuszahlen() throws BetragNegativException, KontoLeerException {
+	public void testAuszahlen() throws BetragNegativException,
+			KontoLeerException {
 		k.auszahlen(k.getKontoStand());
 	}
 
 	/**
-	 * Hier wird das Überziehen des Kontos getestet
+	 * Hier wird das Überziehen des Kontos getestet.
 	 */
 	@Test(expected = KontoLeerException.class)
-	public void testUeberziehen() throws BetragNegativException, KontoLeerException {
+	public void testUeberziehen() throws BetragNegativException,
+			KontoLeerException {
 		k.auszahlen(k.getKontoStand() + 1);
 	}
 }

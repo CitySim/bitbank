@@ -7,7 +7,7 @@ package de.g18.BitBank.Exception;
 public class BetragNegativException extends Exception {
 	private static final long serialVersionUID = -2180366140800175258L;
 
-	public BetragNegativException(String message) {
+	public BetragNegativException(final String message) {
 		super(message);
 	}
 }

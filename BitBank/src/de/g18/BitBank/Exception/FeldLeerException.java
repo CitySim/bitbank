@@ -7,7 +7,7 @@ package de.g18.BitBank.Exception;
 public class FeldLeerException extends Exception {
 	private static final long serialVersionUID = 1207154093010098944L;
 
-	public FeldLeerException(String message) {
+	public FeldLeerException(final String message) {
 		super(message);
 	}
 }

@@ -1,42 +1,47 @@
 package de.g18.BitBank.Gui.Listener;
 
-import de.g18.BitBank.BankController;
-import de.g18.BitBank.Exception.KundeNichtGefundenException;
-import de.g18.BitBank.Gui.KontenListe;
-import de.g18.BitBank.Gui.TableModels.KontenTableModel;
-import de.g18.BitBank.Kunde;
-
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
+import de.g18.BitBank.BankController;
+import de.g18.BitBank.Kunde;
+import de.g18.BitBank.Exception.KundeNichtGefundenException;
+import de.g18.BitBank.Gui.KontenListe;
+import de.g18.BitBank.Gui.TableModels.KontenTableModel;
+
 /**
  * Listener zu den Buttons der KontenListe Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
 
 public class KontenListeListener implements ActionListener {
 	private KontenListe kontenListeFrame;
-	BankController controller;
+	private BankController controller;
 
 	public KontenListeListener(KontenListe kontenListeFrame,
-							   BankController controller) {
+			BankController controller) {
 		this.kontenListeFrame = kontenListeFrame;
 		this.controller = controller;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent event) {
+	public void actionPerformed(final ActionEvent event) {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Kontoübersicht") == 0) {
 			long kundenNummer;
 			try {
-				kundenNummer = Long.parseLong(kontenListeFrame.getKundenNummer().getText());
+				kundenNummer = Long.parseLong(kontenListeFrame
+						.getKundenNummer().getText());
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Kundenummer konnte nicht gelesen werden", "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null,
+						"Kundenummer konnte nicht gelesen werden", "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			}
 
@@ -44,7 +49,8 @@ public class KontenListeListener implements ActionListener {
 			try {
 				kunde = controller.getKundeByNummer(kundenNummer);
 			} catch (KundeNichtGefundenException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
+						JOptionPane.OK_OPTION);
 				return;
 			}
 

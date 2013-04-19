@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * Gui Klasse zum anlegen eines Kundens.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -18,7 +18,8 @@ public class KontoAnlegen extends JPanel {
 
 	private JTabbedPane tabsPane;
 
-	public KontoAnlegen(JTabbedPane tabsPane, BankController controller) {
+	public KontoAnlegen(final JTabbedPane tabsPane,
+			final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());

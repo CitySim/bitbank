@@ -17,8 +17,8 @@ public class Ueberweisung {
 	private Konto zielKonto;
 	private Date datum;
 
-	public Ueberweisung(Konto quellKonto, Konto zielKonto, double betrag,
-						Date datum) {
+	public Ueberweisung(final Konto quellKonto, final Konto zielKonto,
+			final double betrag, final Date datum) {
 
 		this.quellKonto = quellKonto;
 		this.zielKonto = zielKonto;
@@ -29,11 +29,12 @@ public class Ueberweisung {
 
 	/**
 	 * Ueberträgt den betrag der ueberweisung von einem Konto zum anderen.
-	 *
+	 * 
 	 * @throws BetragNegativException
 	 * @throws KontoLeerException
 	 */
-	public void durchfuehrenUeberweisung() throws BetragNegativException, KontoLeerException {
+	public void durchfuehrenUeberweisung() throws BetragNegativException,
+			KontoLeerException {
 		quellKonto.auszahlen(betrag);
 		zielKonto.einzahlen(betrag);
 

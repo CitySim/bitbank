@@ -1,23 +1,28 @@
 package de.g18.BitBank;
 
-import de.g18.BitBank.Exception.*;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
+import de.g18.BitBank.Exception.KontoNichtGefundenException;
+import de.g18.BitBank.Exception.KundeNichtGefundenException;
+import de.g18.BitBank.Exception.KundenNummerException;
+
 public class BankController {
-	List<Kunde> kundenListe = new ArrayList<Kunde>();
+	private List<Kunde> kundenListe = new ArrayList<Kunde>();
 
 	public int getKundenCount() {
 		return kundenListe.size();
 	}
 
-	public Kunde getKundeByIndex(int i) {
+	public Kunde getKundeByIndex(final int i) {
 		return kundenListe.get(i);
 	}
 
-	private Kunde getKundeByKundenNummer(long kundenNummer) throws KundeNichtGefundenException {
+	private Kunde getKundeByKundenNummer(final long kundenNummer)
+			throws KundeNichtGefundenException {
 		for (Kunde kunde : this.kundenListe) {
 			if (kunde.getKundenNummmer() == kundenNummer) {
 				return kunde;
@@ -26,7 +31,8 @@ public class BankController {
 		throw new KundeNichtGefundenException(kundenNummer);
 	}
 
-	public Konto getKontoByKontoNummer(long kontoNummer) throws KontoNichtGefundenException {
+	public Konto getKontoByKontoNummer(final long kontoNummer)
+			throws KontoNichtGefundenException {
 		for (Kunde kunde : kundenListe) {
 			for (Konto konto : kunde.getKontenListe()) {
 				if (konto.getKontoNummer() == kontoNummer) {
@@ -37,7 +43,7 @@ public class BankController {
 		throw new KontoNichtGefundenException(kontoNummer);
 	}
 
-	public void createKunde(String kundenName, long kundenNummer) {
+	public void createKunde(final String kundenName, final long kundenNummer) {
 		try {
 			Kunde kunde = new Kunde(kundenName, kundenNummer);
 			this.kundenListe.add(kunde);
@@ -46,24 +52,32 @@ public class BankController {
 		}
 	}
 
-	public Konto createKonto(long kundenNummer, Kontotyp kontoTyp) throws KundeNichtGefundenException {
+	public Konto createKonto(final long kundenNummer, final Kontotyp kontoTyp)
+			throws KundeNichtGefundenException {
 		Kunde kunde = getKundeByKundenNummer(kundenNummer);
 		return kunde.anlegenKonto(kontoTyp);
 	}
 
-	public double kontoStandAnzeigen(int kontoNummer) throws KontoNichtGefundenException {
+	public double kontoStandAnzeigen(final int kontoNummer)
+			throws KontoNichtGefundenException {
 		return this.getKontoByKontoNummer(kontoNummer).getKontoStand();
 	}
 
-	public void einzahlen(int kontoNummer, double betrag) throws KontoNichtGefundenException, BetragNegativException {
+	public void einzahlen(final int kontoNummer, final double betrag)
+			throws KontoNichtGefundenException, BetragNegativException {
 		this.getKontoByKontoNummer(kontoNummer).einzahlen(betrag);
 	}
 
-	public void auszahlen(int kontoNummer, double betrag) throws KontoNichtGefundenException, KontoLeerException, BetragNegativException {
+	public void auszahlen(final int kontoNummer, final double betrag)
+			throws KontoNichtGefundenException, KontoLeerException,
+			BetragNegativException {
 		this.getKontoByKontoNummer(kontoNummer).auszahlen(betrag);
 	}
 
-	public void ueberweisen(int zielKontoNummer, long quellKontoNummer, double betrag, Date datum) throws KontoNichtGefundenException, KontoLeerException, BetragNegativException {
+	public void ueberweisen(final int zielKontoNummer,
+			final long quellKontoNummer, final double betrag, final Date datum)
+			throws KontoNichtGefundenException, KontoLeerException,
+			BetragNegativException {
 		Konto von = getKontoByKontoNummer(quellKontoNummer);
 		Konto nach = this.getKontoByKontoNummer(zielKontoNummer);
 
@@ -77,7 +91,8 @@ public class BankController {
 		von.ueberweisen(nach, betrag, datum);
 	}
 
-	public Kunde getKundeByNummer(long kundenNummer) throws KundeNichtGefundenException {
+	public Kunde getKundeByNummer(final long kundenNummer)
+			throws KundeNichtGefundenException {
 		for (Kunde kunde : kundenListe) {
 			if (kunde.getKundenNummmer() == kundenNummer) {
 				return kunde;

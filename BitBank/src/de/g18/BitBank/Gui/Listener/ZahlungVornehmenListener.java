@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -27,13 +27,14 @@ public class ZahlungVornehmenListener implements ActionListener {
 	private JTextField neuerKontoStandField;
 	private JTextField betragField;
 
-	public ZahlungVornehmenListener(ZahlungVornehmen zahlungVornehmenFrame) {
+	public ZahlungVornehmenListener(final ZahlungVornehmen zahlungVornehmenFrame) {
 		this.zahlungVornehmenFrame = zahlungVornehmenFrame;
 	}
 
-	public ZahlungVornehmenListener(JTextField kontoNummerField,
-									JTextField alterKontoStandField, JTextField neuerKontoStandField,
-									JTextField betragField, BankController controller) {
+	public ZahlungVornehmenListener(final JTextField kontoNummerField,
+			final JTextField alterKontoStandField,
+			final JTextField neuerKontoStandField,
+			final JTextField betragField, final BankController controller) {
 		this.kontoNummerField = kontoNummerField;
 		this.alterKontoStandField = alterKontoStandField;
 		this.neuerKontoStandField = neuerKontoStandField;
@@ -42,7 +43,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent event) {
+	public void actionPerformed(final ActionEvent event) {
 
 		JButton buttonClicked = (JButton) event.getSource();
 		int kontoNummer = 0;
@@ -129,7 +130,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		}
 	}
 
-	public void aktualisieren(int kontoNummer) {
+	public void aktualisieren(final int kontoNummer) {
 		if (!this.neuerKontoStandField.getText().equals("")) {
 			this.alterKontoStandField.setText(this.neuerKontoStandField
 					.getText());

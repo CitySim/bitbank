@@ -9,7 +9,7 @@ import java.awt.*;
 
 /**
  * Gui Klasse zum Überweisen eines Betrages von einem Konto zum anderen.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -19,7 +19,8 @@ public class Ueberweisung extends JPanel {
 
 	private JTabbedPane tabsPane;
 
-	public Ueberweisung(JTabbedPane tabsPane, BankController controller) {
+	public Ueberweisung(final JTabbedPane tabsPane,
+			final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -89,11 +90,9 @@ public class Ueberweisung extends JPanel {
 		this.add(new JPanel(), c);
 
 		ueberweisenButton
-				.addActionListener(new UeberweisungListener(
-						vomKontoField, nachKontoField, betragField, controller,
-						chooser));
-		beendenButton.addActionListener(new UeberweisungListener(
-				this));
+				.addActionListener(new UeberweisungListener(vomKontoField,
+						nachKontoField, betragField, controller, chooser));
+		beendenButton.addActionListener(new UeberweisungListener(this));
 	}
 
 	public JTabbedPane getTabsPane() {

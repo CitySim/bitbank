@@ -7,7 +7,7 @@ package de.g18.BitBank.Exception;
 public class KeinKontotypException extends Exception {
 	private static final long serialVersionUID = -2180366140800175258L;
 
-	public KeinKontotypException(String message) {
+	public KeinKontotypException(final String message) {
 		super(message);
 	}
 }

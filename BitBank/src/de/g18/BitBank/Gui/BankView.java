@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * Vorgegebene BankMain.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -16,7 +16,7 @@ import java.awt.*;
 public class BankView extends JFrame {
 	private static final long serialVersionUID = -6398346930903875436L;
 
-	public BankView(BankController controller) {
+	public BankView(final BankController controller) {
 		setSize(650, 400);
 		setLocationRelativeTo(null);
 		setLayout(new GridLayout(1, 1));
@@ -48,11 +48,12 @@ public class BankView extends JFrame {
 		setMinimumSize(new Dimension(650, 400));
 		setVisible(true);
 
-		BankViewListener listener = new BankViewListener(actionMenu, tabsPane, controller);
+		BankViewListener listener = new BankViewListener(actionMenu, tabsPane,
+				controller);
 		about.getMenuComponents()[0].addMouseListener(listener);
 	}
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		BankController c = new BankController();
 
 		try {

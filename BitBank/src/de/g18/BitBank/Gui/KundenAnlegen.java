@@ -25,7 +25,8 @@ public class KundenAnlegen extends JPanel {
 
 	private JTabbedPane tabsPane;
 
-	public KundenAnlegen(JTabbedPane tabsPane, BankController controller) {
+	public KundenAnlegen(final JTabbedPane tabsPane,
+			final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());

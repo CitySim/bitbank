@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -24,21 +24,22 @@ public class KontoAnlegenListener implements ActionListener {
 	private JRadioButton giroKontoRadioButton;
 	private JRadioButton sparKontoRadioButton;
 
-	public KontoAnlegenListener(JTextField kundenNummerField,
-								BankController controller, JRadioButton giroKontoRadioButton,
-								JRadioButton sparKontoRadioButton) {
+	public KontoAnlegenListener(final JTextField kundenNummerField,
+			final BankController controller,
+			final JRadioButton giroKontoRadioButton,
+			final JRadioButton sparKontoRadioButton) {
 		this.kundenNummerField = kundenNummerField;
 		this.controller = controller;
 		this.giroKontoRadioButton = giroKontoRadioButton;
 		this.sparKontoRadioButton = sparKontoRadioButton;
 	}
 
-	public KontoAnlegenListener(KontoAnlegen kontoAnlegenFrame) {
+	public KontoAnlegenListener(final KontoAnlegen kontoAnlegenFrame) {
 		this.kontoAnlegenFrame = kontoAnlegenFrame;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent event) {
+	public void actionPerformed(final ActionEvent event) {
 
 		JButton buttonClicked = (JButton) event.getSource();
 
@@ -54,19 +55,28 @@ public class KontoAnlegenListener implements ActionListener {
 
 				} else {
 					if (this.giroKontoRadioButton.isSelected()) {
-						controller.createKonto(kundenNummer, Kontotyp.GIROKONTO);
+						controller
+								.createKonto(kundenNummer, Kontotyp.GIROKONTO);
 					} else if (this.sparKontoRadioButton.isSelected()) {
-						controller.createKonto(kundenNummer, Kontotyp.SPARKONTO);
+						controller
+								.createKonto(kundenNummer, Kontotyp.SPARKONTO);
 					}
 
-					JOptionPane.showMessageDialog(new JFrame(), "Konto unter für Kunde Nr. \"" + kundenNummer + "\" angelegt.");
+					JOptionPane.showMessageDialog(new JFrame(),
+							"Konto unter für Kunde Nr. \"" + kundenNummer
+									+ "\" angelegt.");
 				}
 			} catch (java.lang.NumberFormatException exception) {
-				JOptionPane.showMessageDialog(new JFrame(), "Die Kundennummer ist keine gültige Zahl.", "Fehler", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Die Kundennummer ist keine gültige Zahl.", "Fehler",
+						JOptionPane.ERROR_MESSAGE);
 			} catch (KeinKontotypException exception) {
-				JOptionPane.showMessageDialog(new JFrame(), "Bitte wählen sie einen Kontotypen aus.", "Fehler", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Bitte wählen sie einen Kontotypen aus.", "Fehler",
+						JOptionPane.ERROR_MESSAGE);
 			} catch (KundeNichtGefundenException e) {
-				JOptionPane.showMessageDialog(new JFrame(), e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(new JFrame(), e.getMessage(),
+						"Fehler", JOptionPane.ERROR_MESSAGE);
 			}
 
 		}

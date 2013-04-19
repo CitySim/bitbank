@@ -7,7 +7,7 @@ package de.g18.BitBank.Exception;
 public class KontoLeerException extends Exception {
 	private static final long serialVersionUID = -9013057245886843969L;
 
-	public KontoLeerException(String message) {
+	public KontoLeerException(final String message) {
 		super(message);
 	}
 }
