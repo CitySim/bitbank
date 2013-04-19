@@ -10,7 +10,6 @@ import javax.swing.JTextField;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.FeldLeerException;
-import de.g18.BitBank.Exception.KundenNummerException;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
 /**
@@ -49,16 +48,23 @@ public class KundenAnlegenListener implements ActionListener {
 						.getText());
 				String kundenName = this.kundenNamenField.getText();
 				if (kundenName.equals("")) {
-					new FeldLeerException("Kundenname");
-				} else {
-					this.controller.createKunde(kundenName, kundenNummer);
-
-					JOptionPane.showMessageDialog(new JFrame(),
-							"Kunde mit dem Namen \"" + kundenName
-									+ "\" und der Kundennummer \""
-									+ kundenNummer + "\" angelegt.");
+					throw new FeldLeerException("Kundenname nicht angegeben.");
 				}
+				this.controller.createKunde(kundenName, kundenNummer);
+
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Kunde mit dem Namen \"" + kundenName
+								+ "\" und der Kundennummer \"" + kundenNummer
+								+ "\" angelegt.");
+
 			} catch (NumberFormatException e) {
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Die Kundennummer ist keine gültige Zahl.",
+						"Inane error", JOptionPane.ERROR_MESSAGE);
+			} catch (FeldLeerException e) {
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Der Kundenname muss angegeben werden.", "Inane error",
+						JOptionPane.ERROR_MESSAGE);
 			}
 
 		}

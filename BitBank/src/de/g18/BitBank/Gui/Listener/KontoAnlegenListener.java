@@ -1,14 +1,19 @@
 package de.g18.BitBank.Gui.Listener;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
 import de.g18.BitBank.BankController;
+import de.g18.BitBank.Kontotyp;
 import de.g18.BitBank.Exception.KeinKontotypException;
 import de.g18.BitBank.Exception.KundenNummerException;
 import de.g18.BitBank.Gui.KontoAnlegen;
-import de.g18.BitBank.Kontotyp;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
@@ -50,7 +55,7 @@ public class KontoAnlegenListener implements ActionListener {
 
 				if (!this.giroKontoRadioButton.isSelected()
 						&& !this.sparKontoRadioButton.isSelected()) {
-					new KeinKontotypException();
+					throw new KeinKontotypException("Kein Kontotyp ausgewählt.");
 
 				} else {
 					if (this.giroKontoRadioButton.isSelected()) {
@@ -67,6 +72,13 @@ public class KontoAnlegenListener implements ActionListener {
 									+ "\" angelegt.");
 				}
 			} catch (java.lang.NumberFormatException exception) {
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Die Kundennummer ist keine gültige Zahl.",
+						"Inane error", JOptionPane.ERROR_MESSAGE);
+			} catch (KeinKontotypException exception) {
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Bitte wählen sie einen Kontotypen aus.",
+						"Inane error", JOptionPane.ERROR_MESSAGE);
 			}
 
 		}
