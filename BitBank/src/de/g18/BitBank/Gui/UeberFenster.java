@@ -32,6 +32,7 @@ public class UeberFenster extends JDialog {
 			e.printStackTrace();
 		}
 		JLabel iconLabel = new JLabel(new ImageIcon(myPicture));
+		iconLabel.setBorder(new BorderUIResource.EmptyBorderUIResource(10, 10, 10, 10));
 
 		c.gridx = 0;
 		c.gridy = 0;
