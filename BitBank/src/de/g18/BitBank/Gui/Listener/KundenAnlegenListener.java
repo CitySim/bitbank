@@ -2,6 +2,7 @@ package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.FeldLeerException;
+import de.g18.BitBank.Exception.KundenNummerException;
 import de.g18.BitBank.Exception.KundenNummerVergebenException;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
@@ -11,7 +12,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -23,7 +24,7 @@ public class KundenAnlegenListener implements ActionListener {
 	private BankController controller;
 
 	public KundenAnlegenListener(JTextField kundenNummerField,
-								 JTextField kundenNamenField, BankController controller) {
+			JTextField kundenNamenField, BankController controller) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 		this.controller = controller;
@@ -43,6 +44,10 @@ public class KundenAnlegenListener implements ActionListener {
 
 				long kundenNummer = Long.parseLong(this.kundenAnlegenField
 						.getText());
+				if (kundenNummer <= 0) {
+					throw new KundenNummerException(
+							"Kundennummer darf nicht kleiner 0 sein");
+				}
 				String kundenName = this.kundenNamenField.getText();
 				if (kundenName.equals("")) {
 					throw new FeldLeerException("Kundenname nicht angegeben.");
@@ -64,8 +69,11 @@ public class KundenAnlegenListener implements ActionListener {
 						"Der Kundenname muss angegeben werden.", "Fehler",
 						JOptionPane.ERROR_MESSAGE);
 			} catch (KundenNummerVergebenException e) {
+				JOptionPane.showMessageDialog(new JFrame(), e.getMessage(),
+						"Fehler", JOptionPane.ERROR_MESSAGE);
+			} catch (KundenNummerException e) {
 				JOptionPane.showMessageDialog(new JFrame(),
-						e.getMessage(), "Fehler",
+						"Die Kundennummer darf nicht negativ sein.", "Fehler",
 						JOptionPane.ERROR_MESSAGE);
 			}
 
