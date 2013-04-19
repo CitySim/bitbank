@@ -7,6 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import de.g18.BitBank.BankController;
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
+import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.ZahlungVornehmen;
 
 /**
@@ -47,23 +50,43 @@ public class ZahlungVornehmenListener implements ActionListener {
 		try {
 			kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
 		} catch (java.lang.NumberFormatException exception) {
-			
+
 		}
 
 		if (buttonClicked.getText().compareTo("Kontostand") == 0) {
-			this.alterKontoStandField.setText(""
-					+ this.controller.kontoStandAnzeigen(kontoNummer));
+			try {
+				this.alterKontoStandField.setText(""
+						+ this.controller.kontoStandAnzeigen(kontoNummer));
+			} catch (KontoNichtGefundenException e) {
+				e.printStackTrace();
+			}
 		}
 		if (buttonClicked.getText().compareTo("Einzahlung") == 0) {
 			double betrag = Double.parseDouble(this.betragField.getText());
-			this.controller.einzahlen(kontoNummer, betrag);
+			try {
+				this.controller.einzahlen(kontoNummer, betrag);
+			} catch (KontoNichtGefundenException e) {
+				new KontoNichtGefundenException(kontoNummer);
+			} catch (BetragNegativException e) {
+			}
 
 			this.aktualisieren(kontoNummer);
 
 		}
 		if (buttonClicked.getText().compareTo("Auszahlung") == 0) {
 			double betrag = Double.parseDouble(this.betragField.getText());
-			this.controller.auszahlen(kontoNummer, betrag);
+			try {
+				this.controller.auszahlen(kontoNummer, betrag);
+			} catch (KontoNichtGefundenException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (KontoLeerException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (BetragNegativException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			this.aktualisieren(kontoNummer);
 		}
@@ -79,7 +102,12 @@ public class ZahlungVornehmenListener implements ActionListener {
 					+ this.neuerKontoStandField.getText());
 		}
 
-		this.neuerKontoStandField.setText(""
-				+ this.controller.kontoStandAnzeigen(kontoNummer));
+		try {
+			this.neuerKontoStandField.setText(""
+					+ this.controller.kontoStandAnzeigen(kontoNummer));
+		} catch (KontoNichtGefundenException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
