@@ -19,7 +19,7 @@ public class KontenListe extends JPanel {
 	private static final long serialVersionUID = 5388389196936658751L;
 	private JTabbedPane tabsPane;
 	private JTable table;
-	JTextField kundenNummerField;
+	private JTextField kundenNummerField;
 
 	public KontenListe(JTabbedPane tabsPane, BankController controller) {
 		this.tabsPane = tabsPane;
@@ -78,7 +78,7 @@ public class KontenListe extends JPanel {
 		return table;
 	}
 
-	public long getKundenNummer() {
-		return Long.parseLong(kundenNummerField.getText());
+	public JTextField getKundenNummer() {
+		return kundenNummerField;
 	}
 }

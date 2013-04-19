@@ -1,9 +1,6 @@
 package de.g18.BitBank;
 
-import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.KontoLeerException;
-import de.g18.BitBank.Exception.KontoNichtGefundenException;
-import de.g18.BitBank.Exception.KundenNummerException;
+import de.g18.BitBank.Exception.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -90,4 +87,12 @@ public class BankController {
 		von.ueberweisen(nach, betrag, datum);
 	}
 
+	public Kunde getKundeByNummer(long kundenNummer) throws KundeNichtGefundenException {
+		for (Kunde kunde : kundenListe) {
+			if (kunde.getKundenNummmer() == kundenNummer) {
+				return kunde;
+			}
+		}
+		throw new KundeNichtGefundenException(kundenNummer);
+	}
 }

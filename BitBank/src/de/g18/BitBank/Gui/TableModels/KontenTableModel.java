@@ -1,7 +1,7 @@
 package de.g18.BitBank.Gui.TableModels;
 
-import de.g18.BitBank.BankController;
 import de.g18.BitBank.Konto;
+import de.g18.BitBank.Kunde;
 
 import javax.swing.table.AbstractTableModel;
 
@@ -10,18 +10,16 @@ import javax.swing.table.AbstractTableModel;
  */
 public class KontenTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -3758449082711896808L;
-	BankController controller;
-	long kundenNummer;
-	String[] cols = { "Kontoart", "Kontonummer", "Kontostand" };
+	private Kunde kunde;
+	String[] cols = {"Kontoart", "Kontonummer", "Kontostand"};
 
-	public KontenTableModel(BankController controller, long kundenNummer) {
-		this.controller = controller;
-		this.kundenNummer = kundenNummer;
+	public KontenTableModel(Kunde kunde) {
+		this.kunde = kunde;
 	}
 
 	@Override
 	public int getRowCount() {
-		return controller.getKundenKonten(kundenNummer).size();
+		return kunde.getKontenListe().size();
 	}
 
 	@Override
@@ -36,17 +34,17 @@ public class KontenTableModel extends AbstractTableModel {
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		Konto k = controller.getKundenKonten(kundenNummer).get(rowIndex);
+		Konto k = kunde.getKontenListe().get(rowIndex);
 
 		switch (columnIndex) {
-		case 0:
-			return k.getKontoTyp().toString();
-		case 1:
-			return Long.toString(k.getKontoNummer());
-		case 2:
-			return Double.toString(k.getKontoStand());
-		default:
-			return "Fehler";
+			case 0:
+				return k.getKontoTyp().toString();
+			case 1:
+				return Long.toString(k.getKontoNummer());
+			case 2:
+				return Double.toString(k.getKontoStand());
+			default:
+				return "Fehler";
 		}
 	}
 }
