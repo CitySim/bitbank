@@ -1,26 +1,16 @@
 package de.g18.BitBank.Gui.Listener;
 
-import java.awt.Component;
+import de.g18.BitBank.BankController;
+import de.g18.BitBank.Gui.*;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JTabbedPane;
-
-import de.g18.BitBank.BankController;
-import de.g18.BitBank.Gui.KontenListe;
-import de.g18.BitBank.Gui.KontoAnlegen;
-import de.g18.BitBank.Gui.Kontobewegungen;
-import de.g18.BitBank.Gui.KundenAnlegen;
-import de.g18.BitBank.Gui.KundenListe;
-import de.g18.BitBank.Gui.UeberFenster;
-import de.g18.BitBank.Gui.Ueberweisung;
-import de.g18.BitBank.Gui.ZahlungVornehmen;
-
 /**
  * Listener zu dem Menü BankView Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -30,7 +20,7 @@ public class BankViewListener implements MouseListener {
 	private JTabbedPane tabsPane;
 
 	public BankViewListener(final JMenu anwendungen,
-			final JTabbedPane tabsPane, final BankController controller) {
+							final JTabbedPane tabsPane, final BankController controller) {
 		for (Component component : anwendungen.getMenuComponents()) {
 			component.addMouseListener(this);
 		}
@@ -73,7 +63,7 @@ public class BankViewListener implements MouseListener {
 			tabsPane.add("Ein-/Auszahlung", new ZahlungVornehmen(tabsPane,
 					controller));
 		} else if (menuItem.getText().equals("Überweisungen durchführen")) {
-			tabsPane.add("Überweisung", new Ueberweisung(tabsPane, controller));
+			tabsPane.add("Überweisung", new UeberweisungVornehmen(tabsPane, controller));
 		} else if (menuItem.getText().equals("Kontenliste")) {
 			tabsPane.add("Kontenliste", new KontenListe(tabsPane, controller));
 		} else if (menuItem.getText().equals("Kontobewegungen")) {

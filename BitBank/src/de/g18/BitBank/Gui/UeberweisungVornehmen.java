@@ -9,18 +9,18 @@ import java.awt.*;
 
 /**
  * Gui Klasse zum Überweisen eines Betrages von einem Konto zum anderen.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
 
-public class Ueberweisung extends JPanel {
+public class UeberweisungVornehmen extends JPanel {
 	private static final long serialVersionUID = 3658600368625899293L;
 
 	private JTabbedPane tabsPane;
 
-	public Ueberweisung(final JTabbedPane tabsPane,
-			final BankController controller) {
+	public UeberweisungVornehmen(final JTabbedPane tabsPane,
+								 final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());

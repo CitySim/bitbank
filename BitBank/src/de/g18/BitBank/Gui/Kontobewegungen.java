@@ -1,21 +1,11 @@
 package de.g18.BitBank.Gui;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.SystemColor;
-
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.plaf.BorderUIResource;
-
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Gui.Listener.KontobewegungenListener;
+
+import javax.swing.*;
+import javax.swing.plaf.BorderUIResource;
+import java.awt.*;
 
 /**
  * Created with IntelliJ IDEA. User: Sven Date: 14.04.13 Time: 14:42
@@ -27,7 +17,7 @@ public class Kontobewegungen extends JPanel {
 	private JTable table;
 
 	public Kontobewegungen(final JTabbedPane tabsPane,
-			final BankController controller) {
+						   final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -35,7 +25,7 @@ public class Kontobewegungen extends JPanel {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
 
-		JLabel kundenNummerLabel = new JLabel("Kundennummer");
+		JLabel kontoNummerLabel = new JLabel("Kontonummer");
 		kontoNummerField = new JTextField(10);
 
 		JButton kontobewegungenButton = new JButton("Kontobewegungen");
@@ -49,7 +39,7 @@ public class Kontobewegungen extends JPanel {
 
 		c.gridx = 0;
 		c.gridy = 0;
-		this.add(kundenNummerLabel, c);
+		this.add(kontoNummerLabel, c);
 
 		c.gridx = 1;
 		c.gridy = 0;

@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * Gui Klasse zum Ein - / Auszahlen eines Betrages auf ein Konto.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -23,7 +23,7 @@ public class ZahlungVornehmen extends JPanel {
 	}
 
 	public ZahlungVornehmen(final JTabbedPane tabsPane,
-			final BankController controller) {
+							final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -32,7 +32,7 @@ public class ZahlungVornehmen extends JPanel {
 		c.insets = new Insets(5, 5, 5, 5);
 
 		JLabel kontoNummerLabel = new JLabel("Kontonummer");
-		JLabel alterKontoStandLabel = new JLabel("Alter Kontostand");
+		JLabel alterKontoStandLabel = new JLabel("Jetziger Kontostand");
 		JLabel betragLabel = new JLabel("Betrag");
 		JLabel neuerKontoStandLabel = new JLabel("Neuer Kontostand");
 

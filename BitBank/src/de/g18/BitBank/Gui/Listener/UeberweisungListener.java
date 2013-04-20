@@ -16,32 +16,37 @@ import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
-import de.g18.BitBank.Gui.Ueberweisung;
+import de.g18.BitBank.Gui.UeberweisungVornehmen;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Date;
 
 /**
- * Listener zu den Buttons der Ueberweisung Klasse.
+ * Listener zu den Buttons der UeberweisungVornehmen Klasse.
  * <p/>
- * /** F Listener zu den Buttons der Ueberweisung Klasse.
- * 
+ * /** F Listener zu den Buttons der UeberweisungVornehmen Klasse.
+ *
  * @author it1-markde
  * @since JRE6
  */
 
 public class UeberweisungListener implements ActionListener {
-	private Ueberweisung ueberweisungFrame;
+	private UeberweisungVornehmen ueberweisungVornehmenFrame;
 	private JTextField vomKontoField;
 	private JTextField nachKontoField;
 	private JTextField betragField;
 	private BankController controller;
 	private JDateChooser chooser;
 
-	public UeberweisungListener(final Ueberweisung ueberweisungFrame) {
-		this.ueberweisungFrame = ueberweisungFrame;
+	public UeberweisungListener(final UeberweisungVornehmen ueberweisungVornehmenFrame) {
+		this.ueberweisungVornehmenFrame = ueberweisungVornehmenFrame;
 	}
 
 	public UeberweisungListener(final JTextField vomKontoField,
-			final JTextField nachKontoField, final JTextField betragField,
-			final BankController controller, final JDateChooser chooser) {
+								final JTextField nachKontoField, final JTextField betragField,
+								final BankController controller, final JDateChooser chooser) {
 
 		this.vomKontoField = vomKontoField;
 		this.nachKontoField = nachKontoField;
@@ -57,9 +62,9 @@ public class UeberweisungListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Überweisen") == 0) {
-			double betrag = 0;
-			int vomKontoNummer = 0;
-			int nachKontoNummer = 0;
+			double betrag;
+			int vomKontoNummer;
+			int nachKontoNummer;
 
 			try {
 				betrag = Double.parseDouble(this.betragField.getText());
@@ -88,6 +93,12 @@ public class UeberweisungListener implements ActionListener {
 				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer,
 						betrag, datum);
 
+				JOptionPane.showMessageDialog(new JFrame(),
+						"Ihre Überweisung über \"" + betrag + "\" von \""
+								+ vomKontoNummer + "\" nach\""
+								+ nachKontoNummer
+								+ "\" wurde erfolgreich durchgeführt.");
+
 			} catch (KontoLeerException e) {
 				e.showDialog();
 				return;
@@ -99,7 +110,7 @@ public class UeberweisungListener implements ActionListener {
 				return;
 			}
 		} else if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			this.ueberweisungFrame.getTabsPane().remove(this.ueberweisungFrame);
+			this.ueberweisungVornehmenFrame.getTabsPane().remove(this.ueberweisungVornehmenFrame);
 		}
 	}
 
