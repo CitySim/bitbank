@@ -88,6 +88,7 @@ public class UeberweisungListener implements ActionListener {
 				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer,
 						betrag, datum);
 
+				this.clearFields();
 				this.showCreationDialog(vomKontoNummer, nachKontoNummer, betrag);
 
 			} catch (KontoLeerException e) {
@@ -111,5 +112,12 @@ public class UeberweisungListener implements ActionListener {
 		JOptionPane.showMessageDialog(new JFrame(), "Ihre Überweisung über \""
 				+ betrag + "\" von \"" + vomKontoNummer + "\" nach\""
 				+ nachKontoNummer + "\" wurde erfolgreich durchgeführt.");
+	}
+
+	public void clearFields() {
+		// this.vomKontoField.setText("");
+		this.nachKontoField.setText("");
+		this.betragField.setText("");
+		this.chooser = null;
 	}
 }
