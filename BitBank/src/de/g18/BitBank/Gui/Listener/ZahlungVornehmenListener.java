@@ -49,17 +49,18 @@ public class ZahlungVornehmenListener implements ActionListener {
 
 		JButton buttonClicked = (JButton) event.getSource();
 		int kontoNummer = 0;
-		try {
-			kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
-		} catch (NumberFormatException e) {
+		if (betragField != null) {
 			try {
-				throw new KeineGueltigeZahlException("Kontonummer");
-			} catch (KeineGueltigeZahlException e1) {
-				e1.showDialog();
-				return;
+				kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
+			} catch (NumberFormatException e) {
+				try {
+					throw new KeineGueltigeZahlException("Kontonummer");
+				} catch (KeineGueltigeZahlException e1) {
+					e1.showDialog();
+					return;
+				}
 			}
 		}
-
 		if (buttonClicked.getText().compareTo("Kontostand") == 0) {
 			try {
 				this.alterKontoStandField.setText(Double
