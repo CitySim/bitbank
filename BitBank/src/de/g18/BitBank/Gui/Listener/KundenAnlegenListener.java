@@ -2,6 +2,7 @@ package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.FeldLeerException;
+import de.g18.BitBank.Exception.KeineGültigeZahlException;
 import de.g18.BitBank.Exception.KundenNummerException;
 import de.g18.BitBank.Exception.KundenNummerVergebenException;
 import de.g18.BitBank.Gui.KundenAnlegen;
@@ -50,31 +51,31 @@ public class KundenAnlegenListener implements ActionListener {
 				}
 				String kundenName = this.kundenNamenField.getText();
 				if (kundenName.equals("")) {
-					throw new FeldLeerException("Kundenname nicht angegeben.");
+					throw new FeldLeerException("Kundenname");
 				}
-				this.controller.createKunde(kundenName, kundenNummer);
 
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Kunde mit dem Namen \"" + kundenName
-								+ "\" und der Kundennummer \"" + kundenNummer
-								+ "\" angelegt.");
+				this.controller.createKunde(kundenName, kundenNummer);
+				this.showCreationDialog(kundenName, kundenNummer);
 
 			} catch (NumberFormatException e) {
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Die Kundennummer ist keine gültige Zahl.", "Fehler",
-						JOptionPane.ERROR_MESSAGE);
+				try {
+					throw new KeineGültigeZahlException("Die Kundennummer");
+				} catch (KeineGültigeZahlException e1) {
+					e1.showDialog();
+					return;
+				}
 
 			} catch (FeldLeerException e) {
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Der Kundenname muss angegeben werden.", "Fehler",
-						JOptionPane.ERROR_MESSAGE);
+				e.showDialog();
+				return;
+
 			} catch (KundenNummerVergebenException e) {
-				JOptionPane.showMessageDialog(new JFrame(), e.getMessage(),
-						"Fehler", JOptionPane.ERROR_MESSAGE);
+				e.showDialog();
+				return;
+
 			} catch (KundenNummerException e) {
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Die Kundennummer darf nicht negativ sein.", "Fehler",
-						JOptionPane.ERROR_MESSAGE);
+				e.showDialog();
+				return;
 			}
 
 		}
@@ -82,5 +83,12 @@ public class KundenAnlegenListener implements ActionListener {
 			this.kundenAnlegenFrame.getTabsPane().remove(
 					this.kundenAnlegenFrame);
 		}
+	}
+
+	public void showCreationDialog(String kundenName, long kundenNummer) {
+		JOptionPane.showMessageDialog(new JFrame(), "Kunde mit dem Namen \""
+				+ kundenName + "\" und der Kundennummer \"" + kundenNummer
+				+ "\" angelegt.");
+
 	}
 }

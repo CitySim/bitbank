@@ -2,6 +2,7 @@ package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.KeinKontotypException;
+import de.g18.BitBank.Exception.KeineGültigeZahlException;
 import de.g18.BitBank.Exception.KundeNichtGefundenException;
 import de.g18.BitBank.Gui.KontoAnlegen;
 import de.g18.BitBank.Kontotyp;
@@ -62,21 +63,21 @@ public class KontoAnlegenListener implements ActionListener {
 								.createKonto(kundenNummer, Kontotyp.SPARKONTO);
 					}
 
-					JOptionPane.showMessageDialog(new JFrame(),
-							"Konto unter für Kunde Nr. \"" + kundenNummer
-									+ "\" angelegt.");
+					this.showCreationDialog(kundenNummer);
 				}
-			} catch (java.lang.NumberFormatException exception) {
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Die Kundennummer ist keine gültige Zahl.", "Fehler",
-						JOptionPane.ERROR_MESSAGE);
-			} catch (KeinKontotypException exception) {
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Bitte wählen sie einen Kontotypen aus.", "Fehler",
-						JOptionPane.ERROR_MESSAGE);
+			} catch (java.lang.NumberFormatException e) {
+				try {
+					throw new KeineGültigeZahlException("Die Kundennummer");
+				} catch (KeineGültigeZahlException e1) {
+					e1.showDialog();
+					return;
+				}
+			} catch (KeinKontotypException e) {
+				e.showDialog();
+				return;
 			} catch (KundeNichtGefundenException e) {
-				JOptionPane.showMessageDialog(new JFrame(), e.getMessage(),
-						"Fehler", JOptionPane.ERROR_MESSAGE);
+				e.showDialog();
+				return;
 			}
 
 		}
@@ -84,5 +85,10 @@ public class KontoAnlegenListener implements ActionListener {
 		if (buttonClicked.getText().compareTo("Beenden") == 0) {
 			this.kontoAnlegenFrame.getTabsPane().remove(this.kontoAnlegenFrame);
 		}
+	}
+
+	public void showCreationDialog(long kundenNummer) {
+		JOptionPane.showMessageDialog(new JFrame(),
+				"Konto unter für Kunde Nr. \"" + kundenNummer + "\" angelegt.");
 	}
 }

@@ -1,14 +1,16 @@
 package de.g18.BitBank.Gui.Listener;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
 import de.g18.BitBank.BankController;
+import de.g18.BitBank.Konto;
+import de.g18.BitBank.Exception.KeineGültigeZahlException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.Kontobewegungen;
 import de.g18.BitBank.Gui.TableModels.KontoBewegungenTableModel;
-import de.g18.BitBank.Konto;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
@@ -32,23 +34,25 @@ public class KontobewegungenListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Kontobewegungen") == 0) {
-			long kontonummer;
+			long kontonummer = 0;
 			try {
 				kontonummer = Long.parseLong(kontobewegungenFrame
 						.getKontoNummer().getText());
-			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null,
-						"Kontonummer konnte nicht gelesen werden", "Fehler",
-						JOptionPane.OK_OPTION);
-				return;
+			} catch (NumberFormatException e) {
+				try {
+					throw new KeineGültigeZahlException("Die Kontonummer");
+				} catch (KeineGültigeZahlException e1) {
+					e1.showDialog();
+					return;
+				}
+
 			}
 
-			Konto konto;
+			Konto konto = null;
 			try {
 				konto = controller.getKontoByKontoNummer(kontonummer);
 			} catch (KontoNichtGefundenException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-						JOptionPane.OK_OPTION);
+				e.showDialog();
 				return;
 			}
 

@@ -3,6 +3,7 @@ package de.g18.BitBank.Gui.Listener;
 import com.toedter.calendar.JDateChooser;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KeineGültigeZahlException;
 import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.Ueberweisung;
@@ -52,22 +53,22 @@ public class UeberweisungListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Überweisen") == 0) {
-			double betrag;
-			int vomKontoNummer;
-			int nachKontoNummer;
+			double betrag = 0;
+			int vomKontoNummer = 0;
+			int nachKontoNummer = 0;
 
 			try {
 				betrag = Double.parseDouble(this.betragField.getText());
 				vomKontoNummer = Integer.parseInt(this.vomKontoField.getText());
 				nachKontoNummer = Integer.parseInt(this.nachKontoField
 						.getText());
-			} catch (Exception e) {
-				JOptionPane
-						.showMessageDialog(
-								null,
-								"Eingabe konnte nicht gelesen werden. (Alles korrekte Zahlen?)",
-								"Fehler", JOptionPane.ERROR_MESSAGE);
-				return;
+			} catch (NumberFormatException e) {
+				try {
+					throw new KeineGültigeZahlException("Eine der Nummern");
+				} catch (KeineGültigeZahlException e1) {
+					e1.showDialog();
+					return;
+				}
 			}
 
 			Date datum = chooser.getDate();
@@ -78,32 +79,30 @@ public class UeberweisungListener implements ActionListener {
 						JOptionPane.ERROR_MESSAGE);
 				return;
 			}
-
+			this.showCreationDialog(vomKontoNummer, nachKontoNummer, betrag);
 			try {
 				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer,
 						betrag, datum);
 
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Ihre Überweisung über \"" + betrag + "\" von \""
-								+ vomKontoNummer + "\" nach\""
-								+ nachKontoNummer
-								+ "\" wurde erfolgreich durchgeführt.");
-
 			} catch (KontoLeerException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-						JOptionPane.ERROR_MESSAGE);
+				e.showDialog();
 				return;
 			} catch (BetragNegativException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-						JOptionPane.ERROR_MESSAGE);
+				e.showDialog();
 				return;
 			} catch (KontoNichtGefundenException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-						JOptionPane.ERROR_MESSAGE);
+				e.showDialog();
 				return;
 			}
 		} else if (buttonClicked.getText().compareTo("Beenden") == 0) {
 			this.ueberweisungFrame.getTabsPane().remove(this.ueberweisungFrame);
 		}
+	}
+
+	public void showCreationDialog(int vomKontoNummer, int nachKontoNummer,
+			double betrag) {
+		JOptionPane.showMessageDialog(new JFrame(), "Ihre Überweisung über \""
+				+ betrag + "\" von \"" + vomKontoNummer + "\" nach\""
+				+ nachKontoNummer + "\" wurde erfolgreich durchgeführt.");
 	}
 }

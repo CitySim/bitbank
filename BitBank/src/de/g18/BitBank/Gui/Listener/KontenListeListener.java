@@ -4,10 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Kunde;
+import de.g18.BitBank.Exception.KeineGültigeZahlException;
 import de.g18.BitBank.Exception.KundeNichtGefundenException;
 import de.g18.BitBank.Gui.KontenListe;
 import de.g18.BitBank.Gui.TableModels.KontenTableModel;
@@ -34,23 +34,25 @@ public class KontenListeListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Kontoübersicht") == 0) {
-			long kundenNummer;
+			long kundenNummer = 0;
 			try {
 				kundenNummer = Long.parseLong(kontenListeFrame
 						.getKundenNummer().getText());
-			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null,
-						"Kundenummer konnte nicht gelesen werden", "Fehler",
-						JOptionPane.OK_OPTION);
-				return;
+			} catch (NumberFormatException e) {
+				try {
+					throw new KeineGültigeZahlException("Die Kundennummer");
+				} catch (KeineGültigeZahlException e1) {
+					e1.showDialog();
+					return;
+				}
+
 			}
 
-			Kunde kunde;
+			Kunde kunde = null;
 			try {
 				kunde = controller.getKundeByNummer(kundenNummer);
 			} catch (KundeNichtGefundenException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler",
-						JOptionPane.OK_OPTION);
+				e.showDialog();
 				return;
 			}
 
