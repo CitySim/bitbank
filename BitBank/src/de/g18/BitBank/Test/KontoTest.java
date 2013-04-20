@@ -12,7 +12,7 @@ import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
 
 /**
- * Testklasse fuer die Kontotest Klasse.
+ * Testklasse fuer die Konto Klasse.
  * 
  * @author it1-korebj
  * @since JRE6

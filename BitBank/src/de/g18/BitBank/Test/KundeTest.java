@@ -10,7 +10,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
+ * Testklasse fuer die Kunde Klasse.
+ * 
  * @author it1-korebj
+ * @since JRE6
  */
 public class KundeTest {
 	private Kunde k;
