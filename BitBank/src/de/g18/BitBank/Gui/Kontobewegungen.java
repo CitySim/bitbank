@@ -32,6 +32,7 @@ public class Kontobewegungen extends JPanel {
 		JButton beendenButton = new JButton("Beenden");
 
 		table = new JTable();
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
 		table.setFillsViewportHeight(true);
 		JScrollPane tablePane = new JScrollPane(table);
 		tablePane.setBorder(new BorderUIResource.MatteBorderUIResource(10, 10,

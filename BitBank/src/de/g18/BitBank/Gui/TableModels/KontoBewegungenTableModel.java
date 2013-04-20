@@ -13,7 +13,7 @@ import javax.swing.table.AbstractTableModel;
 public class KontoBewegungenTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -5781280913032155581L;
 	private Konto konto;
-	private String[] cols = {"Datum", "von", "nach", "Betrag"};
+	private String[] cols = {"Datum", "von", "nach", "Betrag", "Text"};
 
 	public KontoBewegungenTableModel(final Konto konto) {
 		this.konto = konto;
@@ -43,8 +43,10 @@ public class KontoBewegungenTableModel extends AbstractTableModel {
 				return kb.getDatum().toString();
 			case 1:
 				if (kb.getClass().equals(Ueberweisung.class)) {
+					// bei einer überweisung wird die quell kontonummer ausgebene
 					return ((Ueberweisung) kb).getQuellKlasse().getKontoNummer();
 				} else if (kb.getClass().equals(Kontobewegung.class)) {
+					// bei einer kontobewegun passend "einzahlung" oder die kontonummer
 					if (kb.getBetrag() > 0) {
 						return "Einzahlung";
 					} else {
@@ -55,8 +57,10 @@ public class KontoBewegungenTableModel extends AbstractTableModel {
 				}
 			case 2:
 				if (kb.getClass().equals(Ueberweisung.class)) {
+					// bei einer überweisung wird die ziel kontonummer ausgebene
 					return ((Ueberweisung) kb).getZielKlasse().getKontoNummer();
 				} else if (kb.getClass().equals(Kontobewegung.class)) {
+					// bei einer kontobewegun passend "auszahlung" oder die kontonummer
 					if (kb.getBetrag() > 0) {
 						return Long.toString(konto.getKontoNummer());
 					} else {
@@ -67,6 +71,8 @@ public class KontoBewegungenTableModel extends AbstractTableModel {
 				}
 			case 3:
 				return Double.toString(kb.getBetrag());
+			case 4:
+				return kb.getText();
 			default:
 				return "Fehler";
 		}

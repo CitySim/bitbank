@@ -47,4 +47,9 @@ public class Ueberweisung extends Kontobewegung {
 	public Konto getZielKlasse() {
 		return zielKonto;
 	}
+
+	@Override
+	public String getText() {
+		return "Überweisun von " + getQuellKlasse().getKontoNummer() + " auf " + getZielKlasse().getKontoNummer();
+	}
 }
