@@ -13,21 +13,17 @@ import com.toedter.calendar.JDateChooser;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.DateException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.UeberweisungVornehmen;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Date;
-
 /**
  * Listener zu den Buttons der UeberweisungVornehmen Klasse.
  * <p/>
  * /** F Listener zu den Buttons der UeberweisungVornehmen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -40,13 +36,14 @@ public class UeberweisungListener implements ActionListener {
 	private BankController controller;
 	private JDateChooser chooser;
 
-	public UeberweisungListener(final UeberweisungVornehmen ueberweisungVornehmenFrame) {
+	public UeberweisungListener(
+			final UeberweisungVornehmen ueberweisungVornehmenFrame) {
 		this.ueberweisungVornehmenFrame = ueberweisungVornehmenFrame;
 	}
 
 	public UeberweisungListener(final JTextField vomKontoField,
-								final JTextField nachKontoField, final JTextField betragField,
-								final BankController controller, final JDateChooser chooser) {
+			final JTextField nachKontoField, final JTextField betragField,
+			final BankController controller, final JDateChooser chooser) {
 
 		this.vomKontoField = vomKontoField;
 		this.nachKontoField = nachKontoField;
@@ -83,21 +80,15 @@ public class UeberweisungListener implements ActionListener {
 			Date datum = chooser.getDate();
 
 			if (datum == null) {
-				JOptionPane.showMessageDialog(null,
-						"Bitte wählen sie ein Datum", "Fehler",
-						JOptionPane.ERROR_MESSAGE);
+				new DateException("Kein Datum gewählt").showDialog();
 				return;
 			}
-			this.showCreationDialog(vomKontoNummer, nachKontoNummer, betrag);
+
 			try {
 				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer,
 						betrag, datum);
 
-				JOptionPane.showMessageDialog(new JFrame(),
-						"Ihre Überweisung über \"" + betrag + "\" von \""
-								+ vomKontoNummer + "\" nach\""
-								+ nachKontoNummer
-								+ "\" wurde erfolgreich durchgeführt.");
+				this.showCreationDialog(vomKontoNummer, nachKontoNummer, betrag);
 
 			} catch (KontoLeerException e) {
 				e.showDialog();
@@ -110,7 +101,8 @@ public class UeberweisungListener implements ActionListener {
 				return;
 			}
 		} else if (buttonClicked.getText().compareTo("Beenden") == 0) {
-			this.ueberweisungVornehmenFrame.getTabsPane().remove(this.ueberweisungVornehmenFrame);
+			this.ueberweisungVornehmenFrame.getTabsPane().remove(
+					this.ueberweisungVornehmenFrame);
 		}
 	}
 
