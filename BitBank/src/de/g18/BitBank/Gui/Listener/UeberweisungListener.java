@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -109,9 +108,9 @@ public class UeberweisungListener implements ActionListener {
 
 	public final void showCreationDialog(final int vomKontoNummer,
 			final int nachKontoNummer, final double betrag) {
-		JOptionPane.showMessageDialog(new JFrame(), "Ihre Überweisung über \""
-				+ betrag + "\" von \"" + vomKontoNummer + "\" nach\""
-				+ nachKontoNummer + "\" wurde erfolgreich durchgeführt.");
+		JOptionPane.showMessageDialog(null, "Ihre Überweisung über \"" + betrag
+				+ "\" von \"" + vomKontoNummer + "\" nach\"" + nachKontoNummer
+				+ "\" wurde erfolgreich durchgeführt.");
 	}
 
 	public void cleanUp() {

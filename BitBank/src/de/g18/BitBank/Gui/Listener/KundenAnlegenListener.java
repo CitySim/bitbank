@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -91,7 +90,7 @@ public class KundenAnlegenListener implements ActionListener {
 
 	public final void showCreationDialog(final String kundenName,
 			final long kundenNummer) {
-		JOptionPane.showMessageDialog(new JFrame(), "Kunde mit dem Namen \""
+		JOptionPane.showMessageDialog(null, "Kunde mit dem Namen \""
 				+ kundenName + "\" und der Kundennummer \"" + kundenNummer
 				+ "\" angelegt.");
 

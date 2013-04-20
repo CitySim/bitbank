@@ -1,6 +1,5 @@
 package de.g18.BitBank.Exception;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +18,7 @@ public class KontoNummerException extends Exception implements
 	}
 
 	public void showDialog() {
-		JOptionPane.showMessageDialog(new JFrame(),
+		JOptionPane.showMessageDialog(null,
 				"Die Kundennummer darf nicht negativ sein.", "Fehler",
 				JOptionPane.ERROR_MESSAGE);
 	}

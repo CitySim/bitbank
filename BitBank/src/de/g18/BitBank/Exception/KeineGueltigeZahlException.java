@@ -1,6 +1,5 @@
 package de.g18.BitBank.Exception;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,7 +19,7 @@ public class KeineGueltigeZahlException extends Exception implements
 	}
 
 	public void showDialog() {
-		JOptionPane.showMessageDialog(new JFrame(), this.getMessage()
+		JOptionPane.showMessageDialog(null, this.getMessage()
 				+ " ist keine gueltige Zahl.", "Fehler",
 				JOptionPane.ERROR_MESSAGE);
 	}
