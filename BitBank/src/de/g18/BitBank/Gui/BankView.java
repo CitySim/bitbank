@@ -10,7 +10,7 @@ import java.io.IOException;
 
 /**
  * Vorgegebene BankMain.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -61,7 +61,7 @@ public class BankView extends JFrame {
 	}
 
 	public static void main(final String[] args) {
-		BankController controll = new BankController();
+		BankController controller = new BankController();
 
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -69,6 +69,6 @@ public class BankView extends JFrame {
 			e.printStackTrace();
 		}
 
-		new BankView(controll);
+		new BankView(controller);
 	}
 }
