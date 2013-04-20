@@ -18,7 +18,5 @@ public class BetragNegativException extends Exception implements
 	public void showDialog() {
 		JOptionPane.showMessageDialog(null, this.getMessage(), "Fehler",
 				JOptionPane.ERROR_MESSAGE);
-
-		return;
 	}
 }

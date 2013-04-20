@@ -1,18 +1,22 @@
 package de.g18.BitBank.Gui.Listener;
 
-import com.toedter.calendar.JDateChooser;
-import de.g18.BitBank.BankController;
-import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.KeineGültigeZahlException;
-import de.g18.BitBank.Exception.KontoLeerException;
-import de.g18.BitBank.Exception.KontoNichtGefundenException;
-import de.g18.BitBank.Gui.Ueberweisung;
-
-import javax.swing.*;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import com.toedter.calendar.JDateChooser;
+
+import de.g18.BitBank.BankController;
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KeineGueltigeZahlException;
+import de.g18.BitBank.Exception.KontoLeerException;
+import de.g18.BitBank.Exception.KontoNichtGefundenException;
+import de.g18.BitBank.Gui.Ueberweisung;
 
 /**
  * Listener zu den Buttons der Ueberweisung Klasse.
@@ -64,8 +68,8 @@ public class UeberweisungListener implements ActionListener {
 						.getText());
 			} catch (NumberFormatException e) {
 				try {
-					throw new KeineGültigeZahlException("Eine der Nummern");
-				} catch (KeineGültigeZahlException e1) {
+					throw new KeineGueltigeZahlException("Eine der Nummern");
+				} catch (KeineGueltigeZahlException e1) {
 					e1.showDialog();
 					return;
 				}

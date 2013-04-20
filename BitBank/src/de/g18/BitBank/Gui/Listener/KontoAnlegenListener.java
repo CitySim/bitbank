@@ -1,15 +1,20 @@
 package de.g18.BitBank.Gui.Listener;
 
-import de.g18.BitBank.BankController;
-import de.g18.BitBank.Exception.KeinKontotypException;
-import de.g18.BitBank.Exception.KeineGültigeZahlException;
-import de.g18.BitBank.Exception.KundeNichtGefundenException;
-import de.g18.BitBank.Gui.KontoAnlegen;
-import de.g18.BitBank.Kontotyp;
-
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+import de.g18.BitBank.BankController;
+import de.g18.BitBank.Kontotyp;
+import de.g18.BitBank.Exception.KeinKontotypException;
+import de.g18.BitBank.Exception.KeineGueltigeZahlException;
+import de.g18.BitBank.Exception.KundeNichtGefundenException;
+import de.g18.BitBank.Gui.KontoAnlegen;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
@@ -67,8 +72,8 @@ public class KontoAnlegenListener implements ActionListener {
 				}
 			} catch (java.lang.NumberFormatException e) {
 				try {
-					throw new KeineGültigeZahlException("Die Kundennummer");
-				} catch (KeineGültigeZahlException e1) {
+					throw new KeineGueltigeZahlException("Die Kundennummer");
+				} catch (KeineGueltigeZahlException e1) {
 					e1.showDialog();
 					return;
 				}

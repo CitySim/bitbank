@@ -7,7 +7,7 @@ import javax.swing.JButton;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Kunde;
-import de.g18.BitBank.Exception.KeineGültigeZahlException;
+import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KundeNichtGefundenException;
 import de.g18.BitBank.Gui.KontenListe;
 import de.g18.BitBank.Gui.TableModels.KontenTableModel;
@@ -40,8 +40,8 @@ public class KontenListeListener implements ActionListener {
 						.getKundenNummer().getText());
 			} catch (NumberFormatException e) {
 				try {
-					throw new KeineGültigeZahlException("Die Kundennummer");
-				} catch (KeineGültigeZahlException e1) {
+					throw new KeineGueltigeZahlException("Die Kundennummer");
+				} catch (KeineGueltigeZahlException e1) {
 					e1.showDialog();
 					return;
 				}

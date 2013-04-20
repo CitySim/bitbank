@@ -1,16 +1,17 @@
 package de.g18.BitBank.Gui.Listener;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.KeineGültigeZahlException;
+import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.ZahlungVornehmen;
-
-import javax.swing.*;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
@@ -52,8 +53,8 @@ public class ZahlungVornehmenListener implements ActionListener {
 			kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
 		} catch (NumberFormatException e) {
 			try {
-				throw new KeineGültigeZahlException("Kontonummer");
-			} catch (KeineGültigeZahlException e1) {
+				throw new KeineGueltigeZahlException("Kontonummer");
+			} catch (KeineGueltigeZahlException e1) {
 				e1.showDialog();
 				return;
 			}
@@ -75,8 +76,8 @@ public class ZahlungVornehmenListener implements ActionListener {
 				betrag = Double.parseDouble(this.betragField.getText());
 			} catch (NumberFormatException e) {
 				try {
-					throw new KeineGültigeZahlException("Der Betrag");
-				} catch (KeineGültigeZahlException e1) {
+					throw new KeineGueltigeZahlException("Der Betrag");
+				} catch (KeineGueltigeZahlException e1) {
 					e1.showDialog();
 					return;
 				}
@@ -101,8 +102,8 @@ public class ZahlungVornehmenListener implements ActionListener {
 				betrag = Double.parseDouble(this.betragField.getText());
 			} catch (NumberFormatException e) {
 				try {
-					throw new KeineGültigeZahlException("Der Betrag");
-				} catch (KeineGültigeZahlException e1) {
+					throw new KeineGueltigeZahlException("Der Betrag");
+				} catch (KeineGueltigeZahlException e1) {
 					e1.showDialog();
 					return;
 				}
