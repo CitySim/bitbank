@@ -8,8 +8,13 @@ import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 
 /**
- * Created with IntelliJ IDEA. User: Sven Date: 14.04.13 Time: 14:42
+ * Gui Klasse zum Ausfuehren einer Kontobewegung (Einzahlung || Auszahlung ||
+ * Ueberweisung) aus.
+ * 
+ * @author it1-markde
+ * @since JRE6
  */
+
 public class Kontobewegungen extends JPanel {
 	private static final long serialVersionUID = -7895660068030891020L;
 	private JTabbedPane tabsPane;
@@ -17,7 +22,7 @@ public class Kontobewegungen extends JPanel {
 	private JTable table;
 
 	public Kontobewegungen(final JTabbedPane tabsPane,
-						   final BankController controller) {
+			final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());

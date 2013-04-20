@@ -6,6 +6,8 @@ import de.g18.BitBank.Exception.KontoLeerException;
 import java.util.Date;
 
 /**
+ * Klasse zum uebertragen von Geld zwischen Konten.
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -15,7 +17,7 @@ public class Ueberweisung extends Kontobewegung {
 	private Konto zielKonto;
 
 	public Ueberweisung(final Konto quellKonto, final Konto zielKonto,
-						final double betrag, final Date datum) {
+			final double betrag, final Date datum) {
 
 		super(datum, betrag);
 
@@ -25,9 +27,11 @@ public class Ueberweisung extends Kontobewegung {
 
 	/**
 	 * Ueberträgt den betrag der ueberweisung von einem Konto zum anderen.
-	 *
-	 * @throws BetragNegativException Fehler bei negativen Beträgen
-	 * @throws KontoLeerException     Fehler bei nicht bekannten Konten
+	 * 
+	 * @throws BetragNegativException
+	 *             Fehler bei negativen Beträgen
+	 * @throws KontoLeerException
+	 *             Fehler bei nicht bekannten Konten
 	 */
 	public void durchfuehrenUeberweisung() throws BetragNegativException,
 			KontoLeerException {
@@ -50,6 +54,7 @@ public class Ueberweisung extends Kontobewegung {
 
 	@Override
 	public String getText() {
-		return "Überweisun von " + getQuellKlasse().getKontoNummer() + " auf " + getZielKlasse().getKontoNummer();
+		return "Überweisun von " + getQuellKlasse().getKontoNummer() + " auf "
+				+ getZielKlasse().getKontoNummer();
 	}
 }

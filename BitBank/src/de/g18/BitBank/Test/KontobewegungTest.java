@@ -8,6 +8,13 @@ import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Testklasse fuer die Kontobewegungs Klasse.
+ * 
+ * @author it1-korebj
+ * @since JRE6
+ */
+
 public class KontobewegungTest {
 	private Kontobewegung kb;
 	private Date now;

@@ -1,6 +1,6 @@
 package de.g18.BitBank.Test;
 
-import de.g18.BitBank.Exception.KundenNummerException;
+import de.g18.BitBank.Exception.KundenNummerUnzulaessigException;
 import de.g18.BitBank.Kontotyp;
 import de.g18.BitBank.Kunde;
 import org.junit.Before;
@@ -16,7 +16,7 @@ public class KundeTest {
 	private Kunde k;
 
 	@Before
-	public void setUp() throws KundenNummerException {
+	public void setUp() throws KundenNummerUnzulaessigException {
 		k = new Kunde("Karl Kunde", 00001111);
 		k.anlegenKonto(Kontotyp.GIROKONTO);
 	}

@@ -8,8 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Gui Klasse zum Anzeigen des aktuellen Kontostandes aller Konten eines
- * Kundens.
+ * Gui Klasse zum Anzeigen aller Kunden.
  * 
  * @author it1-markde
  * @since JRE6

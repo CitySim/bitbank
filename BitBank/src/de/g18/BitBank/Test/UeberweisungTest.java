@@ -12,6 +12,13 @@ import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Testklasse fuer die Ueberweisungs Klasse.
+ * 
+ * @author it1-korebj
+ * @since JRE6
+ */
+
 public class UeberweisungTest {
 	private Konto k1;
 	private Konto k2;
@@ -36,7 +43,8 @@ public class UeberweisungTest {
 	}
 
 	@Test
-	public void testDurchfuehrenUeberweisung() throws KontoLeerException, BetragNegativException {
+	public void testDurchfuehrenUeberweisung() throws KontoLeerException,
+			BetragNegativException {
 		k1.einzahlen(200);
 
 		u.durchfuehrenUeberweisung();

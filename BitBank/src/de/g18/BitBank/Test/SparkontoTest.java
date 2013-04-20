@@ -7,6 +7,13 @@ import de.g18.BitBank.Sparkonto;
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
 
+/**
+ * Testklasse fuer die Sparkonto Klasse.
+ * 
+ * @author it1-korebj
+ * @since JRE6
+ */
+
 public class SparkontoTest {
 	private Sparkonto k;
 

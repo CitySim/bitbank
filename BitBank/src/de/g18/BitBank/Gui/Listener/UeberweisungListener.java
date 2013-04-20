@@ -88,7 +88,7 @@ public class UeberweisungListener implements ActionListener {
 				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer,
 						betrag, datum);
 
-				this.clearFields();
+				this.cleanUp();
 				this.showCreationDialog(vomKontoNummer, nachKontoNummer, betrag);
 
 			} catch (KontoLeerException e) {
@@ -114,7 +114,7 @@ public class UeberweisungListener implements ActionListener {
 				+ nachKontoNummer + "\" wurde erfolgreich durchgeführt.");
 	}
 
-	public void clearFields() {
+	public void cleanUp() {
 		// this.vomKontoField.setText("");
 		this.nachKontoField.setText("");
 		this.betragField.setText("");

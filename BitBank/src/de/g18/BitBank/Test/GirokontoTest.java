@@ -9,6 +9,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Testklasse fuer die Girokonto Klasse.
+ * 
+ * @author it1-korebj
+ * @since JRE6
+ */
+
 public class GirokontoTest {
 	private Girokonto k;
 
@@ -27,13 +34,15 @@ public class GirokontoTest {
 	}
 
 	@Test
-	public void testAuszahlen() throws KontoLeerException, BetragNegativException {
+	public void testAuszahlen() throws KontoLeerException,
+			BetragNegativException {
 		k.auszahlen(k.getLimit());
 		assertEquals(0, k.getKontoStand(), 0);
 	}
 
 	@Test(expected = KontoLeerException.class)
-	public void testUeberziehen() throws KontoLeerException, BetragNegativException {
+	public void testUeberziehen() throws KontoLeerException,
+			BetragNegativException {
 		k.auszahlen(k.getLimit() + k.getKontoStand() + 1);
 	}
 }

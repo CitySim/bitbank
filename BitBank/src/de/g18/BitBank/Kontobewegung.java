@@ -3,8 +3,8 @@ package de.g18.BitBank;
 import java.util.Date;
 
 /**
- * Gibt eine Kontobewegung (Einzahlung || Auszahlung || Überweisung) aus.
- *
+ * Gibt eine Kontobewegung (Einzahlung || Auszahlung || Ueberweisung) aus.
+ * 
  * @author it1-korebj
  * @since JRE6
  */

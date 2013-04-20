@@ -8,9 +8,12 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 /**
- * Created with IntelliJ IDEA. User: Sven Date: 14.04.13 Time: 14:51 To change
- * this template use File | Settings | File Templates.
+ * Gui Klasse fuer das ueberMenu.
+ * 
+ * @author it1-korebj
+ * @since JRE6
  */
+
 public class UeberFenster extends JDialog {
 	private static final long serialVersionUID = -2001045174878425586L;
 
@@ -32,15 +35,18 @@ public class UeberFenster extends JDialog {
 			e.printStackTrace();
 		}
 		JLabel iconLabel = new JLabel(new ImageIcon(myPicture));
-		iconLabel.setBorder(new BorderUIResource.EmptyBorderUIResource(10, 10, 10, 10));
+		iconLabel.setBorder(new BorderUIResource.EmptyBorderUIResource(10, 10,
+				10, 10));
 
 		c.gridx = 0;
 		c.gridy = 0;
 		add(iconLabel);
 
 		JLabel textLabel = new JLabel();
-		textLabel.setText("<html><h3>BitBank</h3>erstellt von:<ul><li>Björn Korella</li><li>Sven Tatter</li><li>Dennis Markmann</li></ul>Logo: http://commons.wikimedia.org/wiki/File:Bitcoin_logo.svg</html>");
-		textLabel.setBorder(new BorderUIResource.EmptyBorderUIResource(10, 10, 10, 10));
+		textLabel
+				.setText("<html><h3>BitBank</h3>erstellt von:<ul><li>Björn Korella</li><li>Sven Tatter</li><li>Dennis Markmann</li></ul>Logo: http://commons.wikimedia.org/wiki/File:Bitcoin_logo.svg</html>");
+		textLabel.setBorder(new BorderUIResource.EmptyBorderUIResource(10, 10,
+				10, 10));
 
 		c.gridx = 1;
 		c.gridy = 0;

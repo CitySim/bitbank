@@ -3,8 +3,10 @@ package de.g18.BitBank.Exception;
 import javax.swing.JOptionPane;
 
 /**
- * Created with IntelliJ IDEA. User: it1-tattsv Date: 16.04.13 Time: 14:28 To
- * change this template use File | Settings | File Templates.
+ * Exception bei negativen Betraegen.
+ * 
+ * @author it1-markde
+ * @since JRE6
  */
 public class BetragNegativException extends Exception implements
 		ExceptionDialogInterface {

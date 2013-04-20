@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.FeldLeerException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
-import de.g18.BitBank.Exception.KundenNummerException;
+import de.g18.BitBank.Exception.KundenNummerUnzulaessigException;
 import de.g18.BitBank.Exception.KundenNummerVergebenException;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
@@ -50,7 +50,7 @@ public class KundenAnlegenListener implements ActionListener {
 				long kundenNummer = Long.parseLong(this.kundenAnlegenField
 						.getText());
 				if (kundenNummer <= 0) {
-					throw new KundenNummerException(
+					throw new KundenNummerUnzulaessigException(
 							"Kundennummer darf nicht kleiner 0 sein");
 				}
 				String kundenName = this.kundenNamenField.getText();
@@ -77,7 +77,7 @@ public class KundenAnlegenListener implements ActionListener {
 				e.showDialog();
 				return;
 
-			} catch (KundenNummerException e) {
+			} catch (KundenNummerUnzulaessigException e) {
 				e.showDialog();
 				return;
 			}

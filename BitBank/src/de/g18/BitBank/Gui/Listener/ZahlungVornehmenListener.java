@@ -64,9 +64,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 			}
 
 			try {
-				this.neuerKontoStandField.setText("");
-				this.betragField.setText("");
-
+				this.cleanUp();
 				this.alterKontoStandField.setText(Double
 						.toString(this.controller
 								.kontoStandAnzeigen(kontoNummer)));
@@ -170,5 +168,10 @@ public class ZahlungVornehmenListener implements ActionListener {
 			throw new KeineGueltigeZahlException("Kontonummer");
 		}
 		return kontoNummer;
+	}
+
+	public void cleanUp() {
+		this.neuerKontoStandField.setText("");
+		this.betragField.setText("");
 	}
 }
