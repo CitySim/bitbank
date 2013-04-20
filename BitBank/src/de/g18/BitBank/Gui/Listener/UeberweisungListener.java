@@ -107,8 +107,8 @@ public class UeberweisungListener implements ActionListener {
 		}
 	}
 
-	public void showCreationDialog(int vomKontoNummer, int nachKontoNummer,
-			double betrag) {
+	public final void showCreationDialog(final int vomKontoNummer,
+			final int nachKontoNummer, final double betrag) {
 		JOptionPane.showMessageDialog(new JFrame(), "Ihre Überweisung über \""
 				+ betrag + "\" von \"" + vomKontoNummer + "\" nach\""
 				+ nachKontoNummer + "\" wurde erfolgreich durchgeführt.");

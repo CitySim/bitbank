@@ -40,10 +40,12 @@ public class ZahlungVornehmenListener implements ActionListener {
 		this.controller = controller;
 	}
 
-	public ZahlungVornehmenListener(ZahlungVornehmen zahlungVornehmenFrame,
-			JTextField kontoNummerField, JTextField alterKontoStandField,
-			JTextField neuerKontoStandField, JTextField betragField,
-			BankController controller) {
+	public ZahlungVornehmenListener(
+			final ZahlungVornehmen zahlungVornehmenFrame,
+			final JTextField kontoNummerField,
+			final JTextField alterKontoStandField,
+			final JTextField neuerKontoStandField,
+			final JTextField betragField, final BankController controller) {
 		new ZahlungVornehmenListener(betragField, betragField, betragField,
 				betragField, controller);
 		this.zahlungVornehmenFrame = zahlungVornehmenFrame;

@@ -23,8 +23,8 @@ public class KontenListeListener implements ActionListener {
 	private KontenListe kontenListeFrame;
 	private BankController controller;
 
-	public KontenListeListener(KontenListe kontenListeFrame,
-			BankController controller) {
+	public KontenListeListener(final KontenListe kontenListeFrame,
+			final BankController controller) {
 		this.kontenListeFrame = kontenListeFrame;
 		this.controller = controller;
 	}

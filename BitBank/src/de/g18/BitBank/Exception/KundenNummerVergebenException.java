@@ -14,7 +14,7 @@ public class KundenNummerVergebenException extends Exception implements
 		ExceptionDialogInterface {
 	private static final long serialVersionUID = -1918411222173099457L;
 
-	public KundenNummerVergebenException(long kundenNummer) {
+	public KundenNummerVergebenException(final long kundenNummer) {
 		super("Die Kundennummer " + Long.toString(kundenNummer)
 				+ " ist bereits vergeben");
 	}

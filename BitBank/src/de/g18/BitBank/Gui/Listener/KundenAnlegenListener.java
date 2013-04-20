@@ -28,14 +28,14 @@ public class KundenAnlegenListener implements ActionListener {
 	private KundenAnlegen kundenAnlegenFrame;
 	private BankController controller;
 
-	public KundenAnlegenListener(JTextField kundenNummerField,
-			JTextField kundenNamenField, BankController controller) {
+	public KundenAnlegenListener(final JTextField kundenNummerField,
+			final JTextField kundenNamenField, final BankController controller) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 		this.controller = controller;
 	}
 
-	public KundenAnlegenListener(KundenAnlegen kundenAnlegenFrame) {
+	public KundenAnlegenListener(final KundenAnlegen kundenAnlegenFrame) {
 		this.kundenAnlegenFrame = kundenAnlegenFrame;
 	}
 
@@ -89,7 +89,8 @@ public class KundenAnlegenListener implements ActionListener {
 		}
 	}
 
-	public void showCreationDialog(String kundenName, long kundenNummer) {
+	public final void showCreationDialog(final String kundenName,
+			final long kundenNummer) {
 		JOptionPane.showMessageDialog(new JFrame(), "Kunde mit dem Namen \""
 				+ kundenName + "\" und der Kundennummer \"" + kundenNummer
 				+ "\" angelegt.");
