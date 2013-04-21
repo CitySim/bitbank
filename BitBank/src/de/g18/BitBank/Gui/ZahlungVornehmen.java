@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * Gui Klasse zum Ein - / Auszahlen eines Betrages auf ein Konto.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -23,7 +23,7 @@ public class ZahlungVornehmen extends JPanel {
 	}
 
 	public ZahlungVornehmen(final JTabbedPane tabsPane,
-			final BankController controller) {
+							final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -46,7 +46,7 @@ public class ZahlungVornehmen extends JPanel {
 		JButton kontoStandButton = new JButton("Kontostand");
 		JButton einzahlungButton = new JButton("Einzahlung");
 		JButton auszahlungButton = new JButton("Auszahlung");
-		JButton beendenButton = new JButton("Beenden");
+		JButton beendenButton = new JButton("Schließen");
 
 		c.gridx = 0;
 		c.gridy = 0;

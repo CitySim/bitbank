@@ -29,7 +29,7 @@ public class Kontobewegungen extends JPanel {
 		kontoNummerField = new JTextField(10);
 
 		JButton kontobewegungenButton = new JButton("Kontobewegungen");
-		JButton beendenButton = new JButton("Beenden");
+		JButton beendenButton = new JButton("Schließen");
 
 		table = new JTable();
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);

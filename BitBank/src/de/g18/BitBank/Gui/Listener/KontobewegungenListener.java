@@ -1,20 +1,19 @@
 package de.g18.BitBank.Gui.Listener;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-
 import de.g18.BitBank.BankController;
-import de.g18.BitBank.Konto;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
 import de.g18.BitBank.Gui.Kontobewegungen;
 import de.g18.BitBank.Gui.TableModels.KontoBewegungenTableModel;
+import de.g18.BitBank.Konto;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -24,7 +23,7 @@ public class KontobewegungenListener implements ActionListener {
 	private BankController controller;
 
 	public KontobewegungenListener(final Kontobewegungen kontobewegungenFrame,
-			final BankController controller) {
+								   final BankController controller) {
 		this.kontobewegungenFrame = kontobewegungenFrame;
 		this.controller = controller;
 	}
@@ -51,6 +50,8 @@ public class KontobewegungenListener implements ActionListener {
 			Konto konto = null;
 			try {
 				konto = controller.getKontoByKontoNummer(kontonummer);
+				kontobewegungenFrame.getTabsPane().setTitleAt(
+						kontobewegungenFrame.getTabsPane().getSelectedIndex(), "Konto " + Long.toString(kontonummer));
 			} catch (KontoNichtGefundenException e) {
 				e.showDialog();
 				return;
@@ -58,7 +59,7 @@ public class KontobewegungenListener implements ActionListener {
 
 			kontobewegungenFrame.getTable().setModel(
 					new KontoBewegungenTableModel(konto));
-		} else if (buttonClicked.getText().compareTo("Beenden") == 0) {
+		} else if (buttonClicked.getText().compareTo("Schließen") == 0) {
 			kontobewegungenFrame.getTabsPane().remove(kontobewegungenFrame);
 		}
 	}

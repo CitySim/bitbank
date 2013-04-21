@@ -39,7 +39,7 @@ public class UeberweisungVornehmen extends JPanel {
 		JTextField betragField = new JTextField();
 
 		JButton ueberweisenButton = new JButton("Überweisen");
-		JButton beendenButton = new JButton("Beenden");
+		JButton beendenButton = new JButton("Schließen");
 
 		c.gridx = 0;
 		c.gridy = 0;

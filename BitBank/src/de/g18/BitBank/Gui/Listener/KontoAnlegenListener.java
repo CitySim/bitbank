@@ -1,24 +1,20 @@
 package de.g18.BitBank.Gui.Listener;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-
 import de.g18.BitBank.BankController;
-import de.g18.BitBank.Kontotyp;
 import de.g18.BitBank.Exception.KeinKontotypException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KundeNichtGefundenException;
 import de.g18.BitBank.Gui.KontoAnlegen;
+import de.g18.BitBank.Gui.KundenAuswahl;
+import de.g18.BitBank.Kontotyp;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -30,18 +26,17 @@ public class KontoAnlegenListener implements ActionListener {
 	private JRadioButton giroKontoRadioButton;
 	private JRadioButton sparKontoRadioButton;
 
-	public KontoAnlegenListener(final JTextField kundenNummerField,
-			final BankController controller,
-			final JRadioButton giroKontoRadioButton,
-			final JRadioButton sparKontoRadioButton) {
-		this.kundenNummerField = kundenNummerField;
+	public KontoAnlegenListener(final BankController controller,
+								final KontoAnlegen kontoAnlegenFrame,
+								final JTextField kundenNummerField,
+								final JRadioButton giroKontoRadioButton,
+								final JRadioButton sparKontoRadioButton) {
+
 		this.controller = controller;
+		this.kontoAnlegenFrame = kontoAnlegenFrame;
+		this.kundenNummerField = kundenNummerField;
 		this.giroKontoRadioButton = giroKontoRadioButton;
 		this.sparKontoRadioButton = sparKontoRadioButton;
-	}
-
-	public KontoAnlegenListener(final KontoAnlegen kontoAnlegenFrame) {
-		this.kontoAnlegenFrame = kontoAnlegenFrame;
 	}
 
 	@Override
@@ -49,7 +44,10 @@ public class KontoAnlegenListener implements ActionListener {
 
 		JButton buttonClicked = (JButton) event.getSource();
 
-		if (buttonClicked.getText().compareTo("Anlegen") == 0) {
+		if (buttonClicked.getText().compareTo("Kunde suchen") == 0) {
+			KundenAuswahl kundenAuswahl = new KundenAuswahl(controller);
+
+		} else if (buttonClicked.getText().compareTo("Anlegen") == 0) {
 			try {
 
 				long kundenNummer = Long.parseLong(this.kundenNummerField
@@ -85,9 +83,7 @@ public class KontoAnlegenListener implements ActionListener {
 				return;
 			}
 
-		}
-
-		if (buttonClicked.getText().compareTo("Beenden") == 0) {
+		} else if (buttonClicked.getText().compareTo("Schließen") == 0) {
 			this.kontoAnlegenFrame.getTabsPane().remove(this.kontoAnlegenFrame);
 		}
 	}

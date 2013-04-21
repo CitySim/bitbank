@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * Gui Klasse zum anlegen eines Kundens.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -19,7 +19,7 @@ public class KontoAnlegen extends JPanel {
 	private JTabbedPane tabsPane;
 
 	public KontoAnlegen(final JTabbedPane tabsPane,
-			final BankController controller) {
+						final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());
@@ -33,7 +33,8 @@ public class KontoAnlegen extends JPanel {
 		JRadioButton giroKontoRadioButton = new JRadioButton("GiroKonto");
 		JRadioButton sparKontoRadioButton = new JRadioButton("SparKonto");
 		JButton anlegenButton = new JButton("Anlegen");
-		JButton beendenButton = new JButton("Beenden");
+		JButton kundeAuswaehlenButton = new JButton("Kunde suchen");
+		JButton beendenButton = new JButton("Schließen");
 
 		ButtonGroup kontoTypSelect = new ButtonGroup();
 		kontoTypSelect.add(giroKontoRadioButton);
@@ -47,6 +48,11 @@ public class KontoAnlegen extends JPanel {
 		c.gridy = 0;
 		c.weightx = 1;
 		add(kundenNummerField, c);
+
+		c.gridx = 2;
+		c.gridy = 0;
+		c.weightx = 0;
+		add(kundeAuswaehlenButton, c);
 
 		c.gridx = 0;
 		c.gridy = 1;
@@ -75,10 +81,11 @@ public class KontoAnlegen extends JPanel {
 		c.weighty = 1;
 		this.add(new JPanel(), c);
 
-		anlegenButton.addActionListener(new KontoAnlegenListener(
-				kundenNummerField, controller, giroKontoRadioButton,
-				sparKontoRadioButton));
-		beendenButton.addActionListener(new KontoAnlegenListener(this));
+		KontoAnlegenListener listener = new KontoAnlegenListener(controller, this, kundenNummerField, giroKontoRadioButton, sparKontoRadioButton);
+
+		anlegenButton.addActionListener(listener);
+		beendenButton.addActionListener(listener);
+		kundeAuswaehlenButton.addActionListener(listener);
 	}
 
 	public final JTabbedPane getTabsPane() {

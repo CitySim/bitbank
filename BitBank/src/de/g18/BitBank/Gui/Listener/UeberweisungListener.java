@@ -1,29 +1,20 @@
 package de.g18.BitBank.Gui.Listener;
 
+import com.toedter.calendar.JDateChooser;
+import de.g18.BitBank.BankController;
+import de.g18.BitBank.Exception.*;
+import de.g18.BitBank.Gui.UeberweisungVornehmen;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-
-import com.toedter.calendar.JDateChooser;
-
-import de.g18.BitBank.BankController;
-import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.DateException;
-import de.g18.BitBank.Exception.KeineGueltigeZahlException;
-import de.g18.BitBank.Exception.KontoLeerException;
-import de.g18.BitBank.Exception.KontoNichtGefundenException;
-import de.g18.BitBank.Gui.UeberweisungVornehmen;
 
 /**
  * Listener zu den Buttons der UeberweisungVornehmen Klasse.
  * <p/>
  * /** F Listener zu den Buttons der UeberweisungVornehmen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -42,8 +33,8 @@ public class UeberweisungListener implements ActionListener {
 	}
 
 	public UeberweisungListener(final JTextField vomKontoField,
-			final JTextField nachKontoField, final JTextField betragField,
-			final BankController controller, final JDateChooser chooser) {
+								final JTextField nachKontoField, final JTextField betragField,
+								final BankController controller, final JDateChooser chooser) {
 
 		this.vomKontoField = vomKontoField;
 		this.nachKontoField = nachKontoField;
@@ -100,14 +91,14 @@ public class UeberweisungListener implements ActionListener {
 				e.showDialog();
 				return;
 			}
-		} else if (buttonClicked.getText().compareTo("Beenden") == 0) {
+		} else if (buttonClicked.getText().compareTo("Schließen") == 0) {
 			this.ueberweisungVornehmenFrame.getTabsPane().remove(
 					this.ueberweisungVornehmenFrame);
 		}
 	}
 
 	public void showCreationDialog(int vomKontoNummer, int nachKontoNummer,
-			double betrag) {
+								   double betrag) {
 		JOptionPane.showMessageDialog(new JFrame(), "Ihre Überweisung über \""
 				+ betrag + "\" von \"" + vomKontoNummer + "\" nach\""
 				+ nachKontoNummer + "\" wurde erfolgreich durchgeführt.");
