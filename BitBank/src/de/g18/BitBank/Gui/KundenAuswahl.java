@@ -4,6 +4,8 @@ import de.g18.BitBank.BankController;
 import de.g18.BitBank.Kunde;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
 /**
@@ -15,6 +17,8 @@ import java.awt.*;
  */
 public class KundenAuswahl extends JDialog {
 
+	public Kunde kunde;
+
 	public KundenAuswahl(final BankController controller) {
 		setLocationRelativeTo(null);
 		setLayout(new GridBagLayout());
@@ -24,10 +28,10 @@ public class KundenAuswahl extends JDialog {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("Kundenauswahl");
 		//setResizable(false);
-		setSize(new Dimension(100, 200));
+		setSize(new Dimension(200, 300));
 		setModal(true);
 
-		JList liste = new JList(new AbstractListModel() {
+		final JList liste = new JList(new AbstractListModel() {
 			@Override
 			public int getSize() {
 				return controller.getKundenCount();
@@ -39,13 +43,20 @@ public class KundenAuswahl extends JDialog {
 				return k.getKundenNummmer() + " - " + k.getName();
 			}
 		});
+		liste.addListSelectionListener(new ListSelectionListener() {
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				kunde = controller.getKundeByIndex(liste.getSelectedIndex());
+			}
+		});
 		liste.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		JScrollPane listeScrollPane = new JScrollPane(liste);
 
 		c.gridx = 0;
-		c.gridy = 1;
+		c.gridy = 0;
 		c.weightx = 1;
 		c.weighty = 1;
+		c.fill = GridBagConstraints.BOTH;
 		add(listeScrollPane, c);
 
 		setVisible(true);

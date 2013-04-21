@@ -11,6 +11,8 @@ import de.g18.BitBank.Kontotyp;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
@@ -45,7 +47,15 @@ public class KontoAnlegenListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Kunde suchen") == 0) {
-			KundenAuswahl kundenAuswahl = new KundenAuswahl(controller);
+			final KundenAuswahl kundenAuswahl = new KundenAuswahl(controller);
+			kundenAuswahl.addWindowListener(new WindowAdapter() {
+				public void windowClosed(WindowEvent e) {
+					System.out.println(e.toString());
+					if (kundenAuswahl.kunde != null) {
+						kundenNummerField.setText(Long.toString(kundenAuswahl.kunde.getKundenNummmer()));
+					}
+				}
+			});
 
 		} else if (buttonClicked.getText().compareTo("Anlegen") == 0) {
 			try {
