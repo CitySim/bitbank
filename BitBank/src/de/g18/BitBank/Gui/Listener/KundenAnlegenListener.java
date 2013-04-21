@@ -14,12 +14,9 @@ import de.g18.BitBank.Exception.KundenNummerUnzulaessigException;
 import de.g18.BitBank.Exception.KundenNummerVergebenException;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
-import javax.swing.*;
-import java.awt.event.*;
-
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -31,8 +28,7 @@ public class KundenAnlegenListener implements ActionListener {
 	private BankController controller;
 
 	public KundenAnlegenListener(final JTextField kundenNummerField,
-								 final JTextField kundenNamenField,
-								 final BankController controller) {
+			final JTextField kundenNamenField, final BankController controller) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 		this.controller = controller;
