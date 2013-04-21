@@ -2,6 +2,13 @@ package de.g18.BitBank.Exception;
 
 import javax.swing.JOptionPane;
 
+/**
+ * Exception bei nicht gesetztem Datum.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
+
 public class DateException extends Exception implements
 		ExceptionDialogInterface {
 

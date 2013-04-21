@@ -1,14 +1,16 @@
 package de.g18.BitBank.Gui.Listener;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Date;
+
 import com.toedter.calendar.JDateChooser;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.*;
 import de.g18.BitBank.Gui.UeberweisungVornehmen;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Date;
+
 
 /**
  * Listener zu den Buttons der UeberweisungVornehmen Klasse.
@@ -33,8 +35,10 @@ public class UeberweisungListener implements ActionListener {
 	}
 
 	public UeberweisungListener(final JTextField vomKontoField,
-								final JTextField nachKontoField, final JTextField betragField,
-								final BankController controller, final JDateChooser chooser) {
+								final JTextField nachKontoField,
+								final JTextField betragField,
+								final BankController controller,
+								final JDateChooser chooser) {
 
 		this.vomKontoField = vomKontoField;
 		this.nachKontoField = nachKontoField;
@@ -79,6 +83,7 @@ public class UeberweisungListener implements ActionListener {
 				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer,
 						betrag, datum);
 
+				this.cleanUp();
 				this.showCreationDialog(vomKontoNummer, nachKontoNummer, betrag);
 
 			} catch (KontoLeerException e) {
@@ -97,10 +102,17 @@ public class UeberweisungListener implements ActionListener {
 		}
 	}
 
-	public void showCreationDialog(int vomKontoNummer, int nachKontoNummer,
-								   double betrag) {
-		JOptionPane.showMessageDialog(new JFrame(), "Ihre Überweisung über \""
-				+ betrag + "\" von \"" + vomKontoNummer + "\" nach\""
-				+ nachKontoNummer + "\" wurde erfolgreich durchgeführt.");
+	public final void showCreationDialog(final int vomKontoNummer,
+										 final int nachKontoNummer, final double betrag) {
+		JOptionPane.showMessageDialog(null, "Ihre Überweisung über \"" + betrag
+				+ "\" von \"" + vomKontoNummer + "\" nach\"" + nachKontoNummer
+				+ "\" wurde erfolgreich durchgeführt.");
+	}
+
+	public void cleanUp() {
+		// this.vomKontoField.setText("");
+		this.nachKontoField.setText("");
+		this.betragField.setText("");
+		this.chooser = null;
 	}
 }

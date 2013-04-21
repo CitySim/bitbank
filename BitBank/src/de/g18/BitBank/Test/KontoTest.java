@@ -1,7 +1,6 @@
 package de.g18.BitBank.Test;
 
 import static org.junit.Assert.assertEquals;
-
 import java.util.Date;
 
 import org.junit.Before;
@@ -11,6 +10,13 @@ import de.g18.BitBank.Girokonto;
 import de.g18.BitBank.Konto;
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
+
+/**
+ * Testklasse fuer die Konto Klasse.
+ * 
+ * @author it1-korebj
+ * @since JRE6
+ */
 
 public class KontoTest {
 	private Konto k;

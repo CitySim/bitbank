@@ -1,15 +1,21 @@
 package de.g18.BitBank.Gui.Listener;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Exception.FeldLeerException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
-import de.g18.BitBank.Exception.KundenNummerException;
+import de.g18.BitBank.Exception.KundenNummerUnzulaessigException;
 import de.g18.BitBank.Exception.KundenNummerVergebenException;
 import de.g18.BitBank.Gui.KundenAnlegen;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 /**
  * Listener zu den Buttons der KundenAnlegen Klasse.
@@ -24,14 +30,15 @@ public class KundenAnlegenListener implements ActionListener {
 	private KundenAnlegen kundenAnlegenFrame;
 	private BankController controller;
 
-	public KundenAnlegenListener(JTextField kundenNummerField,
-								 JTextField kundenNamenField, BankController controller) {
+	public KundenAnlegenListener(final JTextField kundenNummerField,
+								 final JTextField kundenNamenField,
+								 final BankController controller) {
 		this.kundenAnlegenField = kundenNummerField;
 		this.kundenNamenField = kundenNamenField;
 		this.controller = controller;
 	}
 
-	public KundenAnlegenListener(KundenAnlegen kundenAnlegenFrame) {
+	public KundenAnlegenListener(final KundenAnlegen kundenAnlegenFrame) {
 		this.kundenAnlegenFrame = kundenAnlegenFrame;
 	}
 
@@ -46,7 +53,7 @@ public class KundenAnlegenListener implements ActionListener {
 				long kundenNummer = Long.parseLong(this.kundenAnlegenField
 						.getText());
 				if (kundenNummer <= 0) {
-					throw new KundenNummerException(
+					throw new KundenNummerUnzulaessigException(
 							"Kundennummer darf nicht kleiner 0 sein");
 				}
 				String kundenName = this.kundenNamenField.getText();
@@ -73,7 +80,7 @@ public class KundenAnlegenListener implements ActionListener {
 				e.showDialog();
 				return;
 
-			} catch (KundenNummerException e) {
+			} catch (KundenNummerUnzulaessigException e) {
 				e.showDialog();
 				return;
 			}
@@ -85,8 +92,9 @@ public class KundenAnlegenListener implements ActionListener {
 		}
 	}
 
-	public void showCreationDialog(String kundenName, long kundenNummer) {
-		JOptionPane.showMessageDialog(new JFrame(), "Kunde mit dem Namen \""
+	public final void showCreationDialog(final String kundenName,
+			final long kundenNummer) {
+		JOptionPane.showMessageDialog(null, "Kunde mit dem Namen \""
 				+ kundenName + "\" und der Kundennummer \"" + kundenNummer
 				+ "\" angelegt.");
 

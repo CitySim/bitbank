@@ -1,7 +1,14 @@
 package de.g18.BitBank.Exception;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
+/**
+ * Exception bei Eintraegen in Felder, die nicht dem gueltigen Zahlenformat
+ * entsprechen.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
 
 public class KeineGueltigeZahlException extends Exception implements
 		ExceptionDialogInterface {
@@ -12,7 +19,7 @@ public class KeineGueltigeZahlException extends Exception implements
 	}
 
 	public void showDialog() {
-		JOptionPane.showMessageDialog(new JFrame(), this.getMessage()
+		JOptionPane.showMessageDialog(null, this.getMessage()
 				+ " ist keine gueltige Zahl.", "Fehler",
 				JOptionPane.ERROR_MESSAGE);
 	}

@@ -4,8 +4,11 @@ import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
 
 /**
+ * Unterklasse von Konto.
+ * 
  * @author it1-markde
  * @since JRE6
+ * @see Konto
  */
 
 public class Girokonto extends Konto {

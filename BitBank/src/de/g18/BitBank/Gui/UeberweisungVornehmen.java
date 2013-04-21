@@ -8,8 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Gui Klasse zum Überweisen eines Betrages von einem Konto zum anderen.
- *
+ * Gui Klasse zum Ueberweisen eines Betrages von einem Konto zum anderen.
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -20,7 +20,7 @@ public class UeberweisungVornehmen extends JPanel {
 	private JTabbedPane tabsPane;
 
 	public UeberweisungVornehmen(final JTabbedPane tabsPane,
-								 final BankController controller) {
+			final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		this.setLayout(new GridBagLayout());

@@ -2,7 +2,7 @@ package de.g18.BitBank;
 
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
-import de.g18.BitBank.Exception.KundenNummerException;
+import de.g18.BitBank.Exception.KundenNummerUnzulaessigException;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,12 +22,12 @@ public class Kunde {
 	 *
 	 * @param kundenName   Name des Kunden
 	 * @param kundenNummer Kundennummer des Kunden
-	 * @throws KundenNummerException Fehler wenn Nummer < 0
+	 * @throws KundenNummerUnzulaessigException Fehler wenn Nummer < 0
 	 */
 	public Kunde(final String kundenName, final long kundenNummer)
-			throws KundenNummerException {
+			throws KundenNummerUnzulaessigException {
 		if (kundenNummer < 0) {
-			throw new KundenNummerException(
+			throw new KundenNummerUnzulaessigException(
 					"Kundennummer darf nicht kleiner 0 sein");
 		}
 		this.name = kundenName;

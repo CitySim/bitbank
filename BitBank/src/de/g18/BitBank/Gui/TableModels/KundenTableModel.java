@@ -6,9 +6,12 @@ import de.g18.BitBank.BankController;
 import de.g18.BitBank.Kunde;
 
 /**
- * Created with IntelliJ IDEA. User: Sven Date: 17.04.13 Time: 22:38 To change
- * this template use File | Settings | File Templates.
+ * Tabelle zur Anzeige der Kunden.
+ * 
+ * @author it1-korebj
+ * @since JRE6
  */
+
 public class KundenTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -5572145010789838691L;
 	private BankController controller;
