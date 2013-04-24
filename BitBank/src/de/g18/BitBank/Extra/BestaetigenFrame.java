@@ -31,7 +31,6 @@ public class BestaetigenFrame extends JFrame {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setResizable(false);
 		JTextArea emailArea = null;
 		if (operation.equals("email")) {
 			this.setSize(new Dimension(300, 140));
@@ -52,7 +51,7 @@ public class BestaetigenFrame extends JFrame {
 			add(emailArea, c);
 		}
 		if (operation.equals("drucken")) {
-			this.setSize(new Dimension(250, 100));
+			this.setSize(new Dimension(280, 100));
 			this.setTitle("Drucken");
 		}
 
