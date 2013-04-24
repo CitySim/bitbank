@@ -11,12 +11,11 @@ import de.g18.BitBank.Gui.UeberweisungVornehmen;
 
 import javax.swing.*;
 
-
 /**
  * Listener zu den Buttons der UeberweisungVornehmen Klasse.
  * <p/>
  * /** F Listener zu den Buttons der UeberweisungVornehmen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -35,10 +34,8 @@ public class UeberweisungListener implements ActionListener {
 	}
 
 	public UeberweisungListener(final JTextField vomKontoField,
-								final JTextField nachKontoField,
-								final JTextField betragField,
-								final BankController controller,
-								final JDateChooser chooser) {
+			final JTextField nachKontoField, final JTextField betragField,
+			final BankController controller, final JDateChooser chooser) {
 
 		this.vomKontoField = vomKontoField;
 		this.nachKontoField = nachKontoField;
@@ -103,7 +100,7 @@ public class UeberweisungListener implements ActionListener {
 	}
 
 	public final void showCreationDialog(final int vomKontoNummer,
-										 final int nachKontoNummer, final double betrag) {
+			final int nachKontoNummer, final double betrag) {
 		JOptionPane.showMessageDialog(null, "Ihre Überweisung über \"" + betrag
 				+ "\" von \"" + vomKontoNummer + "\" nach\"" + nachKontoNummer
 				+ "\" wurde erfolgreich durchgeführt.");
@@ -113,6 +110,6 @@ public class UeberweisungListener implements ActionListener {
 		// this.vomKontoField.setText("");
 		this.nachKontoField.setText("");
 		this.betragField.setText("");
-		this.chooser = null;
+		this.chooser.setDate(null);
 	}
 }
