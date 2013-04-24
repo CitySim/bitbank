@@ -3,7 +3,7 @@ package de.g18.BitBank.Exception;
 import javax.swing.JOptionPane;
 
 /**
- * Exception bei nicht gesetztem Datum.
+ * Exception bei ungueltigen Daten.
  * 
  * @author it1-markde
  * @since JRE6
@@ -20,7 +20,7 @@ public class DateException extends Exception implements
 
 	@Override
 	public void showDialog() {
-		JOptionPane.showMessageDialog(null, "Bitte wählen sie ein Datum",
-				"Fehler", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, this.getMessage(), "Fehler",
+				JOptionPane.ERROR_MESSAGE);
 	}
 }

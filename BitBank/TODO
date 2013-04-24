@@ -4,3 +4,17 @@
 4. Steuerung per Tastatur
 5. Jetziger Kontostand??
 6. Mehrfaches schließen der Liste unter Kunde suchen (Konto anlegen)
+
+7. "java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog1
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog1
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog1
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog1
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog1
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
+java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog1" ?!?!?!??
