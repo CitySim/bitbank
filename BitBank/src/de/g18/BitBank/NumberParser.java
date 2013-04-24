@@ -17,8 +17,6 @@ public class NumberParser {
 	 * @param text
 	 *            eingelesener Text
 	 * @return betrag - Summe als double
-	 * @throws NumberFormatException
-	 *             Exception beim Parsen von nicht-Zahlen
 	 * @throws ZuVieleNachkommastellenException
 	 *             Exception bei Zahlen mit zu vielen Nachkommastellen
 	 */

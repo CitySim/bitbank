@@ -17,14 +17,14 @@ public class CloseButtonListener implements ActionListener {
 	private JTabbedPane tabsPane;
 	private String tabName;
 
-	public CloseButtonListener(JTabbedPane tabsPane, String tabName) {
+	public CloseButtonListener(final JTabbedPane tabsPane, final String tabName) {
 
 		this.tabsPane = tabsPane;
 		this.tabName = tabName;
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(final ActionEvent e) {
 
 		this.tabsPane.remove(tabsPane.indexOfTab(this.tabName));
 

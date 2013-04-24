@@ -84,10 +84,10 @@ public class BestaetigenFrameListener implements ActionListener {
 					return;
 				}
 			}
-			this.printFrame.dispose();
-		}
 
-		else if (buttonClicked.getText().compareTo("Abbrechen") == 0) {
+			this.printFrame.dispose();
+
+		} else if (buttonClicked.getText().compareTo("Abbrechen") == 0) {
 			this.printFrame.dispose();
 		}
 	}
