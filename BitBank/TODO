@@ -1,11 +1,27 @@
-1. Javadocs
-2. NumberParser Test
-3. Seine Bankview Main wieder implementieren
-4. Steuerung per Tastatur
-5. Jetziger Kontostand??
-6. Programm schließt nicht immer
+Jetziger Kontostand??
 
-7. "java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
+letzter Bug (!)
+
+CloseButtons (Image)
+	Nur ein Tab zu jedem
+		+ Fokus bei Neuauswahl
+		
+Email und Printfunktion sinnvoller Text
+
+NumberParser Test		
+
+Javadocs
+
+
+
+
+
+
+Steuerung per Tastatur
+
+Programm schließt nicht immer
+
+"java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
 java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
 java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog1
 java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
