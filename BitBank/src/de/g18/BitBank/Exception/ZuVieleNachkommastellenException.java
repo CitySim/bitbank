@@ -17,7 +17,8 @@ public class ZuVieleNachkommastellenException extends Exception implements
 		super(message);
 	}
 
-	public void showDialog() {
+	@Override
+	public final void showDialog() {
 		JOptionPane.showMessageDialog(null,
 				"Es dürfen maximal zwei Nachkommastellen angegeben werde.",
 				"Fehler", JOptionPane.ERROR_MESSAGE);

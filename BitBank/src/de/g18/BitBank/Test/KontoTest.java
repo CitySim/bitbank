@@ -44,7 +44,7 @@ public class KontoTest {
 	}
 
 	@Test(expected = BetragNegativException.class)
-	public void negativenBetragEinzahlen() throws BetragNegativException {
+	public final void negativenBetragEinzahlen() throws BetragNegativException {
 		// es können keine negativ beträge eingezahlt werden
 		k.einzahlen(-100);
 		// konto muss noch immer 0 haben, betrag darf sich nicht ändern
@@ -74,7 +74,7 @@ public class KontoTest {
 	}
 
 	@Test(expected = BetragNegativException.class)
-	public void negativenBetragAuszahlen() throws KontoLeerException,
+	public final void negativenBetragAuszahlen() throws KontoLeerException,
 			BetragNegativException {
 		// es können keine negativ beträge eingezahlt werden
 		k.auszahlen(-100);

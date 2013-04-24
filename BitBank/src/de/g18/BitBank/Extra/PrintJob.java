@@ -118,7 +118,7 @@ public class PrintJob implements Printable {
 		return true;
 	}
 
-	public void printAllPages() {
+	public final void printAllPages() {
 		printerJob.setPrintable(this, pageFormat);
 		for (int i = 0; i < numberOfPages; i++) {
 			printPage(i);
@@ -194,7 +194,7 @@ public class PrintJob implements Printable {
 		}
 	}
 
-	public int getNumberOfPages() {
+	public final int getNumberOfPages() {
 		int max = this.getMaxLines();
 		int total = textareaForPrint.getLineCount();
 		int pages = (int) Math.ceil((double) total / (double) max);

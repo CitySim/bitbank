@@ -22,15 +22,15 @@ import de.g18.BitBank.Exception.KundenNummerVergebenException;
 public class BankController {
 	private List<Kunde> kundenListe = new ArrayList<Kunde>();
 
-	public int getKundenCount() {
+	public final int getKundenCount() {
 		return kundenListe.size();
 	}
 
-	public List<Kunde> getKundenListe() {
+	public final List<Kunde> getKundenListe() {
 		return kundenListe;
 	}
 
-	public Kunde getKundeByIndex(final int i) {
+	public final Kunde getKundeByIndex(final int i) {
 		return kundenListe.get(i);
 	}
 

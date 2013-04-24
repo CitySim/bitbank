@@ -170,7 +170,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		}
 	}
 
-	public int ermittleKontoNummer() throws KeineGueltigeZahlException {
+	public final int ermittleKontoNummer() throws KeineGueltigeZahlException {
 		int kontoNummer;
 		try {
 			kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
@@ -180,7 +180,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		return kontoNummer;
 	}
 
-	public void cleanUp() {
+	public final void cleanUp() {
 		this.neuerKontoStandField.setText("");
 		this.betragField.setText("");
 	}
