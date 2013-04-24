@@ -18,9 +18,12 @@ import de.g18.BitBank.BankController;
 import de.g18.BitBank.Kunde;
 
 /**
- * Created with IntelliJ IDEA. User: Sven Date: 21.04.13 Time: 12:03 To change
- * this template use File | Settings | File Templates.
+ * Gui Klasse zur erleichterten Kundenauswahl.
+ * 
+ * @author it1-markde
+ * @since JRE6
  */
+
 public class KundenAuswahl extends JDialog {
 	private static final long serialVersionUID = -785098997227623108L;
 	private Kunde kunde;

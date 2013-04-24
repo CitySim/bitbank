@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontenListe Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -57,7 +57,8 @@ public class KontenListeListener implements ActionListener {
 
 			kontenListeFrame.getTable().setModel(new KontenTableModel(kunde));
 			kontenListeFrame.getTabsPane().setTitleAt(
-					kontenListeFrame.getTabsPane().getSelectedIndex(), "Kunde " + Long.toString(kundenNummer));
+					kontenListeFrame.getTabsPane().getSelectedIndex(),
+					"Kunde " + Long.toString(kundenNummer));
 		}
 		if (buttonClicked.getText().compareTo("Schließen") == 0) {
 			this.kontenListeFrame.getTabsPane().remove(this.kontenListeFrame);

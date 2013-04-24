@@ -10,7 +10,7 @@ import java.awt.*;
 /**
  * Gui Klasse zum Anzeigen des aktuellen Kontostandes aller Konten eines
  * Kundens.
- *
+ * 
  * Gui Klasse zum Anzeigen aller Kunden.
  * 
  * @author it1-markde
@@ -22,7 +22,7 @@ public class KundenListe extends JPanel {
 	private JTabbedPane tabsPane;
 
 	public KundenListe(final JTabbedPane tabsPane,
-					   final BankController controller) {
+			final BankController controller) {
 		this.tabsPane = tabsPane;
 
 		setLayout(new GridBagLayout());

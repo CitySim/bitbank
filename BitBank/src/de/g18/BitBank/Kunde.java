@@ -9,6 +9,8 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * Kunden Klasse.
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -19,10 +21,13 @@ public class Kunde {
 
 	/**
 	 * Ertsellt eine neue Instanz eines Kunden.
-	 *
-	 * @param kundenName   Name des Kunden
-	 * @param kundenNummer Kundennummer des Kunden
-	 * @throws KundenNummerUnzulaessigException Fehler wenn Nummer < 0
+	 * 
+	 * @param kundenName
+	 *            Name des Kunden
+	 * @param kundenNummer
+	 *            Kundennummer des Kunden
+	 * @throws KundenNummerUnzulaessigException
+	 *             Fehler wenn Nummer < 0
 	 */
 	public Kunde(final String kundenName, final long kundenNummer)
 			throws KundenNummerUnzulaessigException {
@@ -36,7 +41,7 @@ public class Kunde {
 
 	/**
 	 * Gibt die Kundennummer des Kunden zurück.
-	 *
+	 * 
 	 * @return Kundennummer des Kunden
 	 */
 	public long getKundenNummmer() {
@@ -45,8 +50,9 @@ public class Kunde {
 
 	/**
 	 * Setzt die Kundennummer des Kunden neu.
-	 *
-	 * @param kundenNummmer Nummer des Kunden
+	 * 
+	 * @param kundenNummmer
+	 *            Nummer des Kunden
 	 */
 	public final void setKundenNummmer(final int kundenNummmer) {
 		this.kundenNummmer = kundenNummmer;
@@ -54,7 +60,7 @@ public class Kunde {
 
 	/**
 	 * Gibt den Namen des Kunden zurück.
-	 *
+	 * 
 	 * @return Name des Kunden
 	 */
 	public final String getName() {
@@ -67,7 +73,7 @@ public class Kunde {
 
 	/**
 	 * Gibt die Liste aller Konten des Kunden zurücks Namen des Kunden zurück.
-	 *
+	 * 
 	 * @return Name des Kunden
 	 */
 	public final List<Konto> getKontenListe() {
@@ -76,24 +82,31 @@ public class Kunde {
 
 	/**
 	 * Führt die UeberweisungVornehmen über das entsprechende Quellkonto durch.
-	 *
-	 * @param quellKonto Konto von dem ueberwiesen wird.
-	 * @param zielKonto  Konto auf das ueberwiesen wird.
-	 * @param betrag     zu ueberweisende Summe.
-	 * @param datum      aktuelles Datum.
-	 * @throws BetragNegativException Fehler bei negativen Beträgen
-	 * @throws KontoLeerException     Fehler bei unbekannten Konten
+	 * 
+	 * @param quellKonto
+	 *            Konto von dem ueberwiesen wird.
+	 * @param zielKonto
+	 *            Konto auf das ueberwiesen wird.
+	 * @param betrag
+	 *            zu ueberweisende Summe.
+	 * @param datum
+	 *            aktuelles Datum.
+	 * @throws BetragNegativException
+	 *             Fehler bei negativen Beträgen
+	 * @throws KontoLeerException
+	 *             Fehler bei unbekannten Konten
 	 */
 	public final void ueberweisen(final Konto quellKonto,
-								  final Konto zielKonto, final int betrag, final Date datum)
+			final Konto zielKonto, final int betrag, final Date datum)
 			throws KontoLeerException, BetragNegativException {
 		quellKonto.ueberweisen(zielKonto, betrag, datum);
 	}
 
 	/**
 	 * Legt ein neues Konto von angeben Typ und fügt es diesem Kunden hinzu.
-	 *
-	 * @param kontoTyp Typ des neuen Kontos
+	 * 
+	 * @param kontoTyp
+	 *            Typ des neuen Kontos
 	 * @return das neu angelegte Konto
 	 */
 	public final Konto anlegenKonto(final Kontotyp kontoTyp) {
@@ -116,7 +129,7 @@ public class Kunde {
 	/**
 	 * Gibt einen mehrzeiligen String mit einer Übersicht aller Konten des
 	 * Kunden zurück.
-	 *
+	 * 
 	 * @return mehrzeiliger String
 	 */
 	public final String anzeigenKontostandsUebersicht() {

@@ -3,7 +3,7 @@
 3. Seine Bankview Main wieder implementieren
 4. Steuerung per Tastatur
 5. Jetziger Kontostand??
-6. Mehrfaches schließen der Liste unter Kunde suchen (Konto anlegen)
+6. Programm schließt nicht immer
 
 7. "java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0
 java.awt.event.WindowEvent[WINDOW_CLOSED,opposite=null,oldState=0,newState=0] on dialog0

@@ -26,8 +26,6 @@ import de.g18.BitBank.Gui.UeberweisungVornehmen;
 
 /**
  * Listener zu den Buttons der UeberweisungVornehmen Klasse.
- * <p/>
- * /** F Listener zu den Buttons der UeberweisungVornehmen Klasse.
  * 
  * @author it1-markde
  * @since JRE6

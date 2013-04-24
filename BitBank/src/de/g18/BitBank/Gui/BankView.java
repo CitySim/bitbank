@@ -10,7 +10,7 @@ import java.io.IOException;
 
 /**
  * Vorgegebene BankMain.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */

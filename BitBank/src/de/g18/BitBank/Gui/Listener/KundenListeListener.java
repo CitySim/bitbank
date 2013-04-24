@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */

@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -23,7 +23,7 @@ public class KontobewegungenListener implements ActionListener {
 	private BankController controller;
 
 	public KontobewegungenListener(final Kontobewegungen kontobewegungenFrame,
-								   final BankController controller) {
+			final BankController controller) {
 		this.kontobewegungenFrame = kontobewegungenFrame;
 		this.controller = controller;
 	}
@@ -51,7 +51,8 @@ public class KontobewegungenListener implements ActionListener {
 			try {
 				konto = controller.getKontoByKontoNummer(kontonummer);
 				kontobewegungenFrame.getTabsPane().setTitleAt(
-						kontobewegungenFrame.getTabsPane().getSelectedIndex(), "Konto " + Long.toString(kontonummer));
+						kontobewegungenFrame.getTabsPane().getSelectedIndex(),
+						"Konto " + Long.toString(kontonummer));
 			} catch (KontoNichtGefundenException e) {
 				e.showDialog();
 				return;
