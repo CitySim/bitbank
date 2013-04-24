@@ -26,7 +26,7 @@ public class KontobewegungTest {
 	}
 
 	@Test
-	public void KontobewegungErstellen() {
+	public void kontobewegungErstellen() {
 		assertEquals(237.68, kb.getBetrag(), 0);
 		assertEquals(now, kb.getDatum());
 	}

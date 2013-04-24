@@ -26,6 +26,10 @@ public class BankController {
 		return kundenListe.size();
 	}
 
+	public List<Kunde> getKundenListe() {
+		return kundenListe;
+	}
+
 	public Kunde getKundeByIndex(final int i) {
 		return kundenListe.get(i);
 	}

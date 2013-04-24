@@ -4,5 +4,12 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="Lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="Lib/Extra/dsn.jar"/>
+	<classpathentry kind="lib" path="Lib/Extra/gimap.jar"/>
+	<classpathentry kind="lib" path="Lib/Extra/imap.jar"/>
+	<classpathentry kind="lib" path="Lib/Extra/mail.jar"/>
+	<classpathentry kind="lib" path="Lib/Extra/mailapi.jar"/>
+	<classpathentry kind="lib" path="Lib/Extra/pop3.jar"/>
+	<classpathentry kind="lib" path="Lib/Extra/smtp.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

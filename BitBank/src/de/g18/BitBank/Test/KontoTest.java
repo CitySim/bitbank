@@ -28,7 +28,7 @@ public class KontoTest {
 	}
 
 	@Test
-	public void KontoErstellen() {
+	public void kontoErstellen() {
 		assertEquals(123401034, k.getKontoNummer());
 		assertEquals(0, k.getKontoStand(), 0);
 	}
@@ -52,7 +52,7 @@ public class KontoTest {
 	}
 
 	@Test
-	public void FehlerBeimEinzahlenAendertBetragNicht() {
+	public void fehlerBeimEinzahlenAendertBetragNicht() {
 		try {
 			k.einzahlen(-100);
 		} catch (BetragNegativException e) {
@@ -81,7 +81,7 @@ public class KontoTest {
 	}
 
 	@Test
-	public void FehlerBeimAuszahlenAendertBetragNicht() {
+	public void fehlerBeimAuszahlenAendertBetragNicht() {
 		try {
 			k.auszahlen(-100);
 		} catch (BetragNegativException e) {
