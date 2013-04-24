@@ -52,16 +52,18 @@ public class UeberweisungListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Überweisen") == 0) {
-			double betrag;
+			double betrag = 0;
 			int vomKontoNummer;
-			int nachKontoNummer;
+			int nachKontoNummer = 0;
 
 			try {
-				betrag = new NumberParser().parseDouble(this.betragField
-						.getText());
+
 				vomKontoNummer = Integer.parseInt(this.vomKontoField.getText());
 				nachKontoNummer = Integer.parseInt(this.nachKontoField
 						.getText());
+				betrag = new NumberParser().parseDouble(this.betragField
+						.getText());
+
 			} catch (NumberFormatException e) {
 				try {
 					throw new KeineGueltigeZahlException("Eine der Nummern");
@@ -69,6 +71,9 @@ public class UeberweisungListener implements ActionListener {
 					e1.showDialog();
 					return;
 				}
+			} catch (ZuVieleNachkommastellenException e) {
+				e.showDialog();
+				return;
 			}
 
 			Date datum = chooser.getDate();

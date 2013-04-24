@@ -6,6 +6,7 @@ import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
+import de.g18.BitBank.Exception.ZuVieleNachkommastellenException;
 import de.g18.BitBank.Gui.ZahlungVornehmen;
 
 import javax.swing.*;
@@ -93,6 +94,9 @@ public class ZahlungVornehmenListener implements ActionListener {
 					e1.showDialog();
 					return;
 				}
+			} catch (ZuVieleNachkommastellenException e) {
+				e.showDialog();
+				return;
 			}
 
 			try {
@@ -125,6 +129,9 @@ public class ZahlungVornehmenListener implements ActionListener {
 					e1.showDialog();
 					return;
 				}
+			} catch (ZuVieleNachkommastellenException e) {
+				e.showDialog();
+				return;
 			}
 
 			try {
