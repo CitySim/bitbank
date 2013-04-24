@@ -16,7 +16,7 @@ import java.awt.event.WindowEvent;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -29,10 +29,10 @@ public class KontoAnlegenListener implements ActionListener {
 	private JRadioButton sparKontoRadioButton;
 
 	public KontoAnlegenListener(final BankController controller,
-								final KontoAnlegen kontoAnlegenFrame,
-								final JTextField kundenNummerField,
-								final JRadioButton giroKontoRadioButton,
-								final JRadioButton sparKontoRadioButton) {
+			final KontoAnlegen kontoAnlegenFrame,
+			final JTextField kundenNummerField,
+			final JRadioButton giroKontoRadioButton,
+			final JRadioButton sparKontoRadioButton) {
 
 		this.controller = controller;
 		this.kontoAnlegenFrame = kontoAnlegenFrame;
@@ -49,10 +49,11 @@ public class KontoAnlegenListener implements ActionListener {
 		if (buttonClicked.getText().compareTo("Kunde suchen") == 0) {
 			final KundenAuswahl kundenAuswahl = new KundenAuswahl(controller);
 			kundenAuswahl.addWindowListener(new WindowAdapter() {
-				public void windowClosed(WindowEvent e) {
+				public void windowClosed(final WindowEvent e) {
 					System.out.println(e.toString());
-					if (kundenAuswahl.kunde != null) {
-						kundenNummerField.setText(Long.toString(kundenAuswahl.kunde.getKundenNummmer()));
+					if (kundenAuswahl.getKunde() != null) {
+						kundenNummerField.setText(Long.toString(kundenAuswahl
+								.getKunde().getKundenNummmer()));
 					}
 				}
 			});

@@ -10,9 +10,9 @@ import java.util.Date;
  */
 
 public class Kontobewegung {
-	protected Date datum;
-	protected double betrag;
-	protected String text;
+	private Date datum;
+	private double betrag;
+	private String text;
 
 	public Kontobewegung(final Date datum, final double betrag) {
 		this(datum, betrag, "");

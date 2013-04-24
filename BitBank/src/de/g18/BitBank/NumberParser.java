@@ -22,8 +22,8 @@ public class NumberParser {
 	 * @throws ZuVieleNachkommastellenException
 	 *             Exception bei Zahlen mit zu vielen Nachkommastellen
 	 */
-	public double parseDouble(String text) throws NumberFormatException,
-			ZuVieleNachkommastellenException {
+	public final double parseDouble(String text)
+			throws ZuVieleNachkommastellenException {
 
 		if (text.contains(",")) {
 			text = (text.substring(0, text.indexOf(",")) + "." + (text
@@ -44,7 +44,7 @@ public class NumberParser {
 	 * @throws ZuVieleNachkommastellenException
 	 *             Exception bei Zahlen mit zu vielen Nachkommastellen
 	 */
-	public void checkNumber(double betrag)
+	public final void checkNumber(final double betrag)
 			throws ZuVieleNachkommastellenException {
 
 		String s = Double.toString(betrag);

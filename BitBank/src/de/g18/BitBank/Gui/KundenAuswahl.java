@@ -23,7 +23,7 @@ import de.g18.BitBank.Kunde;
  */
 public class KundenAuswahl extends JDialog {
 	private static final long serialVersionUID = -785098997227623108L;
-	public Kunde kunde;
+	private Kunde kunde;
 
 	public KundenAuswahl(final BankController controller) {
 		setLocationRelativeTo(null);
@@ -47,15 +47,15 @@ public class KundenAuswahl extends JDialog {
 					}
 
 					@Override
-					public Object getElementAt(int index) {
+					public Object getElementAt(final int index) {
 						Kunde k = controller.getKundeByIndex(index);
 						return k.getKundenNummmer() + " - " + k.getName();
 					}
 				});
 		liste.addListSelectionListener(new ListSelectionListener() {
 			@Override
-			public void valueChanged(ListSelectionEvent e) {
-				kunde = controller.getKundeByIndex(liste.getSelectedIndex());
+			public void valueChanged(final ListSelectionEvent e) {
+				kunde = (controller.getKundeByIndex(liste.getSelectedIndex()));
 			}
 		});
 		liste.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -70,4 +70,9 @@ public class KundenAuswahl extends JDialog {
 
 		setVisible(true);
 	}
+
+	public Kunde getKunde() {
+		return kunde;
+	}
+
 }

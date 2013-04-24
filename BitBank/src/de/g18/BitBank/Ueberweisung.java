@@ -35,8 +35,8 @@ public class Ueberweisung extends Kontobewegung {
 	 */
 	public void durchfuehrenUeberweisung() throws BetragNegativException,
 			KontoLeerException {
-		quellKonto.auszahlen(betrag);
-		zielKonto.einzahlen(betrag);
+		quellKonto.auszahlen(super.getBetrag());
+		zielKonto.einzahlen(super.getBetrag());
 
 		quellKonto.getUeberweisungsListe().add(this);
 		zielKonto.getUeberweisungsListe().add(this);
