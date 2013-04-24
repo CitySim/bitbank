@@ -4,6 +4,13 @@ import javax.swing.JOptionPane;
 
 import de.g18.BitBank.Exception.ExceptionDialogInterface;
 
+/**
+ * Exception bei ungueltigen E-mail Adressen.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
+
 public class EmailAdresseUngueltigException extends Exception implements
 		ExceptionDialogInterface {
 	private static final long serialVersionUID = -610479602115622187L;

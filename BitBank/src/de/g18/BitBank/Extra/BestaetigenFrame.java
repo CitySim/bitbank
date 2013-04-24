@@ -12,6 +12,13 @@ import javax.swing.JTextArea;
 
 import de.g18.BitBank.BankController;
 
+/**
+ * Frame zur Bestaetigung von Druck und E-Mail Vorgaengen.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
+
 public class BestaetigenFrame extends JFrame {
 	private static final long serialVersionUID = 4251619441226397716L;
 
@@ -81,8 +88,7 @@ public class BestaetigenFrame extends JFrame {
 		this.setVisible(true);
 
 		BestaetigenFrameListener listener = new BestaetigenFrameListener(
-				controller, operation, this, bestaetigenButton,
-				abbrechenButton, kundenNummerArea, emailArea);
+				controller, operation, this, kundenNummerArea, emailArea);
 
 		bestaetigenButton.addActionListener(listener);
 		abbrechenButton.addActionListener(listener);

@@ -18,6 +18,13 @@ import de.g18.BitBank.BankController;
 import de.g18.BitBank.Konto;
 import de.g18.BitBank.Kunde;
 
+/**
+ * Klasse zum Versenden einer E-Mail mit den Kontostaenden.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
+
 public class EmailJob {
 
 	public final void initializeEmailSending(final BankController controller,

@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.mail.MessagingException;
-import javax.mail.internet.AddressException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -14,26 +13,28 @@ import de.g18.BitBank.Kunde;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KundeNichtGefundenException;
 
+/**
+ * Listener zu den Buttons der BestaetigenFrame Klasse.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
+
 public class BestaetigenFrameListener implements ActionListener {
 
 	private BankController controller;
 	private String operation;
 	private JFrame printFrame;
-	private JButton bestaetigenButton;
-	private JButton abbrechenButton;
 	private JTextArea kundenNummerArea;
 	private JTextArea emailArea;
 
 	public BestaetigenFrameListener(final BankController controller,
 			final String operation, final JFrame printFrame,
-			final JButton bestaetigenButton, final JButton abbrechenButton,
 			final JTextArea kundenNummerArea, final JTextArea emailArea) {
 
 		this.controller = controller;
 		this.operation = operation;
 		this.printFrame = printFrame;
-		this.bestaetigenButton = bestaetigenButton;
-		this.abbrechenButton = abbrechenButton;
 		this.kundenNummerArea = kundenNummerArea;
 		this.emailArea = emailArea;
 

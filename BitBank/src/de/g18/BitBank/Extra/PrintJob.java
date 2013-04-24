@@ -23,6 +23,13 @@ import de.g18.BitBank.BankController;
 import de.g18.BitBank.Konto;
 import de.g18.BitBank.Kunde;
 
+/**
+ * Klasse zum Ausdrucken der Kontostaende.
+ * 
+ * @author it1-markde
+ * @since JRE6
+ */
+
 public class PrintJob implements Printable {
 
 	private PageFormat pageFormat;
