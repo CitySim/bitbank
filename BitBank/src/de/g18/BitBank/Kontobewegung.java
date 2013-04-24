@@ -18,7 +18,7 @@ public class Kontobewegung {
 		this(datum, betrag, "");
 	}
 
-	public Kontobewegung(final Date datum, final double betrag,
+	private Kontobewegung(final Date datum, final double betrag,
 			final String text) {
 		this.datum = datum;
 		this.betrag = betrag;

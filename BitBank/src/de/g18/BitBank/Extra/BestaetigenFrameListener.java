@@ -20,7 +20,7 @@ import de.g18.BitBank.Exception.KundeNichtGefundenException;
  * @since JRE6
  */
 
-public class BestaetigenFrameListener implements ActionListener {
+class BestaetigenFrameListener implements ActionListener {
 
 	private BankController controller;
 	private String operation;

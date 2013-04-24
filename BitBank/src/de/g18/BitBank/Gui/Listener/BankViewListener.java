@@ -112,7 +112,7 @@ public class BankViewListener implements MouseListener {
 		this.tabsPane.setSelectedIndex(this.tabsPane.getTabCount() - 1);
 	}
 
-	public final void addCloseButton(final String tabName) {
+	private final void addCloseButton(final String tabName) {
 
 		JPanel titlePanel = new JPanel();
 		titlePanel.add(new JLabel(tabName));

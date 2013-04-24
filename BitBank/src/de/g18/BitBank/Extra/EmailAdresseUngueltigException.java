@@ -11,11 +11,11 @@ import de.g18.BitBank.Exception.ExceptionDialogInterface;
  * @since JRE6
  */
 
-public class EmailAdresseUngueltigException extends Exception implements
+class EmailAdresseUngueltigException extends Exception implements
 		ExceptionDialogInterface {
 	private static final long serialVersionUID = -610479602115622187L;
 
-	public EmailAdresseUngueltigException(final String message) {
+	EmailAdresseUngueltigException(final String message) {
 		super(message);
 	}
 

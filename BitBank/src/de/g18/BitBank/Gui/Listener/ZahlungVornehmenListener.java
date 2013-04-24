@@ -156,7 +156,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		}
 	}
 
-	public final void aktualisieren(final int kontoNummer) {
+	private final void aktualisieren(final int kontoNummer) {
 		if (!this.neuerKontoStandField.getText().equals("")) {
 			this.alterKontoStandField.setText(this.neuerKontoStandField
 					.getText());
@@ -170,7 +170,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		}
 	}
 
-	public final int ermittleKontoNummer() throws KeineGueltigeZahlException {
+	private final int ermittleKontoNummer() throws KeineGueltigeZahlException {
 		int kontoNummer;
 		try {
 			kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
@@ -180,7 +180,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		return kontoNummer;
 	}
 
-	public final void cleanUp() {
+	private final void cleanUp() {
 		this.neuerKontoStandField.setText("");
 		this.betragField.setText("");
 	}

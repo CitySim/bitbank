@@ -12,12 +12,12 @@ import javax.swing.JTabbedPane;
  * @since JRE6
  */
 
-public class CloseButtonListener implements ActionListener {
+class CloseButtonListener implements ActionListener {
 
 	private JTabbedPane tabsPane;
 	private String tabName;
 
-	public CloseButtonListener(final JTabbedPane tabsPane, final String tabName) {
+	CloseButtonListener(final JTabbedPane tabsPane, final String tabName) {
 
 		this.tabsPane = tabsPane;
 		this.tabName = tabName;

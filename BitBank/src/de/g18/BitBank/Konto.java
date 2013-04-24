@@ -32,7 +32,7 @@ public abstract class Konto {
 	 * @param indexNummer
 	 *            IndexNummer des Kontos in der Kontoliste des Kunden.
 	 */
-	public Konto(final Kontotyp kontoTyp, final long kundenNummmer,
+	Konto(final Kontotyp kontoTyp, final long kundenNummmer,
 			final int indexNummer) {
 		this.kontoTyp = kontoTyp;
 		this.kontoNummer = ((((long) kundenNummmer) * 100) + this

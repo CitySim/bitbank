@@ -124,14 +124,14 @@ public class UeberweisungListener implements ActionListener {
 		}
 	}
 
-	public final void showCreationDialog(final int vomKontoNummer,
+	private final void showCreationDialog(final int vomKontoNummer,
 			final int nachKontoNummer, final double betrag) {
 		JOptionPane.showMessageDialog(null, "Ihre Überweisung über \"" + betrag
 				+ "\" von \"" + vomKontoNummer + "\" nach\"" + nachKontoNummer
 				+ "\" wurde erfolgreich durchgeführt.");
 	}
 
-	public void cleanUp() {
+	private void cleanUp() {
 		// this.vomKontoField.setText("");
 		this.nachKontoField.setText("");
 		this.betragField.setText("");

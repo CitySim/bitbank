@@ -88,7 +88,7 @@ public class KundenAnlegenListener implements ActionListener {
 		}
 	}
 
-	public final void showCreationDialog(final String kundenName,
+	private final void showCreationDialog(final String kundenName,
 			final long kundenNummer) {
 		JOptionPane.showMessageDialog(null, "Kunde mit dem Namen \""
 				+ kundenName + "\" und der Kundennummer \"" + kundenNummer

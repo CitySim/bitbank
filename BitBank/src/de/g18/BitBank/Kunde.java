@@ -132,7 +132,7 @@ public class Kunde {
 	 * 
 	 * @return mehrzeiliger String
 	 */
-	public final String anzeigenKontostandsUebersicht() {
+	final String anzeigenKontostandsUebersicht() {
 		String ubersicht = "\n";
 
 		ubersicht += "┌────────────────────────────────────────────────────────────────────┐\n";

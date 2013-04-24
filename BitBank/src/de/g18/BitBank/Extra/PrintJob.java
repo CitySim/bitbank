@@ -30,7 +30,7 @@ import de.g18.BitBank.Kunde;
  * @since JRE6
  */
 
-public class PrintJob implements Printable {
+class PrintJob implements Printable {
 
 	private PageFormat pageFormat;
 	private Font fontForPrint;
@@ -49,7 +49,7 @@ public class PrintJob implements Printable {
 
 	private PrinterJob printerJob = PrinterJob.getPrinterJob();
 
-	public PrintJob(final String printText) {
+	PrintJob(final String printText) {
 
 		fontForPrint = new Font("Arial", Font.PLAIN, 16 * CONS);
 		this.pageFormat = new PageFormat();
@@ -103,7 +103,7 @@ public class PrintJob implements Printable {
 		}
 	}
 
-	public final boolean printPage(final int page) {
+	private final boolean printPage(final int page) {
 		if (page < 0 | page > numberOfPages - 1) {
 			return false;
 		}
@@ -118,7 +118,7 @@ public class PrintJob implements Printable {
 		return true;
 	}
 
-	public final void printAllPages() {
+	private final void printAllPages() {
 		printerJob.setPrintable(this, pageFormat);
 		for (int i = 0; i < numberOfPages; i++) {
 			printPage(i);
@@ -149,20 +149,20 @@ public class PrintJob implements Printable {
 		return Printable.PAGE_EXISTS;
 	}
 
-	public final BufferedImage getPreviewOfPage(final int pageI) {
-		textareaForPrint.setText(textPassages.get(pageI));
-
-		bufferedImage = null;
-		bufferedImage = new BufferedImage(pageDim.width, pageDim.height,
-				BufferedImage.TYPE_BYTE_GRAY);
-		textareaForPrint.paint(bufferedImage.getGraphics());
-
-		try {
-			return bufferedImage;
-		} finally {
-			bufferedImage = null;
-		}
-	}
+	// public final BufferedImage getPreviewOfPage(final int pageI) {
+	// textareaForPrint.setText(textPassages.get(pageI));
+	//
+	// bufferedImage = null;
+	// bufferedImage = new BufferedImage(pageDim.width, pageDim.height,
+	// BufferedImage.TYPE_BYTE_GRAY);
+	// textareaForPrint.paint(bufferedImage.getGraphics());
+	//
+	// try {
+	// return bufferedImage;
+	// } finally {
+	// bufferedImage = null;
+	// }
+	// }
 
 	private String getWrappedText(final JTextComponent c) {
 		int len = c.getDocument().getLength();
@@ -205,7 +205,7 @@ public class PrintJob implements Printable {
 		return textareaForPrint.getHeight() / fontMetrics.getHeight();
 	}
 
-	public final String generateText(final BankController controller,
+	private final String generateText(final BankController controller,
 			final Kunde kunde) {
 
 		String printText = "Hello! " + System.lineSeparator()
@@ -227,8 +227,7 @@ public class PrintJob implements Printable {
 
 	}
 
-	public final void printText(final BankController controller,
-			final Kunde kunde) {
+	final void printText(final BankController controller, final Kunde kunde) {
 		String printText = this.generateText(controller, kunde);
 		PrintJob pt = new PrintJob(printText);
 		pt.printAllPages();

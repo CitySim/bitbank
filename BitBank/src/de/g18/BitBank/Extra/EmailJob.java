@@ -25,9 +25,9 @@ import de.g18.BitBank.Kunde;
  * @since JRE6
  */
 
-public class EmailJob {
+class EmailJob {
 
-	public final void initializeEmailSending(final BankController controller,
+	final void initializeEmailSending(final BankController controller,
 			final Kunde kunde, final String email)
 			throws EmailAdresseUngueltigException, MessagingException {
 
@@ -41,7 +41,7 @@ public class EmailJob {
 				controller, kunde, email);
 	}
 
-	public final void sendMail(final String smtpHost, final String username,
+	private final void sendMail(final String smtpHost, final String username,
 			final String password, final String senderAddress,
 			final String subject, final BankController controller,
 			final Kunde kunde, final String emailAdress)
@@ -80,7 +80,7 @@ public class EmailJob {
 
 	}
 
-	class MailAuthenticator extends Authenticator {
+	private class MailAuthenticator extends Authenticator {
 		private final String user;
 		private final String password;
 
