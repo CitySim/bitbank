@@ -44,28 +44,28 @@ public class KontenListe extends JPanel {
 
 		c.gridx = 0;
 		c.gridy = 0;
-		add(kundenNummerLabel, c);
+		this.add(kundenNummerLabel, c);
 
 		c.gridx = 1;
 		c.gridy = 0;
 		c.weightx = 1;
-		add(kundenNummerField, c);
+		this.add(kundenNummerField, c);
 
 		c.gridx = 2;
 		c.gridy = 0;
 		c.weightx = 0;
-		add(kontoUebersichtButton, c);
+		this.add(kontoUebersichtButton, c);
 
 		c.gridx = 2;
 		c.gridy = 1;
-		add(beendenButton, c);
+		this.add(beendenButton, c);
 
 		c.gridx = 0;
 		c.gridy = 3;
 		c.weighty = 1;
 		c.gridwidth = 3;
 		c.fill = GridBagConstraints.BOTH;
-		add(tablePane, c);
+		this.add(tablePane, c);
 
 		KontenListeListener listener = new KontenListeListener(this, controller);
 		kontoUebersichtButton.addActionListener(listener);

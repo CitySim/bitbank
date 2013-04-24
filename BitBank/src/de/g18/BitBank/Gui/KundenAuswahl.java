@@ -29,16 +29,16 @@ public class KundenAuswahl extends JDialog {
 	private Kunde kunde;
 
 	public KundenAuswahl(final BankController controller) {
-		setLocationRelativeTo(null);
-		setLayout(new GridBagLayout());
+		this.setLocationRelativeTo(null);
+		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setTitle("Kundenauswahl");
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setTitle("Kundenauswahl");
 		// setResizable(false);
-		setSize(new Dimension(200, 300));
-		setModal(true);
+		this.setSize(new Dimension(200, 300));
+		this.setModal(true);
 
 		final JList<Object> liste = new JList<Object>(
 				new AbstractListModel<Object>() {
@@ -69,9 +69,9 @@ public class KundenAuswahl extends JDialog {
 		c.weightx = 1;
 		c.weighty = 1;
 		c.fill = GridBagConstraints.BOTH;
-		add(listeScrollPane, c);
+		this.add(listeScrollPane, c);
 
-		setVisible(true);
+		this.setVisible(true);
 	}
 
 	public Kunde getKunde() {

@@ -50,53 +50,53 @@ public class ZahlungVornehmen extends JPanel {
 
 		c.gridx = 0;
 		c.gridy = 0;
-		add(kontoNummerLabel, c);
+		this.add(kontoNummerLabel, c);
 
 		c.gridx = 0;
 		c.gridy = 1;
-		add(alterKontoStandLabel, c);
+		this.add(alterKontoStandLabel, c);
 
 		c.gridx = 0;
 		c.gridy = 2;
-		add(betragLabel, c);
+		this.add(betragLabel, c);
 
 		c.gridx = 0;
 		c.gridy = 3;
-		add(neuerKontoStandLabel, c);
+		this.add(neuerKontoStandLabel, c);
 
 		c.gridx = 1;
 		c.gridy = 0;
 		c.weightx = 1;
-		add(kontoNummerField, c);
+		this.add(kontoNummerField, c);
 
 		c.gridx = 1;
 		c.gridy = 1;
-		add(alterKontoStandField, c);
+		this.add(alterKontoStandField, c);
 
 		c.gridx = 1;
 		c.gridy = 2;
-		add(betragField, c);
+		this.add(betragField, c);
 
 		c.gridx = 1;
 		c.gridy = 3;
-		add(neuerKontoStandField, c);
+		this.add(neuerKontoStandField, c);
 
 		c.gridx = 3;
 		c.gridy = 0;
 		c.weightx = 0;
-		add(kontoStandButton, c);
+		this.add(kontoStandButton, c);
 
 		c.gridx = 3;
 		c.gridy = 2;
-		add(einzahlungButton, c);
+		this.add(einzahlungButton, c);
 
 		c.gridx = 3;
 		c.gridy = 3;
-		add(auszahlungButton, c);
+		this.add(auszahlungButton, c);
 
 		c.gridx = 3;
 		c.gridy = 4;
-		add(beendenButton, c);
+		this.add(beendenButton, c);
 
 		c.gridx = 0;
 		c.gridy = 5;

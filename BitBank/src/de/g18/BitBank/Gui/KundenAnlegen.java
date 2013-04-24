@@ -36,29 +36,29 @@ public class KundenAnlegen extends JPanel {
 
 		c.gridx = 0;
 		c.gridy = 0;
-		add(kundenNummerLabel, c);
+		this.add(kundenNummerLabel, c);
 
 		c.gridx = 1;
 		c.gridy = 0;
 		c.weightx = 1;
-		add(kundenNummerField, c);
+		this.add(kundenNummerField, c);
 
 		c.gridx = 0;
 		c.gridy = 1;
 		c.weightx = 0;
-		add(kundenNamenLabel, c);
+		this.add(kundenNamenLabel, c);
 
 		c.gridx = 1;
 		c.gridy = 1;
-		add(kundenNamenField, c);
+		this.add(kundenNamenField, c);
 
 		c.gridx = 3;
 		c.gridy = 1;
-		add(anlegenButton, c);
+		this.add(anlegenButton, c);
 
 		c.gridx = 3;
 		c.gridy = 2;
-		add(beendenButton, c);
+		this.add(beendenButton, c);
 
 		c.gridx = 0;
 		c.gridy = 3;

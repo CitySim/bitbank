@@ -19,16 +19,17 @@ public class BankView extends JFrame {
 	private static final long serialVersionUID = -6398346930903875436L;
 
 	public BankView(final BankController controller) {
-		setSize(650, 400);
-		setLocationRelativeTo(null);
-		setLayout(new GridLayout(1, 1));
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setSize(650, 400);
+		this.setLocationRelativeTo(null);
+		this.setLayout(new GridLayout(1, 1));
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		try {
-			setIconImage(ImageIO.read(this.getClass().getResource("icon.png")));
+			this.setIconImage(ImageIO.read(this.getClass().getResource(
+					"icon.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		setTitle("BitBank");
+		this.setTitle("BitBank");
 
 		JMenu actionMenu = new JMenu("Aktionen");
 		actionMenu.add(new JMenuItem("Kunde anlegen"));
@@ -49,13 +50,13 @@ public class BankView extends JFrame {
 		JMenuBar bankMenuBar = new JMenuBar();
 		bankMenuBar.add(actionMenu);
 		bankMenuBar.add(about);
-		setJMenuBar(bankMenuBar);
+		this.setJMenuBar(bankMenuBar);
 
 		JTabbedPane tabsPane = new JTabbedPane();
-		add(tabsPane);
+		this.add(tabsPane);
 
-		setMinimumSize(new Dimension(650, 400));
-		setVisible(true);
+		this.setMinimumSize(new Dimension(650, 400));
+		this.setVisible(true);
 
 		new BankViewListener(actionMenu, tabsPane, controller, about);
 	}

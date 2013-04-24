@@ -4,8 +4,11 @@ import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import de.g18.BitBank.BankController;
@@ -71,24 +74,31 @@ public class BankViewListener implements MouseListener {
 		if (menuItem.getText().equals("Kunde anlegen")) {
 			tabsPane.add("Kunde anlegen", new KundenAnlegen(this.tabsPane,
 					this.controller));
+			this.addCloseButton("Kunde anlegen");
 		} else if (menuItem.getText().equals("Konto anlegen")) {
 			tabsPane.add("Konto anlegen", new KontoAnlegen(this.tabsPane,
 					this.controller));
+			this.addCloseButton("Konto anlegen");
 		} else if (menuItem.getText().equals("Ein-/Auszahlungen durchführen")) {
 			tabsPane.add("Ein-/Auszahlung", new ZahlungVornehmen(this.tabsPane,
 					this.controller));
+			this.addCloseButton("Ein-/Auszahlung");
 		} else if (menuItem.getText().equals("Überweisungen durchführen")) {
 			tabsPane.add("Überweisung", new UeberweisungVornehmen(
 					this.tabsPane, this.controller));
+			this.addCloseButton("Überweisung");
 		} else if (menuItem.getText().equals("Kontenliste")) {
 			tabsPane.add("Kontenliste", new KontenListe(this.tabsPane,
 					this.controller));
+			this.addCloseButton("Kontenliste");
 		} else if (menuItem.getText().equals("Kontobewegungen")) {
 			tabsPane.add("Kontobewegungen", new Kontobewegungen(this.tabsPane,
 					this.controller));
+			this.addCloseButton("Kontobewegungen");
 		} else if (menuItem.getText().equals("Kundenliste")) {
 			tabsPane.add("Kundenliste", new KundenListe(this.tabsPane,
 					this.controller));
+			this.addCloseButton("Kundenliste");
 		} else if (menuItem.getText().equals("Über")) {
 			new UeberFenster();
 		} else if (menuItem.getText().equals("Drucken")) {
@@ -100,5 +110,22 @@ public class BankViewListener implements MouseListener {
 		}
 
 		this.tabsPane.setSelectedIndex(this.tabsPane.getTabCount() - 1);
+	}
+
+	public void addCloseButton(String tabName) {
+
+		JPanel titlePanel = new JPanel();
+		titlePanel.add(new JLabel(tabName));
+		// ImageIcon image = new ImageIcon("closeButton.png");
+
+		// JButton closeButton = new JButton(image);
+		// closeButton.setIcon(new ImageIcon("closeButton.png"));
+		JButton closeButton = new JButton("X");
+		titlePanel.add(closeButton);
+
+		closeButton.addActionListener(new CloseButtonListener(this.tabsPane,
+				tabName));
+		this.tabsPane.setTabComponentAt(tabsPane.indexOfTab(tabName),
+				titlePanel);
 	}
 }

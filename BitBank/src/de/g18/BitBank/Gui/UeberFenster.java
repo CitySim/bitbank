@@ -18,15 +18,15 @@ public class UeberFenster extends JDialog {
 	private static final long serialVersionUID = -2001045174878425586L;
 
 	public UeberFenster() {
-		setLocationRelativeTo(null);
-		setLayout(new GridBagLayout());
+		this.setLocationRelativeTo(null);
+		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setTitle("Über BitBank");
-		setResizable(false);
-		setModal(true);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setTitle("Über BitBank");
+		this.setResizable(false);
+		this.setModal(true);
 
 		BufferedImage myPicture = null;
 		try {
@@ -40,7 +40,7 @@ public class UeberFenster extends JDialog {
 
 		c.gridx = 0;
 		c.gridy = 0;
-		add(iconLabel);
+		this.add(iconLabel);
 
 		JLabel textLabel = new JLabel();
 		textLabel
@@ -51,9 +51,9 @@ public class UeberFenster extends JDialog {
 		c.gridx = 1;
 		c.gridy = 0;
 		c.weightx = 1;
-		add(textLabel);
+		this.add(textLabel);
 
-		pack();
-		setVisible(true);
+		this.pack();
+		this.setVisible(true);
 	}
 }

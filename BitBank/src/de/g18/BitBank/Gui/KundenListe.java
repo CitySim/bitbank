@@ -25,7 +25,7 @@ public class KundenListe extends JPanel {
 			final BankController controller) {
 		this.tabsPane = tabsPane;
 
-		setLayout(new GridBagLayout());
+		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
