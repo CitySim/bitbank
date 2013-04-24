@@ -1,6 +1,7 @@
 package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
+import de.g18.BitBank.NumberParser;
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KontoLeerException;
@@ -51,6 +52,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 	public void actionPerformed(final ActionEvent event) {
 
 		JButton buttonClicked = (JButton) event.getSource();
+		NumberParser parser = new NumberParser();
 
 		if (buttonClicked.getText().compareTo("Kontostand") == 0) {
 			int kontoNummer = 0;
@@ -83,7 +85,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 			double betrag = 0;
 
 			try {
-				betrag = Double.parseDouble(this.betragField.getText());
+				betrag = parser.parseDouble(this.betragField.getText());
 			} catch (NumberFormatException e) {
 				try {
 					throw new KeineGueltigeZahlException("Der Betrag");
@@ -115,7 +117,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 			double betrag = 0;
 
 			try {
-				betrag = Double.parseDouble(this.betragField.getText());
+				betrag = parser.parseDouble(this.betragField.getText());
 			} catch (NumberFormatException e) {
 				try {
 					throw new KeineGueltigeZahlException("Der Betrag");

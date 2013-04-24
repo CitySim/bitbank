@@ -6,6 +6,7 @@ import java.util.Date;
 
 import com.toedter.calendar.JDateChooser;
 import de.g18.BitBank.BankController;
+import de.g18.BitBank.NumberParser;
 import de.g18.BitBank.Exception.*;
 import de.g18.BitBank.Gui.UeberweisungVornehmen;
 
@@ -56,7 +57,8 @@ public class UeberweisungListener implements ActionListener {
 			int nachKontoNummer;
 
 			try {
-				betrag = Double.parseDouble(this.betragField.getText());
+				betrag = new NumberParser().parseDouble(this.betragField
+						.getText());
 				vomKontoNummer = Integer.parseInt(this.vomKontoField.getText());
 				nachKontoNummer = Integer.parseInt(this.nachKontoField
 						.getText());
