@@ -1,18 +1,21 @@
 package de.g18.BitBank.Gui.Listener;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
 import de.g18.BitBank.BankController;
+import de.g18.BitBank.Kontotyp;
 import de.g18.BitBank.Exception.KeinKontotypException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KundeNichtGefundenException;
 import de.g18.BitBank.Gui.KontoAnlegen;
 import de.g18.BitBank.Gui.KundenAuswahl;
-import de.g18.BitBank.Kontotyp;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 /**
  * Listener zu den Buttons der KontoAnlegen Klasse.
@@ -47,16 +50,7 @@ public class KontoAnlegenListener implements ActionListener {
 		JButton buttonClicked = (JButton) event.getSource();
 
 		if (buttonClicked.getText().compareTo("Kunde suchen") == 0) {
-			final KundenAuswahl kundenAuswahl = new KundenAuswahl(controller);
-			kundenAuswahl.addWindowListener(new WindowAdapter() {
-				public void windowClosed(final WindowEvent e) {
-					System.out.println(e.toString());
-					if (kundenAuswahl.getKunde() != null) {
-						kundenNummerField.setText(Long.toString(kundenAuswahl
-								.getKunde().getKundenNummmer()));
-					}
-				}
-			});
+			new KundenAuswahl(controller, kundenNummerField);
 
 		} else if (buttonClicked.getText().compareTo("Anlegen") == 0) {
 			try {
