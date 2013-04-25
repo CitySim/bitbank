@@ -102,7 +102,7 @@ class PrintJob implements Printable {
 		}
 	}
 
-	private final boolean printPage(final int page) {
+	private boolean printPage(final int page) {
 		if (page < 0 | page > numberOfPages - 1) {
 			return false;
 		}
@@ -117,7 +117,7 @@ class PrintJob implements Printable {
 		return true;
 	}
 
-	private final void printAllPages() {
+	private void printAllPages() {
 		printerJob.setPrintable(this, pageFormat);
 		for (int i = 0; i < numberOfPages; i++) {
 			printPage(i);
@@ -204,7 +204,7 @@ class PrintJob implements Printable {
 		return textareaForPrint.getHeight() / fontMetrics.getHeight();
 	}
 
-	private final String generateText(final Kunde kunde) {
+	private String generateText(final Kunde kunde) {
 
 		String printText = "Hello! " + "/r/n"
 				+ "This is an autmatic generated mail by BitBank." + "/r/n"

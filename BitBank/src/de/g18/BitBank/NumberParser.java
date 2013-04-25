@@ -42,7 +42,7 @@ public class NumberParser {
 	 * @throws ZuVieleNachkommastellenException
 	 *             Exception bei Zahlen mit zu vielen Nachkommastellen
 	 */
-	private final void checkNumber(final double betrag)
+	private void checkNumber(final double betrag)
 			throws ZuVieleNachkommastellenException {
 
 		String s = Double.toString(betrag);

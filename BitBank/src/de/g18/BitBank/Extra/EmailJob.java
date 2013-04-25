@@ -39,7 +39,7 @@ class EmailJob {
 				kunde, email);
 	}
 
-	private final void sendMail(final String smtpHost, final String username,
+	private void sendMail(final String smtpHost, final String username,
 			final String password, final String senderAddress,
 			final String subject, final Kunde kunde, final String emailAdress)
 			throws EmailAdresseUngueltigException, MessagingException {

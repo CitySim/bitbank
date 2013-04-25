@@ -30,7 +30,7 @@ public class KundenAuswahl extends JDialog {
 	private JTextField kundenNummerField;
 
 	public KundenAuswahl(final BankController controller,
-			JTextField kundenNummerField) {
+			final JTextField kundenNummerField) {
 		this.kundenNummerField = kundenNummerField;
 		this.setLocationRelativeTo(null);
 		this.setLayout(new GridBagLayout());
@@ -83,7 +83,7 @@ public class KundenAuswahl extends JDialog {
 		this.setVisible(true);
 	}
 
-	public void setKundenNummerField(Kunde kunde) {
+	public final void setKundenNummerField(final Kunde kunde) {
 		this.kundenNummerField.setText("" + (kunde.getKundenNummmer()));
 	}
 }

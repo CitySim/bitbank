@@ -22,8 +22,8 @@ public class KundenAuswahlListener implements ActionListener {
 
 	private BankController controller;
 
-	public KundenAuswahlListener(JList<Object> liste,
-			KundenAuswahl kundenAuswahl, BankController controller) {
+	public KundenAuswahlListener(final JList<Object> liste,
+			final KundenAuswahl kundenAuswahl, final BankController controller) {
 
 		this.liste = liste;
 		this.kundenAuswahl = kundenAuswahl;
@@ -31,7 +31,7 @@ public class KundenAuswahlListener implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(final ActionEvent e) {
 		this.kundenAuswahl.setKundenNummerField(this.controller
 				.getKundeByIndex(liste.getSelectedIndex()));
 		this.kundenAuswahl.dispose();
