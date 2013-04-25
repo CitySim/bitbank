@@ -90,6 +90,8 @@ public abstract class Konto {
 			throw new BetragNegativException("Betrag darf nicht negativ sein");
 		}
 
+		// Multiplizieren und Dividieren mit Faktor 1000 zur Umgehung eines Bugs
+		// bei der Rechnung mit Double.
 		this.kontoStand = (this.kontoStand * 1000 + (betrag * 1000)) / 1000;
 		this.kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
 				betrag));
@@ -112,6 +114,8 @@ public abstract class Konto {
 			throw new BetragNegativException("Betrag darf nicht negativ sein");
 		}
 
+		// Multiplizieren und Dividieren mit Faktor 1000 zur Umgehung eines Bugs
+		// bei der Rechnung mit Double.
 		this.kontoStand = (this.kontoStand * 1000 - (betrag * 1000)) / 1000;
 		this.kontoBewegungsListe.add(new Kontobewegung(new java.util.Date(),
 				-betrag));
