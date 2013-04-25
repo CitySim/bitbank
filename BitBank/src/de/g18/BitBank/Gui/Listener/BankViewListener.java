@@ -4,10 +4,12 @@ import de.g18.BitBank.BankController;
 import de.g18.BitBank.Extra.BestaetigenFrame;
 import de.g18.BitBank.Gui.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 
 /**
  * Listener zu dem Menue BankView Klasse.
@@ -100,9 +102,24 @@ public class BankViewListener implements MouseListener {
 		titlePanel.setOpaque(false);
 		titlePanel.add(new JLabel(title));
 
-		JButton closeButton = new JButton("X");
+		ImageIcon buttonIcon = null;
+		try {
+			buttonIcon = new ImageIcon(ImageIO.read(getClass().getClassLoader()
+					.getResourceAsStream("closeButton.png")));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		JButton closeButton = new JButton();
+		closeButton.setIcon(buttonIcon);
+
+		closeButton.setOpaque(false);
+		closeButton.setContentAreaFilled(false);
+		closeButton.setBorderPainted(false);
+		closeButton.setPreferredSize(new Dimension(19, 19));
+
 		titlePanel.add(closeButton);
-		titlePanel.setPreferredSize(new Dimension(140, 27));
+		titlePanel.setPreferredSize(new Dimension(120, 22));
 
 		closeButton.addActionListener(new CloseButtonListener(this.tabsPane,
 				panel));
@@ -110,5 +127,4 @@ public class BankViewListener implements MouseListener {
 		this.tabsPane.setTabComponentAt(this.tabsPane.indexOfComponent(panel),
 				titlePanel);
 	}
-
 }
