@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component jdk="1.6" jdk_type="JavaSDK">
+<component jdk="1.7" jdk_type="JavaSDK">
 	<exclude-output/>
 	<contentEntry url="file://$MODULE_DIR$"/>
 	<lib name="jcalendar-1.4.jar" scope="COMPILE">
 		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/jcalendar-1.4.jar!/"/>
+	</lib>
+	<lib name="dsn.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/Extra/dsn.jar!/"/>
+	</lib>
+	<lib name="gimap.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/Extra/gimap.jar!/"/>
+	</lib>
+	<lib name="imap.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/Extra/imap.jar!/"/>
+	</lib>
+	<lib name="mail.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/Extra/mail.jar!/"/>
+	</lib>
+	<lib name="mailapi.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/Extra/mailapi.jar!/"/>
+	</lib>
+	<lib name="pop3.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/Extra/pop3.jar!/"/>
+	</lib>
+	<lib name="smtp.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/BitBank/Lib/Extra/smtp.jar!/"/>
 	</lib>
 </component>
