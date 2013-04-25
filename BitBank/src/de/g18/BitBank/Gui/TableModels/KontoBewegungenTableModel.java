@@ -1,5 +1,7 @@
 package de.g18.BitBank.Gui.TableModels;
 
+import java.text.NumberFormat;
+
 import de.g18.BitBank.Konto;
 import de.g18.BitBank.Kontobewegung;
 import de.g18.BitBank.Ueberweisung;
@@ -75,7 +77,7 @@ public class KontoBewegungenTableModel extends AbstractTableModel {
 				return "Fehler";
 			}
 		case 3:
-			return Double.toString(kb.getBetrag());
+			return NumberFormat.getCurrencyInstance().format(kb.getBetrag());
 		case 4:
 			return kb.getText();
 		default:
