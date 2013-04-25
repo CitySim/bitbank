@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.mail.MessagingException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Kunde;
@@ -25,18 +25,18 @@ class BestaetigenFrameListener implements ActionListener {
 	private BankController controller;
 	private String operation;
 	private JFrame printFrame;
-	private JTextArea kundenNummerArea;
-	private JTextArea emailArea;
+	private JTextField kundenNummerField;
+	private JTextField emailField;
 
 	public BestaetigenFrameListener(final BankController controller,
 			final String operation, final JFrame printFrame,
-			final JTextArea kundenNummerArea, final JTextArea emailArea) {
+			final JTextField kundenNummerField, final JTextField emailField) {
 
 		this.controller = controller;
 		this.operation = operation;
 		this.printFrame = printFrame;
-		this.kundenNummerArea = kundenNummerArea;
-		this.emailArea = emailArea;
+		this.kundenNummerField = kundenNummerField;
+		this.emailField = emailField;
 
 	}
 
@@ -49,7 +49,7 @@ class BestaetigenFrameListener implements ActionListener {
 
 			long kundenNummer = 0;
 			try {
-				kundenNummer = Long.parseLong(this.kundenNummerArea.getText());
+				kundenNummer = Long.parseLong(this.kundenNummerField.getText());
 			} catch (NumberFormatException e) {
 				try {
 					throw new KeineGueltigeZahlException("Die Kundennummer");
@@ -74,7 +74,7 @@ class BestaetigenFrameListener implements ActionListener {
 				try {
 					try {
 						new EmailJob().initializeEmailSending(kunde,
-								emailArea.getText());
+								this.emailField.getText());
 					} catch (MessagingException e) {
 						e.printStackTrace();
 						return;

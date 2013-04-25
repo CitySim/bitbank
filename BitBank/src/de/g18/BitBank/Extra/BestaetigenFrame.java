@@ -8,7 +8,7 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import de.g18.BitBank.BankController;
 
@@ -31,12 +31,12 @@ public class BestaetigenFrame extends JFrame {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(5, 5, 5, 5);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		JTextArea emailArea = null;
+		JTextField emailField = null;
 		if (operation.equals("email")) {
 			this.setSize(new Dimension(300, 140));
 			this.setTitle("E-Mail");
 			JLabel emailLabel = new JLabel("E-Mail Adresse");
-			emailArea = new JTextArea();
+			emailField = new JTextField();
 
 			c.gridx = 0;
 			c.gridy = 0;
@@ -48,7 +48,7 @@ public class BestaetigenFrame extends JFrame {
 			c.gridy = 0;
 			c.weightx = 3;
 			c.fill = GridBagConstraints.BOTH;
-			add(emailArea, c);
+			add(emailField, c);
 		}
 		if (operation.equals("drucken")) {
 			this.setSize(new Dimension(280, 100));
@@ -56,7 +56,7 @@ public class BestaetigenFrame extends JFrame {
 		}
 
 		JLabel kundenNummerLabel = new JLabel("KundenNummer");
-		JTextArea kundenNummerArea = new JTextArea();
+		JTextField kundenNummerField = new JTextField();
 		JButton bestaetigenButton = new JButton("Bestätigen");
 		JButton abbrechenButton = new JButton("Abbrechen");
 
@@ -70,7 +70,7 @@ public class BestaetigenFrame extends JFrame {
 		c.gridy = 1;
 		c.weightx = 3;
 		c.fill = GridBagConstraints.BOTH;
-		add(kundenNummerArea, c);
+		add(kundenNummerField, c);
 
 		c.gridx = 0;
 		c.gridy = 3;
@@ -87,7 +87,7 @@ public class BestaetigenFrame extends JFrame {
 		this.setVisible(true);
 
 		BestaetigenFrameListener listener = new BestaetigenFrameListener(
-				controller, operation, this, kundenNummerArea, emailArea);
+				controller, operation, this, kundenNummerField, emailField);
 
 		bestaetigenButton.addActionListener(listener);
 		abbrechenButton.addActionListener(listener);
