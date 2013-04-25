@@ -3,6 +3,7 @@ package de.g18.BitBank.Gui.Listener;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.NumberParser;
 import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.BetragZuGroßException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
@@ -12,6 +13,7 @@ import de.g18.BitBank.Gui.ZahlungVornehmen;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
@@ -99,6 +101,9 @@ public class ZahlungVornehmenListener implements ActionListener {
 			} catch (ZuVieleNachkommastellenException e) {
 				e.showDialog();
 				return;
+			} catch (BetragZuGroßException e) {
+				e.showDialog();
+				return;
 			}
 
 			try {
@@ -134,6 +139,9 @@ public class ZahlungVornehmenListener implements ActionListener {
 			} catch (ZuVieleNachkommastellenException e) {
 				e.showDialog();
 				return;
+			} catch (BetragZuGroßException e) {
+				e.showDialog();
+				return;
 			}
 
 			try {
@@ -163,8 +171,10 @@ public class ZahlungVornehmenListener implements ActionListener {
 		}
 
 		try {
-			this.neuerKontoStandField.setText(Double.toString(this.controller
-					.kontoStandAnzeigen(kontoNummer)));
+
+			this.neuerKontoStandField.setText(NumberFormat
+					.getCurrencyInstance().format(
+							(this.controller.kontoStandAnzeigen(kontoNummer))));
 		} catch (KontoNichtGefundenException e) {
 			e.showDialog();
 		}

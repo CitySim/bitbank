@@ -17,6 +17,7 @@ import com.toedter.calendar.JDateChooser;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.NumberParser;
 import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.BetragZuGroßException;
 import de.g18.BitBank.Exception.DateException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KontoLeerException;
@@ -82,6 +83,9 @@ public class UeberweisungListener implements ActionListener {
 					return;
 				}
 			} catch (ZuVieleNachkommastellenException e) {
+				e.showDialog();
+				return;
+			} catch (BetragZuGroßException e) {
 				e.showDialog();
 				return;
 			}

@@ -76,7 +76,7 @@ class BestaetigenFrameListener implements ActionListener {
 						new EmailJob().initializeEmailSending(kunde,
 								this.emailField.getText());
 					} catch (MessagingException e) {
-						e.printStackTrace();
+						new EmailException(e.getMessage()).showDialog();
 						return;
 					}
 				} catch (EmailAdresseUngueltigException e) {
