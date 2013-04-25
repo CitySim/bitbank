@@ -194,15 +194,15 @@ class PrintJob implements Printable {
 		String printText = "Sehr geehrte(r) "
 				+ kunde.getName()
 				+ ",\r\n"
-				+ "\r/n"
+				+ "\r\n"
 				+ "Hierbei handelt es sich um einen automatischen Ausdruck von BitBank."
-				+ "\r/n" + "\r\n" + "Anbei Ihre aktuelle Kontostandsübersicht:"
+				+ "\r\n" + "\r\n" + "Anbei Ihre aktuelle Kontostandsübersicht:"
 				+ "\r\n" + "\r\n";
 
 		if (kunde.getKontenListe().size() != 0) {
 			for (Konto konto : kunde.getKontenListe()) {
 				printText = printText + "Konto: " + konto.getKontoNummer()
-						+ "Kontostand: " + konto.getKontoStand() + "\r\n";
+						+ " Kontostand: " + konto.getKontoStand() + "\r\n";
 			}
 		} else {
 			printText = printText
