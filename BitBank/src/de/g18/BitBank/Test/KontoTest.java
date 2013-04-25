@@ -38,16 +38,16 @@ public class KontoTest {
 		k.einzahlen(200);
 		assertEquals(200, k.getKontoStand(), 0);
 
-		// es sollte genau ein eintrag in der liste sein
+		// Es sollte genau ein Eintrag in der Liste sein.
 		assertEquals(1, k.getKontoBewegungsListe().size());
 		assertEquals(200, k.getKontoBewegungsListe().get(0).getBetrag(), 0);
 	}
 
 	@Test(expected = BetragNegativException.class)
 	public final void negativenBetragEinzahlen() throws BetragNegativException {
-		// es können keine negativ beträge eingezahlt werden
+		// Es können keine negative Betraege eingezahlt werden.
 		k.einzahlen(-100);
-		// konto muss noch immer 0 haben, betrag darf sich nicht ändern
+		// Konto muss noch immer 0 haben, Betrag darf sich nicht aendern.
 		assertEquals(200, k.getKontoStand(), 0);
 	}
 
@@ -59,7 +59,7 @@ public class KontoTest {
 			e.printStackTrace();
 		}
 
-		// konto muss noch immer 0 haben, betrag darf sich nicht ändern
+		// Konto muss noch immer 0 haben, Betrag darf sich nicht aendern.
 		assertEquals(0, k.getKontoStand(), 0);
 	}
 
@@ -68,7 +68,7 @@ public class KontoTest {
 		k.auszahlen(200);
 		assertEquals(-200, k.getKontoStand(), 0);
 
-		// es sollte genau ein eintrag in der liste sein
+		// Es sollte genau ein Eintrag in der Liste sein.
 		assertEquals(1, k.getKontoBewegungsListe().size());
 		assertEquals(-200, k.getKontoBewegungsListe().get(0).getBetrag(), 0);
 	}
@@ -90,7 +90,7 @@ public class KontoTest {
 			e.printStackTrace();
 		}
 
-		// konto muss noch immer 0 haben, betrag darf sich nicht ändern
+		// Konto muss noch immer 0 haben, Betrag darf sich nicht aendern.
 		assertEquals(0, k.getKontoStand(), 0);
 	}
 
@@ -106,8 +106,8 @@ public class KontoTest {
 		assertEquals(200, ziel.getKontoStand(), 0);
 
 		assertEquals(2, k.getKontoBewegungsListe().size());
-		assertEquals(200, k.getKontoBewegungsListe().get(0).getBetrag(), 0); // einzahlung
-		assertEquals(-200, k.getKontoBewegungsListe().get(1).getBetrag(), 0); // überweisung
+		assertEquals(200, k.getKontoBewegungsListe().get(0).getBetrag(), 0); // Einzahlung
+		assertEquals(-200, k.getKontoBewegungsListe().get(1).getBetrag(), 0); // Ueberweisung
 		assertEquals(1, k.getUeberweisungsListe().size(), 1);
 
 		assertEquals(1, ziel.getKontoBewegungsListe().size());

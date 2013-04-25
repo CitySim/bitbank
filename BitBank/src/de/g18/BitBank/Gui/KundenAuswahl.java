@@ -40,20 +40,21 @@ public class KundenAuswahl extends JDialog {
 		this.setSize(new Dimension(200, 300));
 		this.setModal(true);
 
-		final JList liste = new JList(new AbstractListModel() {
-			private static final long serialVersionUID = -7562748123613036992L;
+		final JList<Object> liste = new JList<Object>(
+				new AbstractListModel<Object>() {
+					private static final long serialVersionUID = -7562748123613036992L;
 
-			@Override
-			public int getSize() {
-				return controller.getKundenCount();
-			}
+					@Override
+					public int getSize() {
+						return controller.getKundenCount();
+					}
 
-			@Override
-			public Object getElementAt(final int index) {
-				Kunde k = controller.getKundeByIndex(index);
-				return k.getKundenNummmer() + " - " + k.getName();
-			}
-		});
+					@Override
+					public Object getElementAt(final int index) {
+						Kunde k = controller.getKundeByIndex(index);
+						return k.getKundenNummmer() + " - " + k.getName();
+					}
+				});
 		liste.addListSelectionListener(new ListSelectionListener() {
 			@Override
 			public void valueChanged(final ListSelectionEvent e) {

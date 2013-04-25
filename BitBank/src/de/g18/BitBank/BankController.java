@@ -44,6 +44,8 @@ public class BankController {
 		throw new KundeNichtGefundenException(kundenNummer);
 	}
 
+	// Geht durch jedes Konto von jedem Kunten um das entsprechende Konto zu
+	// finden.
 	public final Konto getKontoByKontoNummer(final long kontoNummer)
 			throws KontoNichtGefundenException {
 		for (Kunde kunde : kundenListe) {
