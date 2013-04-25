@@ -94,31 +94,31 @@ class EmailJob {
 	private MimeMultipart generateMailContent(final Kunde kunde)
 			throws MessagingException {
 
-		String emailText = "Hello! " + "/r/n"
-				+ "This is an autmatic generated mail by BitBank." + "/r/n"
-				+ "/r/n";
+		String emailText = "Sehr geehrte(r) "
+				+ kunde.getName()
+				+ ",\r\n"
+				+ "\r/n"
+				+ "Hierbei handelt es sich um eine automatisch generierte E-Mail von BitBank."
+				+ "\r/n" + "\r\n" + "Anbei Ihre aktuelle Kontostandsübersicht:"
+				+ "\r\n" + "\r\n";
 
-		for (Konto konto : kunde.getKontenListe()) {
-			emailText = emailText + "Konto: \"" + konto.getKontoNummer()
-					+ "\" Kontostand: \"" + konto.getKontoStand() + "\""
-					+ "/r/n";
+		if (kunde.getKontenListe().size() != 0) {
+			for (Konto konto : kunde.getKontenListe()) {
+				emailText = emailText + "Konto: " + konto.getKontoNummer()
+						+ "Kontostand: " + konto.getKontoStand() + "\r\n";
+			}
+		} else {
+			emailText = emailText
+					+ "Sie verfügen bisher über kein Konto bei uns.";
 		}
+		emailText = emailText + "\r\n" + "\r\n"
+				+ "Bitte beehren Sie uns bald wieder!";
 
 		MimeMultipart mailContent = new MimeMultipart();
 		MimeBodyPart text = new MimeBodyPart();
 		text.setText(emailText);
 		text.setDisposition(MimeBodyPart.INLINE);
-		//
-		// File file = new File(defaultPath + "//Groups//" + group.getName()
-		// + ".xml");
-
-		// MimeBodyPart attachement = new MimeBodyPart();
-		// attachement.setDataHandler(new DataHandler(new
-		// FileDataSource(file)));
-		// attachement.setFileName(file.getName());
-		// attachement.setDisposition(MimeBodyPart.ATTACHMENT);
 		mailContent.addBodyPart(text);
-		// mailContent.addBodyPart(attachement);
 
 		return mailContent;
 	}

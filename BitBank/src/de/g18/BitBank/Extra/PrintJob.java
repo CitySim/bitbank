@@ -148,21 +148,6 @@ class PrintJob implements Printable {
 		return Printable.PAGE_EXISTS;
 	}
 
-	// public final BufferedImage getPreviewOfPage(final int pageI) {
-	// textareaForPrint.setText(textPassages.get(pageI));
-	//
-	// bufferedImage = null;
-	// bufferedImage = new BufferedImage(pageDim.width, pageDim.height,
-	// BufferedImage.TYPE_BYTE_GRAY);
-	// textareaForPrint.paint(bufferedImage.getGraphics());
-	//
-	// try {
-	// return bufferedImage;
-	// } finally {
-	// bufferedImage = null;
-	// }
-	// }
-
 	private String getWrappedText(final JTextComponent c) {
 		int len = c.getDocument().getLength();
 		int offset = 0;
@@ -206,21 +191,25 @@ class PrintJob implements Printable {
 
 	private String generateText(final Kunde kunde) {
 
-		String printText = "Hello! " + "/r/n"
-				+ "This is an autmatic generated mail by BitBank." + "/r/n"
-				+ "/r/n";
+		String printText = "Sehr geehrte(r) "
+				+ kunde.getName()
+				+ ",\r\n"
+				+ "\r/n"
+				+ "Hierbei handelt es sich um einen automatischen Ausdruck von BitBank."
+				+ "\r/n" + "\r\n" + "Anbei Ihre aktuelle Kontostandsübersicht:"
+				+ "\r\n" + "\r\n";
 
 		if (kunde.getKontenListe().size() != 0) {
 			for (Konto konto : kunde.getKontenListe()) {
-				printText = printText + "Konto: \"" + konto.getKontoNummer()
-						+ "\" Kontostand: \"" + konto.getKontoStand() + "\""
-						+ "/r/n";
+				printText = printText + "Konto: " + konto.getKontoNummer()
+						+ "Kontostand: " + konto.getKontoStand() + "\r\n";
 			}
 		} else {
 			printText = printText
 					+ "Sie verfügen bisher über kein Konto bei uns.";
 		}
-
+		printText = printText + "\r\n" + "\r\n"
+				+ "Bitte beehren Sie uns bald wieder!";
 		return printText;
 
 	}
