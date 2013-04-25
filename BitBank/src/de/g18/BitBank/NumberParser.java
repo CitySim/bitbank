@@ -2,6 +2,8 @@ package de.g18.BitBank;
 
 import de.g18.BitBank.Exception.ZuVieleNachkommastellenException;
 
+import javax.swing.*;
+
 /**
  * Hilfsklasse zum parsen von String zu double.
  *
@@ -27,7 +29,13 @@ public class NumberParser {
 					.substring(text.indexOf(",") + 1)));
 		}
 
+
 		double betrag = Double.parseDouble(text);
+
+		if (betrag > Long.MAX_VALUE) {
+			JOptionPane.showMessageDialog(null, "test", "test", JOptionPane.ERROR_MESSAGE);
+		}
+
 		this.checkNumber(betrag);
 		return betrag;
 	}
