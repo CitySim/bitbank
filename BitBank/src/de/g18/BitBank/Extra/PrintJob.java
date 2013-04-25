@@ -208,15 +208,15 @@ class PrintJob implements Printable {
 	private final String generateText(final BankController controller,
 			final Kunde kunde) {
 
-		String printText = "Hello! " + System.lineSeparator()
-				+ "This is an autmatic generated mail by BitBank."
-				+ System.lineSeparator() + System.lineSeparator();
+		String printText = "Hello! " + "/r/n"
+				+ "This is an autmatic generated mail by BitBank." + "/r/n"
+				+ "/r/n";
 
 		if (kunde.getKontenListe().size() != 0) {
 			for (Konto konto : kunde.getKontenListe()) {
 				printText = printText + "Konto: \"" + konto.getKontoNummer()
 						+ "\" Kontostand: \"" + konto.getKontoStand() + "\""
-						+ System.lineSeparator();
+						+ "/r/n";
 			}
 		} else {
 			printText = printText

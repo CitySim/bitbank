@@ -97,14 +97,14 @@ class EmailJob {
 	private MimeMultipart generateMailContent(final BankController controller,
 			final Kunde kunde) throws MessagingException {
 
-		String emailText = "Hello! " + System.lineSeparator()
-				+ "This is an autmatic generated mail by BitBank."
-				+ System.lineSeparator() + System.lineSeparator();
+		String emailText = "Hello! " + "/r/n"
+				+ "This is an autmatic generated mail by BitBank." + "/r/n"
+				+ "/r/n";
 
 		for (Konto konto : kunde.getKontenListe()) {
 			emailText = emailText + "Konto: \"" + konto.getKontoNummer()
 					+ "\" Kontostand: \"" + konto.getKontoStand() + "\""
-					+ System.lineSeparator();
+					+ "/r/n";
 		}
 
 		MimeMultipart mailContent = new MimeMultipart();
