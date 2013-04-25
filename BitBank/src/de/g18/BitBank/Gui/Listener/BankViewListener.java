@@ -102,10 +102,12 @@ public class BankViewListener implements MouseListener {
 
 		JButton closeButton = new JButton("X");
 		titlePanel.add(closeButton);
+		titlePanel.setPreferredSize(new Dimension(140, 27));
 
-		closeButton.addActionListener(new CloseButtonListener(tabsPane, panel));
+		closeButton.addActionListener(new CloseButtonListener(this.tabsPane,
+				panel));
 
-		this.tabsPane.setTabComponentAt(tabsPane.indexOfComponent(panel),
+		this.tabsPane.setTabComponentAt(this.tabsPane.indexOfComponent(panel),
 				titlePanel);
 	}
 
