@@ -9,7 +9,7 @@ import java.io.IOException;
 
 /**
  * Gui Klasse fuer das ueberMenu.
- * 
+ *
  * @author it1-korebj
  * @since JRE6
  */
@@ -30,7 +30,8 @@ public class UeberFenster extends JDialog {
 
 		BufferedImage myPicture = null;
 		try {
-			myPicture = ImageIO.read(this.getClass().getResource("icon.png"));
+			myPicture = ImageIO.read(getClass().getClassLoader()
+					.getResourceAsStream("de/g18/BitBank/Gui/Images/icon.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

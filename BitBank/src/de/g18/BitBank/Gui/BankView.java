@@ -10,7 +10,7 @@ import java.io.IOException;
 
 /**
  * Vorgegebene BankMain.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -23,12 +23,14 @@ public class BankView extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setLayout(new GridLayout(1, 1));
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		Image appIcon = null;
 		try {
-			this.setIconImage(ImageIO.read(this.getClass().getResource(
-					"icon.png")));
+			appIcon = ImageIO.read(getClass().getClassLoader()
+					.getResourceAsStream("de/g18/BitBank/Gui/Images/icon.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		this.setIconImage(appIcon);
 		this.setTitle("BitBank");
 
 		JMenu actionMenu = new JMenu("Aktionen");

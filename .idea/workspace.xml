@@ -5,18 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db1625e7-f934-4dc6-8271-7afd99190f70" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/NumberParser.java" afterPath="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/NumberParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/BankView.java" afterPath="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/BankView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/BankViewListener.java" afterPath="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/BankViewListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/UeberFenster.java" afterPath="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/UeberFenster.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="F:\IdeaProjects\bitbank\BitBank\src\closeButton.png" afterPath="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Images/closeButton.png" />
+      <change type="MOVED" beforePath="F:\IdeaProjects\bitbank\BitBank\src\de\g18\BitBank\Gui\icon.png" afterPath="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Images/icon.png" />
     </list>
     <ignored path="bitbank.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366883541607" ignored="false" />
+    <file path="/Dummy.txt" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366890776699" ignored="false" />
     <file path="/fragment.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366886703226" ignored="false" />
     <file path="/a.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366272796694" ignored="false" />
     <file path="/a.xml" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365888987035" ignored="false" />
     <file path="/a.html" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365888989073" ignored="false" />
     <file path="/a.groovy" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365888990620" ignored="false" />
-    <file path="/BankView.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366365638506" ignored="false" />
+    <file path="/BankView.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366890632917" ignored="false" />
     <file path="/BankViewListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366883457710" ignored="false" />
     <file path="/KundenAnlegen.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1365936218640" ignored="false" />
     <file path="/KundenAnlegenListener.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366363401177" ignored="false" />
@@ -36,7 +40,7 @@
     <file path="/BetragNegativException.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366228466854" ignored="false" />
     <file path="/KontoLeerException.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366227479646" ignored="false" />
     <file path="/BankMain.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366228445345" ignored="false" />
-    <file path="/a.dummy" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366877308144" ignored="false" />
+    <file path="/a.dummy" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366890328812" ignored="false" />
     <file path="/Kunde.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366230295477" ignored="false" />
     <file path="/KontoNummerException.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366230772688" ignored="false" />
     <file path="/Ueberweisung.java" changelist="db1625e7-f934-4dc6-8271-7afd99190f70" time="1366478270634" ignored="false" />
@@ -124,19 +128,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BankViewListener.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/BankViewListener.java">
+      <file leaf-file-name="KontenListe.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/KontenListe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="42" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.0">
+            <state line="17" column="13" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NumberParser.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/NumberParser.java">
+      <file leaf-file-name="BankView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/BankView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="0" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.61586636">
+            <state line="28" column="78" selection-start="674" selection-end="765" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UeberFenster.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/UeberFenster.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="78" selection-start="939" selection-end="939" vertical-scroll-proportion="0.46332046">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BankViewListener.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/BankViewListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="0" selection-start="2488" selection-end="2488" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -167,8 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/KundenListe.java" />
-        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/UeberweisungVornehmen.java" />
         <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/ZahlungVornehmen.java" />
         <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/ZahlungVornehmenListener.java" />
         <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/UeberweisungListener.java" />
@@ -181,8 +203,10 @@
         <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/KontoAnlegenListener.java" />
         <option value="$PROJECT_DIR$/BitBank/.classpath" />
         <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/CloseButtonListener.java" />
-        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/BankViewListener.java" />
         <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/NumberParser.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/BankViewListener.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/BankView.java" />
+        <option value="$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/UeberFenster.java" />
       </list>
     </option>
   </component>
@@ -404,6 +428,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitbank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Listener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitbank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BitBank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -444,7 +520,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="preferences.intentionPowerPack" />
+    <property name="options.lastSelected" value="editor" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
@@ -464,6 +540,7 @@
       <recent name="de.g18.BitBank.Exception" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\IdeaProjects\bitbank\BitBank\src\de\g18\BitBank\Gui\Images" />
       <recent name="F:\IdeaProjects\bitbank\BitBank\src\de\g18\BitBank\Gui" />
     </key>
   </component>
@@ -997,7 +1074,11 @@
       <created>1366883585512</created>
       <updated>1366883585513</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="bessere nachkommastellenprüfung">
+      <created>1366886966783</created>
+      <updated>1366886966783</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1024,24 +1105,24 @@
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35038933" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3499407" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32502964" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32502964" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32740214" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.400949" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.400949" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.43890867" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31553975" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32740214" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31553975" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32740214" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19210246" sideWeight="0.66295886" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25364667" sideWeight="0.599051" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33926454" sideWeight="0.99928313" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25364667" sideWeight="0.6607355" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33926454" sideWeight="0.99928313" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32740214" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39954337" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1089,7 +1170,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="tab hintergrund weg gemacht" />
+    <option name="LAST_COMMIT_MESSAGE" value="moar" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1103,12 +1184,10 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="commit 2&#10;" />
     <MESSAGE value="commit 2" />
     <MESSAGE value="commit 3" />
     <MESSAGE value="mehr eingabe fehler abfangen" />
     <MESSAGE value="ah" />
-    <MESSAGE value="moar" />
     <MESSAGE value="app startet" />
     <MESSAGE value="Merge branch 'master' of http://github.com/CitySim/bitbank&#10;&#10;Conflicts:&#10;&#9;BitBank/src/de/g18/BitBank/Gui/Listener/ZahlungVornehmenListener.java&#10;" />
     <MESSAGE value="läuft wieder teil 2" />
@@ -1128,6 +1207,8 @@
     <MESSAGE value="kleine namens fixes" />
     <MESSAGE value="controll in controller gefixt" />
     <MESSAGE value="tab hintergrund weg gemacht" />
+    <MESSAGE value="bessere nachkommastellenprüfung" />
+    <MESSAGE value="moar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1137,69 +1218,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/BitBank/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Ueberweisung.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/.settings/org.eclipse.core.resources.prefs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6611111" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/BankMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="30" selection-start="904" selection-end="904" vertical-scroll-proportion="0.53419596">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/.settings/org.eclipse.jdt.core.prefs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="37" selection-start="614" selection-end="614" vertical-scroll-proportion="0.3456562" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/BitBank.eml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="19" selection-start="58" selection-end="58" vertical-scroll-proportion="0.031481482" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/.classpath">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="12" selection-start="826" selection-end="826" vertical-scroll-proportion="0.4490566" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/BankView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="309" selection-end="309" vertical-scroll-proportion="0.22888617">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/KundenAnlegenListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="49" selection-start="2448" selection-end="2487" vertical-scroll-proportion="0.33292535">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/CloseButtonListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="1" selection-start="568" selection-end="568" vertical-scroll-proportion="0.52019584">
@@ -1214,23 +1232,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/BankViewListener.java">
+    <entry file="jar://F:/JDK/jdk1.7.0_17/src.zip!/java/awt/EventDispatchThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="42" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.0">
+        <state line="210" column="0" selection-start="6701" selection-end="6701" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2221#2365#0" expanded="true" />
+            <element signature="e#2346#2347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/JDK/jdk1.7.0_17/src.zip!/java/awt/EventQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="536" column="0" selection-start="18274" selection-end="18274" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/UeberFenster.java">
+    <entry file="jar://F:/JDK/jdk1.7.0_17/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="32" selection-start="942" selection-end="942" vertical-scroll-proportion="0.35945272">
+        <state line="2042" column="0" selection-start="79256" selection-end="79256" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/JDK/jdk1.7.0_17/src.zip!/java/util/concurrent/locks/LockSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="185" column="0" selection-start="6546" selection-end="6546" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/JDK/jdk1.7.0_17/jre/lib/rt.jar!/sun/awt/windows/WToolkit.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="210" column="32" selection-start="9342" selection-end="9342" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/JDK/jdk1.7.0_17/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="382" column="29" selection-start="17643" selection-end="17643" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/JDK/jdk1.7.0_17/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="319" column="23" selection-start="10057" selection-end="10057" vertical-scroll-proportion="0.5868726">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/NumberParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.61586636">
+        <state line="21" column="29" selection-start="499" selection-end="499" vertical-scroll-proportion="0.38418078">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/KontenListe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/JDK/jdk1.7.0_17/src.zip!/javax/imageio/ImageIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1387" column="0" selection-start="49531" selection-end="49531" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/JDK/jdk1.7.0_17/src.zip!/javax/swing/JFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="654" column="32" selection-start="22974" selection-end="22974" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/Listener/BankViewListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="0" selection-start="2488" selection-end="2488" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/BankView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="78" selection-start="674" selection-end="765" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitBank/src/de/g18/BitBank/Gui/UeberFenster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="78" selection-start="939" selection-end="939" vertical-scroll-proportion="0.46332046">
           <folding />
         </state>
       </provider>

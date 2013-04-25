@@ -13,7 +13,7 @@ import java.io.IOException;
 
 /**
  * Listener zu dem Menue BankView Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -23,8 +23,8 @@ public class BankViewListener implements MouseListener {
 	private JTabbedPane tabsPane;
 
 	public BankViewListener(final JMenu anwendungen,
-			final JTabbedPane tabsPane, final BankController controller,
-			final JMenu about) {
+							final JTabbedPane tabsPane, final BankController controller,
+							final JMenu about) {
 		for (Component component : anwendungen.getMenuComponents()) {
 			component.addMouseListener(this);
 		}
@@ -105,7 +105,7 @@ public class BankViewListener implements MouseListener {
 		ImageIcon buttonIcon = null;
 		try {
 			buttonIcon = new ImageIcon(ImageIO.read(getClass().getClassLoader()
-					.getResourceAsStream("closeButton.png")));
+					.getResourceAsStream("de/g18/BitBank/Gui/Images/closeButton.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
