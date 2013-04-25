@@ -19,7 +19,6 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.JTextComponent;
 import javax.swing.text.Utilities;
 
-import de.g18.BitBank.BankController;
 import de.g18.BitBank.Konto;
 import de.g18.BitBank.Kunde;
 
@@ -205,8 +204,7 @@ class PrintJob implements Printable {
 		return textareaForPrint.getHeight() / fontMetrics.getHeight();
 	}
 
-	private final String generateText(final BankController controller,
-			final Kunde kunde) {
+	private final String generateText(final Kunde kunde) {
 
 		String printText = "Hello! " + "/r/n"
 				+ "This is an autmatic generated mail by BitBank." + "/r/n"
@@ -227,8 +225,8 @@ class PrintJob implements Printable {
 
 	}
 
-	final void printText(final BankController controller, final Kunde kunde) {
-		String printText = this.generateText(controller, kunde);
+	final void printText(final Kunde kunde) {
+		String printText = this.generateText(kunde);
 		PrintJob pt = new PrintJob(printText);
 		pt.printAllPages();
 	}

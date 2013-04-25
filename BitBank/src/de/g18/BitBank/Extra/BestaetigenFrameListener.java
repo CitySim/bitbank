@@ -68,13 +68,13 @@ class BestaetigenFrameListener implements ActionListener {
 				return;
 			}
 			if (this.operation.equals("drucken")) {
-				new PrintJob(null).printText(controller, kunde);
+				new PrintJob(null).printText(kunde);
 
 			} else if (this.operation.equals("email")) {
 				try {
 					try {
-						new EmailJob().initializeEmailSending(controller,
-								kunde, emailArea.getText());
+						new EmailJob().initializeEmailSending(kunde,
+								emailArea.getText());
 					} catch (MessagingException e) {
 						e.printStackTrace();
 						return;
