@@ -14,7 +14,6 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-import de.g18.BitBank.BankController;
 import de.g18.BitBank.Konto;
 import de.g18.BitBank.Kunde;
 
@@ -27,8 +26,7 @@ import de.g18.BitBank.Kunde;
 
 class EmailJob {
 
-	final void initializeEmailSending(final BankController controller,
-			final Kunde kunde, final String email)
+	final void initializeEmailSending(final Kunde kunde, final String email)
 			throws EmailAdresseUngueltigException, MessagingException {
 
 		String username = "bitbank@gmx.de";
@@ -38,13 +36,12 @@ class EmailJob {
 		String smtpHost = "smtp.gmx.net";
 
 		this.sendMail(smtpHost, username, password, senderAddress, subject,
-				controller, kunde, email);
+				kunde, email);
 	}
 
-	private final void sendMail(final String smtpHost, final String username,
+	private void sendMail(final String smtpHost, final String username,
 			final String password, final String senderAddress,
-			final String subject, final BankController controller,
-			final Kunde kunde, final String emailAdress)
+			final String subject, final Kunde kunde, final String emailAdress)
 			throws EmailAdresseUngueltigException, MessagingException {
 
 		Properties properties = new Properties();
@@ -64,7 +61,7 @@ class EmailJob {
 		msg.setSentDate(new Date());
 		MimeMultipart mailContent;
 
-		mailContent = this.generateMailContent(controller, kunde);
+		mailContent = this.generateMailContent(kunde);
 
 		msg.setContent(mailContent);
 
@@ -94,8 +91,8 @@ class EmailJob {
 		}
 	}
 
-	private MimeMultipart generateMailContent(final BankController controller,
-			final Kunde kunde) throws MessagingException {
+	private MimeMultipart generateMailContent(final Kunde kunde)
+			throws MessagingException {
 
 		String emailText = "Hello! " + "/r/n"
 				+ "This is an autmatic generated mail by BitBank." + "/r/n"

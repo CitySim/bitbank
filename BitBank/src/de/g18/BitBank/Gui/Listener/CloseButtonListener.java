@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Listener für die Closebuttons des Tabmenues.
- *
+ * 
  * @author it1-markde
  * @since JRE6
  */
@@ -16,7 +16,7 @@ public class CloseButtonListener implements ActionListener {
 	private JTabbedPane tabsPane;
 	private JPanel panel;
 
-	public CloseButtonListener(JTabbedPane tabsPane, JPanel panel) {
+	public CloseButtonListener(final JTabbedPane tabsPane, final JPanel panel) {
 		this.tabsPane = tabsPane;
 		this.panel = panel;
 	}

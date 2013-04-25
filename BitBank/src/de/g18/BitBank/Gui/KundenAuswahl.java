@@ -6,16 +6,17 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.AbstractListModel;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.Kunde;
+import de.g18.BitBank.Gui.Listener.KundenAuswahlListener;
 
 /**
  * Gui Klasse zur erleichterten Kundenauswahl.
@@ -26,9 +27,11 @@ import de.g18.BitBank.Kunde;
 
 public class KundenAuswahl extends JDialog {
 	private static final long serialVersionUID = -785098997227623108L;
-	private Kunde kunde;
+	private JTextField kundenNummerField;
 
-	public KundenAuswahl(final BankController controller) {
+	public KundenAuswahl(final BankController controller,
+			final JTextField kundenNummerField) {
+		this.kundenNummerField = kundenNummerField;
 		this.setLocationRelativeTo(null);
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
@@ -36,9 +39,10 @@ public class KundenAuswahl extends JDialog {
 		c.insets = new Insets(5, 5, 5, 5);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setTitle("Kundenauswahl");
-		// setResizable(false);
 		this.setSize(new Dimension(200, 300));
 		this.setModal(true);
+
+		JButton auswaehlenButton = new JButton("Auswählen");
 
 		final JList<Object> liste = new JList<Object>(
 				new AbstractListModel<Object>() {
@@ -55,27 +59,31 @@ public class KundenAuswahl extends JDialog {
 						return k.getKundenNummmer() + " - " + k.getName();
 					}
 				});
-		liste.addListSelectionListener(new ListSelectionListener() {
-			@Override
-			public void valueChanged(final ListSelectionEvent e) {
-				kunde = (controller.getKundeByIndex(liste.getSelectedIndex()));
-			}
-		});
+
 		liste.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		JScrollPane listeScrollPane = new JScrollPane(liste);
 
 		c.gridx = 0;
 		c.gridy = 0;
+		c.weightx = 5;
+		c.weighty = 5;
+		c.fill = GridBagConstraints.BOTH;
+		this.add(listeScrollPane, c);
+
+		c.gridx = 0;
+		c.gridy = 2;
 		c.weightx = 1;
 		c.weighty = 1;
 		c.fill = GridBagConstraints.BOTH;
-		this.add(listeScrollPane, c);
+		this.add(auswaehlenButton, c);
+
+		auswaehlenButton.addActionListener(new KundenAuswahlListener(liste,
+				this, controller));
 
 		this.setVisible(true);
 	}
 
-	public Kunde getKunde() {
-		return kunde;
+	public final void setKundenNummerField(final Kunde kunde) {
+		this.kundenNummerField.setText("" + (kunde.getKundenNummmer()));
 	}
-
 }

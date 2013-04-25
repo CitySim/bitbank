@@ -124,7 +124,7 @@ public class UeberweisungListener implements ActionListener {
 		}
 	}
 
-	private final void showCreationDialog(final int vomKontoNummer,
+	private void showCreationDialog(final int vomKontoNummer,
 			final int nachKontoNummer, final double betrag) {
 		JOptionPane.showMessageDialog(null, "Ihre Überweisung über \"" + betrag
 				+ "\" von \"" + vomKontoNummer + "\" nach\"" + nachKontoNummer

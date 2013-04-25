@@ -31,7 +31,11 @@ public class BankController {
 	}
 
 	public final Kunde getKundeByIndex(final int i) {
-		return kundenListe.get(i);
+
+		if (kundenListe.size() != 0) {
+			return kundenListe.get(i);
+		}
+		return null;
 	}
 
 	private Kunde getKundeByKundenNummer(final long kundenNummer)
