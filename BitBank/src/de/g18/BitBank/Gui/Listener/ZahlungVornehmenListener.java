@@ -71,9 +71,10 @@ public class ZahlungVornehmenListener implements ActionListener {
 
 			try {
 
-				this.alterKontoStandField.setText(Double
-						.toString(this.controller
-								.kontoStandAnzeigen(kontoNummer)));
+				this.alterKontoStandField
+						.setText(NumberFormat.getCurrencyInstance()
+								.format(this.controller
+										.kontoStandAnzeigen(kontoNummer)));
 
 			} catch (KontoNichtGefundenException e1) {
 				e1.showDialog();
