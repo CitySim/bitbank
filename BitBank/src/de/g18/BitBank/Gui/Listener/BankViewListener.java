@@ -7,24 +7,24 @@ import de.g18.BitBank.Gui.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.IOException;
 
 /**
  * Listener zu dem Menue BankView Klasse.
- * 
+ *
  * @author it1-markde
  * @since jdk1.7.0_17
  */
 
-public class BankViewListener implements MouseListener {
+public class BankViewListener extends MouseAdapter {
 	private BankController controller;
 	private JTabbedPane tabsPane;
 
 	public BankViewListener(final JMenu anwendungen,
-			final JTabbedPane tabsPane, final BankController controller,
-			final JMenu about) {
+							final JTabbedPane tabsPane, final BankController controller,
+							final JMenu about) {
 		for (Component component : anwendungen.getMenuComponents()) {
 			component.addMouseListener(this);
 		}
@@ -36,27 +36,6 @@ public class BankViewListener implements MouseListener {
 		this.tabsPane = tabsPane;
 	}
 
-	@Override
-	public void mouseClicked(final MouseEvent event) {
-		// not in use
-	}
-
-	@Override
-	public void mouseEntered(final MouseEvent event) {
-		// not in use
-	}
-
-	@Override
-	public void mouseExited(final MouseEvent event) {
-		// not in use
-	}
-
-	@Override
-	public void mousePressed(final MouseEvent event) {
-		// not in use
-	}
-
-	// Auswahl der Menuepunkte.
 	@Override
 	public void mouseReleased(final MouseEvent event) {
 		JMenuItem menuItem = (JMenuItem) event.getSource();
