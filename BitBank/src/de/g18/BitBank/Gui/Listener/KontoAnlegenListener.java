@@ -21,7 +21,7 @@ import de.g18.BitBank.Gui.KundenAuswahl;
  * Listener zu den Buttons der KontoAnlegen Klasse.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class KontoAnlegenListener implements ActionListener {

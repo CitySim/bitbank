@@ -18,7 +18,7 @@ import de.g18.BitBank.Gui.KundenAnlegen;
  * Listener zu den Buttons der KundenAnlegen Klasse.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class KundenAnlegenListener implements ActionListener {

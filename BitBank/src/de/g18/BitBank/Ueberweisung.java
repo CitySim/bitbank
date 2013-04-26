@@ -9,7 +9,7 @@ import java.util.Date;
  * Klasse zum uebertragen von Geld zwischen Konten.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class Ueberweisung extends Kontobewegung {

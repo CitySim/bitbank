@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  * Exception bei nicht auffindbaren Kunden.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class KundeNichtGefundenException extends Throwable implements

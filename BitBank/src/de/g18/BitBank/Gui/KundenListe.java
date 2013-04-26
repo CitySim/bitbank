@@ -14,7 +14,7 @@ import java.awt.*;
  * Gui Klasse zum Anzeigen aller Kunden.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class KundenListe extends JPanel {

@@ -1,5 +1,6 @@
 package de.g18.BitBank.Extra;
 
+import java.text.NumberFormat;
 import java.util.Date;
 import java.util.Properties;
 
@@ -21,7 +22,7 @@ import de.g18.BitBank.Kunde;
  * Klasse zum Versenden einer E-Mail mit den Kontostaenden.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 class EmailJob {
@@ -104,8 +105,14 @@ class EmailJob {
 
 		if (kunde.getKontenListe().size() != 0) {
 			for (Konto konto : kunde.getKontenListe()) {
-				emailText = emailText + "Konto: " + konto.getKontoNummer()
-						+ " Kontostand: " + konto.getKontoStand() + "\r\n";
+				emailText = emailText
+						+ "Konto: "
+						+ konto.getKontoNummer()
+						+ " Kontotyp: "
+						+ konto.getKontoTyp()
+						+ " Kontostand: "
+						+ NumberFormat.getCurrencyInstance().format(
+								konto.getKontoStand()) + "\r\n";
 			}
 		} else {
 			emailText = emailText

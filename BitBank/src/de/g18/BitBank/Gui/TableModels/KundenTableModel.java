@@ -9,7 +9,7 @@ import de.g18.BitBank.Kunde;
  * Tabelle zur Anzeige der Kunden.
  * 
  * @author it1-korebj
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class KundenTableModel extends AbstractTableModel {

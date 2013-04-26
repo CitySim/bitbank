@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class KundenListeListener implements ActionListener {

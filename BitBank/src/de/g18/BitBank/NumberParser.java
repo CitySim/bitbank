@@ -3,13 +3,11 @@ package de.g18.BitBank;
 import de.g18.BitBank.Exception.BetragZuGroßException;
 import de.g18.BitBank.Exception.ZuVieleNachkommastellenException;
 
-import javax.swing.*;
-
 /**
  * Hilfsklasse zum parsen von String zu double.
  * 
  * @author it1-korebj
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class NumberParser {

@@ -10,7 +10,7 @@ import java.awt.*;
  * Gui Klasse zum Anlegen eines neuen Kundens.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class KundenAnlegen extends JPanel {

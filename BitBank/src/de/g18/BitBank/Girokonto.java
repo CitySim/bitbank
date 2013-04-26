@@ -7,7 +7,7 @@ import de.g18.BitBank.Exception.KontoLeerException;
  * Unterklasse von Konto.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  * @see Konto
  */
 

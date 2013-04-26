@@ -8,7 +8,7 @@ import de.g18.BitBank.Exception.ExceptionDialogInterface;
  * Exception bei ungueltigen E-mail Adressen.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 class EmailAdresseUngueltigException extends Exception implements

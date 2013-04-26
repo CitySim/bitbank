@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
  * Testklasse fuer die Ueberweisungs Klasse.
  * 
  * @author it1-korebj
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class UeberweisungTest {

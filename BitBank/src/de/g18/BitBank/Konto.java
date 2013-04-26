@@ -13,7 +13,7 @@ import java.util.List;
  * @author it1-markde
  * @see Girokonto
  * @see Sparkonto
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 public abstract class Konto {
 	private Kontotyp kontoTyp;

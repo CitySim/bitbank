@@ -11,7 +11,7 @@ import de.g18.BitBank.Exception.KontoLeerException;
  * Testklasse fuer die Sparkonto Klasse.
  * 
  * @author it1-korebj
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class SparkontoTest {

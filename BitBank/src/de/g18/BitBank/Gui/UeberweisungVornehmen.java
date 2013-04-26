@@ -11,7 +11,7 @@ import java.awt.*;
  * Gui Klasse zum Ueberweisen eines Betrages von einem Konto zum anderen.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class UeberweisungVornehmen extends JPanel {

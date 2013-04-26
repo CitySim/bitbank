@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
  * Exception bei nicht gefuellten Pflichtfeldern.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class FeldLeerException extends Exception implements
