@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Testklasse fuer die Konto Klasse.
- *
+ * 
  * @author it1-korebj
  * @since jdk1.7.0_17
  */
@@ -56,7 +56,6 @@ public class KontoTest {
 		try {
 			k.einzahlen(-100);
 		} catch (BetragNegativException e) {
-			e.printStackTrace();
 		}
 
 		// Konto muss noch immer 0 haben, Betrag darf sich nicht aendern.
@@ -85,9 +84,7 @@ public class KontoTest {
 		try {
 			k.auszahlen(-100);
 		} catch (BetragNegativException e) {
-			e.printStackTrace();
 		} catch (KontoLeerException e) {
-			e.printStackTrace();
 		}
 
 		// Konto muss noch immer 0 haben, Betrag darf sich nicht aendern.
