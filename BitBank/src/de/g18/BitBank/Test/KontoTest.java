@@ -1,19 +1,19 @@
 package de.g18.BitBank.Test;
 
-import static org.junit.Assert.assertEquals;
-import java.util.Date;
-
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
+import de.g18.BitBank.Girokonto;
+import de.g18.BitBank.Konto;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.g18.BitBank.Girokonto;
-import de.g18.BitBank.Konto;
-import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.KontoLeerException;
+import java.util.Date;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Testklasse fuer die Konto Klasse.
- * 
+ *
  * @author it1-korebj
  * @since jdk1.7.0_17
  */
@@ -105,12 +105,12 @@ public class KontoTest {
 		assertEquals(0, k.getKontoStand(), 0);
 		assertEquals(200, ziel.getKontoStand(), 0);
 
-		assertEquals(2, k.getKontoBewegungsListe().size());
+		assertEquals(3, k.getKontoBewegungsListe().size());
 		assertEquals(200, k.getKontoBewegungsListe().get(0).getBetrag(), 0); // Einzahlung
 		assertEquals(-200, k.getKontoBewegungsListe().get(1).getBetrag(), 0); // Ueberweisung
 		assertEquals(1, k.getUeberweisungsListe().size(), 1);
 
-		assertEquals(1, ziel.getKontoBewegungsListe().size());
+		assertEquals(2, ziel.getKontoBewegungsListe().size());
 		assertEquals(200, ziel.getKontoBewegungsListe().get(0).getBetrag(), 0);
 		assertEquals(1, ziel.getUeberweisungsListe().size());
 		assertEquals(ziel.getUeberweisungsListe().get(0), ziel

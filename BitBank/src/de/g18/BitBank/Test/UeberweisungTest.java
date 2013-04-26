@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Testklasse fuer die Ueberweisungs Klasse.
- * 
+ *
  * @author it1-korebj
  * @since jdk1.7.0_17
  */
@@ -52,12 +52,12 @@ public class UeberweisungTest {
 		assertEquals(50, k1.getKontoStand(), 0);
 		assertEquals(150, k2.getKontoStand(), 0);
 
-		assertEquals(2, k1.getKontoBewegungsListe().size());
+		assertEquals(3, k1.getKontoBewegungsListe().size());
 		assertEquals(200, k1.getKontoBewegungsListe().get(0).getBetrag(), 0); // einzahlung
 		assertEquals(-150, k1.getKontoBewegungsListe().get(1).getBetrag(), 0); // überweisung
 		assertEquals(1, k1.getUeberweisungsListe().size(), 1);
 
-		assertEquals(1, k2.getKontoBewegungsListe().size());
+		assertEquals(2, k2.getKontoBewegungsListe().size());
 		assertEquals(150, k2.getKontoBewegungsListe().get(0).getBetrag(), 0);
 		assertEquals(1, k2.getUeberweisungsListe().size());
 		assertEquals(k1.getUeberweisungsListe().get(0), k2
