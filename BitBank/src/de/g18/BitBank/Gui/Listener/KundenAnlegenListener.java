@@ -58,6 +58,8 @@ public class KundenAnlegenListener implements ActionListener {
 				}
 
 				this.controller.createKunde(kundenName, kundenNummer);
+				this.kundenAnlegenField.setText("");
+				this.kundenNamenField.setText("");
 				this.showCreationDialog(kundenName, kundenNummer);
 
 			} catch (NumberFormatException e) {
