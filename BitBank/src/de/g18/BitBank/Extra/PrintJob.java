@@ -10,6 +10,7 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -201,8 +202,14 @@ class PrintJob implements Printable {
 
 		if (kunde.getKontenListe().size() != 0) {
 			for (Konto konto : kunde.getKontenListe()) {
-				printText = printText + "Konto: " + konto.getKontoNummer()
-						+ " Kontostand: " + konto.getKontoStand() + "\r\n";
+				printText = printText
+						+ "Konto: "
+						+ konto.getKontoNummer()
+						+ " Kontotyp: "
+						+ konto.getKontoTyp()
+						+ " Kontostand: "
+						+ NumberFormat.getCurrencyInstance().format(
+								konto.getKontoStand()) + "\r\n";
 			}
 		} else {
 			printText = printText
