@@ -21,7 +21,7 @@ import de.g18.BitBank.Kunde;
  * Klasse zum Versenden einer E-Mail mit den Kontostaenden.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 class EmailJob {

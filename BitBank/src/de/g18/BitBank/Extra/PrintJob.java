@@ -26,7 +26,7 @@ import de.g18.BitBank.Kunde;
  * Klasse zum Ausdrucken der Kontostaende.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 class PrintJob implements Printable {

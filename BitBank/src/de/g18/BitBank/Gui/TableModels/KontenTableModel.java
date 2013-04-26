@@ -11,7 +11,7 @@ import javax.swing.table.AbstractTableModel;
  * Tabelle zur Anzeige der Konten.
  * 
  * @author it1-korebj
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class KontenTableModel extends AbstractTableModel {

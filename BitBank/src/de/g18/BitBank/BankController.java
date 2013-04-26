@@ -16,7 +16,7 @@ import de.g18.BitBank.Exception.KundenNummerVergebenException;
  * Klassen.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class BankController {

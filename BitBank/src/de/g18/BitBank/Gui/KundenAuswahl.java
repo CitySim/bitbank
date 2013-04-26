@@ -22,7 +22,7 @@ import de.g18.BitBank.Gui.Listener.KundenAuswahlListener;
  * Gui Klasse zur erleichterten Kundenauswahl.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class KundenAuswahl extends JDialog {

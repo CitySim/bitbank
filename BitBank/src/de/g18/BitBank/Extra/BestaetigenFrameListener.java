@@ -17,7 +17,7 @@ import de.g18.BitBank.Exception.KundeNichtGefundenException;
  * Listener zu den Buttons der BestaetigenFrame Klasse.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 class BestaetigenFrameListener implements ActionListener {

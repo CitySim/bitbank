@@ -9,9 +9,9 @@ import java.io.IOException;
 
 /**
  * Gui Klasse fuer das ueberMenu.
- *
+ * 
  * @author it1-korebj
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class UeberFenster extends JDialog {

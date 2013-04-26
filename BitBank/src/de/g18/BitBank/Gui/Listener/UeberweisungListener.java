@@ -29,7 +29,7 @@ import de.g18.BitBank.Gui.UeberweisungVornehmen;
  * Listener zu den Buttons der UeberweisungVornehmen Klasse.
  * 
  * @author it1-markde
- * @since JRE6
+ * @since jdk1.7.0_17
  */
 
 public class UeberweisungListener implements ActionListener {
