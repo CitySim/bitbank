@@ -1,5 +1,7 @@
 package de.g18.BitBank.Gui.TableModels;
 
+import java.text.NumberFormat;
+
 import de.g18.BitBank.Konto;
 import de.g18.BitBank.Kunde;
 
@@ -53,7 +55,7 @@ public class KontenTableModel extends AbstractTableModel {
 		case 1:
 			return Long.toString(k.getKontoNummer());
 		case 2:
-			return Double.toString(k.getKontoStand());
+			return NumberFormat.getCurrencyInstance().format(k.getKontoStand());
 		default:
 			return "Fehler";
 		}
