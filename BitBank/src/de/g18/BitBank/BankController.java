@@ -1,20 +1,15 @@
 package de.g18.BitBank;
 
+import de.g18.BitBank.Exception.*;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.KontoLeerException;
-import de.g18.BitBank.Exception.KontoNichtGefundenException;
-import de.g18.BitBank.Exception.KundeNichtGefundenException;
-import de.g18.BitBank.Exception.KundenNummerUnzulaessigException;
-import de.g18.BitBank.Exception.KundenNummerVergebenException;
-
 /**
  * BankController Klasse als Schnittstelle zwischen Listenern und ausfuehrenden
  * Klassen.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -63,7 +58,7 @@ public class BankController {
 	}
 
 	public final void createKunde(final String kundenName,
-			final long kundenNummer) throws KundenNummerVergebenException {
+								  final long kundenNummer) throws KundenNummerVergebenException {
 		for (Kunde kunde : kundenListe) {
 			if (kunde.getKundenNummmer() == kundenNummer) {
 				throw new KundenNummerVergebenException(kundenNummer);
@@ -79,29 +74,29 @@ public class BankController {
 	}
 
 	public final Konto createKonto(final long kundenNummer,
-			final Kontotyp kontoTyp) throws KundeNichtGefundenException {
+								   final Kontotyp kontoTyp) throws KundeNichtGefundenException {
 		Kunde kunde = getKundeByKundenNummer(kundenNummer);
 		return kunde.anlegenKonto(kontoTyp);
 	}
 
-	public final double kontoStandAnzeigen(final int kontoNummer)
+	public final double kontoStandAnzeigen(final long kontoNummer)
 			throws KontoNichtGefundenException {
 		return this.getKontoByKontoNummer(kontoNummer).getKontoStand();
 	}
 
-	public final void einzahlen(final int kontoNummer, final double betrag)
+	public final void einzahlen(final long kontoNummer, final double betrag)
 			throws KontoNichtGefundenException, BetragNegativException {
 		this.getKontoByKontoNummer(kontoNummer).einzahlen(betrag);
 	}
 
-	public final void auszahlen(final int kontoNummer, final double betrag)
+	public final void auszahlen(final long kontoNummer, final double betrag)
 			throws KontoNichtGefundenException, KontoLeerException,
 			BetragNegativException {
 		this.getKontoByKontoNummer(kontoNummer).auszahlen(betrag);
 	}
 
 	public final void ueberweisen(final int zielKontoNummer,
-			final long quellKontoNummer, final double betrag, final Date datum)
+								  final long quellKontoNummer, final double betrag, final Date datum)
 			throws KontoNichtGefundenException, KontoLeerException,
 			BetragNegativException {
 		Konto von = getKontoByKontoNummer(quellKontoNummer);

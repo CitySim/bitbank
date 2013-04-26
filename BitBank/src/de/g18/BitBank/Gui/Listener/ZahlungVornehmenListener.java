@@ -1,14 +1,9 @@
 package de.g18.BitBank.Gui.Listener;
 
 import de.g18.BitBank.BankController;
-import de.g18.BitBank.NumberParser;
-import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.BetragZuGroßException;
-import de.g18.BitBank.Exception.KeineGueltigeZahlException;
-import de.g18.BitBank.Exception.KontoLeerException;
-import de.g18.BitBank.Exception.KontoNichtGefundenException;
-import de.g18.BitBank.Exception.ZuVieleNachkommastellenException;
+import de.g18.BitBank.Exception.*;
 import de.g18.BitBank.Gui.ZahlungVornehmen;
+import de.g18.BitBank.NumberParser;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,7 +12,7 @@ import java.text.NumberFormat;
 
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
- * 
+ *
  * @author it1-markde
  * @since JRE6
  */
@@ -32,9 +27,9 @@ public class ZahlungVornehmenListener implements ActionListener {
 	private JTextField betragField;
 
 	public ZahlungVornehmenListener(final JTextField kontoNummerField,
-			final JTextField alterKontoStandField,
-			final JTextField neuerKontoStandField,
-			final JTextField betragField, final BankController controller) {
+									final JTextField alterKontoStandField,
+									final JTextField neuerKontoStandField,
+									final JTextField betragField, final BankController controller) {
 		this.kontoNummerField = kontoNummerField;
 		this.alterKontoStandField = alterKontoStandField;
 		this.neuerKontoStandField = neuerKontoStandField;
@@ -60,7 +55,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		NumberParser parser = new NumberParser();
 
 		if (buttonClicked.getText().compareTo("Kontostand") == 0) {
-			int kontoNummer = 0;
+			long kontoNummer = 0;
 			this.cleanUp();
 			try {
 				kontoNummer = this.ermittleKontoNummer();
@@ -81,7 +76,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 				return;
 			}
 		} else if (buttonClicked.getText().compareTo("Einzahlung") == 0) {
-			int kontoNummer;
+			long kontoNummer;
 			try {
 				kontoNummer = this.ermittleKontoNummer();
 			} catch (KeineGueltigeZahlException e) {
@@ -120,7 +115,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 			this.aktualisieren(kontoNummer);
 
 		} else if (buttonClicked.getText().compareTo("Auszahlung") == 0) {
-			int kontoNummer = 0;
+			long kontoNummer = 0;
 			try {
 				kontoNummer = this.ermittleKontoNummer();
 			} catch (KeineGueltigeZahlException e) {
@@ -165,7 +160,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		}
 	}
 
-	private void aktualisieren(final int kontoNummer) {
+	private void aktualisieren(final long kontoNummer) {
 		if (!this.neuerKontoStandField.getText().equals("")) {
 			this.alterKontoStandField.setText(this.neuerKontoStandField
 					.getText());
@@ -181,10 +176,10 @@ public class ZahlungVornehmenListener implements ActionListener {
 		}
 	}
 
-	private int ermittleKontoNummer() throws KeineGueltigeZahlException {
-		int kontoNummer;
+	private long ermittleKontoNummer() throws KeineGueltigeZahlException {
+		long kontoNummer;
 		try {
-			kontoNummer = Integer.parseInt(this.kontoNummerField.getText());
+			kontoNummer = Long.parseLong(this.kontoNummerField.getText());
 		} catch (NumberFormatException e) {
 			throw new KeineGueltigeZahlException("Kontonummer");
 		}
