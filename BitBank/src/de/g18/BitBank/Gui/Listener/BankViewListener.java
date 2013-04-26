@@ -56,10 +56,12 @@ public class BankViewListener implements MouseListener {
 		// not in use
 	}
 
+	// Auswahl der Menuepunkte.
 	@Override
 	public void mouseReleased(final MouseEvent event) {
 		JMenuItem menuItem = (JMenuItem) event.getSource();
 
+		// Teil eins des Menues.
 		if (menuItem.getText().equals("Kunde anlegen")) {
 			addPane("Kunde anlegen", new KundenAnlegen(this.tabsPane,
 					this.controller));
@@ -82,6 +84,7 @@ public class BankViewListener implements MouseListener {
 			addPane("Kundenliste", new KundenListe(this.tabsPane,
 					this.controller));
 
+			// Teil zwei des Menues.
 		} else if (menuItem.getText().equals("Über")) {
 			new UeberFenster();
 		} else if (menuItem.getText().equals("Drucken")) {
@@ -95,6 +98,7 @@ public class BankViewListener implements MouseListener {
 		this.tabsPane.setSelectedIndex(this.tabsPane.getTabCount() - 1);
 	}
 
+	//Methode zum Hinzufuegen von neuen Panes (Inklusive Closebutton etc.)
 	private void addPane(final String title, final JPanel panel) {
 		tabsPane.add(title, panel);
 

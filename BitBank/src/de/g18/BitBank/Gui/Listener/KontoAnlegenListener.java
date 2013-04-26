@@ -93,6 +93,7 @@ public class KontoAnlegenListener implements ActionListener {
 		}
 	}
 
+	// zeigt den Dialog für erfolgreiches Anlegen an.
 	private void showCreationDialog(final long kundenNummer) {
 		JOptionPane.showMessageDialog(new JFrame(),
 				"Konto unter für Kunde Nr. \"" + kundenNummer + "\" angelegt.");

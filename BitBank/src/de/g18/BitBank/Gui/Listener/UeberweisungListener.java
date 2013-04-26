@@ -128,6 +128,7 @@ public class UeberweisungListener implements ActionListener {
 		}
 	}
 
+	// zeigt den Dialog für erfolgreiches Anlegen an.
 	private void showCreationDialog(final int vomKontoNummer,
 			final int nachKontoNummer, final double betrag) {
 		JOptionPane.showMessageDialog(null, "Ihre Überweisung über \"" + betrag
@@ -135,6 +136,7 @@ public class UeberweisungListener implements ActionListener {
 				+ "\" wurde erfolgreich durchgeführt.");
 	}
 
+	// Methode zum clearen des Frames.
 	private void cleanUp() {
 		// this.vomKontoField.setText("");
 		this.nachKontoField.setText("");
@@ -142,6 +144,7 @@ public class UeberweisungListener implements ActionListener {
 		this.chooser.setDate(null);
 	}
 
+	// Methode zum Ermitteln des heutigen Datums.
 	public Date getDate() {
 		DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
 		Calendar c = df.getCalendar();

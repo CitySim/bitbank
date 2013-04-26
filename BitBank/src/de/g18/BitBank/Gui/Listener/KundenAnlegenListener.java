@@ -90,6 +90,7 @@ public class KundenAnlegenListener implements ActionListener {
 		}
 	}
 
+	// zeigt den Dialog für erfolgreiches Anlegen an.
 	private void showCreationDialog(final String kundenName,
 			final long kundenNummer) {
 		JOptionPane.showMessageDialog(null, "Kunde mit dem Namen \""

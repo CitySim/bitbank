@@ -12,7 +12,7 @@ import java.text.NumberFormat;
 
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
- *
+ * 
  * @author it1-markde
  * @since jdk1.7.0_17
  */
@@ -27,9 +27,9 @@ public class ZahlungVornehmenListener implements ActionListener {
 	private JTextField betragField;
 
 	public ZahlungVornehmenListener(final JTextField kontoNummerField,
-									final JTextField alterKontoStandField,
-									final JTextField neuerKontoStandField,
-									final JTextField betragField, final BankController controller) {
+			final JTextField alterKontoStandField,
+			final JTextField neuerKontoStandField,
+			final JTextField betragField, final BankController controller) {
 		this.kontoNummerField = kontoNummerField;
 		this.alterKontoStandField = alterKontoStandField;
 		this.neuerKontoStandField = neuerKontoStandField;
@@ -176,6 +176,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		}
 	}
 
+	// Methode zum ermitteln der Kontonummer.
 	private long ermittleKontoNummer() throws KeineGueltigeZahlException {
 		long kontoNummer;
 		try {
@@ -186,6 +187,7 @@ public class ZahlungVornehmenListener implements ActionListener {
 		return kontoNummer;
 	}
 
+	// Methode zum clearen des Frames.
 	private void cleanUp() {
 		this.neuerKontoStandField.setText("");
 		this.betragField.setText("");
