@@ -27,6 +27,7 @@ import de.g18.BitBank.Kunde;
 
 class EmailJob {
 
+	// legt die Daten für den Emailserver und den Account zum Versenden fest.
 	final void initializeEmailSending(final Kunde kunde, final String email)
 			throws EmailAdresseUngueltigException, MessagingException {
 
@@ -40,6 +41,7 @@ class EmailJob {
 				kunde, email);
 	}
 
+	// versendet Mails
 	private void sendMail(final String smtpHost, final String username,
 			final String password, final String senderAddress,
 			final String subject, final Kunde kunde, final String emailAdress)
@@ -78,6 +80,7 @@ class EmailJob {
 
 	}
 
+	// hilft beim einloggen bei dem Konto.
 	private class MailAuthenticator extends Authenticator {
 		private final String user;
 		private final String password;

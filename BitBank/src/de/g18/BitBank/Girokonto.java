@@ -17,8 +17,6 @@ public class Girokonto extends Konto {
 		super(Kontotyp.GIROKONTO, kundenNummmer, indexNummer);
 	}
 
-	/**
-	 */
 	private double limit;
 
 	public final double getLimit() {

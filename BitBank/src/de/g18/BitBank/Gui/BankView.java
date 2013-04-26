@@ -33,6 +33,7 @@ public class BankView extends JFrame {
 		this.setIconImage(appIcon);
 		this.setTitle("BitBank");
 
+		// erster Teil des Menues
 		JMenu actionMenu = new JMenu("Aktionen");
 		actionMenu.add(new JMenuItem("Kunde anlegen"));
 		actionMenu.add(new JMenuItem("Konto anlegen"));
@@ -44,6 +45,7 @@ public class BankView extends JFrame {
 		actionMenu.add(new JMenuItem("Beenden"));
 		actionMenu.insertSeparator(7);
 
+		// zweiter Teil des Menues
 		JMenu about = new JMenu("Hilfe");
 		about.add(new JMenuItem("Über"));
 		about.add(new JMenuItem("Drucken"));

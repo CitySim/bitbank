@@ -32,6 +32,9 @@ public class BestaetigenFrame extends JFrame {
 		c.insets = new Insets(5, 5, 5, 5);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		JTextField emailField = null;
+
+		// Da das frame fuer zwei Faelle dient, wird die entsprechende Operation
+		// beruecksichtigt.
 		if (operation.equals("email")) {
 			this.setSize(new Dimension(300, 140));
 			this.setTitle("E-Mail");

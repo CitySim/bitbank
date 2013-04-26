@@ -26,7 +26,7 @@ public class Ueberweisung extends Kontobewegung {
 	}
 
 	/**
-	 * Ueberträgt den betrag der ueberweisung von einem Konto zum anderen.
+	 * Uebertraegt den betrag der ueberweisung von einem Konto zum anderen.
 	 * 
 	 * @throws BetragNegativException
 	 *             Fehler bei negativen Beträgen
