@@ -9,18 +9,17 @@ import javax.swing.JOptionPane;
  * @since jdk1.7.0_17
  */
 
-public class KontoNichtGefundenException extends Exception implements
-		ExceptionDialogInterface {
-	private static final long serialVersionUID = -8811022158488793767L;
+public class KontoNichtGefundenException extends Exception implements ExceptionDialogInterface {
 
-	public KontoNichtGefundenException(final long kontoNummer) {
-		super("Konto " + Long.toString(kontoNummer) + " nicht gefunden");
-	}
+    private static final long serialVersionUID = -8811022158488793767L;
 
-	@Override
-	public void showDialog() {
-		JOptionPane.showMessageDialog(null, this.getMessage(), "Fehler",
-				JOptionPane.ERROR_MESSAGE);
+    public KontoNichtGefundenException(final long kontoNummer) {
+        super("Konto " + Long.toString(kontoNummer) + " nicht gefunden");
+    }
 
-	}
+    @Override
+    public void showDialog() {
+        JOptionPane.showMessageDialog(null, this.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
+
+    }
 }

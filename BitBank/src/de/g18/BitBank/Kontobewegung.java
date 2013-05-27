@@ -10,30 +10,30 @@ import java.util.Date;
  */
 
 public class Kontobewegung {
-	private Date datum;
-	private double betrag;
-	private String text;
 
-	public Kontobewegung(final Date datum, final double betrag) {
-		this(datum, betrag, "");
-	}
+    private final Date datum;
+    private final double betrag;
+    private final String text;
 
-	private Kontobewegung(final Date datum, final double betrag,
-			final String text) {
-		this.datum = datum;
-		this.betrag = betrag;
-		this.text = text;
-	}
+    public Kontobewegung(final Date datum, final double betrag) {
+        this(datum, betrag, "");
+    }
 
-	public Date getDatum() {
-		return datum;
-	}
+    private Kontobewegung(final Date datum, final double betrag, final String text) {
+        this.datum = datum;
+        this.betrag = betrag;
+        this.text = text;
+    }
 
-	public double getBetrag() {
-		return betrag;
-	}
+    public Date getDatum() {
+        return this.datum;
+    }
 
-	public String getText() {
-		return text;
-	}
+    public double getBetrag() {
+        return this.betrag;
+    }
+
+    public String getText() {
+        return this.text;
+    }
 }

@@ -12,40 +12,35 @@ import de.g18.BitBank.Exception.KontoLeerException;
  */
 
 public class Sparkonto extends Konto {
-	private double festzins;
 
-	public Sparkonto(final long kundenNummmer, final int indexNummer) {
-		super(Kontotyp.SPARKONTO, kundenNummmer, indexNummer);
-	}
+    private double festzins;
 
-	public final double getFestzins() {
-		return festzins;
-	}
+    public Sparkonto(final long kundenNummmer, final int indexNummer) {
+        super(Kontotyp.SPARKONTO, kundenNummmer, indexNummer);
+    }
 
-	public final void setFestzins(final double festzins) {
-		this.festzins = festzins;
-	}
+    public final double getFestzins() {
+        return this.festzins;
+    }
 
-	/**
-	 * Zieht einen Betrag vom aktuellen Kontostand ab. Kann nicht unter 0
-	 * sinken.
-	 * 
-	 * @throws KontoLeerException
-	 *             Fehler wenn Konto überzogen wird
-	 * @throws BetragNegativException
-	 *             Fehler bei negativen Beträgen
-	 * @param betrag
-	 *            zu zahlender betrag
-	 */
+    public final void setFestzins(final double festzins) {
+        this.festzins = festzins;
+    }
 
-	@Override
-	public void auszahlen(final double betrag) throws KontoLeerException,
-			BetragNegativException {
-		if (super.getKontoStand() - betrag < 0) {
-			throw new KontoLeerException(
-					"Das Konto darf nicht überzogen werden.");
-		}
+    /**
+     * Zieht einen Betrag vom aktuellen Kontostand ab. Kann nicht unter 0 sinken.
+     * 
+     * @throws KontoLeerException Fehler wenn Konto überzogen wird
+     * @throws BetragNegativException Fehler bei negativen Beträgen
+     * @param betrag zu zahlender betrag
+     */
 
-		super.auszahlen(betrag);
-	}
+    @Override
+    public void auszahlen(final double betrag) throws KontoLeerException, BetragNegativException {
+        if (super.getKontoStand() - betrag < 0) {
+            throw new KontoLeerException("Das Konto darf nicht überzogen werden.");
+        }
+
+        super.auszahlen(betrag);
+    }
 }

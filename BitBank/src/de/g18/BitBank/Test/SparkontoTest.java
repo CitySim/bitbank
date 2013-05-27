@@ -15,32 +15,29 @@ import de.g18.BitBank.Exception.KontoLeerException;
  */
 
 public class SparkontoTest {
-	private Sparkonto k;
 
-	@Before
-	public void setUp() throws Exception {
-		k = new Sparkonto(1234, 34);
-		k.setKontoStand(10000);
-	}
+    private Sparkonto k;
 
-	@Test
-	public void testAuszahlen() throws BetragNegativException,
-			KontoLeerException {
-		k.auszahlen(k.getKontoStand());
-	}
+    @Before
+    public void setUp() throws Exception {
+        this.k = new Sparkonto(1234, 34);
+        this.k.setKontoStand(10000);
+    }
 
-	/**
-	 * Hier wird das Überziehen des Kontos getestet.
-	 * 
-	 * @throws BetragNegativException
-	 *             Fehler bei negativen Beträgen
-	 * @throws KontoLeerException
-	 *             Fehler bei nicht bekannten Konten
-	 */
+    @Test
+    public void testAuszahlen() throws BetragNegativException, KontoLeerException {
+        this.k.auszahlen(this.k.getKontoStand());
+    }
 
-	@Test(expected = KontoLeerException.class)
-	public void testUeberziehen() throws BetragNegativException,
-			KontoLeerException {
-		k.auszahlen(k.getKontoStand() + 1);
-	}
+    /**
+     * Hier wird das Überziehen des Kontos getestet.
+     * 
+     * @throws BetragNegativException Fehler bei negativen Beträgen
+     * @throws KontoLeerException Fehler bei nicht bekannten Konten
+     */
+
+    @Test(expected = KontoLeerException.class)
+    public void testUeberziehen() throws BetragNegativException, KontoLeerException {
+        this.k.auszahlen(this.k.getKontoStand() + 1);
+    }
 }

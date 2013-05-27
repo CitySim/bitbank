@@ -25,77 +25,74 @@ import de.g18.BitBank.Gui.KundenAuswahl;
  */
 
 public class KontoAnlegenListener implements ActionListener {
-	private JTextField kundenNummerField;
-	private KontoAnlegen kontoAnlegenFrame;
-	private BankController controller;
-	private JRadioButton giroKontoRadioButton;
-	private JRadioButton sparKontoRadioButton;
 
-	public KontoAnlegenListener(final BankController controller,
-			final KontoAnlegen kontoAnlegenFrame,
-			final JTextField kundenNummerField,
-			final JRadioButton giroKontoRadioButton,
-			final JRadioButton sparKontoRadioButton) {
+    private final JTextField kundenNummerField;
+    private final KontoAnlegen kontoAnlegenFrame;
+    private final BankController controller;
+    private final JRadioButton giroKontoRadioButton;
+    private final JRadioButton sparKontoRadioButton;
 
-		this.controller = controller;
-		this.kontoAnlegenFrame = kontoAnlegenFrame;
-		this.kundenNummerField = kundenNummerField;
-		this.giroKontoRadioButton = giroKontoRadioButton;
-		this.sparKontoRadioButton = sparKontoRadioButton;
-	}
+    public KontoAnlegenListener(
+            final BankController controller,
+            final KontoAnlegen kontoAnlegenFrame,
+            final JTextField kundenNummerField,
+            final JRadioButton giroKontoRadioButton,
+            final JRadioButton sparKontoRadioButton) {
 
-	@Override
-	public void actionPerformed(final ActionEvent event) {
+        this.controller = controller;
+        this.kontoAnlegenFrame = kontoAnlegenFrame;
+        this.kundenNummerField = kundenNummerField;
+        this.giroKontoRadioButton = giroKontoRadioButton;
+        this.sparKontoRadioButton = sparKontoRadioButton;
+    }
 
-		JButton buttonClicked = (JButton) event.getSource();
+    @Override
+    public void actionPerformed(final ActionEvent event) {
 
-		if (buttonClicked.getText().compareTo("Kunde suchen") == 0) {
-			new KundenAuswahl(controller, kundenNummerField);
+        final JButton buttonClicked = (JButton) event.getSource();
 
-		} else if (buttonClicked.getText().compareTo("Anlegen") == 0) {
-			try {
+        if (buttonClicked.getText().compareTo("Kunde suchen") == 0) {
+            new KundenAuswahl(this.controller, this.kundenNummerField);
 
-				long kundenNummer = Long.parseLong(this.kundenNummerField
-						.getText());
+        } else if (buttonClicked.getText().compareTo("Anlegen") == 0) {
+            try {
 
-				if (!this.giroKontoRadioButton.isSelected()
-						&& !this.sparKontoRadioButton.isSelected()) {
-					throw new KeinKontotypException("Kein Kontotyp ausgewählt.");
+                final long kundenNummer = Long.parseLong(this.kundenNummerField.getText());
 
-				} else {
-					if (this.giroKontoRadioButton.isSelected()) {
-						controller
-								.createKonto(kundenNummer, Kontotyp.GIROKONTO);
-					} else if (this.sparKontoRadioButton.isSelected()) {
-						controller
-								.createKonto(kundenNummer, Kontotyp.SPARKONTO);
-					}
+                if (!this.giroKontoRadioButton.isSelected() && !this.sparKontoRadioButton.isSelected()) {
+                    throw new KeinKontotypException("Kein Kontotyp ausgewählt.");
 
-					this.showCreationDialog(kundenNummer);
-				}
-			} catch (java.lang.NumberFormatException e) {
-				try {
-					throw new KeineGueltigeZahlException("Die Kundennummer");
-				} catch (KeineGueltigeZahlException e1) {
-					e1.showDialog();
-					return;
-				}
-			} catch (KeinKontotypException e) {
-				e.showDialog();
-				return;
-			} catch (KundeNichtGefundenException e) {
-				e.showDialog();
-				return;
-			}
+                } else {
+                    if (this.giroKontoRadioButton.isSelected()) {
+                        this.controller.createKonto(kundenNummer, Kontotyp.GIROKONTO);
+                    } else if (this.sparKontoRadioButton.isSelected()) {
+                        this.controller.createKonto(kundenNummer, Kontotyp.SPARKONTO);
+                    }
 
-		} else if (buttonClicked.getText().compareTo("Schließen") == 0) {
-			this.kontoAnlegenFrame.getTabsPane().remove(this.kontoAnlegenFrame);
-		}
-	}
+                    this.showCreationDialog(kundenNummer);
+                }
+            } catch (final java.lang.NumberFormatException e) {
+                try {
+                    throw new KeineGueltigeZahlException("Die Kundennummer");
+                } catch (final KeineGueltigeZahlException e1) {
+                    e1.showDialog();
+                    return;
+                }
+            } catch (final KeinKontotypException e) {
+                e.showDialog();
+                return;
+            } catch (final KundeNichtGefundenException e) {
+                e.showDialog();
+                return;
+            }
 
-	// zeigt den Dialog für erfolgreiches Anlegen an.
-	private void showCreationDialog(final long kundenNummer) {
-		JOptionPane.showMessageDialog(new JFrame(),
-				"Konto unter für Kunde Nr. \"" + kundenNummer + "\" angelegt.");
-	}
+        } else if (buttonClicked.getText().compareTo("Schließen") == 0) {
+            this.kontoAnlegenFrame.getTabsPane().remove(this.kontoAnlegenFrame);
+        }
+    }
+
+    // zeigt den Dialog für erfolgreiches Anlegen an.
+    private void showCreationDialog(final long kundenNummer) {
+        JOptionPane.showMessageDialog(new JFrame(), "Konto unter für Kunde Nr. \"" + kundenNummer + "\" angelegt.");
+    }
 }

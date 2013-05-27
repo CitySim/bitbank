@@ -1,14 +1,21 @@
 package de.g18.BitBank.Gui.Listener;
 
-import de.g18.BitBank.BankController;
-import de.g18.BitBank.Exception.*;
-import de.g18.BitBank.Gui.ZahlungVornehmen;
-import de.g18.BitBank.NumberParser;
-
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+import de.g18.BitBank.BankController;
+import de.g18.BitBank.NumberParser;
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.BetragZuGroßException;
+import de.g18.BitBank.Exception.KeineGueltigeZahlException;
+import de.g18.BitBank.Exception.KontoLeerException;
+import de.g18.BitBank.Exception.KontoNichtGefundenException;
+import de.g18.BitBank.Exception.ZuVieleNachkommastellenException;
+import de.g18.BitBank.Gui.ZahlungVornehmen;
 
 /**
  * Listener zu den Buttons der ZahlungVornehmen Klasse.
@@ -19,177 +26,174 @@ import java.text.NumberFormat;
 
 public class ZahlungVornehmenListener implements ActionListener {
 
-	private ZahlungVornehmen zahlungVornehmenFrame;
-	private JTextField kontoNummerField;
-	private BankController controller;
-	private JTextField alterKontoStandField;
-	private JTextField neuerKontoStandField;
-	private JTextField betragField;
+    private ZahlungVornehmen zahlungVornehmenFrame;
+    private JTextField kontoNummerField;
+    private BankController controller;
+    private JTextField alterKontoStandField;
+    private JTextField neuerKontoStandField;
+    private JTextField betragField;
 
-	public ZahlungVornehmenListener(final JTextField kontoNummerField,
-			final JTextField alterKontoStandField,
-			final JTextField neuerKontoStandField,
-			final JTextField betragField, final BankController controller) {
-		this.kontoNummerField = kontoNummerField;
-		this.alterKontoStandField = alterKontoStandField;
-		this.neuerKontoStandField = neuerKontoStandField;
-		this.betragField = betragField;
-		this.controller = controller;
-	}
+    public ZahlungVornehmenListener(
+            final JTextField kontoNummerField,
+            final JTextField alterKontoStandField,
+            final JTextField neuerKontoStandField,
+            final JTextField betragField,
+            final BankController controller) {
+        this.kontoNummerField = kontoNummerField;
+        this.alterKontoStandField = alterKontoStandField;
+        this.neuerKontoStandField = neuerKontoStandField;
+        this.betragField = betragField;
+        this.controller = controller;
+    }
 
-	public ZahlungVornehmenListener(
-			final ZahlungVornehmen zahlungVornehmenFrame,
-			final JTextField kontoNummerField,
-			final JTextField alterKontoStandField,
-			final JTextField neuerKontoStandField,
-			final JTextField betragField, final BankController controller) {
-		new ZahlungVornehmenListener(betragField, betragField, betragField,
-				betragField, controller);
-		this.zahlungVornehmenFrame = zahlungVornehmenFrame;
-	}
+    public ZahlungVornehmenListener(
+            final ZahlungVornehmen zahlungVornehmenFrame,
+            final JTextField kontoNummerField,
+            final JTextField alterKontoStandField,
+            final JTextField neuerKontoStandField,
+            final JTextField betragField,
+            final BankController controller) {
+        new ZahlungVornehmenListener(betragField, betragField, betragField, betragField, controller);
+        this.zahlungVornehmenFrame = zahlungVornehmenFrame;
+    }
 
-	@Override
-	public void actionPerformed(final ActionEvent event) {
+    @Override
+    public void actionPerformed(final ActionEvent event) {
 
-		JButton buttonClicked = (JButton) event.getSource();
-		NumberParser parser = new NumberParser();
+        final JButton buttonClicked = (JButton) event.getSource();
+        final NumberParser parser = new NumberParser();
 
-		if (buttonClicked.getText().compareTo("Kontostand") == 0) {
-			long kontoNummer = 0;
-			this.cleanUp();
-			try {
-				kontoNummer = this.ermittleKontoNummer();
-			} catch (KeineGueltigeZahlException e) {
-				e.showDialog();
-				return;
-			}
+        if (buttonClicked.getText().compareTo("Kontostand") == 0) {
+            long kontoNummer = 0;
+            this.cleanUp();
+            try {
+                kontoNummer = this.ermittleKontoNummer();
+            } catch (final KeineGueltigeZahlException e) {
+                e.showDialog();
+                return;
+            }
 
-			try {
+            try {
 
-				this.alterKontoStandField
-						.setText(NumberFormat.getCurrencyInstance()
-								.format(this.controller
-										.kontoStandAnzeigen(kontoNummer)));
+                this.alterKontoStandField.setText(NumberFormat.getCurrencyInstance().format(
+                        this.controller.kontoStandAnzeigen(kontoNummer)));
 
-			} catch (KontoNichtGefundenException e1) {
-				e1.showDialog();
-				return;
-			}
-		} else if (buttonClicked.getText().compareTo("Einzahlung") == 0) {
-			long kontoNummer;
-			try {
-				kontoNummer = this.ermittleKontoNummer();
-			} catch (KeineGueltigeZahlException e) {
-				e.showDialog();
-				return;
-			}
-			double betrag = 0;
+            } catch (final KontoNichtGefundenException e1) {
+                e1.showDialog();
+                return;
+            }
+        } else if (buttonClicked.getText().compareTo("Einzahlung") == 0) {
+            long kontoNummer;
+            try {
+                kontoNummer = this.ermittleKontoNummer();
+            } catch (final KeineGueltigeZahlException e) {
+                e.showDialog();
+                return;
+            }
+            double betrag = 0;
 
-			try {
-				betrag = parser.parseDouble(this.betragField.getText());
-			} catch (NumberFormatException e) {
-				try {
-					throw new KeineGueltigeZahlException("Der Betrag");
-				} catch (KeineGueltigeZahlException e1) {
-					e1.showDialog();
-					return;
-				}
-			} catch (ZuVieleNachkommastellenException e) {
-				e.showDialog();
-				return;
-			} catch (BetragZuGroßException e) {
-				e.showDialog();
-				return;
-			}
+            try {
+                betrag = parser.parseDouble(this.betragField.getText());
+            } catch (final NumberFormatException e) {
+                try {
+                    throw new KeineGueltigeZahlException("Der Betrag");
+                } catch (final KeineGueltigeZahlException e1) {
+                    e1.showDialog();
+                    return;
+                }
+            } catch (final ZuVieleNachkommastellenException e) {
+                e.showDialog();
+                return;
+            } catch (final BetragZuGroßException e) {
+                e.showDialog();
+                return;
+            }
 
-			try {
-				this.controller.einzahlen(kontoNummer, betrag);
-			} catch (KontoNichtGefundenException e) {
-				e.showDialog();
-				return;
-			} catch (BetragNegativException e) {
-				e.showDialog();
-				return;
-			}
+            try {
+                this.controller.einzahlen(kontoNummer, betrag);
+            } catch (final KontoNichtGefundenException e) {
+                e.showDialog();
+                return;
+            } catch (final BetragNegativException e) {
+                e.showDialog();
+                return;
+            }
 
-			this.aktualisieren(kontoNummer);
+            this.aktualisieren(kontoNummer);
 
-		} else if (buttonClicked.getText().compareTo("Auszahlung") == 0) {
-			long kontoNummer = 0;
-			try {
-				kontoNummer = this.ermittleKontoNummer();
-			} catch (KeineGueltigeZahlException e) {
-				e.showDialog();
-			}
-			double betrag = 0;
+        } else if (buttonClicked.getText().compareTo("Auszahlung") == 0) {
+            long kontoNummer = 0;
+            try {
+                kontoNummer = this.ermittleKontoNummer();
+            } catch (final KeineGueltigeZahlException e) {
+                e.showDialog();
+            }
+            double betrag = 0;
 
-			try {
-				betrag = parser.parseDouble(this.betragField.getText());
-			} catch (NumberFormatException e) {
-				try {
-					throw new KeineGueltigeZahlException("Der Betrag");
-				} catch (KeineGueltigeZahlException e1) {
-					e1.showDialog();
-					return;
-				}
-			} catch (ZuVieleNachkommastellenException e) {
-				e.showDialog();
-				return;
-			} catch (BetragZuGroßException e) {
-				e.showDialog();
-				return;
-			}
+            try {
+                betrag = parser.parseDouble(this.betragField.getText());
+            } catch (final NumberFormatException e) {
+                try {
+                    throw new KeineGueltigeZahlException("Der Betrag");
+                } catch (final KeineGueltigeZahlException e1) {
+                    e1.showDialog();
+                    return;
+                }
+            } catch (final ZuVieleNachkommastellenException e) {
+                e.showDialog();
+                return;
+            } catch (final BetragZuGroßException e) {
+                e.showDialog();
+                return;
+            }
 
-			try {
-				this.controller.auszahlen(kontoNummer, betrag);
-			} catch (KontoNichtGefundenException e) {
-				e.showDialog();
-				return;
-			} catch (KontoLeerException e) {
-				e.showDialog();
-				return;
-			} catch (BetragNegativException e) {
-				e.showDialog();
-				return;
-			}
+            try {
+                this.controller.auszahlen(kontoNummer, betrag);
+            } catch (final KontoNichtGefundenException e) {
+                e.showDialog();
+                return;
+            } catch (final KontoLeerException e) {
+                e.showDialog();
+                return;
+            } catch (final BetragNegativException e) {
+                e.showDialog();
+                return;
+            }
 
-			this.aktualisieren(kontoNummer);
-		} else if (buttonClicked.getText().compareTo("Schließen") == 0) {
-			this.zahlungVornehmenFrame.getTabsPane().remove(
-					this.zahlungVornehmenFrame);
-		}
-	}
+            this.aktualisieren(kontoNummer);
+        } else if (buttonClicked.getText().compareTo("Schließen") == 0) {
+            this.zahlungVornehmenFrame.getTabsPane().remove(this.zahlungVornehmenFrame);
+        }
+    }
 
-	private void aktualisieren(final long kontoNummer) {
-		if (!this.neuerKontoStandField.getText().equals("")) {
-			this.alterKontoStandField.setText(this.neuerKontoStandField
-					.getText());
-		}
+    private void aktualisieren(final long kontoNummer) {
+        if (!this.neuerKontoStandField.getText().equals("")) {
+            this.alterKontoStandField.setText(this.neuerKontoStandField.getText());
+        }
 
-		try {
+        try {
 
-			this.neuerKontoStandField.setText(NumberFormat
-					.getCurrencyInstance().format(
-							(this.controller.kontoStandAnzeigen(kontoNummer))));
-		} catch (KontoNichtGefundenException e) {
-			e.showDialog();
-		}
-	}
+            this.neuerKontoStandField.setText(NumberFormat.getCurrencyInstance().format(
+                    (this.controller.kontoStandAnzeigen(kontoNummer))));
+        } catch (final KontoNichtGefundenException e) {
+            e.showDialog();
+        }
+    }
 
-	// Methode zum ermitteln der Kontonummer.
-	private long ermittleKontoNummer() throws KeineGueltigeZahlException {
-		long kontoNummer;
-		try {
-			kontoNummer = Long.parseLong(this.kontoNummerField.getText());
-		} catch (NumberFormatException e) {
-			throw new KeineGueltigeZahlException("Kontonummer");
-		}
-		return kontoNummer;
-	}
+    // Methode zum ermitteln der Kontonummer.
+    private long ermittleKontoNummer() throws KeineGueltigeZahlException {
+        long kontoNummer;
+        try {
+            kontoNummer = Long.parseLong(this.kontoNummerField.getText());
+        } catch (final NumberFormatException e) {
+            throw new KeineGueltigeZahlException("Kontonummer");
+        }
+        return kontoNummer;
+    }
 
-	// Methode zum clearen des Frames.
-	private void cleanUp() {
-		this.neuerKontoStandField.setText("");
-		this.betragField.setText("");
-	}
+    // Methode zum clearen des Frames.
+    private void cleanUp() {
+        this.neuerKontoStandField.setText("");
+        this.betragField.setText("");
+    }
 }

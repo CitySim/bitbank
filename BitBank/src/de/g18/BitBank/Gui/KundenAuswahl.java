@@ -26,67 +26,66 @@ import de.g18.BitBank.Gui.Listener.KundenAuswahlListener;
  */
 
 public class KundenAuswahl extends JDialog {
-	private static final long serialVersionUID = -785098997227623108L;
-	private JTextField kundenNummerField;
 
-	public KundenAuswahl(final BankController controller,
-			final JTextField kundenNummerField) {
-		this.kundenNummerField = kundenNummerField;
-		this.setLocationRelativeTo(null);
-		this.setLayout(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.insets = new Insets(5, 5, 5, 5);
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		this.setTitle("Kundenauswahl");
-		this.setSize(new Dimension(200, 300));
-		this.setModal(true);
+    private static final long serialVersionUID = -785098997227623108L;
+    private JTextField kundenNummerField;
 
-		JButton auswaehlenButton = new JButton("Auswählen");
+    public KundenAuswahl(final BankController controller, final JTextField kundenNummerField) {
+        this.kundenNummerField = kundenNummerField;
+        this.setLocationRelativeTo(null);
+        this.setLayout(new GridBagLayout());
+        final GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.insets = new Insets(5, 5, 5, 5);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setTitle("Kundenauswahl");
+        this.setSize(new Dimension(200, 300));
+        this.setModal(true);
 
-		final JList<Object> liste = new JList<Object>(
-				new AbstractListModel<Object>() {
-					private static final long serialVersionUID = -7562748123613036992L;
+        final JButton auswaehlenButton = new JButton("Auswählen");
 
-					@Override
-					public int getSize() {
-						return controller.getKundenCount();
-					}
+        final JList<Object> liste = new JList<Object>(new AbstractListModel<Object>() {
 
-					@Override
-					public Object getElementAt(final int index) {
-						Kunde k = controller.getKundeByIndex(index);
-						return k.getKundenNummmer() + " - " + k.getName();
-					}
-				});
+            private static final long serialVersionUID = -7562748123613036992L;
 
-		liste.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		JScrollPane listeScrollPane = new JScrollPane(liste);
+            @Override
+            public int getSize() {
+                return controller.getKundenCount();
+            }
 
-		c.gridx = 0;
-		c.gridy = 0;
-		c.weightx = 5;
-		c.weighty = 5;
-		c.fill = GridBagConstraints.BOTH;
-		this.add(listeScrollPane, c);
+            @Override
+            public Object getElementAt(final int index) {
+                final Kunde k = controller.getKundeByIndex(index);
+                return k.getKundenNummmer() + " - " + k.getName();
+            }
+        });
 
-		c.gridx = 0;
-		c.gridy = 2;
-		c.weightx = 1;
-		c.weighty = 1;
-		c.fill = GridBagConstraints.BOTH;
-		this.add(auswaehlenButton, c);
+        liste.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        final JScrollPane listeScrollPane = new JScrollPane(liste);
 
-		auswaehlenButton.addActionListener(new KundenAuswahlListener(liste,
-				this, controller));
+        c.gridx = 0;
+        c.gridy = 0;
+        c.weightx = 5;
+        c.weighty = 5;
+        c.fill = GridBagConstraints.BOTH;
+        this.add(listeScrollPane, c);
 
-		this.setVisible(true);
-	}
+        c.gridx = 0;
+        c.gridy = 2;
+        c.weightx = 1;
+        c.weighty = 1;
+        c.fill = GridBagConstraints.BOTH;
+        this.add(auswaehlenButton, c);
 
-	public final void setKundenNummerField(final Kunde kunde) {
-		try {
-			this.kundenNummerField.setText("" + (kunde.getKundenNummmer()));
-		} catch (java.lang.NullPointerException e) {
-		}
-	}
+        auswaehlenButton.addActionListener(new KundenAuswahlListener(liste, this, controller));
+
+        this.setVisible(true);
+    }
+
+    public final void setKundenNummerField(final Kunde kunde) {
+        try {
+            this.kundenNummerField.setText("" + (kunde.getKundenNummmer()));
+        } catch (final java.lang.NullPointerException e) {
+        }
+    }
 }

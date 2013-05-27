@@ -1,13 +1,14 @@
 package de.g18.BitBank.Test;
 
-import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.KontoLeerException;
-import de.g18.BitBank.Girokonto;
-import de.g18.BitBank.Kontotyp;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import de.g18.BitBank.Girokonto;
+import de.g18.BitBank.Kontotyp;
+import de.g18.BitBank.Exception.BetragNegativException;
+import de.g18.BitBank.Exception.KontoLeerException;
 
 /**
  * Testklasse fuer die Girokonto Klasse.
@@ -17,32 +18,31 @@ import static org.junit.Assert.assertEquals;
  */
 
 public class GirokontoTest {
-	private Girokonto k;
 
-	@Before
-	public void setUp() throws Exception {
-		k = new Girokonto(1234, 34);
-		k.setKontoStand(10000);
-		k.setLimit(10000);
-	}
+    private Girokonto k;
 
-	@Test
-	public void testGirokontoErstellen() {
-		assertEquals(123401034, k.getKontoNummer());
-		assertEquals(10000, k.getKontoStand(), 0);
-		assertEquals(Kontotyp.GIROKONTO, k.getKontoTyp());
-	}
+    @Before
+    public void setUp() throws Exception {
+        this.k = new Girokonto(1234, 34);
+        this.k.setKontoStand(10000);
+        this.k.setLimit(10000);
+    }
 
-	@Test
-	public void testAuszahlen() throws KontoLeerException,
-			BetragNegativException {
-		k.auszahlen(k.getLimit());
-		assertEquals(0, k.getKontoStand(), 0);
-	}
+    @Test
+    public void testGirokontoErstellen() {
+        assertEquals(123401034, this.k.getKontoNummer());
+        assertEquals(10000, this.k.getKontoStand(), 0);
+        assertEquals(Kontotyp.GIROKONTO, this.k.getKontoTyp());
+    }
 
-	@Test(expected = KontoLeerException.class)
-	public void testUeberziehen() throws KontoLeerException,
-			BetragNegativException {
-		k.auszahlen(k.getLimit() + k.getKontoStand() + 1);
-	}
+    @Test
+    public void testAuszahlen() throws KontoLeerException, BetragNegativException {
+        this.k.auszahlen(this.k.getLimit());
+        assertEquals(0, this.k.getKontoStand(), 0);
+    }
+
+    @Test(expected = KontoLeerException.class)
+    public void testUeberziehen() throws KontoLeerException, BetragNegativException {
+        this.k.auszahlen(this.k.getLimit() + this.k.getKontoStand() + 1);
+    }
 }

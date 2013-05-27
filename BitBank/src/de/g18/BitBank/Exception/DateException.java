@@ -9,18 +9,16 @@ import javax.swing.JOptionPane;
  * @since jdk1.7.0_17
  */
 
-public class DateException extends Exception implements
-		ExceptionDialogInterface {
+public class DateException extends Exception implements ExceptionDialogInterface {
 
-	private static final long serialVersionUID = -6632898694055165592L;
+    private static final long serialVersionUID = -6632898694055165592L;
 
-	public DateException(final String message) {
-		super(message);
-	}
+    public DateException(final String message) {
+        super(message);
+    }
 
-	@Override
-	public void showDialog() {
-		JOptionPane.showMessageDialog(null, this.getMessage(), "Fehler",
-				JOptionPane.ERROR_MESSAGE);
-	}
+    @Override
+    public void showDialog() {
+        JOptionPane.showMessageDialog(null, this.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
+    }
 }

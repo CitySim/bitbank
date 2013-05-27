@@ -20,80 +20,84 @@ import de.g18.BitBank.BankController;
  */
 
 public class BestaetigenFrame extends JFrame {
-	private static final long serialVersionUID = 4251619441226397716L;
 
-	public BestaetigenFrame(final BankController controller,
-			final String operation) {
+    private static final long serialVersionUID = 4251619441226397716L;
 
-		setLocationRelativeTo(null);
-		setLayout(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.insets = new Insets(5, 5, 5, 5);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		JTextField emailField = null;
+    public BestaetigenFrame(final BankController controller, final String operation) {
 
-		// Da das frame fuer zwei Faelle dient, wird die entsprechende Operation
-		// beruecksichtigt.
-		if (operation.equals("email")) {
-			this.setSize(new Dimension(300, 140));
-			this.setTitle("E-Mail");
-			JLabel emailLabel = new JLabel("E-Mail Adresse");
-			emailField = new JTextField();
+        this.setLocationRelativeTo(null);
+        this.setLayout(new GridBagLayout());
+        final GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.insets = new Insets(5, 5, 5, 5);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        JTextField emailField = null;
 
-			c.gridx = 0;
-			c.gridy = 0;
-			c.weightx = 3;
-			c.fill = GridBagConstraints.BOTH;
-			add(emailLabel, c);
+        // Da das frame fuer zwei Faelle dient, wird die entsprechende Operation
+        // beruecksichtigt.
+        if (operation.equals("email")) {
+            this.setSize(new Dimension(300, 140));
+            this.setTitle("E-Mail");
+            final JLabel emailLabel = new JLabel("E-Mail Adresse");
+            emailField = new JTextField();
 
-			c.gridx = 3;
-			c.gridy = 0;
-			c.weightx = 3;
-			c.fill = GridBagConstraints.BOTH;
-			add(emailField, c);
-		}
-		if (operation.equals("drucken")) {
-			this.setSize(new Dimension(280, 100));
-			this.setTitle("Drucken");
-		}
+            c.gridx = 0;
+            c.gridy = 0;
+            c.weightx = 3;
+            c.fill = GridBagConstraints.BOTH;
+            this.add(emailLabel, c);
 
-		JLabel kundenNummerLabel = new JLabel("KundenNummer");
-		JTextField kundenNummerField = new JTextField();
-		JButton bestaetigenButton = new JButton("Bestätigen");
-		JButton abbrechenButton = new JButton("Abbrechen");
+            c.gridx = 3;
+            c.gridy = 0;
+            c.weightx = 3;
+            c.fill = GridBagConstraints.BOTH;
+            this.add(emailField, c);
+        }
+        if (operation.equals("drucken")) {
+            this.setSize(new Dimension(280, 100));
+            this.setTitle("Drucken");
+        }
 
-		c.gridx = 0;
-		c.gridy = 1;
-		c.weightx = 3;
-		c.fill = GridBagConstraints.BOTH;
-		add(kundenNummerLabel, c);
+        final JLabel kundenNummerLabel = new JLabel("KundenNummer");
+        final JTextField kundenNummerField = new JTextField();
+        final JButton bestaetigenButton = new JButton("Bestätigen");
+        final JButton abbrechenButton = new JButton("Abbrechen");
 
-		c.gridx = 3;
-		c.gridy = 1;
-		c.weightx = 3;
-		c.fill = GridBagConstraints.BOTH;
-		add(kundenNummerField, c);
+        c.gridx = 0;
+        c.gridy = 1;
+        c.weightx = 3;
+        c.fill = GridBagConstraints.BOTH;
+        this.add(kundenNummerLabel, c);
 
-		c.gridx = 0;
-		c.gridy = 3;
-		c.weightx = 3;
-		c.fill = GridBagConstraints.BOTH;
-		add(bestaetigenButton, c);
+        c.gridx = 3;
+        c.gridy = 1;
+        c.weightx = 3;
+        c.fill = GridBagConstraints.BOTH;
+        this.add(kundenNummerField, c);
 
-		c.gridx = 3;
-		c.gridy = 3;
-		c.weightx = 3;
-		c.fill = GridBagConstraints.BOTH;
-		add(abbrechenButton, c);
+        c.gridx = 0;
+        c.gridy = 3;
+        c.weightx = 3;
+        c.fill = GridBagConstraints.BOTH;
+        this.add(bestaetigenButton, c);
 
-		this.setVisible(true);
+        c.gridx = 3;
+        c.gridy = 3;
+        c.weightx = 3;
+        c.fill = GridBagConstraints.BOTH;
+        this.add(abbrechenButton, c);
 
-		BestaetigenFrameListener listener = new BestaetigenFrameListener(
-				controller, operation, this, kundenNummerField, emailField);
+        this.setVisible(true);
 
-		bestaetigenButton.addActionListener(listener);
-		abbrechenButton.addActionListener(listener);
+        final BestaetigenFrameListener listener = new BestaetigenFrameListener(
+                controller,
+                operation,
+                this,
+                kundenNummerField,
+                emailField);
 
-	}
+        bestaetigenButton.addActionListener(listener);
+        abbrechenButton.addActionListener(listener);
+
+    }
 }

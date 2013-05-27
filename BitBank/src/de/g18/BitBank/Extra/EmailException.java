@@ -11,22 +11,21 @@ import de.g18.BitBank.Exception.ExceptionDialogInterface;
  * @since jdk1.7.0_17
  */
 
-public class EmailException extends Exception implements
-		ExceptionDialogInterface {
+public class EmailException extends Exception implements ExceptionDialogInterface {
 
-	private static final long serialVersionUID = 6533752400390467570L;
+    private static final long serialVersionUID = 6533752400390467570L;
 
-	EmailException(final String message) {
-		super(message);
-	}
+    EmailException(final String message) {
+        super(message);
+    }
 
-	@Override
-	public void showDialog() {
-		JOptionPane
-				.showMessageDialog(
-						null,
-						"Die E-Mail konnte nicht verschickt werden. Bitte überprüfen Sie ihre Internetverbindung.",
-						"Fehler", JOptionPane.ERROR_MESSAGE);
-	}
+    @Override
+    public void showDialog() {
+        JOptionPane.showMessageDialog(
+                null,
+                "Die E-Mail konnte nicht verschickt werden. Bitte überprüfen Sie ihre Internetverbindung.",
+                "Fehler",
+                JOptionPane.ERROR_MESSAGE);
+    }
 
 }

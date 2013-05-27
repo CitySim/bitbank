@@ -22,73 +22,75 @@ import de.g18.BitBank.Exception.KundeNichtGefundenException;
 
 class BestaetigenFrameListener implements ActionListener {
 
-	private BankController controller;
-	private String operation;
-	private JFrame printFrame;
-	private JTextField kundenNummerField;
-	private JTextField emailField;
+    private final BankController controller;
+    private final String operation;
+    private final JFrame printFrame;
+    private final JTextField kundenNummerField;
+    private final JTextField emailField;
 
-	public BestaetigenFrameListener(final BankController controller,
-			final String operation, final JFrame printFrame,
-			final JTextField kundenNummerField, final JTextField emailField) {
+    public BestaetigenFrameListener(
+            final BankController controller,
+            final String operation,
+            final JFrame printFrame,
+            final JTextField kundenNummerField,
+            final JTextField emailField) {
 
-		this.controller = controller;
-		this.operation = operation;
-		this.printFrame = printFrame;
-		this.kundenNummerField = kundenNummerField;
-		this.emailField = emailField;
+        this.controller = controller;
+        this.operation = operation;
+        this.printFrame = printFrame;
+        this.kundenNummerField = kundenNummerField;
+        this.emailField = emailField;
 
-	}
+    }
 
-	@Override
-	public void actionPerformed(final ActionEvent event) {
+    @Override
+    public void actionPerformed(final ActionEvent event) {
 
-		JButton buttonClicked = (JButton) event.getSource();
+        final JButton buttonClicked = (JButton) event.getSource();
 
-		if (buttonClicked.getText().compareTo("Bestätigen") == 0) {
+        if (buttonClicked.getText().compareTo("Bestätigen") == 0) {
 
-			long kundenNummer = 0;
-			try {
-				kundenNummer = Long.parseLong(this.kundenNummerField.getText());
-			} catch (NumberFormatException e) {
-				try {
-					throw new KeineGueltigeZahlException("Die Kundennummer");
-				} catch (KeineGueltigeZahlException e1) {
-					e1.showDialog();
-					return;
-				}
+            long kundenNummer = 0;
+            try {
+                kundenNummer = Long.parseLong(this.kundenNummerField.getText());
+            } catch (final NumberFormatException e) {
+                try {
+                    throw new KeineGueltigeZahlException("Die Kundennummer");
+                } catch (final KeineGueltigeZahlException e1) {
+                    e1.showDialog();
+                    return;
+                }
 
-			}
+            }
 
-			Kunde kunde = null;
-			try {
-				kunde = controller.getKundeByNummer(kundenNummer);
-			} catch (KundeNichtGefundenException e) {
-				e.showDialog();
-				return;
-			}
-			if (this.operation.equals("drucken")) {
-				new PrintJob(null).printText(kunde);
+            Kunde kunde = null;
+            try {
+                kunde = this.controller.getKundeByNummer(kundenNummer);
+            } catch (final KundeNichtGefundenException e) {
+                e.showDialog();
+                return;
+            }
+            if (this.operation.equals("drucken")) {
+                new PrintJob(null).printText(kunde);
 
-			} else if (this.operation.equals("email")) {
-				try {
-					try {
-						new EmailJob().initializeEmailSending(kunde,
-								this.emailField.getText());
-					} catch (MessagingException e) {
-						new EmailException(e.getMessage()).showDialog();
-						return;
-					}
-				} catch (EmailAdresseUngueltigException e) {
-					e.showDialog();
-					return;
-				}
-			}
+            } else if (this.operation.equals("email")) {
+                try {
+                    try {
+                        new EmailJob().initializeEmailSending(kunde, this.emailField.getText());
+                    } catch (final MessagingException e) {
+                        new EmailException(e.getMessage()).showDialog();
+                        return;
+                    }
+                } catch (final EmailAdresseUngueltigException e) {
+                    e.showDialog();
+                    return;
+                }
+            }
 
-			this.printFrame.dispose();
+            this.printFrame.dispose();
 
-		} else if (buttonClicked.getText().compareTo("Abbrechen") == 0) {
-			this.printFrame.dispose();
-		}
-	}
+        } else if (buttonClicked.getText().compareTo("Abbrechen") == 0) {
+            this.printFrame.dispose();
+        }
+    }
 }

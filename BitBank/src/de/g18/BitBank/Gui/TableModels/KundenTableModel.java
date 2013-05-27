@@ -13,42 +13,43 @@ import de.g18.BitBank.Kunde;
  */
 
 public class KundenTableModel extends AbstractTableModel {
-	private static final long serialVersionUID = -5572145010789838691L;
-	private BankController controller;
-	private String[] cols = { "Nr.", "Name", "Konten" };
 
-	public KundenTableModel(final BankController controller) {
-		this.controller = controller;
-	}
+    private static final long serialVersionUID = -5572145010789838691L;
+    private final BankController controller;
+    private final String[] cols = { "Nr.", "Name", "Konten" };
 
-	@Override
-	public int getRowCount() {
-		return controller.getKundenCount();
-	}
+    public KundenTableModel(final BankController controller) {
+        this.controller = controller;
+    }
 
-	@Override
-	public int getColumnCount() {
-		return cols.length;
-	}
+    @Override
+    public int getRowCount() {
+        return this.controller.getKundenCount();
+    }
 
-	@Override
-	public String getColumnName(final int col) {
-		return cols[col];
-	}
+    @Override
+    public int getColumnCount() {
+        return this.cols.length;
+    }
 
-	@Override
-	public Object getValueAt(final int rowIndex, final int columnIndex) {
-		Kunde k = controller.getKundeByIndex(rowIndex);
+    @Override
+    public String getColumnName(final int col) {
+        return this.cols[col];
+    }
 
-		switch (columnIndex) {
-		case 0:
-			return k.getKundenNummmer();
-		case 1:
-			return k.getName();
-		case 2:
-			return k.getKontenListe().size();
-		default:
-			return "Fehler";
-		}
-	}
+    @Override
+    public Object getValueAt(final int rowIndex, final int columnIndex) {
+        final Kunde k = this.controller.getKundeByIndex(rowIndex);
+
+        switch (columnIndex) {
+        case 0:
+            return k.getKundenNummmer();
+        case 1:
+            return k.getName();
+        case 2:
+            return k.getKontenListe().size();
+        default:
+            return "Fehler";
+        }
+    }
 }

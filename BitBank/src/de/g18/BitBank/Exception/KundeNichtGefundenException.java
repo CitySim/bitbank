@@ -9,18 +9,17 @@ import javax.swing.JOptionPane;
  * @since jdk1.7.0_17
  */
 
-public class KundeNichtGefundenException extends Throwable implements
-		ExceptionDialogInterface {
-	private static final long serialVersionUID = -982313113253885226L;
+public class KundeNichtGefundenException extends Throwable implements ExceptionDialogInterface {
 
-	public KundeNichtGefundenException(final long kundenNummer) {
-		super("Kunde " + Long.toString(kundenNummer) + " nicht gefunden");
-	}
+    private static final long serialVersionUID = -982313113253885226L;
 
-	@Override
-	public void showDialog() {
-		JOptionPane.showMessageDialog(null, this.getMessage(), "Fehler",
-				JOptionPane.ERROR_MESSAGE);
+    public KundeNichtGefundenException(final long kundenNummer) {
+        super("Kunde " + Long.toString(kundenNummer) + " nicht gefunden");
+    }
 
-	}
+    @Override
+    public void showDialog() {
+        JOptionPane.showMessageDialog(null, this.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
+
+    }
 }

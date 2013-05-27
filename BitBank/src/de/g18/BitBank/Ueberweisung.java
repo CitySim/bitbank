@@ -1,9 +1,9 @@
 package de.g18.BitBank;
 
+import java.util.Date;
+
 import de.g18.BitBank.Exception.BetragNegativException;
 import de.g18.BitBank.Exception.KontoLeerException;
-
-import java.util.Date;
 
 /**
  * Klasse zum uebertragen von Geld zwischen Konten.
@@ -13,48 +13,44 @@ import java.util.Date;
  */
 
 public class Ueberweisung extends Kontobewegung {
-	private Konto quellKonto;
-	private Konto zielKonto;
 
-	public Ueberweisung(final Konto quellKonto, final Konto zielKonto,
-			final double betrag, final Date datum) {
+    private final Konto quellKonto;
+    private final Konto zielKonto;
 
-		super(datum, betrag);
+    public Ueberweisung(final Konto quellKonto, final Konto zielKonto, final double betrag, final Date datum) {
 
-		this.quellKonto = quellKonto;
-		this.zielKonto = zielKonto;
-	}
+        super(datum, betrag);
 
-	/**
-	 * Uebertraegt den betrag der ueberweisung von einem Konto zum anderen.
-	 * 
-	 * @throws BetragNegativException
-	 *             Fehler bei negativen Beträgen
-	 * @throws KontoLeerException
-	 *             Fehler bei nicht bekannten Konten
-	 */
-	public void durchfuehrenUeberweisung() throws BetragNegativException,
-			KontoLeerException {
-		quellKonto.auszahlen(super.getBetrag());
-		zielKonto.einzahlen(super.getBetrag());
+        this.quellKonto = quellKonto;
+        this.zielKonto = zielKonto;
+    }
 
-		quellKonto.getUeberweisungsListe().add(this);
-		zielKonto.getUeberweisungsListe().add(this);
-		quellKonto.getKontoBewegungsListe().add(this);
-		zielKonto.getKontoBewegungsListe().add(this);
-	}
+    /**
+     * Uebertraegt den betrag der ueberweisung von einem Konto zum anderen.
+     * 
+     * @throws BetragNegativException Fehler bei negativen Beträgen
+     * @throws KontoLeerException Fehler bei nicht bekannten Konten
+     */
+    public void durchfuehrenUeberweisung() throws BetragNegativException, KontoLeerException {
+        this.quellKonto.auszahlen(super.getBetrag());
+        this.zielKonto.einzahlen(super.getBetrag());
 
-	public Konto getQuellKlasse() {
-		return quellKonto;
-	}
+        this.quellKonto.getUeberweisungsListe().add(this);
+        this.zielKonto.getUeberweisungsListe().add(this);
+        this.quellKonto.getKontoBewegungsListe().add(this);
+        this.zielKonto.getKontoBewegungsListe().add(this);
+    }
 
-	public Konto getZielKlasse() {
-		return zielKonto;
-	}
+    public Konto getQuellKlasse() {
+        return this.quellKonto;
+    }
 
-	@Override
-	public String getText() {
-		return "Überweisun von " + getQuellKlasse().getKontoNummer() + " auf "
-				+ getZielKlasse().getKontoNummer();
-	}
+    public Konto getZielKlasse() {
+        return this.zielKonto;
+    }
+
+    @Override
+    public String getText() {
+        return "Überweisun von " + this.getQuellKlasse().getKontoNummer() + " auf " + this.getZielKlasse().getKontoNummer();
+    }
 }

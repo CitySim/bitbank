@@ -11,19 +11,21 @@ import de.g18.BitBank.Exception.ExceptionDialogInterface;
  * @since jdk1.7.0_17
  */
 
-class EmailAdresseUngueltigException extends Exception implements
-		ExceptionDialogInterface {
-	private static final long serialVersionUID = -610479602115622187L;
+class EmailAdresseUngueltigException extends Exception implements ExceptionDialogInterface {
 
-	EmailAdresseUngueltigException(final String message) {
-		super(message);
-	}
+    private static final long serialVersionUID = -610479602115622187L;
 
-	@Override
-	public void showDialog() {
-		JOptionPane.showMessageDialog(null,
-				"Die E-Mail Adresse: " + this.getMessage() + " ist ungültig.",
-				"Fehler", JOptionPane.ERROR_MESSAGE);
-	}
+    EmailAdresseUngueltigException(final String message) {
+        super(message);
+    }
+
+    @Override
+    public void showDialog() {
+        JOptionPane.showMessageDialog(
+                null,
+                "Die E-Mail Adresse: " + this.getMessage() + " ist ungültig.",
+                "Fehler",
+                JOptionPane.ERROR_MESSAGE);
+    }
 
 }

@@ -9,6 +9,7 @@ package de.g18.BitBank;
 
 public enum Kontotyp {
 
-	SPARKONTO, GIROKONTO
+    SPARKONTO,
+    GIROKONTO
 
 }

@@ -1,12 +1,20 @@
 package de.g18.BitBank.Gui;
 
-import de.g18.BitBank.BankController;
-import de.g18.BitBank.Gui.Listener.BankViewListener;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
-import java.io.IOException;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JTabbedPane;
+import javax.swing.UIManager;
+
+import de.g18.BitBank.BankController;
+import de.g18.BitBank.Gui.Listener.BankViewListener;
 
 /**
  * Vorgegebene BankMain.
@@ -16,64 +24,64 @@ import java.io.IOException;
  */
 
 public class BankView extends JFrame {
-	private static final long serialVersionUID = -6398346930903875436L;
 
-	public BankView(final BankController controller) {
-		this.setSize(650, 400);
-		this.setLocationRelativeTo(null);
-		this.setLayout(new GridLayout(1, 1));
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		Image appIcon = null;
-		try {
-			appIcon = ImageIO.read(getClass().getClassLoader()
-					.getResourceAsStream("de/g18/BitBank/Gui/Images/icon.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		this.setIconImage(appIcon);
-		this.setTitle("BitBank");
+    private static final long serialVersionUID = -6398346930903875436L;
 
-		// erster Teil des Menues
-		JMenu actionMenu = new JMenu("Aktionen");
-		actionMenu.add(new JMenuItem("Kunde anlegen"));
-		actionMenu.add(new JMenuItem("Konto anlegen"));
-		actionMenu.add(new JMenuItem("Ein-/Auszahlungen durchführen"));
-		actionMenu.add(new JMenuItem("Überweisungen durchführen"));
-		actionMenu.add(new JMenuItem("Kontenliste"));
-		actionMenu.add(new JMenuItem("Kontobewegungen"));
-		actionMenu.add(new JMenuItem("Kundenliste"));
-		actionMenu.add(new JMenuItem("Beenden"));
-		actionMenu.insertSeparator(7);
+    public BankView(final BankController controller) {
+        this.setSize(650, 400);
+        this.setLocationRelativeTo(null);
+        this.setLayout(new GridLayout(1, 1));
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        Image appIcon = null;
+        try {
+            appIcon = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("de/g18/BitBank/Gui/Images/icon.png"));
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
+        this.setIconImage(appIcon);
+        this.setTitle("BitBank");
 
-		// zweiter Teil des Menues
-		JMenu about = new JMenu("Hilfe");
-		about.add(new JMenuItem("Über"));
-		about.add(new JMenuItem("Drucken"));
-		about.add(new JMenuItem("E-Mail"));
+        // erster Teil des Menues
+        final JMenu actionMenu = new JMenu("Aktionen");
+        actionMenu.add(new JMenuItem("Kunde anlegen"));
+        actionMenu.add(new JMenuItem("Konto anlegen"));
+        actionMenu.add(new JMenuItem("Ein-/Auszahlungen durchführen"));
+        actionMenu.add(new JMenuItem("Überweisungen durchführen"));
+        actionMenu.add(new JMenuItem("Kontenliste"));
+        actionMenu.add(new JMenuItem("Kontobewegungen"));
+        actionMenu.add(new JMenuItem("Kundenliste"));
+        actionMenu.add(new JMenuItem("Beenden"));
+        actionMenu.insertSeparator(7);
 
-		JMenuBar bankMenuBar = new JMenuBar();
-		bankMenuBar.add(actionMenu);
-		bankMenuBar.add(about);
-		this.setJMenuBar(bankMenuBar);
+        // zweiter Teil des Menues
+        final JMenu about = new JMenu("Hilfe");
+        about.add(new JMenuItem("Über"));
+        about.add(new JMenuItem("Drucken"));
+        about.add(new JMenuItem("E-Mail"));
 
-		JTabbedPane tabsPane = new JTabbedPane();
-		this.add(tabsPane);
+        final JMenuBar bankMenuBar = new JMenuBar();
+        bankMenuBar.add(actionMenu);
+        bankMenuBar.add(about);
+        this.setJMenuBar(bankMenuBar);
 
-		this.setMinimumSize(new Dimension(650, 400));
-		this.setVisible(true);
+        final JTabbedPane tabsPane = new JTabbedPane();
+        this.add(tabsPane);
 
-		new BankViewListener(actionMenu, tabsPane, controller, about);
-	}
+        this.setMinimumSize(new Dimension(650, 400));
+        this.setVisible(true);
 
-	public static void main(final String[] args) {
-		BankController controller = new BankController();
+        new BankViewListener(actionMenu, tabsPane, controller, about);
+    }
 
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+    public static void main(final String[] args) {
+        final BankController controller = new BankController();
 
-		new BankView(controller);
-	}
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+
+        new BankView(controller);
+    }
 }

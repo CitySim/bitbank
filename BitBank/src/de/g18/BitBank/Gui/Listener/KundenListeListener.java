@@ -1,10 +1,11 @@
 package de.g18.BitBank.Gui.Listener;
 
-import de.g18.BitBank.Gui.KundenListe;
-
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
+import de.g18.BitBank.Gui.KundenListe;
 
 /**
  * Listener zu den Buttons der KontostandsUebersichtAnzeigen Klasse.
@@ -14,18 +15,19 @@ import java.awt.event.ActionListener;
  */
 
 public class KundenListeListener implements ActionListener {
-	private KundenListe kundenListeFrame;
 
-	public KundenListeListener(final KundenListe kundenListeFrame) {
-		this.kundenListeFrame = kundenListeFrame;
-	}
+    private final KundenListe kundenListeFrame;
 
-	@Override
-	public void actionPerformed(final ActionEvent event) {
-		JButton buttonClicked = (JButton) event.getSource();
+    public KundenListeListener(final KundenListe kundenListeFrame) {
+        this.kundenListeFrame = kundenListeFrame;
+    }
 
-		if (buttonClicked.getText().compareTo("Schließen") == 0) {
-			kundenListeFrame.getTabsPane().remove(kundenListeFrame);
-		}
-	}
+    @Override
+    public void actionPerformed(final ActionEvent event) {
+        final JButton buttonClicked = (JButton) event.getSource();
+
+        if (buttonClicked.getText().compareTo("Schließen") == 0) {
+            this.kundenListeFrame.getTabsPane().remove(this.kundenListeFrame);
+        }
+    }
 }

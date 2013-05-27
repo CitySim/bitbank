@@ -33,129 +33,122 @@ import de.g18.BitBank.Gui.UeberweisungVornehmen;
  */
 
 public class UeberweisungListener implements ActionListener {
-	private UeberweisungVornehmen ueberweisungVornehmenFrame;
-	private JTextField vomKontoField;
-	private JTextField nachKontoField;
-	private JTextField betragField;
-	private BankController controller;
-	private JDateChooser chooser;
 
-	public UeberweisungListener(
-			final UeberweisungVornehmen ueberweisungVornehmenFrame) {
-		this.ueberweisungVornehmenFrame = ueberweisungVornehmenFrame;
-	}
+    private UeberweisungVornehmen ueberweisungVornehmenFrame;
+    private JTextField vomKontoField;
+    private JTextField nachKontoField;
+    private JTextField betragField;
+    private BankController controller;
+    private JDateChooser chooser;
 
-	public UeberweisungListener(final JTextField vomKontoField,
-			final JTextField nachKontoField, final JTextField betragField,
-			final BankController controller, final JDateChooser chooser) {
+    public UeberweisungListener(final UeberweisungVornehmen ueberweisungVornehmenFrame) {
+        this.ueberweisungVornehmenFrame = ueberweisungVornehmenFrame;
+    }
 
-		this.vomKontoField = vomKontoField;
-		this.nachKontoField = nachKontoField;
-		this.betragField = betragField;
-		this.controller = controller;
-		this.chooser = chooser;
+    public UeberweisungListener(
+            final JTextField vomKontoField,
+            final JTextField nachKontoField,
+            final JTextField betragField,
+            final BankController controller,
+            final JDateChooser chooser) {
 
-	}
+        this.vomKontoField = vomKontoField;
+        this.nachKontoField = nachKontoField;
+        this.betragField = betragField;
+        this.controller = controller;
+        this.chooser = chooser;
 
-	@Override
-	public void actionPerformed(final ActionEvent event) {
+    }
 
-		JButton buttonClicked = (JButton) event.getSource();
+    @Override
+    public void actionPerformed(final ActionEvent event) {
 
-		if (buttonClicked.getText().compareTo("Überweisen") == 0) {
-			double betrag = 0;
-			int vomKontoNummer;
-			int nachKontoNummer = 0;
+        final JButton buttonClicked = (JButton) event.getSource();
 
-			try {
+        if (buttonClicked.getText().compareTo("Überweisen") == 0) {
+            double betrag = 0;
+            int vomKontoNummer;
+            int nachKontoNummer = 0;
 
-				vomKontoNummer = Integer.parseInt(this.vomKontoField.getText());
-				nachKontoNummer = Integer.parseInt(this.nachKontoField
-						.getText());
-				betrag = new NumberParser().parseDouble(this.betragField
-						.getText());
+            try {
 
-			} catch (NumberFormatException e) {
-				try {
-					throw new KeineGueltigeZahlException("Eine der Nummern");
-				} catch (KeineGueltigeZahlException e1) {
-					e1.showDialog();
-					return;
-				}
-			} catch (ZuVieleNachkommastellenException e) {
-				e.showDialog();
-				return;
-			} catch (BetragZuGroßException e) {
-				e.showDialog();
-				return;
-			}
+                vomKontoNummer = Integer.parseInt(this.vomKontoField.getText());
+                nachKontoNummer = Integer.parseInt(this.nachKontoField.getText());
+                betrag = new NumberParser().parseDouble(this.betragField.getText());
 
-			Date datum = chooser.getDate();
+            } catch (final NumberFormatException e) {
+                try {
+                    throw new KeineGueltigeZahlException("Eine der Nummern");
+                } catch (final KeineGueltigeZahlException e1) {
+                    e1.showDialog();
+                    return;
+                }
+            } catch (final ZuVieleNachkommastellenException e) {
+                e.showDialog();
+                return;
+            } catch (final BetragZuGroßException e) {
+                e.showDialog();
+                return;
+            }
 
-			if (datum == null) {
-				new DateException("Es wurde kein Datum ausgewählt.")
-						.showDialog();
-				return;
-			}
+            final Date datum = this.chooser.getDate();
 
-			if (datum.compareTo(this.getDate()) < 0) {
-				new DateException(
-						"Überweisungen in der Vergangenheit sind unzulässig.")
-						.showDialog();
-				return;
-			}
+            if (datum == null) {
+                new DateException("Es wurde kein Datum ausgewählt.").showDialog();
+                return;
+            }
 
-			try {
-				this.controller.ueberweisen(nachKontoNummer, vomKontoNummer,
-						betrag, datum);
+            if (datum.compareTo(this.getDate()) < 0) {
+                new DateException("Überweisungen in der Vergangenheit sind unzulässig.").showDialog();
+                return;
+            }
 
-				this.cleanUp();
-				this.showCreationDialog(vomKontoNummer, nachKontoNummer, betrag);
+            try {
+                this.controller.ueberweisen(nachKontoNummer, vomKontoNummer, betrag, datum);
 
-			} catch (KontoLeerException e) {
-				e.showDialog();
-				return;
-			} catch (BetragNegativException e) {
-				e.showDialog();
-				return;
-			} catch (KontoNichtGefundenException e) {
-				e.showDialog();
-				return;
-			}
-		} else if (buttonClicked.getText().compareTo("Schließen") == 0) {
-			this.ueberweisungVornehmenFrame.getTabsPane().remove(
-					this.ueberweisungVornehmenFrame);
-		}
-	}
+                this.cleanUp();
+                this.showCreationDialog(vomKontoNummer, nachKontoNummer, betrag);
 
-	// zeigt den Dialog für erfolgreiches Anlegen an.
-	private void showCreationDialog(final int vomKontoNummer,
-			final int nachKontoNummer, final double betrag) {
-		JOptionPane.showMessageDialog(null, "Ihre Überweisung über \"" + betrag
-				+ "\" von \"" + vomKontoNummer + "\" nach\"" + nachKontoNummer
-				+ "\" wurde erfolgreich durchgeführt.");
-	}
+            } catch (final KontoLeerException e) {
+                e.showDialog();
+                return;
+            } catch (final BetragNegativException e) {
+                e.showDialog();
+                return;
+            } catch (final KontoNichtGefundenException e) {
+                e.showDialog();
+                return;
+            }
+        } else if (buttonClicked.getText().compareTo("Schließen") == 0) {
+            this.ueberweisungVornehmenFrame.getTabsPane().remove(this.ueberweisungVornehmenFrame);
+        }
+    }
 
-	// Methode zum clearen des Frames.
-	private void cleanUp() {
-		// this.vomKontoField.setText("");
-		this.nachKontoField.setText("");
-		this.betragField.setText("");
-		this.chooser.setDate(null);
-	}
+    // zeigt den Dialog für erfolgreiches Anlegen an.
+    private void showCreationDialog(final int vomKontoNummer, final int nachKontoNummer, final double betrag) {
+        JOptionPane.showMessageDialog(null, "Ihre Überweisung über \"" + betrag + "\" von \"" + vomKontoNummer + "\" nach\""
+                + nachKontoNummer + "\" wurde erfolgreich durchgeführt.");
+    }
 
-	// Methode zum Ermitteln des heutigen Datums.
-	public Date getDate() {
-		DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
-		Calendar c = df.getCalendar();
-		c.setTimeInMillis(System.currentTimeMillis());
-		Date date = null;
-		try {
-			date = df.parse(c.get(Calendar.DAY_OF_MONTH) + "."
-					+ (c.get(Calendar.MONTH) + 1) + "." + c.get(Calendar.YEAR));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		return date;
-	}
+    // Methode zum clearen des Frames.
+    private void cleanUp() {
+        // this.vomKontoField.setText("");
+        this.nachKontoField.setText("");
+        this.betragField.setText("");
+        this.chooser.setDate(null);
+    }
+
+    // Methode zum Ermitteln des heutigen Datums.
+    public Date getDate() {
+        final DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        final Calendar c = df.getCalendar();
+        c.setTimeInMillis(System.currentTimeMillis());
+        Date date = null;
+        try {
+            date = df.parse(c.get(Calendar.DAY_OF_MONTH) + "." + (c.get(Calendar.MONTH) + 1) + "." + c.get(Calendar.YEAR));
+        } catch (final ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
 }

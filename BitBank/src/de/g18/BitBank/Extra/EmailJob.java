@@ -27,109 +27,100 @@ import de.g18.BitBank.Kunde;
 
 class EmailJob {
 
-	// legt die Daten für den Emailserver und den Account zum Versenden fest.
-	final void initializeEmailSending(final Kunde kunde, final String email)
-			throws EmailAdresseUngueltigException, MessagingException {
+    // legt die Daten für den Emailserver und den Account zum Versenden fest.
+    final void initializeEmailSending(final Kunde kunde, final String email) throws EmailAdresseUngueltigException,
+            MessagingException {
 
-		String username = "bitbank@gmx.de";
-		String password = "bitbank12";
-		String senderAddress = "bitbank@gmx.de";
-		String subject = "BitBank";
-		String smtpHost = "smtp.gmx.net";
+        final String username = "bitbank@gmx.de";
+        final String password = "bitbank12";
+        final String senderAddress = "bitbank@gmx.de";
+        final String subject = "BitBank";
+        final String smtpHost = "smtp.gmx.net";
 
-		this.sendMail(smtpHost, username, password, senderAddress, subject,
-				kunde, email);
-	}
+        this.sendMail(smtpHost, username, password, senderAddress, subject, kunde, email);
+    }
 
-	// versendet Mails
-	private void sendMail(final String smtpHost, final String username,
-			final String password, final String senderAddress,
-			final String subject, final Kunde kunde, final String emailAdress)
-			throws EmailAdresseUngueltigException, MessagingException {
+    // versendet Mails
+    private void sendMail(
+            final String smtpHost,
+            final String username,
+            final String password,
+            final String senderAddress,
+            final String subject,
+            final Kunde kunde,
+            final String emailAdress) throws EmailAdresseUngueltigException, MessagingException {
 
-		Properties properties = new Properties();
-		properties.put("mail.smtp.host", smtpHost);
-		properties.setProperty("mail.smtp.port", "587");
-		properties.put("mail.smtp.auth", "true");
+        final Properties properties = new Properties();
+        properties.put("mail.smtp.host", smtpHost);
+        properties.setProperty("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
 
-		MailAuthenticator auth = new MailAuthenticator(username, password);
-		Session session = Session.getDefaultInstance(properties, auth);
+        final MailAuthenticator auth = new MailAuthenticator(username, password);
+        final Session session = Session.getDefaultInstance(properties, auth);
 
-		Message msg = new MimeMessage(session);
+        final Message msg = new MimeMessage(session);
 
-		msg.setFrom(new InternetAddress(senderAddress));
+        msg.setFrom(new InternetAddress(senderAddress));
 
-		msg.setSubject(subject);
-		msg.setHeader("GroupBuilder", "GroupBuilder");
-		msg.setSentDate(new Date());
-		MimeMultipart mailContent;
+        msg.setSubject(subject);
+        msg.setHeader("GroupBuilder", "GroupBuilder");
+        msg.setSentDate(new Date());
+        MimeMultipart mailContent;
 
-		mailContent = this.generateMailContent(kunde);
+        mailContent = this.generateMailContent(kunde);
 
-		msg.setContent(mailContent);
+        msg.setContent(mailContent);
 
-		if (emailAdress != null && !emailAdress.equals("")) {
-			msg.setRecipients(Message.RecipientType.TO,
-					InternetAddress.parse(emailAdress, false));
-			try {
-				Transport.send(msg);
-			} catch (javax.mail.SendFailedException e) {
-				throw new EmailAdresseUngueltigException(emailAdress);
-			}
-		}
+        if (emailAdress != null && !emailAdress.equals("")) {
+            msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailAdress, false));
+            try {
+                Transport.send(msg);
+            } catch (final javax.mail.SendFailedException e) {
+                throw new EmailAdresseUngueltigException(emailAdress);
+            }
+        }
 
-	}
+    }
 
-	// hilft beim einloggen bei dem Konto.
-	private class MailAuthenticator extends Authenticator {
-		private final String user;
-		private final String password;
+    // hilft beim einloggen bei dem Konto.
+    private class MailAuthenticator extends Authenticator {
 
-		public MailAuthenticator(final String user, final String password) {
-			this.user = user;
-			this.password = password;
-		}
+        private final String user;
+        private final String password;
 
-		protected PasswordAuthentication getPasswordAuthentication() {
-			return new PasswordAuthentication(this.user, this.password);
-		}
-	}
+        public MailAuthenticator(final String user, final String password) {
+            this.user = user;
+            this.password = password;
+        }
 
-	private MimeMultipart generateMailContent(final Kunde kunde)
-			throws MessagingException {
+        @Override
+        protected PasswordAuthentication getPasswordAuthentication() {
+            return new PasswordAuthentication(this.user, this.password);
+        }
+    }
 
-		String emailText = "Sehr geehrte(r) "
-				+ kunde.getName()
-				+ ",\r\n"
-				+ "\r\n"
-				+ "Hierbei handelt es sich um eine automatisch generierte E-Mail von BitBank."
-				+ "\r\n" + "\r\n" + "Anbei Ihre aktuelle Kontostandsübersicht:"
-				+ "\r\n" + "\r\n";
+    private MimeMultipart generateMailContent(final Kunde kunde) throws MessagingException {
 
-		if (kunde.getKontenListe().size() != 0) {
-			for (Konto konto : kunde.getKontenListe()) {
-				emailText = emailText
-						+ "Konto: "
-						+ konto.getKontoNummer()
-						+ " Kontotyp: "
-						+ konto.getKontoTyp()
-						+ " Kontostand: "
-						+ NumberFormat.getCurrencyInstance().format(
-								konto.getKontoStand()) + "\r\n";
-			}
-		} else {
-			emailText = emailText
-					+ "Sie verfügen bisher über kein Konto bei uns.";
-		}
-		emailText = emailText + "\r\n" + "\r\n"
-				+ "Bitte beehren Sie uns bald wieder!";
+        String emailText = "Sehr geehrte(r) " + kunde.getName() + ",\r\n" + "\r\n"
+                + "Hierbei handelt es sich um eine automatisch generierte E-Mail von BitBank." + "\r\n" + "\r\n"
+                + "Anbei Ihre aktuelle Kontostandsübersicht:" + "\r\n" + "\r\n";
 
-		MimeMultipart mailContent = new MimeMultipart();
-		MimeBodyPart text = new MimeBodyPart();
-		text.setText(emailText);
-		text.setDisposition(MimeBodyPart.INLINE);
-		mailContent.addBodyPart(text);
+        if (kunde.getKontenListe().size() != 0) {
+            for (final Konto konto : kunde.getKontenListe()) {
+                emailText = emailText + "Konto: " + konto.getKontoNummer() + " Kontotyp: " + konto.getKontoTyp()
+                        + " Kontostand: " + NumberFormat.getCurrencyInstance().format(konto.getKontoStand()) + "\r\n";
+            }
+        } else {
+            emailText = emailText + "Sie verfügen bisher über kein Konto bei uns.";
+        }
+        emailText = emailText + "\r\n" + "\r\n" + "Bitte beehren Sie uns bald wieder!";
 
-		return mailContent;
-	}
+        final MimeMultipart mailContent = new MimeMultipart();
+        final MimeBodyPart text = new MimeBodyPart();
+        text.setText(emailText);
+        text.setDisposition(MimeBodyPart.INLINE);
+        mailContent.addBodyPart(text);
+
+        return mailContent;
+    }
 }

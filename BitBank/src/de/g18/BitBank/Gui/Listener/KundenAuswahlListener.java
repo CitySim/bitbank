@@ -17,23 +17,21 @@ import de.g18.BitBank.Gui.KundenAuswahl;
 
 public class KundenAuswahlListener implements ActionListener {
 
-	private JList<Object> liste;
-	private KundenAuswahl kundenAuswahl;
+    private final JList<Object> liste;
+    private final KundenAuswahl kundenAuswahl;
 
-	private BankController controller;
+    private final BankController controller;
 
-	public KundenAuswahlListener(final JList<Object> liste,
-			final KundenAuswahl kundenAuswahl, final BankController controller) {
+    public KundenAuswahlListener(final JList<Object> liste, final KundenAuswahl kundenAuswahl, final BankController controller) {
 
-		this.liste = liste;
-		this.kundenAuswahl = kundenAuswahl;
-		this.controller = controller;
-	}
+        this.liste = liste;
+        this.kundenAuswahl = kundenAuswahl;
+        this.controller = controller;
+    }
 
-	@Override
-	public void actionPerformed(final ActionEvent e) {
-		this.kundenAuswahl.setKundenNummerField(this.controller
-				.getKundeByIndex(liste.getSelectedIndex()));
-		this.kundenAuswahl.dispose();
-	}
+    @Override
+    public void actionPerformed(final ActionEvent e) {
+        this.kundenAuswahl.setKundenNummerField(this.controller.getKundeByIndex(this.liste.getSelectedIndex()));
+        this.kundenAuswahl.dispose();
+    }
 }

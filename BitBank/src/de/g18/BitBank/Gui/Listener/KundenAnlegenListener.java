@@ -22,80 +22,78 @@ import de.g18.BitBank.Gui.KundenAnlegen;
  */
 
 public class KundenAnlegenListener implements ActionListener {
-	private JTextField kundenAnlegenField;
-	private JTextField kundenNamenField;
-	private KundenAnlegen kundenAnlegenFrame;
-	private BankController controller;
 
-	public KundenAnlegenListener(final JTextField kundenNummerField,
-			final JTextField kundenNamenField, final BankController controller) {
-		this.kundenAnlegenField = kundenNummerField;
-		this.kundenNamenField = kundenNamenField;
-		this.controller = controller;
-	}
+    private JTextField kundenAnlegenField;
+    private JTextField kundenNamenField;
+    private KundenAnlegen kundenAnlegenFrame;
+    private BankController controller;
 
-	public KundenAnlegenListener(final KundenAnlegen kundenAnlegenFrame) {
-		this.kundenAnlegenFrame = kundenAnlegenFrame;
-	}
+    public KundenAnlegenListener(
+            final JTextField kundenNummerField,
+            final JTextField kundenNamenField,
+            final BankController controller) {
+        this.kundenAnlegenField = kundenNummerField;
+        this.kundenNamenField = kundenNamenField;
+        this.controller = controller;
+    }
 
-	@Override
-	public void actionPerformed(final ActionEvent event) {
-		JButton buttonClicked = (JButton) event.getSource();
+    public KundenAnlegenListener(final KundenAnlegen kundenAnlegenFrame) {
+        this.kundenAnlegenFrame = kundenAnlegenFrame;
+    }
 
-		if (buttonClicked.getText().compareTo("Anlegen") == 0) {
+    @Override
+    public void actionPerformed(final ActionEvent event) {
+        final JButton buttonClicked = (JButton) event.getSource();
 
-			try {
+        if (buttonClicked.getText().compareTo("Anlegen") == 0) {
 
-				long kundenNummer = Long.parseLong(this.kundenAnlegenField
-						.getText());
-				if (kundenNummer <= 0) {
-					throw new KundenNummerUnzulaessigException(
-							"Kundennummer darf nicht kleiner 0 sein");
-				}
-				String kundenName = this.kundenNamenField.getText();
-				if (kundenName.equals("")) {
-					throw new FeldLeerException("Kundenname");
-				}
+            try {
 
-				this.controller.createKunde(kundenName, kundenNummer);
-				this.kundenAnlegenField.setText("");
-				this.kundenNamenField.setText("");
-				this.showCreationDialog(kundenName, kundenNummer);
+                final long kundenNummer = Long.parseLong(this.kundenAnlegenField.getText());
+                if (kundenNummer <= 0) {
+                    throw new KundenNummerUnzulaessigException("Kundennummer darf nicht kleiner 0 sein");
+                }
+                final String kundenName = this.kundenNamenField.getText();
+                if (kundenName.equals("")) {
+                    throw new FeldLeerException("Kundenname");
+                }
 
-			} catch (NumberFormatException e) {
-				try {
-					throw new KeineGueltigeZahlException("Die Kundennummer");
-				} catch (KeineGueltigeZahlException e1) {
-					e1.showDialog();
-					return;
-				}
+                this.controller.createKunde(kundenName, kundenNummer);
+                this.kundenAnlegenField.setText("");
+                this.kundenNamenField.setText("");
+                this.showCreationDialog(kundenName, kundenNummer);
 
-			} catch (FeldLeerException e) {
-				e.showDialog();
-				return;
+            } catch (final NumberFormatException e) {
+                try {
+                    throw new KeineGueltigeZahlException("Die Kundennummer");
+                } catch (final KeineGueltigeZahlException e1) {
+                    e1.showDialog();
+                    return;
+                }
 
-			} catch (KundenNummerVergebenException e) {
-				e.showDialog();
-				return;
+            } catch (final FeldLeerException e) {
+                e.showDialog();
+                return;
 
-			} catch (KundenNummerUnzulaessigException e) {
-				e.showDialog();
-				return;
-			}
+            } catch (final KundenNummerVergebenException e) {
+                e.showDialog();
+                return;
 
-		}
-		if (buttonClicked.getText().compareTo("Schließen") == 0) {
-			this.kundenAnlegenFrame.getTabsPane().remove(
-					this.kundenAnlegenFrame);
-		}
-	}
+            } catch (final KundenNummerUnzulaessigException e) {
+                e.showDialog();
+                return;
+            }
 
-	// zeigt den Dialog für erfolgreiches Anlegen an.
-	private void showCreationDialog(final String kundenName,
-			final long kundenNummer) {
-		JOptionPane.showMessageDialog(null, "Kunde mit dem Namen \""
-				+ kundenName + "\" und der Kundennummer \"" + kundenNummer
-				+ "\" angelegt.");
+        }
+        if (buttonClicked.getText().compareTo("Schließen") == 0) {
+            this.kundenAnlegenFrame.getTabsPane().remove(this.kundenAnlegenFrame);
+        }
+    }
 
-	}
+    // zeigt den Dialog für erfolgreiches Anlegen an.
+    private void showCreationDialog(final String kundenName, final long kundenNummer) {
+        JOptionPane.showMessageDialog(null, "Kunde mit dem Namen \"" + kundenName + "\" und der Kundennummer \"" + kundenNummer
+                + "\" angelegt.");
+
+    }
 }

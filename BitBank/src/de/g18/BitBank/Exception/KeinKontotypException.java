@@ -9,18 +9,16 @@ import javax.swing.JOptionPane;
  * @since jdk1.7.0_17
  */
 
-public class KeinKontotypException extends Exception implements
-		ExceptionDialogInterface {
-	private static final long serialVersionUID = -2180366140800175258L;
+public class KeinKontotypException extends Exception implements ExceptionDialogInterface {
 
-	public KeinKontotypException(final String message) {
-		super(message);
-	}
+    private static final long serialVersionUID = -2180366140800175258L;
 
-	@Override
-	public void showDialog() {
-		JOptionPane.showMessageDialog(null,
-				"Bitte wählen sie einen Kontotypen aus.", "Fehler",
-				JOptionPane.ERROR_MESSAGE);
-	}
+    public KeinKontotypException(final String message) {
+        super(message);
+    }
+
+    @Override
+    public void showDialog() {
+        JOptionPane.showMessageDialog(null, "Bitte wählen sie einen Kontotypen aus.", "Fehler", JOptionPane.ERROR_MESSAGE);
+    }
 }

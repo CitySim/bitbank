@@ -13,41 +13,35 @@ import de.g18.BitBank.Exception.KontoLeerException;
 
 public class Girokonto extends Konto {
 
-	public Girokonto(final long kundenNummmer, final int indexNummer) {
-		super(Kontotyp.GIROKONTO, kundenNummmer, indexNummer);
-	}
+    public Girokonto(final long kundenNummmer, final int indexNummer) {
+        super(Kontotyp.GIROKONTO, kundenNummmer, indexNummer);
+    }
 
-	private double limit;
+    private double limit;
 
-	public final double getLimit() {
-		return limit;
-	}
+    public final double getLimit() {
+        return this.limit;
+    }
 
-	public final void setLimit(final double limit) {
-		this.limit = limit;
-	}
+    public final void setLimit(final double limit) {
+        this.limit = limit;
+    }
 
-	/**
-	 * Zieht einen Betrag vom aktuellen Kontostand ab. Kann nicht unter 0 - das
-	 * festgelegte Limit fallen.
-	 * 
-	 * @throws KontoLeerException
-	 *             Fehler wenn Konto überzogen wird
-	 * 
-	 * @throws BetragNegativException
-	 *             Fehler bei negativen Beträgen
-	 * @param betrag
-	 *            zu zahlender Betrag
-	 */
+    /**
+     * Zieht einen Betrag vom aktuellen Kontostand ab. Kann nicht unter 0 - das festgelegte Limit fallen.
+     * 
+     * @throws KontoLeerException Fehler wenn Konto überzogen wird
+     * 
+     * @throws BetragNegativException Fehler bei negativen Beträgen
+     * @param betrag zu zahlender Betrag
+     */
 
-	@Override
-	public void auszahlen(final double betrag) throws BetragNegativException,
-			KontoLeerException {
-		if (super.getKontoStand() - betrag < -limit) {
-			throw new KontoLeerException(
-					"Das Konto kann nicht weiter als um das zugelassene Limit überzogen werden.");
-		}
+    @Override
+    public void auszahlen(final double betrag) throws BetragNegativException, KontoLeerException {
+        if (super.getKontoStand() - betrag < -this.limit) {
+            throw new KontoLeerException("Das Konto kann nicht weiter als um das zugelassene Limit überzogen werden.");
+        }
 
-		super.auszahlen(betrag);
-	}
+        super.auszahlen(betrag);
+    }
 }

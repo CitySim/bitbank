@@ -1,13 +1,14 @@
 package de.g18.BitBank.Test;
 
-import de.g18.BitBank.Exception.KundenNummerUnzulaessigException;
-import de.g18.BitBank.Kontotyp;
-import de.g18.BitBank.Kunde;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import de.g18.BitBank.Kontotyp;
+import de.g18.BitBank.Kunde;
+import de.g18.BitBank.Exception.KundenNummerUnzulaessigException;
 
 /**
  * Testklasse fuer die Kunde Klasse.
@@ -16,23 +17,24 @@ import static org.junit.Assert.assertTrue;
  * @since jdk1.7.0_17
  */
 public class KundeTest {
-	private Kunde k;
 
-	@Before
-	public void setUp() throws KundenNummerUnzulaessigException {
-		k = new Kunde("Karl Kunde", 00001111);
-		k.anlegenKonto(Kontotyp.GIROKONTO);
-	}
+    private Kunde k;
 
-	@Test
-	public void testKunde() {
-		assertEquals("Karl Kunde", k.getName());
-		assertEquals(00001111, k.getKundenNummmer());
-	}
+    @Before
+    public void setUp() throws KundenNummerUnzulaessigException {
+        this.k = new Kunde("Karl Kunde", 00001111);
+        this.k.anlegenKonto(Kontotyp.GIROKONTO);
+    }
 
-	@Test
-	public void testAnlegenKonto() {
-		System.out.println(k.getKontenListe());
-		assertTrue(k.getKontenListe().size() == 1);
-	}
+    @Test
+    public void testKunde() {
+        assertEquals("Karl Kunde", this.k.getName());
+        assertEquals(00001111, this.k.getKundenNummmer());
+    }
+
+    @Test
+    public void testAnlegenKonto() {
+        System.out.println(this.k.getKontenListe());
+        assertTrue(this.k.getKontenListe().size() == 1);
+    }
 }
