@@ -85,7 +85,10 @@ public class Kunde {
      * @throws BetragNegativException Fehler bei negativen Beträgen
      * @throws KontoLeerException Fehler bei unbekannten Konten
      */
-    public final void ueberweisen(final Konto quellKonto, final Konto zielKonto, final int betrag, final Date datum)
+    // TODO from UCDetector: Method "Kunde.ueberweisen(Konto,Konto,int,Date)" has 0 references
+    public final void ueberweisen(final Konto quellKonto, final Konto zielKonto, final int betrag, final Date datum) // NO_UCD
+                                                                                                                     // (unused
+                                                                                                                     // code)
             throws KontoLeerException, BetragNegativException {
         quellKonto.ueberweisen(zielKonto, betrag, datum);
     }

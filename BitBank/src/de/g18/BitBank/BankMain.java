@@ -2,7 +2,7 @@ package de.g18.BitBank;
 
 import java.util.Scanner;
 
-public class BankMain {
+public class BankMain { // NO_UCD (unused code)
 
     public static void main(final String[] args) {
         try {

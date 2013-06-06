@@ -11,7 +11,7 @@ import de.g18.BitBank.Exception.ExceptionDialogInterface;
  * @since jdk1.7.0_17
  */
 
-public class EmailException extends Exception implements ExceptionDialogInterface {
+class EmailException extends Exception implements ExceptionDialogInterface {
 
     private static final long serialVersionUID = 6533752400390467570L;
 
