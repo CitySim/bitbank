@@ -18,7 +18,7 @@ public class KeinKontotypException extends Exception implements ExceptionDialogI
     }
 
     @Override
-    public void showDialog() {
+    public final void showDialog() {
         JOptionPane.showMessageDialog(null, "Bitte wählen sie einen Kontotypen aus.", "Fehler", JOptionPane.ERROR_MESSAGE);
     }
 }

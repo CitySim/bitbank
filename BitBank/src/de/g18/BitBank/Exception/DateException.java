@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * @since jdk1.7.0_17
  */
 
-public class DateException extends Exception implements ExceptionDialogInterface {
+public final class DateException extends Exception implements ExceptionDialogInterface {
 
     private static final long serialVersionUID = -6632898694055165592L;
 

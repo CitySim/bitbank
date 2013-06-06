@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.NumberParser;
 import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.BetragZuGroßException;
+import de.g18.BitBank.Exception.BetragZuGrossException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KontoLeerException;
 import de.g18.BitBank.Exception.KontoNichtGefundenException;
@@ -58,7 +58,7 @@ public class ZahlungVornehmenListener implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(final ActionEvent event) {
+    public final void actionPerformed(final ActionEvent event) {
 
         final JButton buttonClicked = (JButton) event.getSource();
         final NumberParser parser = new NumberParser();
@@ -104,7 +104,7 @@ public class ZahlungVornehmenListener implements ActionListener {
             } catch (final ZuVieleNachkommastellenException e) {
                 e.showDialog();
                 return;
-            } catch (final BetragZuGroßException e) {
+            } catch (final BetragZuGrossException e) {
                 e.showDialog();
                 return;
             }
@@ -142,7 +142,7 @@ public class ZahlungVornehmenListener implements ActionListener {
             } catch (final ZuVieleNachkommastellenException e) {
                 e.showDialog();
                 return;
-            } catch (final BetragZuGroßException e) {
+            } catch (final BetragZuGrossException e) {
                 e.showDialog();
                 return;
             }

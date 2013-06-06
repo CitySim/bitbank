@@ -2,7 +2,17 @@ package de.g18.BitBank;
 
 import java.util.Scanner;
 
-public class BankMain { // NO_UCD (unused code)
+/**
+ * Vorgegebene main Klasse zum testen.
+ * 
+ * @author dennis.markmann
+ */
+
+final class BankMain {
+
+    private BankMain() {
+
+    }
 
     public static void main(final String[] args) {
         try {

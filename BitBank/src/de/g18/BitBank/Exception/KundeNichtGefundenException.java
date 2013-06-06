@@ -18,7 +18,7 @@ public class KundeNichtGefundenException extends Throwable implements ExceptionD
     }
 
     @Override
-    public void showDialog() {
+    public final void showDialog() {
         JOptionPane.showMessageDialog(null, this.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
 
     }

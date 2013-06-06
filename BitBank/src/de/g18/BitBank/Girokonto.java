@@ -37,7 +37,7 @@ public class Girokonto extends Konto {
      */
 
     @Override
-    public void auszahlen(final double betrag) throws BetragNegativException, KontoLeerException {
+    public final void auszahlen(final double betrag) throws BetragNegativException, KontoLeerException {
         if (super.getKontoStand() - betrag < -this.limit) {
             throw new KontoLeerException("Das Konto kann nicht weiter als um das zugelassene Limit überzogen werden.");
         }

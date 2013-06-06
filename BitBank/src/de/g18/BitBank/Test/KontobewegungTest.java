@@ -16,7 +16,7 @@ import de.g18.BitBank.Kontobewegung;
  * @since jdk1.7.0_17
  */
 
-public class KontobewegungTest {
+public final class KontobewegungTest {
 
     private Kontobewegung kb;
     private Date now;

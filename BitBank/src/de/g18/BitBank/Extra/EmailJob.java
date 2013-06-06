@@ -82,7 +82,12 @@ class EmailJob {
 
     }
 
-    // hilft beim einloggen bei dem Konto.
+    /**
+     * Hilft beim Einloggen des Kontos.
+     * 
+     * @author dennis.markmann
+     * 
+     */
     private class MailAuthenticator extends Authenticator {
 
         private final String user;

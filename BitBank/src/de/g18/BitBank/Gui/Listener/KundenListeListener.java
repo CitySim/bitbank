@@ -23,7 +23,7 @@ public class KundenListeListener implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(final ActionEvent event) {
+    public final void actionPerformed(final ActionEvent event) {
         final JButton buttonClicked = (JButton) event.getSource();
 
         if (buttonClicked.getText().compareTo("Schließen") == 0) {

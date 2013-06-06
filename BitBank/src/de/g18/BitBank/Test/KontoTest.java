@@ -24,19 +24,19 @@ public class KontoTest {
     private Konto k;
 
     @Before
-    public void setUp() throws Exception {
+    public final void setUp() throws Exception {
         this.k = new Girokonto(1234, 34);
         ((Girokonto) this.k).setLimit(1000);
     }
 
     @Test
-    public void kontoErstellen() {
+    public final void kontoErstellen() {
         assertEquals(123401034, this.k.getKontoNummer());
         assertEquals(0, this.k.getKontoStand(), 0);
     }
 
     @Test
-    public void einzahlen() throws BetragNegativException {
+    public final void einzahlen() throws BetragNegativException {
         this.k.einzahlen(200);
         assertEquals(200, this.k.getKontoStand(), 0);
 
@@ -54,10 +54,11 @@ public class KontoTest {
     }
 
     @Test
-    public void fehlerBeimEinzahlenAendertBetragNicht() {
+    public final void fehlerBeimEinzahlenAendertBetragNicht() {
         try {
             this.k.einzahlen(-100);
         } catch (final BetragNegativException e) {
+            // TODO
         }
 
         // Konto muss noch immer 0 haben, Betrag darf sich nicht aendern.
@@ -65,7 +66,7 @@ public class KontoTest {
     }
 
     @Test
-    public void auszahlen() throws KontoLeerException, BetragNegativException {
+    public final void auszahlen() throws KontoLeerException, BetragNegativException {
         this.k.auszahlen(200);
         assertEquals(-200, this.k.getKontoStand(), 0);
 
@@ -81,11 +82,13 @@ public class KontoTest {
     }
 
     @Test
-    public void fehlerBeimAuszahlenAendertBetragNicht() {
+    public final void fehlerBeimAuszahlenAendertBetragNicht() {
         try {
             this.k.auszahlen(-100);
         } catch (final BetragNegativException e) {
+            // TODO
         } catch (final KontoLeerException e) {
+            // TODO
         }
 
         // Konto muss noch immer 0 haben, Betrag darf sich nicht aendern.
@@ -93,7 +96,7 @@ public class KontoTest {
     }
 
     @Test
-    public void testDurchfuehrenUeberweisung() throws BetragNegativException, KontoLeerException {
+    public final void testDurchfuehrenUeberweisung() throws BetragNegativException, KontoLeerException {
         this.k.einzahlen(200);
         final Konto ziel = new Girokonto(1234, 35);
 

@@ -17,7 +17,7 @@ import com.toedter.calendar.JDateChooser;
 import de.g18.BitBank.BankController;
 import de.g18.BitBank.NumberParser;
 import de.g18.BitBank.Exception.BetragNegativException;
-import de.g18.BitBank.Exception.BetragZuGroßException;
+import de.g18.BitBank.Exception.BetragZuGrossException;
 import de.g18.BitBank.Exception.DateException;
 import de.g18.BitBank.Exception.KeineGueltigeZahlException;
 import de.g18.BitBank.Exception.KontoLeerException;
@@ -61,7 +61,7 @@ public class UeberweisungListener implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(final ActionEvent event) {
+    public final void actionPerformed(final ActionEvent event) {
 
         final JButton buttonClicked = (JButton) event.getSource();
 
@@ -86,7 +86,7 @@ public class UeberweisungListener implements ActionListener {
             } catch (final ZuVieleNachkommastellenException e) {
                 e.showDialog();
                 return;
-            } catch (final BetragZuGroßException e) {
+            } catch (final BetragZuGrossException e) {
                 e.showDialog();
                 return;
             }
@@ -139,7 +139,7 @@ public class UeberweisungListener implements ActionListener {
     }
 
     // Methode zum Ermitteln des heutigen Datums.
-    public Date getDate() {
+    public final Date getDate() {
         final DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         final Calendar c = df.getCalendar();
         c.setTimeInMillis(System.currentTimeMillis());

@@ -31,7 +31,7 @@ public class Ueberweisung extends Kontobewegung {
      * @throws BetragNegativException Fehler bei negativen Beträgen
      * @throws KontoLeerException Fehler bei nicht bekannten Konten
      */
-    public void durchfuehrenUeberweisung() throws BetragNegativException, KontoLeerException {
+    public final void durchfuehrenUeberweisung() throws BetragNegativException, KontoLeerException {
         this.quellKonto.auszahlen(super.getBetrag());
         this.zielKonto.einzahlen(super.getBetrag());
 
@@ -41,16 +41,16 @@ public class Ueberweisung extends Kontobewegung {
         this.zielKonto.getKontoBewegungsListe().add(this);
     }
 
-    public Konto getQuellKlasse() {
+    public final Konto getQuellKlasse() {
         return this.quellKonto;
     }
 
-    public Konto getZielKlasse() {
+    public final Konto getZielKlasse() {
         return this.zielKonto;
     }
 
     @Override
-    public String getText() {
+    public final String getText() {
         return "Überweisun von " + this.getQuellKlasse().getKontoNummer() + " auf " + this.getZielKlasse().getKontoNummer();
     }
 }

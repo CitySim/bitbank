@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * @since jdk1.7.0_17
  */
 
-public class FeldLeerException extends Exception implements ExceptionDialogInterface {
+public final class FeldLeerException extends Exception implements ExceptionDialogInterface {
 
     private static final long serialVersionUID = 1207154093010098944L;
 

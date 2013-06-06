@@ -25,11 +25,11 @@ public class Kontobewegung {
         this.text = text;
     }
 
-    public Date getDatum() {
+    public final Date getDatum() {
         return this.datum;
     }
 
-    public double getBetrag() {
+    public final double getBetrag() {
         return this.betrag;
     }
 

@@ -19,13 +19,13 @@ public class SparkontoTest {
     private Sparkonto k;
 
     @Before
-    public void setUp() throws Exception {
+    public final void setUp() throws Exception {
         this.k = new Sparkonto(1234, 34);
         this.k.setKontoStand(10000);
     }
 
     @Test
-    public void testAuszahlen() throws BetragNegativException, KontoLeerException {
+    public final void testAuszahlen() throws BetragNegativException, KontoLeerException {
         this.k.auszahlen(this.k.getKontoStand());
     }
 
@@ -37,7 +37,7 @@ public class SparkontoTest {
      */
 
     @Test(expected = KontoLeerException.class)
-    public void testUeberziehen() throws BetragNegativException, KontoLeerException {
+    public final void testUeberziehen() throws BetragNegativException, KontoLeerException {
         this.k.auszahlen(this.k.getKontoStand() + 1);
     }
 }

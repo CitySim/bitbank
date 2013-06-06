@@ -28,7 +28,7 @@ public class UeberweisungTest {
     private Date now;
 
     @Before
-    public void setUp() throws Exception {
+    public final void setUp() throws Exception {
         this.k1 = new Girokonto(1234, 34);
         this.k2 = new Girokonto(1234, 35);
         this.now = new Date();
@@ -37,7 +37,7 @@ public class UeberweisungTest {
     }
 
     @Test
-    public void testUeberweisung() {
+    public final void testUeberweisung() {
         assertEquals(150, this.u.getBetrag(), 0);
         assertEquals(this.now, this.u.getDatum());
         assertEquals(this.k1, this.u.getQuellKlasse());
@@ -45,7 +45,7 @@ public class UeberweisungTest {
     }
 
     @Test
-    public void testDurchfuehrenUeberweisung() throws KontoLeerException, BetragNegativException {
+    public final void testDurchfuehrenUeberweisung() throws KontoLeerException, BetragNegativException {
         this.k1.einzahlen(200);
 
         this.u.durchfuehrenUeberweisung();

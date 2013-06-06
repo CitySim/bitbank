@@ -26,22 +26,22 @@ public class KontoBewegungenTableModel extends AbstractTableModel {
     }
 
     @Override
-    public int getRowCount() {
+    public final int getRowCount() {
         return this.konto.getKontoBewegungsListe().size();
     }
 
     @Override
-    public int getColumnCount() {
+    public final int getColumnCount() {
         return this.cols.length;
     }
 
     @Override
-    public String getColumnName(final int col) {
+    public final String getColumnName(final int col) {
         return this.cols[col];
     }
 
     @Override
-    public Object getValueAt(final int rowIndex, final int columnIndex) {
+    public final Object getValueAt(final int rowIndex, final int columnIndex) {
         final Kontobewegung kb = this.konto.getKontoBewegungsListe().get(rowIndex);
 
         switch (columnIndex) {

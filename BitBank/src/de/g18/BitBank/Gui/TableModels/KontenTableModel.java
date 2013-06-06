@@ -14,7 +14,7 @@ import de.g18.BitBank.Kunde;
  * @since jdk1.7.0_17
  */
 
-public class KontenTableModel extends AbstractTableModel {
+public final class KontenTableModel extends AbstractTableModel {
 
     private static final long serialVersionUID = -3758449082711896808L;
     private final Kunde kunde;

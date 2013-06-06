@@ -55,7 +55,7 @@ public class BankViewListener extends MouseAdapter {
     }
 
     @Override
-    public void mouseReleased(final MouseEvent event) {
+    public final void mouseReleased(final MouseEvent event) {
         final JMenuItem menuItem = (JMenuItem) event.getSource();
 
         // Teil eins des Menues.

@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  */
 
 // TODO from UCDetector: Class "KontoNummerException" has 0 references
-public class KontoNummerException extends Exception implements ExceptionDialogInterface { // NO_UCD (unused code)
+public final class KontoNummerException extends Exception implements ExceptionDialogInterface { // NO_UCD (unused code)
 
     private static final long serialVersionUID = 1207154093010098944L;
 

@@ -23,22 +23,22 @@ public class KundenTableModel extends AbstractTableModel {
     }
 
     @Override
-    public int getRowCount() {
+    public final int getRowCount() {
         return this.controller.getKundenCount();
     }
 
     @Override
-    public int getColumnCount() {
+    public final int getColumnCount() {
         return this.cols.length;
     }
 
     @Override
-    public String getColumnName(final int col) {
+    public final String getColumnName(final int col) {
         return this.cols[col];
     }
 
     @Override
-    public Object getValueAt(final int rowIndex, final int columnIndex) {
+    public final Object getValueAt(final int rowIndex, final int columnIndex) {
         final Kunde k = this.controller.getKundeByIndex(rowIndex);
 
         switch (columnIndex) {

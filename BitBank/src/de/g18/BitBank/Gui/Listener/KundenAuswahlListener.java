@@ -30,7 +30,7 @@ public class KundenAuswahlListener implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(final ActionEvent e) {
+    public final void actionPerformed(final ActionEvent e) {
         this.kundenAuswahl.setKundenNummerField(this.controller.getKundeByIndex(this.liste.getSelectedIndex()));
         this.kundenAuswahl.dispose();
     }

@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * @since jdk1.7.0_17
  */
 
-public class KontoNichtGefundenException extends Exception implements ExceptionDialogInterface {
+public final class KontoNichtGefundenException extends Exception implements ExceptionDialogInterface {
 
     private static final long serialVersionUID = -8811022158488793767L;
 

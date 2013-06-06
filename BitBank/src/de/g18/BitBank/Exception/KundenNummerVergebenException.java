@@ -18,7 +18,7 @@ public class KundenNummerVergebenException extends Exception implements Exceptio
     }
 
     @Override
-    public void showDialog() {
+    public final void showDialog() {
         JOptionPane.showMessageDialog(null, this.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
     }
 }

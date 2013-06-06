@@ -40,7 +40,7 @@ public class Kunde {
      * 
      * @return Kundennummer des Kunden
      */
-    public long getKundenNummmer() {
+    public final long getKundenNummmer() {
         return this.kundenNummmer;
     }
 

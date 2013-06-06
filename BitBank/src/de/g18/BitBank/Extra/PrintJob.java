@@ -45,7 +45,7 @@ class PrintJob implements Printable {
     private int linesTotal = 0;
     private int linesMaxOnPage = 0;
     private int numberOfPages = 0;
-    private final int pageBorders[][] = new int[999][2];
+    private final int[][] pageBorders = new int[999][2];
 
     private final PrinterJob printerJob = PrinterJob.getPrinterJob();
 

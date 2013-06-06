@@ -86,6 +86,7 @@ public class KundenAuswahl extends JDialog {
         try {
             this.kundenNummerField.setText("" + (kunde.getKundenNummmer()));
         } catch (final java.lang.NullPointerException e) {
+            // TODO
         }
     }
 }

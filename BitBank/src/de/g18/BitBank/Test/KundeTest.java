@@ -21,19 +21,19 @@ public class KundeTest {
     private Kunde k;
 
     @Before
-    public void setUp() throws KundenNummerUnzulaessigException {
+    public final void setUp() throws KundenNummerUnzulaessigException {
         this.k = new Kunde("Karl Kunde", 00001111);
         this.k.anlegenKonto(Kontotyp.GIROKONTO);
     }
 
     @Test
-    public void testKunde() {
+    public final void testKunde() {
         assertEquals("Karl Kunde", this.k.getName());
         assertEquals(00001111, this.k.getKundenNummmer());
     }
 
     @Test
-    public void testAnlegenKonto() {
+    public final void testAnlegenKonto() {
         System.out.println(this.k.getKontenListe());
         assertTrue(this.k.getKontenListe().size() == 1);
     }

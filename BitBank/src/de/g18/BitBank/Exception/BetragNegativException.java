@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  * @author it1-markde
  * @since jdk1.7.0_17
  */
-public class BetragNegativException extends Exception implements ExceptionDialogInterface {
+public final class BetragNegativException extends Exception implements ExceptionDialogInterface {
 
     private static final long serialVersionUID = -2180366140800175258L;
 

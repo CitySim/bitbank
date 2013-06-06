@@ -18,7 +18,7 @@ public class KundenNummerUnzulaessigException extends Exception implements Excep
     }
 
     @Override
-    public void showDialog() {
+    public final void showDialog() {
         JOptionPane.showMessageDialog(null, "Die Kundennummer darf nicht negativ sein.", "Fehler", JOptionPane.ERROR_MESSAGE);
     }
 }

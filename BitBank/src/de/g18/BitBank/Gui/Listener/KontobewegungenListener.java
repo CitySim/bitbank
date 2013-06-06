@@ -19,7 +19,7 @@ import de.g18.BitBank.Gui.TableModels.KontoBewegungenTableModel;
  * @since jdk1.7.0_17
  */
 
-public class KontobewegungenListener implements ActionListener {
+public final class KontobewegungenListener implements ActionListener {
 
     private final Kontobewegungen kontobewegungenFrame;
     private final BankController controller;

@@ -1,6 +1,6 @@
 package de.g18.BitBank;
 
-import de.g18.BitBank.Exception.BetragZuGroßException;
+import de.g18.BitBank.Exception.BetragZuGrossException;
 import de.g18.BitBank.Exception.ZuVieleNachkommastellenException;
 
 /**
@@ -20,7 +20,7 @@ public class NumberParser {
      * @throws ZuVieleNachkommastellenException Exception bei Zahlen mit zu vielen Nachkommastellen
      * @throws BetragZuGroßException
      */
-    public final double parseDouble(String text) throws ZuVieleNachkommastellenException, BetragZuGroßException {
+    public final double parseDouble(String text) throws ZuVieleNachkommastellenException, BetragZuGrossException {
 
         if (text.contains(",")) {
             text = (text.substring(0, text.indexOf(",")) + "." + (text.substring(text.indexOf(",") + 1)));
@@ -29,7 +29,7 @@ public class NumberParser {
         final double betrag = Double.parseDouble(text);
 
         if (betrag > Long.MAX_VALUE) {
-            throw new BetragZuGroßException("Betrag zu groß");
+            throw new BetragZuGrossException("Betrag zu groß");
         }
 
         this.checkNumber(betrag);

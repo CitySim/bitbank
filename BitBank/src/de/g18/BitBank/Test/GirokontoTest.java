@@ -22,27 +22,27 @@ public class GirokontoTest {
     private Girokonto k;
 
     @Before
-    public void setUp() throws Exception {
+    public final void setUp() throws Exception {
         this.k = new Girokonto(1234, 34);
         this.k.setKontoStand(10000);
         this.k.setLimit(10000);
     }
 
     @Test
-    public void testGirokontoErstellen() {
+    public final void testGirokontoErstellen() {
         assertEquals(123401034, this.k.getKontoNummer());
         assertEquals(10000, this.k.getKontoStand(), 0);
         assertEquals(Kontotyp.GIROKONTO, this.k.getKontoTyp());
     }
 
     @Test
-    public void testAuszahlen() throws KontoLeerException, BetragNegativException {
+    public final void testAuszahlen() throws KontoLeerException, BetragNegativException {
         this.k.auszahlen(this.k.getLimit());
         assertEquals(0, this.k.getKontoStand(), 0);
     }
 
     @Test(expected = KontoLeerException.class)
-    public void testUeberziehen() throws KontoLeerException, BetragNegativException {
+    public final void testUeberziehen() throws KontoLeerException, BetragNegativException {
         this.k.auszahlen(this.k.getLimit() + this.k.getKontoStand() + 1);
     }
 }
