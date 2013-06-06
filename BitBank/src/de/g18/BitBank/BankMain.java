@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author dennis.markmann
  */
 
-final class BankMain {
+final class BankMain { // NO_UCD (unused code)
 
     private BankMain() {
 
