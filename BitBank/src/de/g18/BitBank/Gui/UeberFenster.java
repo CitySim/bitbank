@@ -3,15 +3,13 @@ package de.g18.BitBank.Gui;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.plaf.BorderUIResource;
+
+import dennis.markmann.MyLibraries.DefaultJobs.IconHelper.IconHelper;
 
 /**
  * Gui Klasse fuer das ueberMenu.
@@ -35,13 +33,7 @@ public class UeberFenster extends JDialog {
         this.setResizable(false);
         this.setModal(true);
 
-        BufferedImage myPicture = null;
-        try {
-            myPicture = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream("de/g18/BitBank/Gui/Images/icon.png"));
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
-        final JLabel iconLabel = new JLabel(new ImageIcon(myPicture));
+        final JLabel iconLabel = new JLabel(new IconHelper().getIcon("de/g18/BitBank/Gui/Images/icon.png"));
         iconLabel.setBorder(new BorderUIResource.EmptyBorderUIResource(10, 10, 10, 10));
 
         c.gridx = 0;

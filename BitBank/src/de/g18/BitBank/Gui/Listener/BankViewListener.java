@@ -4,10 +4,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -25,6 +22,7 @@ import de.g18.BitBank.Gui.KundenListe;
 import de.g18.BitBank.Gui.UeberFenster;
 import de.g18.BitBank.Gui.UeberweisungVornehmen;
 import de.g18.BitBank.Gui.ZahlungVornehmen;
+import dennis.markmann.MyLibraries.DefaultJobs.IconHelper.IconHelper;
 
 /**
  * Listener zu dem Menue BankView Klasse.
@@ -96,18 +94,8 @@ public class BankViewListener extends MouseAdapter {
         titlePanel.setOpaque(false);
         titlePanel.add(new JLabel(title));
 
-        ImageIcon buttonIcon = null;
-        try {
-            buttonIcon = new ImageIcon(ImageIO.read(this.getClass()
-                    .getClassLoader()
-                    .getResourceAsStream("de/g18/BitBank/Gui/Images/closeButton.png")));
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
-
         final JButton closeButton = new JButton();
-        closeButton.setIcon(buttonIcon);
-
+        closeButton.setIcon(new IconHelper().getIcon("de/g18/BitBank/Gui/Images/closeButton.png"));
         closeButton.setOpaque(false);
         closeButton.setContentAreaFilled(false);
         closeButton.setBorderPainted(false);
